@@ -63,14 +63,30 @@ This procedure is commonly adapted when working with single-cell DNA-methylation
 
 As an example, we will us in this paper data from XX et al., who have performed sc-BS on [...] and analysed their data in the manner just described. Figure 1a shows a UMAP plot, derived from our re-analysis of the data, using a tiling of the genome into windows of size 100 kb. As one can see, the approach is suitable to see clear structure in the data, observe ...
 
-Nevertheless, this analysis strategy has substantial room for improvement, as we will discuss next.
+Nevertheless, this analysis strategy has substantial room for improvement, as we will discuss next. Here, we discuss the proposed improvements only qualitatively. For the mathematical details, please see the Methods section. 
 
 \begin{figure}
 \includegraphics[width=\columnwidth]{need_for_relative_meth.png}
 \caption{\textbf{Effect of read position:} Depicted is a genomic interval along a chromosome, for which DNA methylation is to be quantified. Two cells cover differing parts of the interval with one read each. If one simply counts for each cell which fraction of the covered CpG sites are methylated, one obtains very different values for the two cells.}
 \end{figure}
 
-\section{Read position affects average}
+\section{Reducing variance due to differing read positions}
+
+We first discuss the task of quantifying the level of methylation in given, fixed, genomic interval. In Figure \ref{}, such an interval is covered by a single read for each of the two cells shown. The read from the cell 2 shows much more methylation than the read from cell 1, and a simple analysis would therefore consider that cell as having stronger methylation in the interval. However, given that the two reads agree wherever they overlap, a more parsimonous interpretation would be that the cells do not show difference in methylation within the interval. Rather, both cells, and similarly maybe most other cells, might have stronger methylation in the left third of the interval than in the middle one.
+
+Therefore, we propose to not first obtain, for each CpG position, an average methylation across all cells and, then quantify for each individual cell its deviation from this average. In Figure \ref{}, the curved line depicts such an average over all cells, the red vertical lines show an individual cell's deviation from the ensemble average. We take the lengths of the red lines as signed values (``redidual''), positive for lines extending upwards from the curve (methylated CpG) and negative for lines extending downwards (unmethylated CpG), and take the average over the residual for all the CpGs in the interval that are covered by reads from this cell. The value thus obtained is what we use to quantify this cell's (relative) methylation in the interval. For a genome tiled into such intervals, we thus obtain a matrix, one row per interval, one column per cell, that can be used for downstream analysis, e.g., as input for a PCA.
+
+The signal to noise ratio in a matrix thus obtained will be much better than in a matrix obtained by simply averaging absolute methylation (0 or 1) over all the cell's covered CpG in a region. The reason for this is that we reduce the variation in situation as the one depicted in FIgure \ref{}, where absolute methylation might differ strongly even though there is no actual evidence for a difference between the two cells.
+
+How should one obtain the ensemble average (the curved line in Fig.\ \ref{})? A simple approach to get a value for a spcific CpG would be to take all cells with read coverage for the CpG and use the fraction of these that show the CpG as methylated. However, especially when only few cells offer coverage, these averages will be very noisy. Therefore, we propose to smoothen using a kernel smoother, i.e., by performing a kernel-weighted average over the CpG site's neighborhood. The kernel bandwidth (i.e., the size of the neighborhood to average over) is a tuning parameter; we got good results with XXX bp and used this value for the examples presented here.
+
+\section{PCA with imputation}
+
+...
+
+
+\section{Finding variably methylated regions}
+
 
 
 \end{document}
