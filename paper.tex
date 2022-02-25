@@ -53,7 +53,7 @@ CpG dinocleotides are underrepresented in eukariotic genomes (due to their vulne
 
 In the present paper, we discuss strategies to analyse sc-BS-Seq data, suggest improvement to current approaches, show their value in a benchmark, and present software to perform the improved analysis methods.
 
-\section{Standard approach}
+\subsection{Standard approach}
 
 We start by briefly reviewing the standard approach of analysing single-cell \emph{RNA}-Seq data, and how this approach is typically adapted to the case of DNA methylation data.
 
@@ -70,7 +70,9 @@ Nevertheless, this analysis strategy has substantial room for improvement, as we
 \caption{\textbf{Effect of read position:} Depicted is a genomic interval along a chromosome, for which DNA methylation is to be quantified. Two cells cover differing parts of the interval with one read each. If one simply counts for each cell which fraction of the covered CpG sites are methylated, one obtains very different values for the two cells.}
 \end{figure}
 
-\section{Reducing variance due to differing read positions}
+\section{Three improvements to processing scBS data}
+
+\subsection{Smoothing residuals}
 
 We first discuss the task of quantifying the level of methylation in given, fixed, genomic interval. In Figure \ref{}, such an interval is covered by a single read for each of the two cells shown. The read from the cell 2 shows much more methylation than the read from cell 1, and a simple analysis would therefore consider that cell as having stronger methylation in the interval. However, given that the two reads agree wherever they overlap, a more parsimonous interpretation would be that the cells do not show difference in methylation within the interval. Rather, both cells, and similarly maybe most other cells, might have stronger methylation in the left third of the interval than in the middle one.
 
@@ -80,13 +82,36 @@ The signal to noise ratio in a matrix thus obtained will be much better than in 
 
 How should one obtain the ensemble average (the curved line in Fig.\ \ref{})? A simple approach to get a value for a spcific CpG would be to take all cells with read coverage for the CpG and use the fraction of these that show the CpG as methylated. However, especially when only few cells offer coverage, these averages will be very noisy. Therefore, we propose to smoothen using a kernel smoother, i.e., by performing a kernel-weighted average over the CpG site's neighborhood. The kernel bandwidth (i.e., the size of the neighborhood to average over) is a tuning parameter; we got good results with XXX bp and used this value for the examples presented here.
 
-\section{PCA with imputation}
+\subsection{PCA with imputation}
+
+The standard PCA algorithm cannot deal with missing data. Therefore, one would need to make intervals wide enough to ensure that every interval is covered by at least one read for most windows and discard any interval that is not covered by any single cell. Hence, a naive analysis has to resort to a coarse tiling of the genome. To counter this, we propose a simple and straightforward way to deal with missing data in the input matrix to a PCA: In a first iteration, we replace each missing value in the centered input matrix with zero, then run the PCA. Then, these zeroes are replaced by the value predicted by the PCA and the PCA is rerun. Convergence is typically achieved after two to four iterations. For details, see Methods. 
+
+The possibility to perform PCA with missing data allows us to use a shorter and thus more intervals and hence provide the PCA with richer input data.
+
+\subsection{Finding variably methylated regions}
+
+Typically, some regions in a chromosome will have very similar methylation status in all cells (most commonly, fully methylated in nearly all cells) while other regions show variability in methylation across cells. Only the latter regions are of value for our goal of quantitating dissimilarity between cells. We call these the variably methylated regions (VMRs).
+
+So far, we have discussed dividing up (tiling) each chromosme genome into non-overlapping, equal-sized intervals, and quantitating the methylation of each such window. Such rigid placing of interval boundaries is unlikely to be optimal: for example, a VMR might be much smaller than a tile and its signal will hence be drowned out by the larger part of uninformative CpGs that are equal in all cells, when averaging over all the CpG sites in the tile.
+
+Therefore, we propose the folloing approach: Divide up the chromosome into many \emph{overlapping} windows, that start at regular multiples of a fixed, small, step size. Quantify the methylation of each cell in each window by averaging the cell's methylation residuals over all CpGs in the window, as described above and depicted in Figure\ \ref{}. Then, calculate for each window the variance of these values over all cells. Select, say, the top XX\% windows with the highest variances and mark them as VMRs. Wherever thus marked windows overlap or are divided by only a small gap, merge them into one larger VMR. Then, calculate for each of these laregr VMRs the methylation signal, as before, by averaging for each cell over the residuals of all contained CpGs.
+
+In this manner, we obtain a methylation matrix, with one column per cell and one row per VMR, that is, in a sense, richer in information and has better signal-to-noise ratio than the matrix obtained by the simple analysis sketched at the very beginning. As we demonstrate below, a PCA performed on such a matrix provided a distance metric for the cells that contains more information on biological detail than one from a simpler analysis. 
+
+Besides providing better input for the distance calculations, the identified VMRs can also be compared with genomic annotation, thus providing a useful starting point for examining the data with methods from functional genomics.
+
+\section{The scbs Python package}
+
+We have implemented the approach just described in a Python package, called ``scbs'', that offers the following functionality: ...
+
+The code is open source, the source-code and the package are available from ..., where detailled documentation on usage is provided as well.
+
+\section{Comparison}
+
+Now, we can compare the simple analysis described initially with an analysis using our method, in order to demonstrate that it improves results.
+
+\section{Discussion and Conclusion}
 
 ...
-
-
-\section{Finding variably methylated regions}
-
-
 
 \end{document}
