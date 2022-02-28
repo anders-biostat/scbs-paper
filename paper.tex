@@ -2,7 +2,7 @@
 
 \usepackage[a4paper,hmargin=1.5cm,vmargin=2.5cm,]{geometry}
 \setlength{\columnsep}{0.7cm}
-\usepackage{palatino}
+\usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
@@ -35,7 +35,7 @@ Lukas P. M. Kremer, Leonie Küchenhoff, ..., Simon Anders\\
 {\footnotesize University of Heidelberg, Germany}
 \vspace{1.5ex}
 
-November 2021
+March 2022
 \vspace{6ex}
 }]
 
@@ -113,5 +113,93 @@ Now, we can compare the simple analysis described initially with an analysis usi
 \section{Discussion and Conclusion}
 
 ...
+
+\appendix
+
+\section{Appendix: Methods in Detail}
+
+\subsection{Raw data}
+
+We write $x_{ij}$ for the methylation status of CpG $i$ in cell $j$. The index $i$ runs over all CpG positions present in the genome, the index $j$ over all cells in the assay. We write $x_{ij}=0$ if position $i$ was found to be unmethylated in cell $j$ by bisulfite sequencing , $x_{ij}=1$ if it was methylated, and $x_{ij}=\text{NA}$ if position $i$ was not covered by reads from cell $j$ and the methylation status is therefore not available ("NA"),
+
+These values can be readily obtained from single-cell bisulfite sequencing data using tools like Bismark.
+
+If multiple reads with the same cell barcode cover the positions, these will typically be PCR duplicates of each other and hence agree. Of course, the two alleles of a CpG may differ in their methylation status and while it is in principle possible that one obtains reads stemming the same position on both the paternal and the maternal chromosomes of the same cell, but this is so unlikely that we can ignore the case. Hence, whenever Bismarck reports multiple reads covering the same position in the same cell, we set $x_{ij}$ to 0 or 1 following the majority of reads and put $x_{ij}=\text{NA}$ in case of a tie. 
+
+For later use: We write $C$ for the set of all cells in the assay (i.e., $C$ is the index set for the cell indices $j$). Moreover,
+we define $C_i\subset C$ as the set of all those cells $j$ that have reads covering position $i$,
+$$ C_i=\{j\in C: x_{ij}\neq\text{NA}\}.$$
+Conversely, we define $G_j$ as the set of all the CpG positions $i$ covered by reads from cell $j$ 
+$$ G_j=\{i: x_{ij}\neq\text{NA}\}.$$
+
+\subsection{Data preparation}
+
+The function `scbs prepare` reads a set of CpG coverage files (e.g. produced by Bismark) and produces a file that stores the matrix $x$ in a space-efficient format, as follows: $x$ is represented as a NumPy sparse matrix, encoding the actual values 0, 1, and NA as -1, 1, and 0, respectively. Coding NA (the most common value) as 0 leverages NumPy's sparse matrix storage. In all the follows here, any mention of $x$ will, however, always mean the encoding as $x_{ij}\in\{0,1,\text{NA}\}$.
+
+\subsection{Smoothing}
+
+For each CpG position $i$, we write 
+$$\overline{x}_i=\langle x_{ij} \rangle_{j\in C_i} = \frac{1}{|C_i|}\sum_{j\in C_i} x_{ij}$$ 
+for the average methylation at position $i$, where $\langle\cdot\rangle$ denotes averaging, and the average runs over all the cells $i\in C_j$, i.e. over those cells for which methylation data is available for position $i$.
+
+NOTE: Here, we could already do shrinkage and use $\frac{1}{|C_i|+1}\sum_i x_{ij}$ intead. But we don't do that, right?
+
+We then run a kernel smoother over these per-position averages to obtain the smoothed averages $\tilde x_i$. Specifically, we use
+
+\[ \tilde x_i = \frac{\sum_{i'} \overline x_{i'}\, k_h(d_{ii'})}{\sum_{i'} k_h(d_{ii'})},\]
+i.e., $\tilde x_i$ is the weighted average over the per-position averages $\overline{x}_{i'}$, taken over the CpG sites $i'$ in the neighborhood of $i$, and weighted using a smoothing kernel $k_h$ with bandwidth $h$. Here, $d_{ii'}$ is the distance between CpG positions $i$ and $i'$, measured in base pairs, $h$ is the smoothing bandwidth in base pairs (by default, $h=1000$), and $k_h$ is the tricube kernel,
+
+\[ k_h(d) = \left\{
+\begin{aligned}
+	&\left(1-|d/h|^3\right)^3 &\text{for } |d|<h \\
+	&\,0 &\text{otherwise}. 
+\end{aligned}
+\right.
+\]
+
+NOTE: Here, we could weight the positions by number of covered cells, i.e., use
+
+$$ \tilde x_i = \frac{\sum_{i'} \overline x_{i'}\, k_h(d_{ii'})\, n_{i'}}{\sum_{i'} k_h(d_{ii'})\, n_{i'}},$$
+
+but we don't do that, or do we?
+
+
+\subsection{Methylation for an interval}
+
+Next, we discuss averaging methylation over a range of CpG sites.
+
+Given an interval $I$ on the chromosome, we wish to quantify the average methylation $m_{Ij}$ of the CpG sites within the interval for cell $j$. If we interpret $I$ as the set of CpG positions $i$ in the interval, we may write
+
+$$ m_{Ij} = \left< x_{ij} \right>_{i\in I\cap G_j}.$$
+
+Here, the average runs over all those sites $i$ that lie within the interval $I$ and are covered by reads from cell $j$.
+
+If we wish to compare cells, it can be helpful to center this quantity by subtracting its average:
+
+$$ z_{Ij} = m_{Ij} - \langle m_{Ij'}\rangle_{j'\in C}.$$
+
+As an alternative, we suggest to consider the residuals of the individual CpG methylation values $x_{ij}$ from the smoothed average $\tilde x_i$,
+$$ r_{ij} = x_{ij} - \tilde x_i, $$
+and averaging over these, obtaining
+$$ r_{Ij} = \frac{\scriptsize{1}}{\scriptsize{|I\cap C_i|+1}}\sum_{i\in I\cap C_i}\left( x_{ij} - \tilde x_i \right).$$
+
+This is a shrunken average, with denominator $n+1$. This extra pseudocount has the effect of shrinking the value towards the "neutral" value 0, with the shrinkage becoming stronger if the data is "weak" because the number $|I\cap C_i|$ of positions covered by reads from cell $j$  is low. In the extreme case of none of the reads from cell $j$ covering $I$, the sum becomes 0 and the denominator 1, i.e. $r_{Ij}=0$ in this case.
+
+\subsection{Finding variably methylated regions (VMRs)}
+
+For any interval $I$, we denote by $v_I$ the sampling variance of its residual averages $r_{Ij}$:
+
+$$ v_I = \frac{\scriptsize{1}}{\scriptsize{|C_I|-1}}\left( r_{Ij} - \langle r_{Ij'}\rangle_{j'\in C_I} \right)^2,$$
+
+where the average runs only over the set $C_I=\bigcup_{i\in I}C_i$ of those cells $j$ which have reads covering interval I.
+
+To find VMRs, we define intervals $I_1, I_2, ...$, all of the same width, and with step-wise increasing starts, then calculate $v_1, v_2, ...$ for these intervals. We then mark the intervals with the 2% highest variances. We take the union of all these intervals, split the union into connected components, and call each component a VMR. Putting that last step in other words: We take all the intervals with variance in the top 2-percentile, fuse intervals that overlap and call the regions thus obtained the VMRs.
+
+\subsection{Calculating cell to cell distances}
+
+[...]
+
+
+\bibliography{scbs}
 
 \end{document}
