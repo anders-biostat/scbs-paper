@@ -202,7 +202,9 @@ $$ z_{Ij} = m_{Ij} - \langle m_{Ij'}\rangle_{j'\in C}.$$
 As an alternative, we suggest to consider the residuals of the individual CpG methylation values $x_{ij}$ from the smoothed average $\tilde x_i$,
 $$ r_{ij} = x_{ij} - \tilde x_i, $$
 and averaging over these, obtaining
-$$ r_{Ij} = \frac{\scriptsize{1}}{\scriptsize{|I\cap C_i|+1}}\sum_{i\in I\cap C_i}\left( x_{ij} - \tilde x_i \right).$$
+\begin{equation} 
+r_{Ij} = \frac{\scriptsize{1}}{\scriptsize{|I\cap C_i|+1}}\sum_{i\in I\cap C_i}\left( x_{ij} - \tilde x_i \right). \label{avgres}
+\end{equation}
 
 This is a shrunken average, with denominator $n+1$. This extra pseudocount has the effect of shrinking the value towards the "neutral" value 0, with the shrinkage becoming stronger if the data is "weak" because the number $|I\cap C_i|$ of positions covered by reads from cell $j$  is low. In the extreme case of none of the reads from cell $j$ covering $I$, the sum becomes 0 and the denominator 1, i.e. $r_{Ij}=0$ in this case.
 
@@ -214,9 +216,13 @@ $$ v_I = \frac{\scriptsize{1}}{\scriptsize{|C_I|-1}}\left( r_{Ij} - \langle r_{I
 
 where the average runs only over the set $C_I=\bigcup_{i\in I}C_i$ of those cells $j$ which have reads covering interval I.
 
-To find VMRs, we define intervals $I_1, I_2, ...$, all of the same width, and with step-wise increasing starts, then calculate $v_1, v_2, ...$ for these intervals. We then mark the intervals with the 2% highest variances. We take the union of all these intervals, split the union into connected components, and call each component a VMR. Putting that last step in other words: We take all the intervals with variance in the top 2-percentile, fuse intervals that overlap and call the regions thus obtained the VMRs.
+To find VMRs, we define intervals $I_1, I_2, ...$, all of the same width, and with step-wise increasing starts, then calculate $v_1, v_2, ...$ for these intervals. We then mark the intervals with the 2\% highest variances. We take the union of all these intervals, split the union into connected components, and call each component a VMR. Putting that last step in other words: We take all the intervals with variance in the top 2-percentile, fuse intervals that overlap and call the regions thus obtained the VMRs.
 
 \subsection{Calculating cell to cell distances}
+
+Given a set, $\mathcal{V}=\{I^\text{v}_1,I^\text{v}_2,\dots\}$, of intervals corresponding to VMRs, we get a relative methylation fraction $r_{ij}$ for each VMR $I^\text{v}_i$ and each cell $j$ from Eq.\ ()\ref{avgres}). The matrix thus obtained can then be centered and used as input for a PCA. If we calculate the top $R$ principal components, we thus obtain for each cell $j$ an $R$-dimensional principal component vector $\mathbf{x}^\text{P}_j$. For any two cells $j$, $j'$, we use the Euclidean distance $\|\mathbf{x}^\text{P}_j - \mathbf{x}^\text{P}_{j'}\|$ as the measure of dissimilarity of the two cells. Thus, the matrix of PC scores can be used as input to dimension reduction methods like t-SNE or UMAP, and to clustering methods like the Louvain or Leiden algorithm, which requirte such a matrix as input to the approximate mnearest neighbor (ANN) finding algorithm that is their first step.
+
+\subsection{PCA with imputation}
 
 [...]
 
