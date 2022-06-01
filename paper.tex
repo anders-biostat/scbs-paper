@@ -31,7 +31,7 @@
 \textbf{\Large Analysing single-cell bisulfite sequencing data with scbs}
 \vspace{1.5ex}
 
-Lukas P. M. Kremer, Leonie Küchenhoff, ..., Simon Anders\\
+Lukas P.~M. Kremer, Leonie Küchenhoff, Santiago Cerrizuela, ..., Ana Martin-Villalba, Simon Anders\\
 {\footnotesize University of Heidelberg, Germany}
 \vspace{1.5ex}
 
@@ -107,7 +107,7 @@ The possibility to perform PCA with missing data allows us to use a shorter and 
 
 \begin{figure}
 	\includegraphics[width=\columnwidth]{figures/Fig_sliding.png}
-	\caption{\small \textbf{Finding variably methylated regions (VMR):} The chromosomes are divided up into overlapping windows (first five shown at the bottom), and for each window, the cells' methylation values are calculated as described and as depicted in Fig.\ \ref{smoothres}B. Then, the variance of these values are calculated (each point represents one of the overlapping windows), a threshold (red line) is chosen such that a chosen quantile of windows have a variance exceeding the threshold. Windows with above-threshold variance are merged if they overlap, yielding the ``variably methylated regions''.}
+	\caption{\small \textbf{Finding variably methylated regions (VMR):} The chromosomes are divided up into overlapping windows (first five shown at the bottom), and for each window, the cells' methylation values are calculated as described and as depicted in Fig.\ \ref{smoothres}B. Then, the variance of these values is calculated (each point represents one of the overlapping windows), a threshold (dashed line) is chosen such that a chosen quantile of windows have a variance exceeding the threshold. Windows with above-threshold variance are merged if they overlap, yielding the ``variably methylated regions''.}
 	\label{vmr}
 \end{figure}
 
@@ -124,7 +124,13 @@ Besides providing better input for the distance calculations, the identified VMR
 
 \section{The scbs Python package}
 
-We have implemented the approach just described in a Python package, called ``scbs'', that offers the following functionality:
+\begin{figure}
+	\includegraphics[width=\columnwidth]{figures/Fig_workflow.png}
+	\caption{\small \textbf{Overview of the functionalities implemented in the scbs package} Bla bla.}
+	\label{workflow}
+\end{figure}
+
+We have implemented the approach just described in a Python package, called ``scbs'', that offers the following functionality \ref{workflow}:
 
 \subsection{Efficient storage and access of whole-genome scBS data}
 
@@ -206,7 +212,7 @@ $$ G_j=\{i: x_{ij}\neq\text{NA}\}.$$
 
 \subsection{Data preparation}
 
-The function `scbs prepare` reads a set of CpG coverage files (e.g. produced by Bismark) and produces a file that stores the matrix $x$ in a space-efficient format, as follows: $x$ is represented as a NumPy sparse matrix, encoding the actual values 0, 1, and NA as -1, 1, and 0, respectively. Coding NA (the most common value) as 0 leverages NumPy's sparse matrix storage. In all the follows here, any mention of $x$ will, however, always mean the encoding as $x_{ij}\in\{0,1,\text{NA}\}$.
+The function `scbs prepare` reads a set of CpG coverage files (e.g. produced by Bismark) and produces a file that stores the matrix $x$ in a space-efficient format, as follows: $x$ is represented as a SciPy sparse matrix, encoding the actual values 0, 1, and NA as -1, 1, and 0, respectively. Coding NA (the most common value) as 0 leverages SciPy's sparse matrix storage. In all the follows here, any mention of $x$ will, however, always mean the encoding as $x_{ij}\in\{0,1,\text{NA}\}$.
 
 \subsection{Smoothing}
 
