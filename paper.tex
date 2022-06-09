@@ -29,10 +29,10 @@
 \twocolumn[{%
 \centering
 \textbf{\Large Analysing single-cell bisulfite sequencing data with scbs}
-\vspace{1.5ex}
 
-Lukas P.~M. Kremer, Leonie Küchenhoff, Santiago Cerrizuela, ..., Ana Martin-Villalba, Simon Anders\\
-{\footnotesize University of Heidelberg, Germany}
+Lukas P.~M. Kremer\textsuperscript{1,2}, Leonie Küchenhoff\textsuperscript{1,2}, Santiago Cerrizuela\textsuperscript{2}, ..., Ana Martin-Villalba\textsuperscript{2}, Simon Anders\textsuperscript{1}\\
+{\footnotesize \textsuperscript{1} BioQuant, University of Heidelberg, Germany}\\
+{\footnotesize \textsuperscript{2} Molecular Neurobiology, German Cancer Research Center (DKFZ), Heidelberg, Germany}
 \vspace{1.5ex}
 
 March 2022
@@ -45,19 +45,19 @@ March 2022
 
 \section{Introduction}
 
-Sequencing-based assays with single-cell resolution have offered new means to understand the differences between the cells making up a sample. Single-cell RNA sequencing techniques have matured at great pace in recent years, and methods to study chromatin are rapidly catching up. Of special interest here is DNA methylation, i.e., the methylation of bases in the DNA, because DNA methylation patterns are passed on to daughter cells in cell division. Especially in mammals, such methylation chiefly occurs at cytosine bases that are immediately after followed by guanine bases, so-called CpG sites. 
+Sequencing-based assays with single-cell resolution have offered new means to understand the differences between the cells making up a sample. Single-cell RNA sequencing (scRNA-seq) techniques have matured at great pace in recent years, and methods to study chromatin are rapidly catching up. Of special interest here is DNA methylation, i.e., the methylation of bases in the DNA, because DNA methylation patterns are passed on to daughter cells in cell division. Especially in mammals, such methylation chiefly occurs at cytosine bases that are immediately after followed by guanine bases, so-called CpG sites. 
 
-To detect CpG methylation by sequencing, bisulfite conversion is commonly employed: treatment of DNA with bisulfite causes unmethylated guanine bases to be deaminated to uracil, which is paired with thymine in subsequent PCR. Therefore, unmethylated CpGs are read as TG in sequencing of bisulfite-converted DNA while only methylated CpG is correctly read as CG \citep{Frommer_1992}. Such so-called bisulfite sequencing has been used for bulk samples since long, and methods for bisulfite sequencing with single-cell resolution \citep{Smallwood_2014} have become commercially available recently and are increasingly used.
+To detect CpG methylation by sequencing, bisulfite conversion is commonly employed: treatment of DNA with bisulfite causes unmethylated cytosine bases to be deaminated to uracil, which is paired with thymine in subsequent PCR. Therefore, unmethylated CpGs are read as TG in sequencing of bisulfite-converted DNA while only methylated CpG is correctly read as CG \citep{Frommer_1992}. Such so-called bisulfite sequencing has been used for bulk samples since long, and methods for bisulfite sequencing with single-cell resolution (scBS) were recently developed \citep{Smallwood_2014} and are increasingly used.
 
-CpG dinocleotides are underrepresented in eukariotic genomes (due to their vulnerability to mutation by conversion to TpG due to accidental deanimation), and the majority of existing CpG sites are methylated. Presence or absence of the methyl group at CpG sites is believed to have effect on gene regulation, with methylation inhibiting transcription. Methylating DNA during differentiation is therefore conjectured to be an important mechanism to silence genome regions that are not needed in the target lineage. One important application of single-cell bisulfite sequencing (scBS) therefore lies in the study of differentiation processes.
+CpG dinocleotides are underrepresented in eukaryotic genomes (due to their vulnerability to mutation by conversion to TpG due to accidental deanimation), and the majority of existing CpG sites are methylated. Presence or absence of the methyl group at CpG sites is believed to have effect on gene regulation, with methylation inhibiting transcription. Methylating DNA during differentiation is therefore conjectured to be an important mechanism to silence genome regions that are not needed in the target lineage. One important application of single-cell bisulfite sequencing (scBS) therefore lies in the study of differentiation processes.
 
 In the present paper, we discuss strategies to analyse scBS data, suggest improvement to current approaches, show their value in a benchmark, and present software to perform the improved analysis methods.
 
 \subsection{Standard approach}
 
-We start by briefly reviewing the standard approach of analysing single-cell \emph{RNA}-Seq data, and how this approach is typically adapted to the case of DNA methylation data.
+We start by briefly reviewing the standard approach of analysing single-cell \emph{RNA}-Seq data, and how this approach is typically adapted to the case of single-cell DNA methylation data.
 
-The starting point in scRNA-Seq is a matrix of UMI counts (i.e. of counts of distinct RNA molecules), one row for each cell and one column for each gene. As a first step towards assigning cell types or states to cells, one needs to establish which cells are similar to each other, and to this end, find a way to quantify the distance (i.e., dissimilarity) between any two given cells' transcriptional profile. A standard approach, used with minor variation in virtually all recent research and automated by popular software such as Seurat \citep{Hao_2021} or ScanPy \citep{Wolf_2018}, is as follows: One first accounts for cell-to-cell variation in sequencing depth by dividing each UMI count by the respective cell's total UMI count, then transforms to a homoskedastic scale by taking the logarithm. In order to avoid matrix elements with zero count to be transformed to minus infinity, one typically adds a very small ``pseudocount'' (often $10^{-5}$) to the normalized fractions before taking the logarithm. Now, one could use Euclidean distances of these vectors  of logarithmized fractions as dissimilarity score. However, these scores would be exceedingly noisy due to the strong Poisson noise introduced by the many genes with very low counts. Therefore, one performs a principal component analysis (PCA), keeping only the top few (typically, 20 to 50) components. As Poisson noise is uncorrelated between genes, it will average out in the top principal components. Therefore, Euclidean distances between these "PCA space" vectors provide a robust dissimilarity score, which can subsequently be used as input to methods like t-SNE and UMAP, which provide a two-dimensional representation of the data. The PCA space representation is furthermore used for clustering (assigning cells to groups by similarity) and trajectory finding (identifying elongated manifolds in PCA space and assigning cells to quasi-1D positions along them).
+The starting point in scRNA-Seq is a matrix of UMI counts (i.e. of counts of distinct RNA molecules), one row for each cell and one column for each gene. As a first step towards assigning cell types or states to cells, one needs to establish which cells are similar to each other, and to this end, find a way to quantify the distance (i.e., dissimilarity) between any two given cells' transcriptional profile. A standard approach, used with minor variation in virtually all recent research and automated by popular software such as Seurat \citep{Hao_2021} or ScanPy \citep{Wolf_2018}, is as follows: One first accounts for cell-to-cell variation in sequencing depth by dividing each UMI count by the respective cell's total UMI count, then transforms to a homoskedastic scale by taking the logarithm. In order to avoid matrix elements with zero count to be transformed to minus infinity, one typically adds a very small ``pseudocount'' (often $10^{-5}$) to the normalized fractions before taking the logarithm. Now, one could use Euclidean distances of these vectors  of logarithmized fractions as dissimilarity score. However, these scores would be exceedingly noisy due to the strong Poisson noise introduced by the many genes with very low counts. Therefore, one performs a principal component analysis (PCA), keeping only the top few (typically, 20 to 50) components. As Poisson noise is uncorrelated between genes, it will average out in the top principal components. Therefore, Euclidean distances between these ``PCA space'' vectors provide a robust dissimilarity score, which can subsequently be used as input to methods like t-SNE and UMAP, which provide a two-dimensional representation of the data. The PCA space representation is furthermore used for clustering (assigning cells to groups by similarity) and trajectory finding (identifying elongated manifolds in PCA space and assigning cells to quasi-1D positions along them).
 
 \begin{figure}
 	\framebox[\columnwidth]{
@@ -87,7 +87,7 @@ Nevertheless, this analysis strategy has substantial room for improvement, as we
 
 \section{Three improvements to processing scBS data}
 
-\subsection{Smoothing residuals}
+\subsection{Smoothing residuals} \label{residuals}
 
 We first discuss the task of quantifying the level of methylation in given, fixed, genomic interval. In Figure \ref{smoothres}A, such an interval is covered by a single read for each of the two cells shown. The read from the cell 2 shows much more methylation than the read from cell 1, and a simple analysis would therefore consider that cell as having stronger methylation in the interval. However, given that the two reads agree wherever they overlap, a more parsimonous interpretation would be that the cells do not show difference in methylation within the interval. Rather, both cells, and similarly maybe most other cells, might have stronger methylation in the left third of the interval than in the middle one.
 
@@ -126,23 +126,20 @@ Besides providing better input for the distance calculations, the identified VMR
 
 \begin{figure}
 	\includegraphics[width=\columnwidth]{figures/Fig_workflow.png}
-	\caption{\small \textbf{Overview of the functionalities implemented in the scbs package} Bla bla.}
+	\caption{\small \textbf{Overview of the functionalities implemented in the scbs package}
+	A 
+	}
 	\label{workflow}
 \end{figure}
 
-We have implemented the approach just described in a Python package, called ``scbs'', that offers the following functionality \ref{workflow}:
+We have implemented the approach just described in a Python package with a command line interface, called \texttt{scbs}, which also offers a number of other functionalities for the analysis of scBS data Figure \ref{workflow}. The starting point of such an analysis are methylation files generated by tools such as Bismark \citep{bismark} or methylpy \citep{methylpy}. For each cell, these tools produce a text file that lists the methylation status of all CpG sites. Since it is inconvenient to work with hundreds or thousands of text files, \texttt{scbs} provides the \texttt{prepare} command which parses methylation files and stores their content in a compressed format that enables efficient access to all CpG sites of the genome.
 
-\subsection{Efficient storage and access of whole-genome scBS data}
+\texttt{scbs prepare} also computes a number of summary statistics for each cell, including the mean genome-wide methylation level and the number of observed CpG sites, i.~e. the number of CpG sites that have sequencing coverage. These summary statistics can be used to detect cells with poor quality. The quality of each single cell methylome can furthermore be inspected with \texttt{scbs profile}, which computes the average methylation profile of a set of user-defined genomic regions such as transcription start sites (TSS). The TSS profile is a useful quality control plot since methylation shows a characteristic dip roughly \textpm1~kb around the transcription start site in mammalian genomes. Cells that do not show this pattern, or cells with few observed CpG sites, may then be filtered from the data set with \texttt{scbs filter}. 
 
-\subsection{Identification and filtering of low-quality cells}
+After quality control, the user has access to the previously described genome-wide VMR detection approach via \texttt{scbs scan}. This produces a BED-file that lists the genome coordinates of VMRs. To finally obtain a methylation matrix analogous to an scRNA-seq count matrix, this BED-file can be used as input for \texttt{scbs matrix}, which quantifies methylation at genomic intervals in all cells. The command produces both the percentage of methylated CpG sites, as well as our proposed methylation measure (shrunken mean of the residuals) that is more robust to variation in sequencing coverage or stochastic differences in read position between cells. We note that both \texttt{matrix} and \texttt{profile} accept any valid BED-file as input, which means that the user can quantify and visualize methylation at any genomic feature of interest, such as promoters, enhancers or transcription factor binding sites. The obtained methylation matrix can then serve as input for common single-cell analysis methods such as dimensionality reduction and cell clustering.
 
-\subsection{Finding variably methylated regions}
+\texttt{scbs} is free and open source, and the package can be installed via the Python package manager. The source code and the package are available at \href{https://github.com/LKremer/scbs}, where detailed documentation on usage, as well as a tutorial using example data, is provided as well.
 
-\subsection{Quantification of methylation in genomic intervals}
-
-
-
-The code is open source, the source-code and the package are available from ..., where detailled documentation on usage is provided as well.
 
 \section{Comparison}
 
@@ -235,7 +232,7 @@ i.e., $\tilde x_i$ is the weighted average over the per-position averages $\over
 \right.
 \]
 
-NOTE: Here, we could weight the positions by number of covered cells, i.e., use
+We also provide Here, we could weight the positions by number of covered cells, i.e., use
 
 $$ \tilde x_i = \frac{\sum_{i'} \overline x_{i'}\, k_h(d_{ii'})\, n_{i'}}{\sum_{i'} k_h(d_{ii'})\, n_{i'}},$$
 
@@ -267,9 +264,9 @@ This is a shrunken average, with denominator $n+1$. This extra pseudocount has t
 
 \subsection{Finding variably methylated regions (VMRs)}
 
-For any interval $I$, we denote by $v_I$ the sampling variance of its residual averages $r_{Ij}$:
+For any interval $I$, we denote by $v_I$ the variance of its residual averages $r_{Ij}$:
 
-$$ v_I = \frac{\scriptsize{1}}{\scriptsize{|C_I|-1}}\left( r_{Ij} - \langle r_{Ij'}\rangle_{j'\in C_I} \right)^2,$$
+$$ v_I = \frac{\scriptsize{1}}{\scriptsize{|C_I|}}\left( r_{Ij} - \langle r_{Ij'}\rangle_{j'\in C_I} \right)^2,$$
 
 where the average runs only over the set $C_I=\bigcup_{i\in I}C_i$ of those cells $j$ which have reads covering interval I.
 
