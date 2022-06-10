@@ -60,13 +60,13 @@ The standard approach to analyse scBS data is based on methodology developed for
 The starting point in most scRNA-Seq analyses is a matrix of UMI counts (i.e. of counts of distinct RNA molecules), one row for each cell and one column for each gene. A first goal is then to assigning cell types or states to cells, and to this end, one needs to establish which cells are similar to each other, i.e., find a way to quantify the distance (i.e., dissimilarity) between any two given cells' transcriptional profile. A standard approach, used with minor variation in virtually all recent research and automated by popular software such as Seurat \citep{Hao_2021} or ScanPy \citep{Wolf_2018}, is as follows: One first accounts for cell-to-cell variation in sequencing depth by dividing each UMI count by the respective cell's total UMI count, then transforms to a homoskedastic scale by taking the logarithm. In order to avoid matrix elements with zero count to be transformed to minus infinity, one typically adds a very small ``pseudocount'' (often $10^{-5}$) to the normalized fractions before taking the logarithm. Now, one could use Euclidean distances of these vectors of logarithmized fractions as dissimilarity score. However, these scores would be exceedingly noisy due to the strong Poisson noise introduced by the many genes with very low counts. Therefore, one performs a principal component analysis (PCA), keeping only the top few (typically, 20 to 50) components. As Poisson noise is uncorrelated between genes, it will average out in the top principal components, as these are all linear combinations with weight on very many genes. Therefore, Euclidean distances between these ``PCA space'' vectors provide a robust dissimilarity score. Hence, the PCA space representation y are suitable as input to methods like t-SNE and UMAP, which provide a two-dimensional representation of the data, or to methods for clustering (assigning cells to groups by similarity) and trajectory finding (identifying elongated manifolds in PCA space and assigning cells to quasi-1D positions along them).
 
 \begin{figure}
-	\framebox[\columnwidth]{
-		\begin{minipage}[c][3.5cm]{\columnwidth}
-			\centering Figure
-		\end{minipage}
-	}
-	\caption{\small UMAP representations of the single-cell bisulfite data of XXX et al., calculated \textbf{(A)} using conventional preprocessing and \textbf{(B)} using the approach described here.}
-	\label{umaps}
+    \framebox[\columnwidth]{
+        \begin{minipage}[c][3.5cm]{\columnwidth}
+            \centering Figure
+        \end{minipage}
+    }
+    \caption{\small UMAP representations of the single-cell bisulfite data of XXX et al., calculated \textbf{(A)} using conventional preprocessing and \textbf{(B)} using the approach described here.}
+    \label{umaps}
 \end{figure}
 
 
@@ -78,11 +78,11 @@ As an example, we will use in this paper data from \citet{luo2017single}, who pe
 Nevertheless, this analysis strategy has substantial room for improvement, as we will discuss next. Here, we discuss the proposed improvements only qualitatively. For the mathematical details, please see the Methods section. 
 
 \begin{figure*}
-	A\\
+    A\\
     \begin{center}
         \includegraphics[width=0.75\textwidth]{figures/Fig_residuals_A.png}\\
     \end{center}
-	B\\
+    B\\
     \begin{center}
         \includegraphics[width=0.75\textwidth]{figures/Fig_residuals_B.png}
     \end{center}
@@ -112,13 +112,13 @@ The possibility to perform PCA with missing data allows us to use shorter, and t
 \subsection{Finding variably methylated regions}
 
 \begin{figure}
-	\includegraphics[width=\columnwidth]{figures/Fig_sliding.png}
-	\caption{\small \textbf{Finding variably methylated regions (VMR):} The chromosomes are divided up into overlapping windows (first five shown at the bottom), and for each window, the cells' methylation values are calculated as described and as depicted in Fig.\ \ref{fig:smoothres}B. Then, the variance of these values is calculated (each point represents one of the overlapping windows), a threshold (dashed line) is chosen such that a chosen quantile of windows have a variance exceeding the threshold. Windows with above-threshold variance are merged if they overlap, yielding the ``variably methylated regions''.}
-	\label{vmr}
+    \includegraphics[width=\columnwidth]{figures/Fig_sliding.png}
+    \caption{\small \textbf{Finding variably methylated regions (VMR):} The chromosomes are divided up into overlapping windows (first five shown at the bottom), and for each window, the cells' methylation values are calculated as described and as depicted in Fig.\ \ref{fig:smoothres}B. Then, the variance of these values is calculated (each point represents one of the overlapping windows), a threshold (dashed line) is chosen such that a chosen quantile of windows have a variance exceeding the threshold. Windows with above-threshold variance are merged if they overlap, yielding the ``variably methylated regions''.}
+    \label{vmr}
 \end{figure}
 
 
-Typically, some regions in a chromosome will have very similar methylation status in all cells, while other regions show variability in methylation across cells. For instance, it is long known that CpG-rich promoters of housekeeping genes are unmethylated, and that a large proportion of the remaining genome is highly methylated regardless of cell type \citet{bird1986cpg}. In contrast, DNA methylation at certain genomic features such as enhancers is more dynamic \citep{argelaguet2019gastru}, and thus more variable across cells.
+Typically, some regions in a chromosome will have very similar methylation status in all cells, while other regions show variability in methylation across cells. For instance, it is long known that CpG-rich promoters of housekeeping genes are unmethylated, and that a large proportion of the remaining genome is highly methylated regardless of cell type \citep{bird1986cpg}. In contrast, DNA methylation at certain genomic features such as enhancers is more dynamic \citep{argelaguet2019gastru}, and thus more variable across cells.
 Only the latter regions are of value for our goal of quantitating dissimilarity between cells. We call these the variably methylated regions (VMRs).
 
 So far, we have discussed dividing up (tiling) each chromosome into non-overlapping, equal-sized intervals, and quantitating the methylation of each such window. Such rigid placing of interval boundaries is unlikely to be optimal: for example, a VMR might be much smaller than a tile and its signal will hence be drowned out by the larger part of uninformative CpGs that are equal in all cells, when averaging over all the CpG sites in the tile.
@@ -135,51 +135,45 @@ Thus, VMRs provide a useful starting point for examining the data with methods f
 
 \begin{figure*}
     \begin{center}
-	    \includegraphics[width=.8\textwidth]{figures/Fig_workflow.png}
+        \includegraphics[width=.8\textwidth]{figures/Fig_workflow.png}
     \end{center}
-	\caption{\small \textbf{Overview of the functionalities implemented in the scbs package}
-	A 
-	}
-	\label{workflow}
+    \caption{\small \textbf{Overview of the functionalities implemented in the scbs package}
+    A 
+    }
+    \label{workflow}
 \end{figure*}
 
-We have implemented the approach just described in a Python package with a command line interface, called \texttt{scbs}, which also offers a number of other functionalities for the analysis of scBS data Figure \ref{workflow}. The starting point of such an analysis are methylation files generated by tools such as Bismark \citep{bismark} or methylpy \citep{methylpy}. For each cell, these tools produce a text file that lists the methylation status of all CpG sites. Since it is inconvenient to work with hundreds or thousands of text files, \texttt{scbs} provides the \texttt{prepare} command which parses methylation files and stores their content in a compressed format that enables efficient access to all CpG sites of the genome.
+We have implemented the approach just described in a Python package with a command line interface, called \texttt{scbs}, which also offers a number of other functionalities for the analysis of scBS data (Figure \ref{workflow}). The starting point of such an analysis are methylation files generated by tools such as Bismark \citep{bismark} or methylpy \citep{methylpy}. For each cell, these tools produce a text file that lists the methylation status of all CpG sites. Since it is inconvenient to work with hundreds or thousands of text files, \texttt{scbs} provides the \texttt{prepare} command which parses methylation files and stores their content in a compressed format that enables efficient access to all CpG sites of the genome.
 
-\texttt{scbs prepare} also computes a number of summary statistics for each cell, including the mean genome-wide methylation level and the number of observed CpG sites, i.~e. the number of CpG sites that have sequencing coverage. These summary statistics can be used to detect cells with poor quality. The quality of each single cell methylome can furthermore be inspected with \texttt{scbs profile}, which computes the average methylation profile of a set of user-defined genomic regions such as transcription start sites (TSS). The TSS profile is a useful quality control plot since methylation shows a characteristic dip roughly \textpm1~kb around the transcription start site in mammalian genomes. Cells that do not show this pattern, or cells with few observed CpG sites, may then be filtered from the data set with \texttt{scbs filter}. 
+In brief, we store methylation of each chromosome in a binary matrix where each column represents a cell and each row represents a base pair. Since the vast majority of values in this matrix are missing due to the sparsity of scBS data, we encode missing values as zero and then store the data in Compressed Sparse Row (CSR) format. This format does not explicitly store zeroes (here: missing values) and is optimized for row-wise access, which results in significant compression and allows fast access to the methylation status of genomic intervals.
 
-After quality control, the user has access to the previously described genome-wide VMR detection approach via \texttt{scbs scan}. This produces a BED-file that lists the genome coordinates of VMRs. To finally obtain a methylation matrix analogous to an scRNA-seq count matrix, this BED-file can be used as input for \texttt{scbs matrix}, which quantifies methylation at genomic intervals in all cells. The command produces both the percentage of methylated CpG sites, as well as our proposed methylation measure (shrunken mean of the residuals) that is more robust to variation in sequencing coverage or stochastic differences in read position between cells. We note that both \texttt{matrix} and \texttt{profile} accept any valid BED-file as input, which means that the user can quantify and visualize methylation at any genomic feature of interest, such as promoters, enhancers or transcription factor binding sites. The obtained methylation matrix can then serve as input for common single-cell analysis methods such as dimensionality reduction and cell clustering.
+\texttt{scbs prepare} also computes a number of summary statistics for each cell, including the mean genome-wide methylation level and the number of observed CpG sites, i.~e. the number of CpG sites that have sequencing coverage. These summary statistics can be used to detect cells with poor quality. The quality of each single cell methylome can furthermore be inspected with \texttt{scbs profile}, which computes the average methylation profile of a set of user-defined genomic regions such as transcription start sites (TSS) at single-cell resolution. The TSS profile is a useful quality control plot since methylation shows a characteristic dip roughly \textpm1~kb around the transcription start site in mammalian genomes. Cells that do not show this pattern, or cells with few observed CpG sites, may then be discarded with \texttt{scbs filter}. 
+
+After quality control, the user has access to the previously described genome-wide VMR detection approach via \texttt{scbs scan}. This produces a BED-file that lists the genome coordinates of VMRs. To finally obtain a methylation matrix analogous to a scRNA-seq count matrix, this BED-file can be used as input for \texttt{scbs matrix}, which quantifies methylation at genomic intervals in all cells. The command produces both the percentage of methylated CpG sites, as well as our proposed methylation measure (shrunken mean of the residuals) that is more robust to variation in sequencing coverage or stochastic differences in read position between cells. We note that both \texttt{matrix} and \texttt{profile} accept any valid BED-file as input, which means that the user can quantify and visualize methylation at any genomic feature of interest, such as promoters, enhancers or transcription factor binding sites, in single cells. The obtained methylation matrix can then serve as input for common single-cell analysis methods such as dimensionality reduction and cell clustering.
 
 \texttt{scbs} is free and open source, and the package can be installed via the Python package manager. The source code and the package are available at \href{https://github.com/LKremer/scbs}{https://github.com/LKremer/scbs}, where we also provide detailed documentation including a tutorial that demonstrates a complete \texttt{scbs} analysis on an example data set.
 
 
 \section{Comparison}
+To assess performance of our newly devised methods, we obtained two previously published scBS data sets and re-analysed them with \texttt{scbs}.
 
-To demonstrate an improvement of results, we compare previously published analyses described above with our analysis method.
-First, we use a data set by \citet{argelaguet2019gastru}. In their work, they generated a single cell methylome data set of mouse embryo cells across different stages of development (E4.5 – E7.5). They calculated the correlation between RNA expression intensity and corresponding DNA methylation at the promoter region to elucidate the implications of the epigenome on RNA expression during development. As promoters, they used DNA regions of \textpm2~kb around transcriptions start sites (TSS). 
-
-
-
-
---The following paragraph potentially needs to be changed when new plots are made--
-
-
-
+The first data set is a single-cell multi-omic data set generated by \citet{argelaguet2019gastru}. In their work, the authors obtained single-cell methylomes of mouse embryo cells across different stages of development (E4.5 – E7.5), as well as single-cell transcriptomes from the same cells. They calculated the correlation between RNA expression and DNA methylation at the corresponding promoter region to elucidate the implications of the epigenome on gene expression in development. \citet{argelaguet2019gastru} defined promoters as genomic intervals \textpm2~kb around the TSS of each gene. 
 
 In our analysis, we compare correlations between RNA expression intensity and DNA methylation of these promotor regions to correlations between RNA expression intensity and DNA methylation of the closest variable methylation regions that we identified with \texttt{scbs}. In Figure \ref{figure:correlation}, we show that correlation of RNA expression intensity to gene methylation around the TSS \textpm2~kb is less strong compared to the correlation at the closest variable region. This effect can be observed with methylation fractions (Figure \ref{figure:correlation}A) or shrunken residuals (Figure \ref{figure:correlation}B) as data inputs.
 
 \begin{figure}[!htp]
-	A\\
-	\hspace{.2cm}\includegraphics[width=.7\columnwidth]{part_leonie_git/leonie_plots/corr_methylation_fraction_4kbwindow.pdf} \\
-	B\\
-	\hspace{.2cm}\includegraphics[width=.7\columnwidth]{part_leonie_git/leonie_plots/corr_shrunken_residual_4kbwindow.pdf} \\
-	C\\
-	\hspace{.39cm}\includegraphics[width=\columnwidth]{part_leonie_git/leonie_plots/comparison_meth_RNA.pdf}
+    A\\
+    \hspace{.2cm}\includegraphics[width=.7\columnwidth]{part_leonie_git/leonie_plots/corr_methylation_fraction_4kbwindow.pdf} \\
+    B\\
+    \hspace{.2cm}\includegraphics[width=.7\columnwidth]{part_leonie_git/leonie_plots/corr_shrunken_residual_4kbwindow.pdf} \\
+    C\\
+    \hspace{.39cm}\includegraphics[width=\columnwidth]{part_leonie_git/leonie_plots/comparison_meth_RNA.pdf}
 
-	\caption{\small \textbf{Correlation of DNA methylation and RNA expression intensity}. All plots are based on the data by \citep{luo2017single}.
-	\textbf{(A)} Correlation of each gene's RNA expression intensity to methylation fraction of TSS $\pm$ 2kb (y-axis) or to methylation fraction of closest variable gene.
-	\textbf{(B)} Correlation of each gene's RNA expression intensity to shrunken residual of methylation of TSS $\pm$ 2kb (y-axis) or to shrunken residual of closest variable gene.
-	\textbf{(C)} Mean gene methylation of Ube2l6 gene (ENSMUSG00000027078, marked in yellow in A \& B). Cells were into 4 groups based on their RNA expression (group 0: cells with no expression of gene, group 1-3: cells that express gene divided into three equally large groups with group 3 having the highest expression). Mean methylation level of each group was smoothed with a tricube kernel of bandwidth = 2000.}
-	\label{figure:correlation}
+    \caption{\small \textbf{Correlation of DNA methylation and RNA expression intensity}. All plots are based on the data by \citep{luo2017single}.
+    \textbf{(A)} Correlation of each gene's RNA expression intensity to methylation fraction of TSS $\pm$ 2kb (y-axis) or to methylation fraction of closest variable gene.
+    \textbf{(B)} Correlation of each gene's RNA expression intensity to shrunken residual of methylation of TSS $\pm$ 2kb (y-axis) or to shrunken residual of closest variable gene.
+    \textbf{(C)} Mean gene methylation of Ube2l6 gene (ENSMUSG00000027078, marked in yellow in A \& B). Cells were into 4 groups based on their RNA expression (group 0: cells with no expression of gene, group 1-3: cells that express gene divided into three equally large groups with group 3 having the highest expression). Mean methylation level of each group was smoothed with a tricube kernel of bandwidth = 2000.}
+    \label{figure:correlation}
 \end{figure}
 
 As an example to illustrate this effect more clearly, we picked a gene with significantly stronger correlation at the closest variable region than at the TSS. This gene is marked on Figure \ref{figure:correlation}A and B with a yellow dot. We divided all cells into four groups of cells with no, low, medium and high expression of this exemplary gene Ube216 and plotted a smoothed methylation level per group. As shown in Figure \ref{figure:correlation}C, the promoter region is sparsely methylated in all four RNA expression groups and is therefore a poor region to make conclusions about the relation of DNA methylation and RNA expression intensity. However, a region close to the TSS, identified as the closest highly variable methylation region with scbs, shows a much clearer negative correlation between RNA expression intensity and DNA methylation.  
@@ -189,16 +183,16 @@ To further demonstrate the benefit of detecting variable methylation regions, we
 
 
 \begin{figure}[!htp]
-	A\\
-	\hspace{.3cm}\includegraphics[width=.45\columnwidth]{part_leonie_git/leonie_plots/complete_135k_12cm_log.pdf} 
-	B
-	\hspace{.3cm}\includegraphics[width=.45\columnwidth]{part_leonie_git/leonie_plots/cell500_20k_12cm_log.pdf} \\
-	C\\
-	\hspace{.39cm}\includegraphics[width=\columnwidth]{part_leonie_git/leonie_plots/UMAP_fulldataset.pdf}
-	D\\
-	\hspace{.39cm}\includegraphics[width=\columnwidth]{part_leonie_git/leonie_plots/UMAP_reduceddataset.pdf}
-	\caption{\small \textbf{Analysis comparison}. All plots are based on the data by \citep{luo2017single}. \textbf{(A)} Nearest neighbor count score for complete dataset using four different analysis techniques and a variable number of regions as input. Exemplary UMAPs for encircled scores are shown in (C). \textbf{(B)} Nearest neighbor count score for the same dataset reduced to 500 cells using four different analysis techniques and a variable number of regions as input. Exemplary UMAPs for encircled scores are shown in (D). \textbf{(C)} Two exemplary UMAPs using 1000 regions of the full dataset and methylation fraction of 100 kb windows (left) or shrunken residuals of variable methylation regions (right) \textbf{(D)} Two exemplary UMAPs using 1000 regions of the reduced dataset and methylation fraction of 100 kb windows (left) or shrunken residuals of variable methylation regions (right).}
-	\label{figure:score}
+    A\\
+    \hspace{.3cm}\includegraphics[width=.45\columnwidth]{part_leonie_git/leonie_plots/complete_135k_12cm_log.pdf} 
+    B
+    \hspace{.3cm}\includegraphics[width=.45\columnwidth]{part_leonie_git/leonie_plots/cell500_20k_12cm_log.pdf} \\
+    C\\
+    \hspace{.39cm}\includegraphics[width=\columnwidth]{part_leonie_git/leonie_plots/UMAP_fulldataset.pdf}
+    D\\
+    \hspace{.39cm}\includegraphics[width=\columnwidth]{part_leonie_git/leonie_plots/UMAP_reduceddataset.pdf}
+    \caption{\small \textbf{Analysis comparison}. All plots are based on the data by \citep{luo2017single}. \textbf{(A)} Nearest neighbor count score for complete dataset using four different analysis techniques and a variable number of regions as input. Exemplary UMAPs for encircled scores are shown in (C). \textbf{(B)} Nearest neighbor count score for the same dataset reduced to 500 cells using four different analysis techniques and a variable number of regions as input. Exemplary UMAPs for encircled scores are shown in (D). \textbf{(C)} Two exemplary UMAPs using 1000 regions of the full dataset and methylation fraction of 100 kb windows (left) or shrunken residuals of variable methylation regions (right) \textbf{(D)} Two exemplary UMAPs using 1000 regions of the reduced dataset and methylation fraction of 100 kb windows (left) or shrunken residuals of variable methylation regions (right).}
+    \label{figure:score}
 \end{figure}
 
 \section{Discussion and Conclusion}
@@ -241,8 +235,8 @@ i.e., $\tilde x_i$ is the weighted average over the per-position averages $\over
 
 \[ k_h(d) = \left\{
 \begin{aligned}
-	&\left(1-|d/h|^3\right)^3 &\text{for } |d|<h \\
-	&\,0 &\text{otherwise}. 
+    &\left(1-|d/h|^3\right)^3 &\text{for } |d|<h \\
+    &\,0 &\text{otherwise}. 
 \end{aligned}
 \right.
 \]
