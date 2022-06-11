@@ -2,16 +2,16 @@
 
 \usepackage[a4paper,hmargin=1.5cm,vmargin=2.5cm,]{geometry}
 \setlength{\columnsep}{0.7cm}
+\usepackage{microtype} % nice typesetting
 \usepackage{amsmath}
 \usepackage{graphicx}
+
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
 \urlstyle{same} % no tt font for URLs
-
 \usepackage{natbib}
 \bibliographystyle{genome_research}
 %\setcitestyle{aysep={}} 
-
 \usepackage[dvipsnames]{xcolor}
 \hypersetup{
     colorlinks,
@@ -28,7 +28,7 @@
 
 \twocolumn[{%
 \centering
-\textbf{\Large Analysing single-cell bisulfite sequencing data with scbs}
+\textbf{\Large Analysing single-cell bisulfite sequencing data with \texttt{scbs}}
 
 Lukas P.~M. Kremer\textsuperscript{1,2}, Leonie Küchenhoff\textsuperscript{1,2}, Santiago Cerrizuela\textsuperscript{2}, ..., Ana Martin-Villalba\textsuperscript{2}, Simon Anders\textsuperscript{1}\\
 {\footnotesize \textsuperscript{1} BioQuant, University of Heidelberg, Germany}\\
@@ -59,32 +59,32 @@ The standard approach to analyse scBS data is based on methodology developed for
 
 The starting point in most scRNA-Seq analyses is a matrix of UMI counts (i.e. of counts of distinct RNA molecules), one row for each cell and one column for each gene. A first goal is then to assigning cell types or states to cells, and to this end, one needs to establish which cells are similar to each other, i.e., find a way to quantify the distance (i.e., dissimilarity) between any two given cells' transcriptional profile. A standard approach, used with minor variation in virtually all recent research and automated by popular software such as Seurat \citep{Hao_2021} or ScanPy \citep{Wolf_2018}, is as follows: One first accounts for cell-to-cell variation in sequencing depth by dividing each UMI count by the respective cell's total UMI count, then transforms to a homoskedastic scale by taking the logarithm. In order to avoid matrix elements with zero count to be transformed to minus infinity, one typically adds a very small ``pseudocount'' (often $10^{-5}$) to the normalized fractions before taking the logarithm. Now, one could use Euclidean distances of these vectors of logarithmized fractions as dissimilarity score. However, these scores would be exceedingly noisy due to the strong Poisson noise introduced by the many genes with very low counts. Therefore, one performs a principal component analysis (PCA), keeping only the top few (typically, 20 to 50) components. As Poisson noise is uncorrelated between genes, it will average out in the top principal components, as these are all linear combinations with weight on very many genes. Therefore, Euclidean distances between these ``PCA space'' vectors provide a robust dissimilarity score. Hence, the PCA space representation y are suitable as input to methods like t-SNE and UMAP, which provide a two-dimensional representation of the data, or to methods for clustering (assigning cells to groups by similarity) and trajectory finding (identifying elongated manifolds in PCA space and assigning cells to quasi-1D positions along them).
 
-\begin{figure}
-    \framebox[\columnwidth]{
-        \begin{minipage}[c][3.5cm]{\columnwidth}
-            \centering Figure
-        \end{minipage}
-    }
-    \caption{\small UMAP representations of the single-cell bisulfite data of XXX et al., calculated \textbf{(A)} using conventional preprocessing and \textbf{(B)} using the approach described here.}
-    \label{umaps}
-\end{figure}
-
+%\begin{figure}
+%   \framebox[\columnwidth]{
+%       \begin{minipage}[c][3.5cm]{\columnwidth}
+%           \centering Figure
+%       \end{minipage}
+%   }
+%   \caption{\small UMAP representations of the single-cell bisulfite data of XXX et al., calculated \textbf{(A)} using conventional preprocessing and \textbf{(B)} using the approach described here.}
+%   \label{umaps}
+%\end{figure}
 
 This procedure is commonly adapted when working with single-cell DNA-methylation data, so that established methods used in scRNA-Seq can be used.
 The question is therefore how to construct a suitable matrix as input for the PCA. A simple and common approach, used for instance by \citet{luo2017single}, is to tile the genome into windows of, say, 100~kb size, and calculate for each cell the average methylation of the DNA within each window. To this end, we identify all CpG sites in the window for which we have coverage with at least one read and can hence call the CpG to be either unmethylated or methylated in the cell. Then we denote as average DNA methylation of this window in a given cell the proportion of observed CpG sites in the window that were found to be methylated (Figure \ref{fig:smoothres}A). This yields a matrix, with one row for each cell and one column for each window from the genome tiling, comprising numbers (methylation fractions) between 0 and 1. This matrix is now subjected to PCA.
 
-As an example, we will use in this paper data from \citet{luo2017single}, who performed scBS on 16 neuronal subtypes of the mouse frontal cortex, and analysed their data in the manner just described. Figure \ref{umaps}A shows a UMAP plot, derived from our re-analysis of the data, using a tiling of the genome into windows of size 100~kb. As one can see, the approach is suitable to see clear structure in the data, observe ...
+%As an example, we will use in this paper data from \citet{luo2017single}, who performed scBS on 16 neuronal subtypes of the mouse frontal cortex, and analysed their data in the manner just described.
+%Figure \ref{umaps}A shows a UMAP plot, derived from our re-analysis of the data, using a tiling of the genome into windows of size 100~kb. As one can see, the approach is suitable to see clear structure in the data, observe ...
 
-Nevertheless, this analysis strategy has substantial room for improvement, as we will discuss next. Here, we discuss the proposed improvements only qualitatively. For the mathematical details, please see the Methods section. 
+We think that this analysis strategy has room for improvement, as we will discuss next. Here, we discuss the proposed improvements only qualitatively. For the mathematical details, please see the Methods section. 
 
 \begin{figure*}
     A\\
     \begin{center}
-        \includegraphics[width=0.75\textwidth]{figures/Fig_residuals_A.png}\\
+        \includegraphics[width=0.7\textwidth]{figures/Fig_residuals_A.png}\\
     \end{center}
     B\\
     \begin{center}
-        \includegraphics[width=0.75\textwidth]{figures/Fig_residuals_B.png}
+        \includegraphics[width=0.7\textwidth]{figures/Fig_residuals_B.png}
     \end{center}
 \caption{\small \textbf{Effect of read position:} \textbf{(A)} Depicted is a genomic interval along a chromosome, for which DNA methylation is to be quantified. Two cells cover differing parts of the interval with one read each. If one simply counts for each cell which fraction of the covered CpG sites are methylated, one obtains very different values for the two cells. \textbf{(B)} By averaging each CpG site's methylation over all cells and subsequent smoothing, the thick black ``average methylation curve'' is obtained. To quantify the methylation of cell 1 from (A) relative to this average over all cells, we propose to use the cell's residuals to the smoothed curve (lengths of the vertical red lines) and take their average, counting residuals of methylated CpGs positive and residuals of unmethylated CpGs negative.}
 \label{fig:smoothres}
@@ -138,7 +138,6 @@ Thus, VMRs provide a useful starting point for examining the data with methods f
         \includegraphics[width=.8\textwidth]{figures/Fig_workflow.png}
     \end{center}
     \caption{\small \textbf{Overview of the functionalities implemented in the scbs package}
-    A 
     }
     \label{workflow}
 \end{figure*}
@@ -154,46 +153,64 @@ After quality control, the user has access to the previously described genome-wi
 \texttt{scbs} is free and open source, and the package can be installed via the Python package manager. The source code and the package are available at \href{https://github.com/LKremer/scbs}{https://github.com/LKremer/scbs}, where we also provide detailed documentation including a tutorial that demonstrates a complete \texttt{scbs} analysis on an example data set.
 
 
-\section{Comparison}
+\section{Benchmarks}
 To assess performance of our newly devised methods, we obtained two previously published scBS data sets and re-analysed them with \texttt{scbs}.
 
-The first data set is a single-cell multi-omic data set generated by \citet{argelaguet2019gastru}. In their work, the authors obtained single-cell methylomes of mouse embryo cells across different stages of development (E4.5 – E7.5), as well as single-cell transcriptomes from the same cells. They calculated the correlation between RNA expression and DNA methylation at the corresponding promoter region to elucidate the implications of the epigenome on gene expression in development. \citet{argelaguet2019gastru} defined promoters as genomic intervals \textpm2~kb around the TSS of each gene. 
+The first data set is a single-cell multi-omic data set generated by \citet{argelaguet2019gastru}. In their work, the authors obtained single-cell methylomes of mouse embryo cells across different stages of development (E4.5~–~E7.5), as well as single-cell transcriptomes from the same cells. They calculated the correlation between gene expression and promoter methylation to elucidate the implications of the epigenome on gene expression in development. The authors identified several genes where promoter methylation predicts gene expression, but obtained low correlations for the vast majority of genes.
 
-In our analysis, we compare correlations between RNA expression intensity and DNA methylation of these promotor regions to correlations between RNA expression intensity and DNA methylation of the closest variable methylation regions that we identified with \texttt{scbs}. In Figure \ref{figure:correlation}, we show that correlation of RNA expression intensity to gene methylation around the TSS \textpm2~kb is less strong compared to the correlation at the closest variable region. This effect can be observed with methylation fractions (Figure \ref{figure:correlation}A) or shrunken residuals (Figure \ref{figure:correlation}B) as data inputs.
+We reasoned that VMRs obtained with the previously described sliding window approach might be a better predictor of gene expression. 
+In Figure \ref{figure:correlation}A, we compare correlations of gene expression and promoter methylation to correlations of gene expression and methylation of the closest VMR identified with \texttt{scbs scan}.
+This analysis revealed a number of genes whose expression does not correlate with promoter methylation, but correlates with VMR methylation.
+This effect is also observed when using our proposed measure of methylation, the shrunken mean of residuals (Figure \ref{figure:correlation}B).
 
-\begin{figure}[!htp]
+\begin{figure}
     A\\
-    \hspace{.2cm}\includegraphics[width=.7\columnwidth]{part_leonie_git/leonie_plots/corr_methylation_fraction_4kbwindow.pdf} \\
+    \includegraphics[width=.7\columnwidth]{part_leonie_git/leonie_plots/corr_methylation_fraction_4kbwindow.pdf} \\
     B\\
-    \hspace{.2cm}\includegraphics[width=.7\columnwidth]{part_leonie_git/leonie_plots/corr_shrunken_residual_4kbwindow.pdf} \\
+    \includegraphics[width=.7\columnwidth]{part_leonie_git/leonie_plots/corr_shrunken_residual_4kbwindow.pdf} \\
     C\\
-    \hspace{.39cm}\includegraphics[width=\columnwidth]{part_leonie_git/leonie_plots/comparison_meth_RNA.pdf}
-
-    \caption{\small \textbf{Correlation of DNA methylation and RNA expression intensity}. All plots are based on the data by \citep{luo2017single}.
-    \textbf{(A)} Correlation of each gene's RNA expression intensity to methylation fraction of TSS $\pm$ 2kb (y-axis) or to methylation fraction of closest variable gene.
-    \textbf{(B)} Correlation of each gene's RNA expression intensity to shrunken residual of methylation of TSS $\pm$ 2kb (y-axis) or to shrunken residual of closest variable gene.
-    \textbf{(C)} Mean gene methylation of Ube2l6 gene (ENSMUSG00000027078, marked in yellow in A \& B). Cells were into 4 groups based on their RNA expression (group 0: cells with no expression of gene, group 1-3: cells that express gene divided into three equally large groups with group 3 having the highest expression). Mean methylation level of each group was smoothed with a tricube kernel of bandwidth = 2000.}
+    \includegraphics[width=.95\columnwidth]{part_leonie_git/leonie_plots/comparison_meth_RNA.pdf}
+    \caption{\small \textbf{Correlation of DNA methylation and gene expression}.
+    \textbf{(A)} Correlation of each gene's RNA expression values to the the methylation fractions that were measured at promoters (y-axis), or to methylation fractions of the nearest VMR (x-axis). Promoters are defined as intervals \textpm2~kb around the TSS.
+    \textbf{(B)} Same as in (A), but using mean shrunken residuals as a measure of methylation.
+    \textbf{(C)} Mean smoothed methylation near the gene Ube2l6 (ENSMUSG00000027078, marked in yellow in A \& B). Cells are assigned to 4 groups based on Ube2l6 expression (group 0: cells with no Ube2l6 expression, groups 1-3: cells that express Ube2l6, divided into three equally large groups with group 3 having the highest expression). The mean methylation level of each group was smoothed with a tricube kernel of bandwidth 2000.
+    Data from \citet{argelaguet2019gastru}.}
     \label{figure:correlation}
 \end{figure}
 
-As an example to illustrate this effect more clearly, we picked a gene with significantly stronger correlation at the closest variable region than at the TSS. This gene is marked on Figure \ref{figure:correlation}A and B with a yellow dot. We divided all cells into four groups of cells with no, low, medium and high expression of this exemplary gene Ube216 and plotted a smoothed methylation level per group. As shown in Figure \ref{figure:correlation}C, the promoter region is sparsely methylated in all four RNA expression groups and is therefore a poor region to make conclusions about the relation of DNA methylation and RNA expression intensity. However, a region close to the TSS, identified as the closest highly variable methylation region with scbs, shows a much clearer negative correlation between RNA expression intensity and DNA methylation.  
+To illustrate this effect with an example, we picked a gene where VMR methylation is a much better predictor of gene expression than promoter methylation (Ube2l6, highlighted in orange in Figure \ref{figure:correlation}).
+Grouping all cells into four groups according to their level of Ube2l6 expression, it is clearly visible that the promoter of this gene is lowly methylated regardless of gene expression, while methylation at the nearest VMR is greatly decreased in cells with high Ube2l6 expression.
 
+To assess the impact of our methods on dimensionality reduction and the ability to distinguish different (sub)types of cells, we obtained a second data set from \citet{luo2017single}. This data set consists of over three thousand single-cell CpG methylomes from murine frontal cortex, comprising 16 neuronal subtypes.
+We subjected this data set to the standard scBS workflow: defining a set of genomic intervals, quantifying methylation in these intervals, and subjecting the resulting matrix to PCA.
+We repeated this analysis several times, either using 100~kb tiles or VMRs, and either using methylation fractions or mean shrunken residuals as a measure of methylation.
 
-To further demonstrate the benefit of detecting variable methylation regions, we used a second dataset, published by \citet{luo2017single}. In their work, \citet{luo2017single} generated methylomes from single cell neuronal nuclei in mice to identify genomic regulatory elements across neuron types. To compare how well cell types are separated by different analysis techniques, we processed the same dataset into 2-dimensional UMAPs several times. Subsequently, we compared the results by assigning a score to each output based on cell type separation in the final 15 principal components. We see an improvement of cell separation when comparing the analysis of variable methylation regions to 100 kb regions (\ref{figure:score}A and C). The difference of using shrunken residuals instead of methylation fractions to assess the methylation per region is not as significant. However, when emulating a sparse dataset with less cells by randomly reducing the dataset to 500 cells, it becomes clear that using shrunken residuals over methylation fractions also improves the outcome of our analysis (\ref{figure:score}B and D). 
+To assess performance of each combination of methods, we used a nearest neighbor count score that quantifies how well the different neuronal subtypes are separated in 15 dimensional PC space (see Methods).
+The results demonstrate that the 16 neuronal subtypes are more cleanly separated when using our proposed methods (Figure \ref{figure:score}A).
+Most of this gain in performance can be attributed to the use of VMRs over genomic tiles. The use of mean shrunken residuals over methylation fractions provides an additional small improvement.
+Of note, our results show that even few VMRs, e.g. the 1000 VMRs that have read coverage in the highest number of cells, already contain sufficient information to distinguish neuronal subtypes.
+In contrast, the neighbor count score for the top 1000 genomic tiles is much lower.
+To visualize the different degrees of separation, we further reduced the PC space from both analyses with UMAP, showing that some neuronal subtypes such as mL5-1 and mDL-3 are separated from the other subtypes when using 1000 VMRs (Figure \ref{figure:score}C).
+% why not just plot PC1 vs. PC2 here?
 
+Since some scBS protocols are based on the use of 96-well-plates, and since scBS is costly and labor-intensive, only few laboratories are currently able to obtain thousands of single cell methylomes.
+To simulate a smaller data set, we subsampled the frontal cortex data set to 500 cells and repeated our analysis.
+In this smaller data set, the performance gains were even more pronounced, indicating that our methods help extract information even from challenging data sets (Figure \ref{figure:score}D).
 
-\begin{figure}[!htp]
-    A\\
-    \hspace{.3cm}\includegraphics[width=.45\columnwidth]{part_leonie_git/leonie_plots/complete_135k_12cm_log.pdf} 
-    B
-    \hspace{.3cm}\includegraphics[width=.45\columnwidth]{part_leonie_git/leonie_plots/cell500_20k_12cm_log.pdf} \\
+\begin{figure*}
+    \begin{center}
+    A\hspace{.35\textwidth}B\\
+    \hspace{.3cm}\includegraphics[width=.35\textwidth]{part_leonie_git/leonie_plots/complete_135k_12cm_log.pdf}
+    \hspace{.3cm}\includegraphics[width=.35\textwidth]{part_leonie_git/leonie_plots/cell500_20k_12cm_log.pdf}\\
     C\\
-    \hspace{.39cm}\includegraphics[width=\columnwidth]{part_leonie_git/leonie_plots/UMAP_fulldataset.pdf}
+    \hspace{.3cm}\includegraphics[width=.75\textwidth]{part_leonie_git/leonie_plots/UMAP_fulldataset.pdf}\\
     D\\
-    \hspace{.39cm}\includegraphics[width=\columnwidth]{part_leonie_git/leonie_plots/UMAP_reduceddataset.pdf}
-    \caption{\small \textbf{Analysis comparison}. All plots are based on the data by \citep{luo2017single}. \textbf{(A)} Nearest neighbor count score for complete dataset using four different analysis techniques and a variable number of regions as input. Exemplary UMAPs for encircled scores are shown in (C). \textbf{(B)} Nearest neighbor count score for the same dataset reduced to 500 cells using four different analysis techniques and a variable number of regions as input. Exemplary UMAPs for encircled scores are shown in (D). \textbf{(C)} Two exemplary UMAPs using 1000 regions of the full dataset and methylation fraction of 100 kb windows (left) or shrunken residuals of variable methylation regions (right) \textbf{(D)} Two exemplary UMAPs using 1000 regions of the reduced dataset and methylation fraction of 100 kb windows (left) or shrunken residuals of variable methylation regions (right).}
+    \hspace{.3cm}\includegraphics[width=.75\textwidth]{part_leonie_git/leonie_plots/UMAP_reduceddataset.pdf}
+    \caption{\small \textbf{Benchmark of our methods on single-cell methylomes of 16 neuronal subtypes}. \textbf{(A)} Nearest neighbor count score using four different method combinations and a variable number of genomic intervals (regions) as input to PCA. Exemplary UMAPs for encircled analyses are shown in (C). \textbf{(B)} Same benchmark as in (A), but for a smaller data set consisting of 500 randomly subsampled cells. Exemplary UMAPs for analyses are shown in (D). \textbf{(C)} Two exemplary UMAPs using 1000 high-coverage intervals of the full data set and methylation fractions of 100~kb windows (left) or shrunken residuals of variable methylation intervals (right) \textbf{(D)} Two exemplary UMAPs using 1000 intervals of the smaller data set and methylation fraction of 100 kb windows (left) or shrunken residuals of variable methylation intervals (right). Data from \citet{luo2017single}.}
     \label{figure:score}
-\end{figure}
+    \end{center}
+\end{figure*}
+
 
 \section{Discussion and Conclusion}
 
@@ -216,9 +233,9 @@ $$ C_i=\{j\in C: x_{ij}\neq\text{NA}\}.$$
 Conversely, we define $G_j$ as the set of all the CpG positions $i$ covered by reads from cell $j$ 
 $$ G_j=\{i: x_{ij}\neq\text{NA}\}.$$
 
-\subsection{Data preparation}
+\subsection{Data storage}
 
-The function `scbs prepare` reads a set of CpG coverage files (e.g. produced by Bismark) and produces a file that stores the matrix $x$ in a space-efficient format, as follows: $x$ is represented as a SciPy sparse matrix, encoding the actual values 0, 1, and NA as -1, 1, and 0, respectively. Coding NA (the most common value) as 0 leverages SciPy's sparse matrix storage. In all the follows here, any mention of $x$ will, however, always mean the encoding as $x_{ij}\in\{0,1,\text{NA}\}$.
+The function \texttt{scbs prepare} reads a set of methylation files (e.g. produced by Bismark) and produces a file that stores the matrix $x$ in a space-efficient format, as follows: $x$ is represented as a SciPy sparse matrix, encoding the actual values 0, 1, and NA as -1, 1, and 0, respectively. Coding NA (the most common value) as 0 leverages SciPy's sparse matrix storage. In all the follows here, any mention of $x$ will, however, always mean the encoding as $x_{ij}\in\{0,1,\text{NA}\}$.
 
 \subsection{Smoothing}
 
@@ -240,13 +257,6 @@ i.e., $\tilde x_i$ is the weighted average over the per-position averages $\over
 \end{aligned}
 \right.
 \]
-
-We also provide Here, we could weight the positions by number of covered cells, i.e., use
-
-$$ \tilde x_i = \frac{\sum_{i'} \overline x_{i'}\, k_h(d_{ii'})\, n_{i'}}{\sum_{i'} k_h(d_{ii'})\, n_{i'}},$$
-
-but we don't do that, or do we?
-
 
 \subsection{Methylation for an interval}
 
@@ -286,9 +296,19 @@ To find VMRs, we define intervals $I_1, I_2, ...$, all of the same width, and wi
 Given a set, $\mathcal{V}=\{I^\text{v}_1,I^\text{v}_2,\dots\}$, of intervals corresponding to VMRs, we get a relative methylation fraction $r_{ij}$ for each VMR $I^\text{v}_i$ and each cell $j$ from Eq.\ ()\ref{avgres}). The matrix thus obtained can then be centered and used as input for a PCA. If we calculate the top $R$ principal components, we thus obtain for each cell $j$ an $R$-dimensional principal component vector $\mathbf{x}^\text{P}_j$. For any two cells $j$, $j'$, we use the Euclidean distance $\|\mathbf{x}^\text{P}_j - \mathbf{x}^\text{P}_{j'}\|$ as the measure of dissimilarity of the two cells. Thus, the matrix of PC scores can be used as input to dimension reduction methods like t-SNE or UMAP, and to clustering methods like the Louvain or Leiden algorithm, which requirte such a matrix as input to the approximate mnearest neighbor (ANN) finding algorithm that is their first step.
 
 \subsection{PCA with imputation}
-
 [...]
 
+\subsection{Re-analysis of published scBS datasets}
+To re-analyze scBS data sets by \citet{luo2017single} and \citet{argelaguet2019gastru}, the genome was first annotated with genomic intervals that were either obtained by tiling the genome into non-overlapping 100~kb bins, or by acquiring VMRs with \texttt{scbs scan} using default options. For all intervals (VMRs and tiles), the mean methylation fractions and mean shrunken residuals were obtained with \texttt{scbs matrix}. Intervals containing less than four measured CpGs, or that were measured in less than 10\% of cells, were discarded. To select $n$ intervals for further analysis, the top $n$ intervals were picked based on the number of cells that the region was measured in. 
+For dimensionality reduction, missing values were imputed with an iterative PCA as described above. To visualize data, UMAP was performed on the final 15 principal components.
+
+\subsection{Nearest neighbor count score}
+To assess performance of our methods, we processed mouse CpG-methylation data from \citet{luo2017single} with several method combinations and scored each result. The score evaluates the ability of each method combination to separate cell types in 15-dimensional PCA space, based on their CpG methylation. Each score varies between 0 and 1, where higher scores reflect better separation.
+
+The nearest neighbor count score $nnc(k)$ is based on the $\Gamma$-score \citep{Kireeva_2014}. Each cell $c_j^i$ belongs to a cell type $j$. For each cell, $k$ nearest neighbors $nn_j^k$ were computed based on their Euclidean distance. Based on the cell type $j$ of the $k$ nearest neighbors of each cell, the nnc score $nnc(k)$ was computed with formula (1), in which $d(c_j^i, k_j^i)=1$ if at least 90\% of neighbor classes match the class of cell $c_j^i$ and $d(c_j^i, k_j^i)=0$ if less than 90\% of classes match, while $n$ are the total number of cells.
+\begin{equation}
+    nnc(k) = \frac{1}{n}d(c_j^i, k_j^i)
+\end{equation}
 
 {\small \bibliography{scbs}}
 
