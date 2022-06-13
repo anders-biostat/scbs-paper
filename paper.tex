@@ -65,16 +65,16 @@ In the present paper, we discuss strategies to analyze scBS data, suggest improv
 \subsection{Standard approach}
 
 \begin{figure*}
-	\hspace{2.5cm}A\\[-7ex]
-	\begin{center}
-		\includegraphics[width=0.7\textwidth]{figures/Fig_residuals_A.png}\\
-	\end{center}
-	\hspace{2.5cm}B\\[-3ex]
-	\begin{center}
-		\includegraphics[width=0.7\textwidth]{figures/Fig_residuals_B.png}
-	\end{center}
-	\caption{\small \textbf{Effect of read position:} \textbf{(A)} Depicted is a genomic interval along a chromosome, for which DNA methylation is to be quantified. Two cells cover differing parts of the interval with one read each. If one simply counts for each cell which fraction of the covered CpG sites are methylated, one obtains very different values for the two cells. \textbf{(B)} By averaging each CpG site's methylation over all cells and subsequent smoothing, the thick black ``average methylation curve'' is obtained. To quantify the methylation of cell 1 from (A) relative to this average over all cells, we propose to use the cell's residuals to the smoothed curve (lengths of the vertical red lines) and take their average, counting residuals of methylated CpGs positive and residuals of unmethylated CpGs negative.}
-	\label{fig:smoothres}
+    \hspace{2.5cm}A\\[-7ex]
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{figures/Fig_residuals_A.png}\\
+    \end{center}
+    \hspace{2.5cm}B\\[-3ex]
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{figures/Fig_residuals_B.png}
+    \end{center}
+    \caption{\small \textbf{Effect of read position:} \textbf{(A)} Depicted is a genomic interval along a chromosome, for which DNA methylation is to be quantified. Two cells cover differing parts of the interval with one read each. If one simply counts for each cell which fraction of the covered CpG sites are methylated, one obtains very different values for the two cells. \textbf{(B)} By averaging each CpG site's methylation over all cells and subsequent smoothing, the thick black ``average methylation curve'' is obtained. To quantify the methylation of cell 1 from (A) relative to this average over all cells, we propose to use the cell's residuals to the smoothed curve (lengths of the vertical red lines) and take their average, counting residuals of methylated CpGs positive and residuals of unmethylated CpGs negative.}
+    \label{fig:smoothres}
 \end{figure*}
 
 
@@ -167,12 +167,14 @@ This analysis revealed a number of genes whose expression does not correlate wit
 This effect is also observed when using our proposed measure of methylation, the shrunken mean of residuals (Figure \ref{figure:correlation}B).
 
 \begin{figure}
-    A\\
+    \begin{center}
+    A\hspace{.9\columnwidth}~\\
     \includegraphics[width=.7\columnwidth]{part_leonie_git/leonie_plots/corr_methylation_fraction_4kbwindow.pdf} \\
-    B\\
+    B\hspace{.9\columnwidth}~\\
     \includegraphics[width=.7\columnwidth]{part_leonie_git/leonie_plots/corr_shrunken_residual_4kbwindow.pdf} \\
-    C\\
+    C\hspace{.9\columnwidth}~\\
     \includegraphics[width=.95\columnwidth]{part_leonie_git/leonie_plots/comparison_meth_RNA.pdf}
+    \end{center}
     \caption{\small \textbf{Correlation of DNA methylation and gene expression}.
     \textbf{(A)} Correlation of each gene's RNA expression values to the the methylation fractions that were measured at promoters (y-axis), or to methylation fractions of the nearest VMR (x-axis). Promoters are defined as intervals \textpm2~kb around the TSS.
     \textbf{(B)} Same as in (A), but using mean shrunken residuals as a measure of methylation.
@@ -186,9 +188,9 @@ Grouping all cells into four groups according to their level of Ube2l6 expressio
 
 \subsection{Identification of cellular sub-types}
 
-To assess the impact of our methods on dimensionality reduction and the ability to distinguish different (sub)types of cells, we used the data set from \citet{luo2017single}. This data set consists of over three thousand \todo{Give exact number.} single-cell CpG methylomes from the murine frontal cortex, comprising 16 neuronal subtypes.
+To assess the impact of our methods on dimensionality reduction and the ability to distinguish different (sub)types of cells, we used a data set from \citet{luo2017single}. This data set consists of 3377 single-cell CpG methylomes from the murine frontal cortex, comprising 16 neuronal subtypes.
 We subjected this data set to the standard scBS workflow: defining a set of genomic intervals, quantifying methylation in these intervals, and subjecting the resulting matrix to PCA.
-We repeated this analysis several times, either using 100~kb tiles or VMRs, and either using methylation fractions or mean shrunken residuals as a measure of methylation. \todo{Is the following correct?} For both types of regions, the 100~kb tiles and the VMRs, we ranked the regions by the number of covering cells (i.e., cells with at least on read in the region) and kep only the top 1000 regions.
+We repeated this analysis several times, either using 100~kb tiles or VMRs, and either using methylation fractions or mean shrunken residuals as a measure of methylation. \todo{Is the following correct?} For both types of regions, the 100~kb tiles and the VMRs, we ranked the regions by the number of covering cells (i.e., cells with at least on read in the region) and keep only the top 1000 regions.
 
 To assess performance of each combination of methods, we used a nearest neighbor count score that quantifies how well the different neuronal subtypes are separated in 15 dimensional PC space (see Methods).
 The results demonstrate that the 16 neuronal subtypes are more cleanly separated when using our proposed methods (Figure \ref{figure:score}A).
@@ -221,8 +223,27 @@ Again, the difference is even more pronounced in the sub-sampled analysis with o
 
 \section{Discussion and Conclusion}
 
-...
+%Here we propose a number of new methods for the analysis of single cell methylation data and provide them to the research community as a command line tool called \texttt{scbs}.
+%Instead of dividing the genome into coarse-grained tiles, we propose to discover variably-methylated regions (VMRs) in the data itself, which improves performance of common downstream applications.
+%We also think that VMRs, due to their smaller size, are easier to interpret than  and furthermore provides a list of candidate regions.
+%These regions may then be linked to individual genes, tested for celltype-specific methylation differences, or subjected to gene ontology or motif enrichment, depending on the research question at hand.
+%We also propose a number of methods specifically tailored to the sparse nature of scBS data.
+%First, we observe 
 
+
+%- propose a number of new methods for the analysis of scBS data
+%- developed methods to analyse scBS data that go beyond simple genome tiling
+% - instead we discover potential genomic regions of interest on the data itself, which improves performance of common downstream applications and aids interpretability.
+% - VMRs can also be used as input for e.g. motif enrichment, go enrichment etc
+%- devised a method to store genome-wide scBS data efficiently
+%- propose a new measure of DNA methylation in a genomic interval (~ relative methylation)
+
+%- implement them in Python and release them to the community as a Python package with a CLI
+%-> no more custom scripts and manual data wrangling of 1000 text files required, instead every user can quickly go from raw data to count matrix
+%- lowers the entry barrier for scBS data analysis and makes this new and exciting data type available to a greater audience
+
+%whats missing?
+%- 
 
 \section{Methods}
 
@@ -250,7 +271,7 @@ For each CpG position $i$, we write
 $$\overline{x}_i=\langle x_{ij} \rangle_{j\in C_i} = \frac{1}{|C_i|}\sum_{j\in C_i} x_{ij}$$ 
 for the average methylation at position $i$, where $\langle\cdot\rangle$ denotes averaging, and the average runs over all the cells $i\in C_j$, i.e. over those cells for which methylation data is available for position $i$.
 
-\todo{NOTE: Here, we could already do shrinkage and use $\frac{1}{|C_i|+1}\sum_i x_{ij}$ intead. But we don't do that, right?}
+%\todo{NOTE: Here, we could already do shrinkage and use $\frac{1}{|C_i|+1}\sum_i x_{ij}$ instead. But we don't do that, right?}
 
 We then run a kernel smoother over these per-position averages to obtain the smoothed averages $\tilde x_i$. Specifically, we use
 \[ \tilde x_i = \frac{\sum_{i'} \overline x_{i'}\, k_h(d_{ii'})}{\sum_{i'} k_h(d_{ii'})},\]
@@ -299,7 +320,8 @@ To find VMRs, we define intervals $I_1, I_2, ...$, all of the same width, and wi
 
 \subsection{Calculating cell to cell distances}
 
-Given a set, $\mathcal{V}=\{I^\text{v}_1,I^\text{v}_2,\dots\}$, of intervals corresponding to VMRs, we get a relative methylation fraction $r_{ij}$ for each VMR $I^\text{v}_i$ and each cell $j$ from Eq.\ ()\ref{avgres}). The matrix thus obtained can then be centered and used as input for a PCA. If we calculate the top $R$ principal components, we thus obtain for each cell $j$ an $R$-dimensional principal component vector $\mathbf{x}^\text{P}_j$. For any two cells $j$, $j'$, we use the Euclidean distance $\|\mathbf{x}^\text{P}_j - \mathbf{x}^\text{P}_{j'}\|$ as the measure of dissimilarity of the two cells. Thus, the matrix of PC scores can be used as input to dimension reduction methods like t-SNE or UMAP, and to clustering methods like the Louvain or Leiden algorithm, which requirte such a matrix as input to the approximate mnearest neighbor (ANN) finding algorithm that is their first step.
+Given a set, $\mathcal{V}=\{I^\text{v}_1,I^\text{v}_2,\dots\}$, of intervals corresponding to VMRs, we get a relative methylation fraction $r_{ij}$ for each VMR $I^\text{v}_i$ and each cell $j$ from Eq.\ ()\ref{avgres}). The matrix thus obtained can then be centered and used as input for a PCA. If we calculate the top $R$ principal components, we thus obtain for each cell $j$ an $R$-dimensional principal component vector $\mathbf{x}^\text{P}_j$. For any two cells $j$, $j'$, we use the Euclidean distance $\|\mathbf{x}^\text{P}_j - \mathbf{x}^\text{P}_{j'}\|$ as the measure of dissimilarity of the two cells.
+Thus, the matrix of PC scores can be used as input to dimension reduction methods like t-SNE or UMAP, and to clustering methods like the Louvain or Leiden algorithm, which require such a matrix as input to the approximate mnearest neighbor (ANN) finding algorithm that is their first step.
 
 \subsection{PCA with imputation}
 [...]
@@ -309,7 +331,7 @@ To re-analyze scBS data sets by \citet{luo2017single} and \citet{argelaguet2019g
 For dimensionality reduction, missing values were imputed with an iterative PCA as described above. To visualize data, UMAP was performed on the final 15 principal components.
 
 \subsection{Nearest neighbor count score}
-To assess performance of our methods, we processed mouse CpG-methylation data from \citet{luo2017single} with several method combinations and scored each result. The score evaluates the ability of each method combination to separate cell types in 15-dimensional PCA space, based on their CpG methylation. Each score varies between 0 and 1, where higher scores reflect better separation.
+To assess performance of our methods, we processed mouse CpG methylation data from \citet{luo2017single} with several method combinations and scored each result. The score evaluates the ability of each method combination to separate cell types in 15-dimensional PCA space, based on their CpG methylation. Each score varies between 0 and 1, where higher scores reflect better separation.
 
 \todo{Improve wording} The nearest neighbor count score $nnc(k)$ is based on the $\Gamma$-score \citep{Kireeva_2014}. Each cell $c_j^i$ belongs to a cell type $j$. For each cell, $k$ nearest neighbors $nn_j^k$ were computed based on their Euclidean distance. Based on the cell type $j$ of the $k$ nearest neighbors of each cell, the nnc score $nnc(k)$ was computed with formula (\todo{ref}), in which $d(c_j^i, k_j^i)=1$ if at least 90\% of neighbor classes match the class of cell $c_j^i$ and $d(c_j^i, k_j^i)=0$ if less than 90\% of classes match, while $n$ are the total number of cells.
 \begin{equation}
