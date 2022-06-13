@@ -246,7 +246,7 @@ Second, we suggest a method to handle missing values in PCA in an iterative mann
 Both of these methods help remedy the influence of differences in sequencing coverage on dimensionality reduction and clustering.
 
 Finally, we provide the above-mentioned methods to the scientific community in the form of a command line tool.
-Our software, called \texttt{scbs}, allows the user to obtain a cell \times region matrix from raw methylation files using only few, simple shell commands
+Our software, called \texttt{scbs}, allows the user to obtain a cell $\times$ region matrix from raw methylation files using only few, simple shell commands
 This means that users no longer need to write custom data-wrangling scripts, which ensures reproducibility across and makes the analysis of single-cell methylomes faster and easier.
 
 \section{Methods}
@@ -328,7 +328,12 @@ Given a set, $\mathcal{V}=\{I^\text{v}_1,I^\text{v}_2,\dots\}$, of intervals cor
 Thus, the matrix of PC scores can be used as input to dimension reduction methods like t-SNE or UMAP, and to clustering methods like the Louvain or Leiden algorithm, which require such a matrix as input to the approximate mnearest neighbor (ANN) finding algorithm that is their first step.
 
 \subsection{PCA with imputation}
-[...]
+
+Whenever a region is not covered by any read in a cell, the corresponding data entry in the input data matrix for the PCA will be missing. The standard approach to calculate PCA (commonly done using the IRLBA algorthm, \citep{Baglama2005}) is not suited to deal with missing data. We circumvent this issue by simply using the PCA itself to impute the missing value.
+
+Let us write $A$ for the matrix to which the PCA is to be applied. In contrast to the main text, and in order to follow statistics rather than bioinformatcis convention, we consider here the features (here: regions) to be represented by the matrix rows rather than the columns. The matrix has already been centered, i.e., $\sum_i a_{ij}=0$. To establish notation, we remind the reader that performing a PCA on A means finding the singular value decomposition (SVD), $A=UDR^\top$, with $D$ diagonal and $U$ and $R$ orthonormal. The PCA scores are contained in $X=UD$, the loadings in $R$. To reconstruct the input data $A$ from the PCA representation, one may use $A=XR^\top$, i.e., $a_{ij}=\sum_r x_{ir} r_{jr}$, where the equation is exact if $r$ runs over all principal components and approximate if it is truncated to the leading ones.
+
+Our iterative imputation strategy is now simply the following: we first replace all missing values in the row-centered input matrix $A$ with zeroes and perform the (truncated) PCA. Then, we use the PCA predictions for the missing values, i.e., the $a_{ij}=\sum_r x_{ir} r_{jr}$, as refined stand-ins for the missing values in $A$ and run the PCA once more. This can now be iterated utnil convergence, which is typically achieved after at most 4--5 rounds of PCA.
 
 \subsection{Re-analysis of published scBS datasets}
 To re-analyze scBS data sets by \citet{luo2017single} and \citet{argelaguet2019gastru}, the genome was first annotated with genomic intervals that were either obtained by tiling the genome into non-overlapping 100~kb bins, or by acquiring VMRs with \texttt{scbs scan} using default options. \todo{Mention choice of top 1000 regions.} For all intervals (VMRs and tiles), the mean methylation fractions and mean shrunken residuals were obtained with \texttt{scbs matrix}. Intervals containing less than four measured CpGs, or that were measured in less than 10\% of cells, were discarded. To select $n$ intervals for further analysis, the top $n$ intervals were picked based on the number of cells that the region was measured in. 
