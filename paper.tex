@@ -184,7 +184,7 @@ To assess the impact of our methods on dimensionality reduction and the ability 
 We subjected this data set to the standard scBS workflow: defining a set of genomic intervals, quantifying methylation in these intervals, and subjecting the resulting matrix to PCA.
 We repeated this analysis several times, either using 100~kb windows or VMRs, and either using methylation fractions or mean shrunken residuals as a measure of methylation. \todo{Is the following correct?} For both types of regions, the 100~kb windows and the VMRs, we ranked the regions by the number of covering cells (i.e., cells with at least on read in the region) and kept only the top 100, 1000, or 10,000 regions.
 
-To assess performance of each combination of methods, we used a nearest neighbor count score that quantifies how well the different neuronal subtypes are separated in 15 dimensional PC space (see Methods).
+To assess performance of each combination of methods, we used a nearest neighbor count score (see Methods) that quantifies how well the different neuronal subtypes are separated in 15 dimensional PC space. We used the original assignment of cells to cell types from \citet{luo2017single}.
 The results demonstrate that the 16 neuronal subtypes are more cleanly separated when using our proposed methods (Figure \ref{figure:score}A).
 Most of this gain in performance can be attributed to the use of VMRs over genomic tiles. The use of mean shrunken residuals over methylation fractions provides an additional small improvement.
 
