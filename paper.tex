@@ -274,7 +274,7 @@ The function \texttt{scbs prepare} reads a set of methylation files (e.g. produc
 
 For each CpG position $i$, we write 
 $$\overline{x}_i=\langle x_{ij} \rangle_{j\in C_i} = \frac{1}{|C_i|}\sum_{j\in C_i} x_{ij}$$ 
-for the average methylation at position $i$, where $\langle\cdot\rangle$ denotes averaging, and the average runs over all the cells $i\in C_j$, i.e. over those cells for which methylation data is available for position $i$.
+for the average methylation at position $i$, where $\langle\cdot\rangle$ denotes averaging, and the average runs over all the cells $j\in C_i$, i.e. over those cells for which methylation data is available for position $i$.
 
 %\todo{NOTE: Here, we could already do shrinkage and use $\frac{1}{|C_i|+1}\sum_i x_{ij}$ instead. But we don't do that, right?}
 
