@@ -45,17 +45,20 @@ Lukas P.~M. Kremer\textsuperscript{1,2,*}, Leonie Küchenhoff\textsuperscript{1,
 \vspace{1.5ex}
 
 June 2022
-\vspace{6ex}
+\vspace{5.5ex}
+
+\begin{minipage}{0.7\textwidth}
+\small
+\textit{Abstract} -- Single-cell-bisulfite sequencing (scBS) allows to asses DNA methylation with single-basepair and single-cell resolution. Analysing the big data sets thus obtained requires preprocessing to reduce data size, improve signal over noise, and provide interpretability. Currently, this is simply done by tiling the genome into large windows and averaging in these. We show that this coarse-graining dilutes signal, and suggest improved approaches to determine informative regions to quantify for and to quantitate methylation in these windows. We demonstrate how our preprocessing approach helps to better distinguish cell types, reduces demands on cell number, and show that our method of finding variably-methylated regions finds biologically meaningful loci. Finally, we present a software tool, \texttt{scbs}, that implements this approach and offers further functionality requried to work with scBS data.
+\end{minipage}
+\vspace{6.5ex}
+
 }]
-\blfootnote{\hspace{-.5cm}\raggedright\textsuperscript{*} e-mail:  \texttt{l.kremer@dkfz-heidelberg.de} and\\ \hspace{1cm}\texttt{simon.anders@bioquant.uni-heidelberg.de}}
-
-\section{Abstract}
-
-Single-cell-bisulfite sequencing (scBS) allows to asses DNA methylation with single-basepair and single-cell resolution. Analysing the big data sets thus obtained requires preprocessing to reduce data size, improve signal over noise, and provide interpretability. Currently, this is simply done by tiling the genome into large windows and averaging in these. We show that this coarse-graining dilutes signal, and suggest improved approaches to determine informative regions to quantify for and to quantitate methylation in these windows. We demonstrate how our preprocessing approach helps to better distinguish cell types, reduces demands on cell number, and show that our method of finding variably-methylated regions finds biologically meaningful loci. Finally, we present a software tool, \texttt{scbs}, that implements this approach and offers further functionality requried to work with scBS data.
 
 \section{Introduction}
 
 Sequencing-based assays with single-cell resolution have offered new means to understand the differences between the cells making up a sample. Single-cell RNA sequencing (sc-RNA-seq) techniques have matured at great pace in recent years, with well developed analysis methodology, and methods to study epigenetics at single-cell resolution are rapidly catching up. 
+\blfootnote{\hspace{-.5cm}\raggedright\textsuperscript{*} e-mail:  \texttt{l.kremer@dkfz-heidelberg.de} and\\ \hspace{1cm}\texttt{simon.anders@bioquant.uni-heidelberg.de}}
 
 Here, we discuss bisulfite sequencing (sc-BS-Seq), a method to study DNA methylation. In brief, DNA is treated with bisulfite, which converts unmethylated cytosines to uracils which are read as thymine in subsequent PCR, while methylated cytosines are protected from conversion. After sequencing, these conversions allow to determine the methylation status of all cytosines covered by reads \citep{Frommer_1992}. Bisulfite sequencing can also be performed with single-cell resolution \citep{Smallwood_2014} and even in parallel with sc-RNA-Seq \citep{Clark2018}.
 
