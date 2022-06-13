@@ -336,16 +336,15 @@ Let us write $A$ for the matrix to which the PCA is to be applied, with the feat
 Our iterative imputation strategy is now simply the following: we first replace all missing values in the row-centered input matrix $A$ with zeroes and perform the (truncated) PCA. Then, we use the PCA predictions for the missing values, i.e., the $a_{ij}=\sum_r x_{ir} r_{jr}$, as refined stand-ins for the missing values in $A$ and run the PCA once more. This can now be iterated until convergence, which is typically achieved after at most 4--5 rounds of PCA.
 
 \subsection{Re-analysis of published scBS datasets}
-To re-analyze scBS data sets by \citet{luo2017single} and \citet{argelaguet2019gastru}, the genome was first annotated with genomic intervals that were either obtained by tiling the genome into non-overlapping 100~kb bins, or by acquiring VMRs with \texttt{scbs scan} using default options. \todo{Mention choice of top 1000 regions.} For all intervals (VMRs and tiles), the mean methylation fractions and mean shrunken residuals were obtained with \texttt{scbs matrix}. Intervals containing less than four measured CpGs, or that were measured in less than 10\% of cells, were discarded. To select $n$ intervals for further analysis, the top $n$ intervals were picked based on the number of cells that the region was measured in. 
+To re-analyze scBS data sets by \citet{luo2017single} and \citet{argelaguet2019gastru}, the genome was first annotated with genomic intervals that were either obtained by tiling the genome into non-overlapping 100~kb bins, or by acquiring VMRs with \texttt{scbs scan} using default options. For all intervals (VMRs and tiles), the mean methylation fractions and mean shrunken residuals were obtained with \texttt{scbs matrix}. Intervals containing less than four measured CpGs, or that were measured in less than 10\% of cells, were discarded. To select $n$ intervals for further analysis, the top $n$ intervals were picked based on the number of cells that the region was measured in. 
 For dimensionality reduction, missing values were imputed with an iterative PCA as described above. To visualize data, UMAP was performed on the final 15 principal components.
 
 \subsection{Nearest neighbor count score}
 To assess performance of our methods, we processed mouse CpG methylation data from \citet{luo2017single} with several method combinations and scored each result. The score evaluates the ability of each method combination to separate cell types in 15-dimensional PCA space, based on their CpG methylation. Each score varies between 0 and 1, where higher scores reflect better separation.
 
-\todo{Improve wording} The nearest neighbor count score $nnc(k)$ is based on the $\Gamma$-score \citep{Kireeva_2014}. Each cell $c_j^i$ belongs to a cell type $j$. For each cell, $k$ nearest neighbors $nn_j^k$ were computed based on their Euclidean distance. Based on the cell type $j$ of the $k$ nearest neighbors of each cell, the nnc score $nnc(k)$ was computed with formula (\todo{ref}), in which $d(c_j^i, k_j^i)=1$ if at least 90\% of neighbor classes match the class of cell $c_j^i$ and $d(c_j^i, k_j^i)=0$ if less than 90\% of classes match, while $n$ are the total number of cells.
-\begin{equation}
-    \text{nnc}(k) = \frac{1}{n}d(c_j^i, k_j^i)
-\end{equation}
+Our nearest-neighbor-count score $\text{nnc}_k$, is based on the $\Gamma$-score \citep{Kireeva_2014} and is calculated as follows. For each cell $j$, we count how many of its $k$ nearest neighbors have been assigned to the same cluster as cell $j$. We denote this count $a^k_j$. We consider a cell as ``well-assigned'' if $a^k_j>\theta k$, where we have chosen $\theta=0.9$. In other words, a cell is ``well-assigned'' if at least 90\% of its $k$ nearest neighbors have been assigned the same class as the cell under consideration.
+
+The score $\text{nnc}_k$ is then simply the fraction of cells in the data set that are well-assigned in this sense.
 
 {\small \bibliography{scbs}}
 
