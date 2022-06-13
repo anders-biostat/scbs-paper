@@ -343,7 +343,7 @@ For dimensionality reduction, missing values were imputed with an iterative PCA 
 \subsection{Nearest neighbor count score}
 To assess performance of our methods, we processed mouse CpG methylation data from \citet{luo2017single} with several method combinations and scored each result. The score evaluates the ability of each method combination to separate cell types in 15-dimensional PCA space, based on their CpG methylation. Each score varies between 0 and 1, where higher scores reflect better separation.
 
-Our nearest-neighbor-count score $\text{nnc}_k$, is based on the $\Gamma$-score \citep{Kireeva_2014} and is calculated as follows. For each cell $j$, we count how many of its $k$ nearest neighbors have been assigned to the same cluster as cell $j$. We denote this count $a^k_j$. We consider a cell as ``well-assigned'' if $a^k_j>\theta k$, where we have chosen $\theta=0.9$. In other words, a cell is ``well-assigned'' if at least 90\% of its $k$ nearest neighbors have been assigned the same class as the cell under consideration.
+Our nearest-neighbor-count score $\text{nnc}_k$, is based on the $\Gamma$-score \citep{Kireeva_2014} and is calculated as follows. For each cell $j$, we count how many of its $k$ nearest neighbors have been assigned to the same cluster as cell $j$. We denote this count $a^k_j$. We consider a cell as ``well-assigned'' if $a^k_j>\theta k$, where we have chosen $\theta=0.9$. In other words, a cell is ``well-assigned'' if at least 90\% of its $k$ nearest neighbors have been assigned to the same class as the cell under consideration.
 
 The score $\text{nnc}_k$ is then simply the fraction of cells in the data set that are well-assigned in this sense.
 
