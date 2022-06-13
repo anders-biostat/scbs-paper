@@ -186,7 +186,7 @@ We repeated this analysis several times, either using 100~kb tiles or VMRs, and 
 For both types of regions, we varied the number of input regions, ranging from 100 to 50,000 high-coverage regions that were selected for PCA.
 Specifically, we ranked regions by their number of coverging cells (i.e., cells with at least on read in the region) and selected those with the highest number.
 
-To assess performance of each combination of methods, we used a nearest neighbor count score that quantifies how well the different neuronal subtypes are separated in 15 dimensional PC space (see Methods).
+To assess performance of each combination of methods, we used a nearest neighbor count score (see Methods) that quantifies how well the different neuronal subtypes are separated in 15 dimensional PC space. We used the original assignment of cells to cell types from \citet{luo2017single}.
 The results demonstrate that the 16 neuronal subtypes are more cleanly separated when using our proposed methods (Figure \ref{figure:score}A).
 Most of this gain in performance can be attributed to the use of VMRs over genomic tiles. The use of mean shrunken residuals over methylation fractions provides an additional small improvement.
 
