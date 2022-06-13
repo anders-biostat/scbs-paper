@@ -223,27 +223,22 @@ After quality control, the user has access to the genome-wide VMR detection appr
 
 \section{Discussion and Conclusion}
 
-%Here we propose a number of new methods for the analysis of single cell methylation data and provide them to the research community as a command line tool called \texttt{scbs}.
-%Instead of dividing the genome into coarse-grained tiles, we propose to discover variably-methylated regions (VMRs) in the data itself, which improves performance of common downstream applications.
-%We also think that VMRs, due to their smaller size, are easier to interpret than  and furthermore provides a list of candidate regions.
-%These regions may then be linked to individual genes, tested for celltype-specific methylation differences, or subjected to gene ontology or motif enrichment, depending on the research question at hand.
-%We also propose a number of methods specifically tailored to the sparse nature of scBS data.
-%First, we observe 
+Here we propose a number of new methods for the analysis of single cell methylation data and provide them to the research community as a command line tool.
+Instead of dividing the genome into coarse-grained tiles, we propose to discover variably-methylated regions (VMRs) in the data itself, which improves performance of common downstream applications.
+VMRs help interpreting the results of scBS experiments, since they represent a list of candidate regions that are potentially biologically meaningful.
+Due to their smaller size, individual VMRs can also be related to nearby or intersecting genomic features such as gene bodies or known regulatory elements.
+Furthermore, VMRs can be tested for methylation differences between groups of cells, or subjected to gene ontology enrichment or motif enrichment, depending on the research questions at hand.
 
+We also propose a number of methods to address issues caused by the sparse nature of scBS data.
+First, we observe that incomplete read coverage of a genomic interval can lead to inaccurate methylation estimates.
+To remedy this problem, we propose to use relative methylation values instead of absolute methylation fractions, and to employ shrinkage to decrease the impact of intervals with very low sequencing coverage.
+Second, we suggest a method to handle missing values in PCA in an iterative manner.
+Both of these methods help remedy the influence of differences in sequencing coverage on dimensionality reduction and clustering.
 
-%- propose a number of new methods for the analysis of scBS data
-%- developed methods to analyse scBS data that go beyond simple genome tiling
-% - instead we discover potential genomic regions of interest on the data itself, which improves performance of common downstream applications and aids interpretability.
-% - VMRs can also be used as input for e.g. motif enrichment, go enrichment etc
-%- devised a method to store genome-wide scBS data efficiently
-%- propose a new measure of DNA methylation in a genomic interval (~ relative methylation)
+Finally, we provide the above-mentioned methods to the scientific community in the form of a command line tool.
+Our software, called \texttt{scbs}, allows the user to obtain a cell \times region matrix from raw methylation files using only few, simple shell commands
+This means that users no longer need to write custom data-wrangling scripts, which ensures reproducibility across and makes the analysis of single-cell methylomes faster and easier.
 
-%- implement them in Python and release them to the community as a Python package with a CLI
-%-> no more custom scripts and manual data wrangling of 1000 text files required, instead every user can quickly go from raw data to count matrix
-%- lowers the entry barrier for scBS data analysis and makes this new and exciting data type available to a greater audience
-
-%whats missing?
-%- 
 
 \section{Methods}
 
