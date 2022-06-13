@@ -1,6 +1,6 @@
 \documentclass[twocolumn,10pt]{article}
 
-\usepackage[a4paper,hmargin=1.5cm,vmargin=2.5cm,]{geometry}
+\usepackage[a4paper,hmargin=1.5cm,vmargin=2cm]{geometry}
 \setlength{\columnsep}{0.7cm}
 %\usepackage{microtype} % nice typesetting  % doesn't work for me :-( -S
 \usepackage{amsmath}
@@ -19,8 +19,9 @@
     citecolor={blue!50!black},
     urlcolor={blue!50!black}
 }
+\renewcommand{\topfraction}{0.9}
 \renewcommand{\dbltopfraction}{0.9}
-\renewcommand{\textfraction}{0.15}
+\renewcommand{\textfraction}{0.1}
 
 \newcommand\blfootnote[1]{%
     \begingroup
@@ -66,7 +67,7 @@ In the present paper, we discuss strategies to analyze sc-BS-Seq data, suggest i
 
 \subsection{Standard approach}
 
-\begin{figure*}
+\begin{figure*}[t]
     \hspace{2.5cm}A\\[-7ex]
     \begin{center}
         \includegraphics[width=0.7\textwidth]{figures/Fig_residuals_A.png}\\
@@ -163,6 +164,20 @@ Grouping all cells into four groups according to their level of Ube2l6 expressio
 
 \subsection{Identification of cellular sub-types}
 
+\begin{figure*}
+	\begin{center}
+		A\hspace{.4\textwidth}B\hspace*{.3\textwidth}~\\
+		\hspace{.3cm}\includegraphics[width=.35\textwidth]{part_leonie_git/leonie_plots/complete_135k_12cm_log.pdf}
+		\hspace{1cm}\includegraphics[width=.35\textwidth]{part_leonie_git/leonie_plots/cell500_20k_12cm_log.pdf}\\
+		C\hspace*{.7\textwidth}~\\
+		\hspace{.3cm}\includegraphics[width=.75\textwidth]{part_leonie_git/leonie_plots/UMAP_fulldataset.pdf}\\
+		D\hspace*{.7\textwidth}~\\
+		\hspace{.3cm}\includegraphics[width=.75\textwidth]{part_leonie_git/leonie_plots/UMAP_reduceddataset.pdf}
+		\caption{\small \textbf{Benchmark of our methods on single-cell methylomes of 16 neuronal subtypes}. \textbf{(A)} Nearest neighbor count score using four different method combinations and a variable number of genomic regions (VMRs or 100~kb windows) as input to PCA. Exemplary UMAPs for encircled analyses are shown in (C). \textbf{(B)} Same benchmark as in (A), but for a smaller data set consisting of 500 randomly subsampled cells. Exemplary UMAPs for analyses are shown in (D). \textbf{(C)} Two exemplary UMAPs of the full data set and methylation fractions of 100~kb windows (left) or mean shrunken residuals of VMRs (right) \textbf{(D)} Two exemplary UMAPs of the smaller data set and methylation fraction of 100~kb windows (left) or mean shrunken residuals of VMRs (right). Data from \citet{luo2017single}.}
+		\label{figure:score}
+	\end{center}
+\end{figure*}
+
 To assess the impact of our methods on dimensionality reduction and the ability to distinguish different (sub)types of cells, we used a data set from \citet{luo2017single}. This data set consists of 3377 single-cell CpG methylomes from the murine frontal cortex, comprising 16 neuronal subtypes.
 We subjected this data set to the standard scBS workflow: defining a set of genomic intervals, quantifying methylation in these intervals, and subjecting the resulting matrix to PCA.
 We repeated this analysis several times, either using 100~kb windows or VMRs, and either using methylation fractions or mean shrunken residuals as a measure of methylation. \todo{Is the following correct?} For both types of regions, the 100~kb windows and the VMRs, we ranked the regions by the number of covering cells (i.e., cells with at least on read in the region) and kept only the top 100, 1000, or 10,000 regions.
@@ -181,23 +196,9 @@ To visualize the different degrees of separation, we further reduced the PC spac
 % why not just plot PC1 vs. PC2 here? % because people will want to see the UMAP. -S
 Again, the difference is even more pronounced in the sub-sampled analysis with only 500 cells (Figure \ref{figure:score}D).
 
-\begin{figure*}
-    \begin{center}
-    A\hspace{.4\textwidth}B\hspace*{.3\textwidth}~\\
-    \hspace{.3cm}\includegraphics[width=.35\textwidth]{part_leonie_git/leonie_plots/complete_135k_12cm_log.pdf}
-    \hspace{1cm}\includegraphics[width=.35\textwidth]{part_leonie_git/leonie_plots/cell500_20k_12cm_log.pdf}\\
-    C\hspace*{.7\textwidth}~\\
-    \hspace{.3cm}\includegraphics[width=.75\textwidth]{part_leonie_git/leonie_plots/UMAP_fulldataset.pdf}\\
-    D\hspace*{.7\textwidth}~\\
-    \hspace{.3cm}\includegraphics[width=.75\textwidth]{part_leonie_git/leonie_plots/UMAP_reduceddataset.pdf}
-    \caption{\small \textbf{Benchmark of our methods on single-cell methylomes of 16 neuronal subtypes}. \textbf{(A)} Nearest neighbor count score using four different method combinations and a variable number of genomic regions (VMRs or 100~kb windows) as input to PCA. Exemplary UMAPs for encircled analyses are shown in (C). \textbf{(B)} Same benchmark as in (A), but for a smaller data set consisting of 500 randomly subsampled cells. Exemplary UMAPs for analyses are shown in (D). \textbf{(C)} Two exemplary UMAPs of the full data set and methylation fractions of 100~kb windows (left) or mean shrunken residuals of VMRs (right) \textbf{(D)} Two exemplary UMAPs of the smaller data set and methylation fraction of 100~kb windows (left) or mean shrunken residuals of VMRs (right). Data from \citet{luo2017single}.}
-    \label{figure:score}
-    \end{center}
-\end{figure*}
-
 \section{The \texttt{scbs} Python package}
 
-\begin{figure*}
+\begin{figure*}[t]
 	\begin{center}
 		\includegraphics[width=.8\textwidth]{figures/Fig_workflow.png}
 	\end{center}
