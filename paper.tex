@@ -39,7 +39,7 @@
 \centering
 \textbf{\Large Analysing single-cell bisulfite sequencing data with \texttt{scbs}}\\[1.5ex]
 
-Lukas P.~M. Kremer\textsuperscript{1,2,*}, Leonie Küchenhoff\textsuperscript{1,2}, Santiago Cerrizuela\textsuperscript{2}, ..., Ana Martin-Villalba\textsuperscript{2}, Simon Anders\textsuperscript{1,*}\\[1ex]
+Lukas P.~M. Kremer\textsuperscript{1,2,*}, Leonie Küchenhoff\textsuperscript{1,2}, Santiago Cerrizuela\textsuperscript{2}, \todo{...}, Ana Martin-Villalba\textsuperscript{2}, Simon Anders\textsuperscript{1,*}\\[1ex]
 {\footnotesize \textsuperscript{1} BioQuant Centre, University of Heidelberg, Heidelberg, Germany\\[-.5ex]
 \textsuperscript{2} Molecular Neurobiology Dept., German Cancer Research Center (DKFZ), Heidelberg, Germany}
 \vspace{1.5ex}
@@ -64,41 +64,28 @@ In the present paper, we discuss strategies to analyze scBS data, suggest improv
 
 \subsection{Standard approach}
 
+\begin{figure*}
+	\hspace{2.5cm}A\\[-7ex]
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{figures/Fig_residuals_A.png}\\
+	\end{center}
+	\hspace{2.5cm}B\\[-3ex]
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{figures/Fig_residuals_B.png}
+	\end{center}
+	\caption{\small \textbf{Effect of read position:} \textbf{(A)} Depicted is a genomic interval along a chromosome, for which DNA methylation is to be quantified. Two cells cover differing parts of the interval with one read each. If one simply counts for each cell which fraction of the covered CpG sites are methylated, one obtains very different values for the two cells. \textbf{(B)} By averaging each CpG site's methylation over all cells and subsequent smoothing, the thick black ``average methylation curve'' is obtained. To quantify the methylation of cell 1 from (A) relative to this average over all cells, we propose to use the cell's residuals to the smoothed curve (lengths of the vertical red lines) and take their average, counting residuals of methylated CpGs positive and residuals of unmethylated CpGs negative.}
+	\label{fig:smoothres}
+\end{figure*}
+
+
 The standard approach to analyse scBS-Seq data is based on methodology developed for the analysis of single-cell RNA-Seq data. Therefore, we will start by briefly reviewing how single-cell \emph{RNA}-Seq data is commonly analysed, before we discuss scBS data analysis.
 
 The starting point in most scRNA-Seq analyses is a matrix of UMI counts (i.e. of counts of distinct RNA molecules), one row for each cell and one column for each gene. A first goal is then to assigning cell types or states to cells, and to this end, one needs to establish which cells are similar to each other, i.e., find a way to quantify the distance (i.e., dissimilarity) between any two given cells' transcriptional profile. A standard approach, used with minor variation in virtually all recent research and automated by popular software such as Seurat \citep{Hao_2021} or ScanPy \citep{Wolf_2018}, is as follows: One first accounts for cell-to-cell variation in sequencing depth by dividing each UMI count by the respective cell's total UMI count, then transforms to a homoskedastic scale by taking the logarithm. In order to avoid matrix elements with zero count to be transformed to minus infinity, one typically adds a very small ``pseudocount'' (often $10^{-4}$) to the normalized fractions before taking the logarithm. Now, one could use Euclidean distances of these vectors of logarithmized fractions as dissimilarity score. However, these scores would be exceedingly noisy due to the strong Poisson noise introduced by the many genes with very low counts. Therefore, one performs a principal component analysis (PCA), keeping only the top few (typically, 20 to 50) components. As Poisson noise is uncorrelated between genes, it will average out in the top principal components, as these are all linear combinations with weight on very many genes. Therefore, Euclidean distances between these ``PCA space'' vectors provide a robust dissimilarity score. Hence, the PCA space representation y are suitable as input to methods like t-SNE and UMAP, which provide a two-dimensional representation of the data, or to methods for clustering (assigning cells to groups by similarity) and trajectory finding (identifying elongated manifolds in PCA space and assigning cells to quasi-1D positions along them).
 
-%\begin{figure}
-%   \framebox[\columnwidth]{
-%       \begin{minipage}[c][3.5cm]{\columnwidth}
-%           \centering Figure
-%       \end{minipage}
-%   }
-%   \caption{\small UMAP representations of the single-cell bisulfite data of XXX et al., calculated \textbf{(A)} using conventional preprocessing and \textbf{(B)} using the approach described here.}
-%   \label{umaps}
-%\end{figure}
-
 This procedure is commonly adapted when working with single-cell DNA-methylation data, so that established methods used in scRNA-Seq can be used.
 The question is therefore how to construct a suitable matrix as input for the PCA. A simple and common approach, used for instance by \citet{luo2017single}, is to tile the genome into windows of, say, 100~kb size, and calculate for each cell the average methylation of the DNA within each window. To this end, we identify all CpG sites in the window for which we have coverage with at least one read and can hence call the CpG to be either unmethylated or methylated in the cell. Then we denote as average DNA methylation of this window in a given cell the proportion of observed CpG sites in the window that were found to be methylated (Figure \ref{fig:smoothres}A). This yields a matrix, with one row for each cell and one column for each window from the genome tiling, comprising numbers (methylation fractions) between 0 and 1. This matrix is now subjected to PCA.
 
-%As an example, we will use in this paper data from \citet{luo2017single}, who performed scBS on 16 neuronal subtypes of the mouse frontal cortex, and analysed their data in the manner just described.
-%Figure \ref{umaps}A shows a UMAP plot, derived from our re-analysis of the data, using a tiling of the genome into windows of size 100~kb. As one can see, the approach is suitable to see clear structure in the data, observe ...
-
 We think that this analysis strategy has room for improvement, as we will discuss next. Here, we discuss the proposed improvements only qualitatively. For the mathematical details, please see the Methods section. 
-
-\begin{figure*}
-    A\\
-    \begin{center}
-        \includegraphics[width=0.7\textwidth]{figures/Fig_residuals_A.png}\\
-    \end{center}
-    B\\
-    \begin{center}
-        \includegraphics[width=0.7\textwidth]{figures/Fig_residuals_B.png}
-    \end{center}
-\caption{\small \textbf{Effect of read position:} \textbf{(A)} Depicted is a genomic interval along a chromosome, for which DNA methylation is to be quantified. Two cells cover differing parts of the interval with one read each. If one simply counts for each cell which fraction of the covered CpG sites are methylated, one obtains very different values for the two cells. \textbf{(B)} By averaging each CpG site's methylation over all cells and subsequent smoothing, the thick black ``average methylation curve'' is obtained. To quantify the methylation of cell 1 from (A) relative to this average over all cells, we propose to use the cell's residuals to the smoothed curve (lengths of the vertical red lines) and take their average, counting residuals of methylated CpGs positive and residuals of unmethylated CpGs negative.}
-\label{fig:smoothres}
-\end{figure*}
-
 
 \section{Three improvements to processing scBS data}
 
@@ -260,7 +247,6 @@ for the average methylation at position $i$, where $\langle\cdot\rangle$ denotes
 \todo{NOTE: Here, we could already do shrinkage and use $\frac{1}{|C_i|+1}\sum_i x_{ij}$ intead. But we don't do that, right?}
 
 We then run a kernel smoother over these per-position averages to obtain the smoothed averages $\tilde x_i$. Specifically, we use
-
 \[ \tilde x_i = \frac{\sum_{i'} \overline x_{i'}\, k_h(d_{ii'})}{\sum_{i'} k_h(d_{ii'})},\]
 i.e., $\tilde x_i$ is the weighted average over the per-position averages $\overline{x}_{i'}$, taken over the CpG sites $i'$ in the neighborhood of $i$, and weighted using a smoothing kernel $k_h$ with bandwidth $h$. Here, $d_{ii'}$ is the distance between CpG positions $i$ and $i'$, measured in base pairs, $h$ is the smoothing bandwidth in base pairs (by default, $h=1000$), and $k_h$ is the tricube kernel,
 
