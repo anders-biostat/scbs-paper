@@ -39,7 +39,7 @@
 \centering
 \textbf{\Large Analysing single-cell bisulfite sequencing data with \texttt{scbs}}\\[1.5ex]
 
-Lukas P.~M. Kremer\textsuperscript{1,2,*}, Leonie Küchenhoff\textsuperscript{1,2}, Santiago Cerrizuela\textsuperscript{2}, \todo{...}, Ana Martin-Villalba\textsuperscript{2}, Simon Anders\textsuperscript{1,*}\\[1ex]
+Lukas P.~M. Kremer\textsuperscript{1,2,*}, Leonie Küchenhoff\textsuperscript{1,2}, Santiago Cerrizuela\textsuperscript{2}, Ana Martin-Villalba\textsuperscript{2}, Simon Anders\textsuperscript{1,*}\\[1ex]
 {\footnotesize \textsuperscript{1} BioQuant Centre, University of Heidelberg, Heidelberg, Germany\\[-.5ex]
 \textsuperscript{2} Molecular Neurobiology Dept., German Cancer Research Center (DKFZ), Heidelberg, Germany}
 \vspace{1.5ex}
@@ -162,7 +162,7 @@ Grouping all cells into four groups according to their level of Ube2l6 expressio
 
 To assess the impact of our methods on dimensionality reduction and the ability to distinguish different (sub)types of cells, we used a data set from \citet{luo2017single}. This data set consists of 3377 single-cell CpG methylomes from the murine frontal cortex, comprising 16 neuronal subtypes.
 We subjected this data set to the standard scBS workflow: defining a set of genomic intervals, quantifying methylation in these intervals, and subjecting the resulting matrix to PCA.
-We repeated this analysis several times, either using 100~kb tiles or VMRs, and either using methylation fractions or mean shrunken residuals as a measure of methylation. \todo{Is the following correct?} For both types of regions, the 100~kb tiles and the VMRs, we ranked the regions by the number of covering cells (i.e., cells with at least on read in the region) and kept only the top 100, 1000, or 10,000 regions.
+We repeated this analysis several times, either using 100~kb tiles or VMRs, and either using methylation fractions or mean shrunken residuals as a measure of methylation. For both types of regions, the 100~kb tiles and the VMRs, we ranked the regions by the number of covering cells (i.e., cells with at least on read in the region) and kept only the top 100, 1000, or 10,000 regions.
 
 To assess performance of each combination of methods, we used a nearest neighbor count score that quantifies how well the different neuronal subtypes are separated in 15 dimensional PC space (see Methods).
 The results demonstrate that the 16 neuronal subtypes are more cleanly separated when using our proposed methods (Figure \ref{figure:score}A).
