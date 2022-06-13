@@ -223,31 +223,20 @@ After quality control, the user has access to the genome-wide VMR detection appr
 
 \section{Discussion and Conclusion}
 
-\subsection{Simon's draft}
+Here, we have proposed an improved strategy to preprocess single-cell bisulfite-sequencing data.
+Based on the observation that incomplete read coverage of a genomic interval can lead to inaccurate methylation estimates, we suggest a scoring scheme that is aware of a reads local context rather than just treating all reads in an interval alike
+Furthermore, we show a way to pinpoint minimal regions of high variability across cells, which we call variably-methylated regions (VMRs).
+By reanalyzing two published datasets we could show that these improvements to data preprocessing help to increase signal and decrease noise, resulting in a more informative intermediate-dimensional representation of the data. As examples of practical benefits, we demonstrate that our preprocessing allows for better distinction of cell sub-types, especially for smaller data sets with limited numbers of cells. In addition to this improvement of global signal-to-noise ratio (with regards to cell dissimilarity quantification), we also show that the determination of VMRs improve biological interpretability by pinpointing the regions that actually change and hence have a putative regulatory role.
 
-Here, we have proposed an improved strategy to preprocess single-cell bisulfite-sequencing data. On the one hand, we suggest a scoring scheme that is aware of a reads local context rather than just treating all reads in an interval alike, and on the other hand, we show a way to pinpoint minimal regions of high variability across cells, which we call variably-methylated regions (VMRs). By reanalyzing two published datasets we could show that these improvements to data preprocessing help to increase signal and descrease noise, resulting in a more informative intermediate-dimensional representation of the data. As examples of practical benefits, we demonstrate that our preprocessing allows for better distinction of cell sub-types, especially for smaller data sets with limited numbers of cells. In addition to this improvement of global signal-to-noise ratio (with regards to cell dissimilarity quantification), we also show that the determination of VMRs improve biological interpretability by pinpointing the regions that actually change and hence have a putative regulatory role.
+Furthermore, we have presented and published an open source software tool, called \texttt{scbs}, that provides an easy-to-use implementation of the described algorithms. The package also offers functionality for all other steps of data preprocessing that are needed to get from the output of methylation callers such as Bismark and methylpy to a cell\texttimes region matrix that is suitable as input for standard analysis tools that work in a reduced-dimensionality setting, thus allowing the user to use, e.g., well established tools from scRNA-seq analysis, including visualization tools such as t-SNE and UMAP, Leiden/Louvain clustering, pseudotime trajectory analyses etc. By offering these functions, \texttt{scbs} bridges a gap in the chain of existing tools that so far hindered practitioners in their data analysis.
 
-Furthermore, we have presented and published an open source software tool, called \texttt{scbs}, that provides an easy-to-use implementation of the described algorithms. The package also offers functionality for all other steps of data preprocessing taht are needed to get from the output of methylation callers such as Bismark and methylpy to a data matrix that is suitable as input for standard analysis tools that work in a reduced-dimensionality setting, thus allowing the user to use, e.g., well established tools from sc-RNA-Seq analysis, including visualization tools such as t-SNE and UMAP, Leiden/Louvain clustering, pseudotime trajectory analyses etc. By offering these functions, \texttt{scbs} bridges a gap in the chain of existing tools that so far hindered practitioners in their data analysis. In addition, by pinpointing exact regions of change, the VMR functionality provides useful input for genomics-style analyses.
+In addition, by pinpointing exact regions of interest, the VMR functionality provides useful input for genomics-style analyses.
+Depending on the research question at hand, individual VMRs can be related to nearby genomic features such as gene bodies or known regulatory elements, tested for methylation differences between groups of cells, or subjected to gene ontology enrichment or motif enrichment.
 
-In conclusion, we have presented powerful improvements to sc-BS-Seq data preprocessing and a software tool that implements these and also completes a gap in existing tool chains.
+In conclusion, we have presented powerful improvements to scBS data preprocessing and a software tool that implements these and also completes a gap in existing tool chains.
 
-\subsection{Lukas's draft}
 
-Here we propose a number of new methods for the analysis of single cell methylation data and provide them to the research community as a command line tool.
-Instead of dividing the genome into coarse-grained tiles, we propose to discover variably-methylated regions (VMRs) in the data itself, which improves performance of common downstream applications.
-VMRs help interpreting the results of scBS experiments, since they represent a list of candidate regions that are potentially biologically meaningful.
-Due to their smaller size, individual VMRs can also be related to nearby or intersecting genomic features such as gene bodies or known regulatory elements.
-Furthermore, VMRs can be tested for methylation differences between groups of cells, or subjected to gene ontology enrichment or motif enrichment, depending on the research questions at hand.
 
-We also propose a number of methods to address issues caused by the sparse nature of scBS data.
-First, we observe that incomplete read coverage of a genomic interval can lead to inaccurate methylation estimates.
-To remedy this problem, we propose to use relative methylation values instead of absolute methylation fractions, and to employ shrinkage to decrease the impact of intervals with very low sequencing coverage.
-Second, we suggest a method to handle missing values in PCA in an iterative manner.
-Both of these methods help remedy the influence of differences in sequencing coverage on dimensionality reduction and clustering.
-
-Finally, we provide the above-mentioned methods to the scientific community in the form of a command line tool.
-Our software, called \texttt{scbs}, allows the user to obtain a cell $\times$ region matrix from raw methylation files using only few, simple shell commands
-This means that users no longer need to write custom data-wrangling scripts, which ensures reproducibility across and makes the analysis of single-cell methylomes faster and easier.
 
 \section{Methods}
 
