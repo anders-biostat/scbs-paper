@@ -229,7 +229,9 @@ In brief, we store methylation of each chromosome in a matrix where each column 
 
 After quality control, the user has access to the genome-wide VMR detection approach described above via \texttt{scbs scan}. This produces a BED file that lists the genome coordinates of VMRs. To finally obtain a methylation matrix analogous to a scRNA-seq count matrix, this BED file can be used as input for \texttt{scbs matrix}, which quantifies methylation at genomic intervals in all cells. The command produces both the percentage of methylated CpG sites, as well as our proposed methylation measure (shrunken mean of the residuals) that is more robust to variation in sequencing coverage or stochastic differences in read position between cells. We note that both \texttt{matrix} and \texttt{profile} accept any valid BED-file as input, which means that the user can quantify and visualize methylation at any genomic feature of interest, such as promoters, enhancers or transcription factor binding sites, in single cells. The obtained methylation matrix can then serve as input for common single-cell analysis methods such as dimensionality reduction and cell clustering.
 
-\texttt{scbs} is free and open source, and the package can be installed via the Python package manager. The source code and the package are available at \href{https://github.com/LKremer/scbs}{https://github.com/LKremer/scbs}, where we also provide detailed documentation including a tutorial that demonstrates a complete \texttt{scbs} analysis on an example data set.
+\texttt{scbs} is free and open source.
+The package is available on the Python Package Index (PyPI) and can be installed with the Python package installer pip.
+The source code is hosted at \href{https://github.com/LKremer/scbs}{https://github.com/LKremer/scbs}, where we also provide detailed documentation including a tutorial that demonstrates a complete \texttt{scbs} analysis on an example data set.
 
 
 
