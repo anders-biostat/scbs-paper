@@ -238,7 +238,7 @@ The source code is hosted at \href{https://github.com/LKremer/scbs}{https://gith
 
 \section{Discussion and Conclusion}
 
-Here, we have proposed an improved strategy to preprocess single-cell bisulfite-sequencing data.
+Here, we have proposed an improved strategy to preprocess single-cell bisulfite sequencing data.
 Based on the observation that incomplete read coverage of a genomic interval can lead to inaccurate methylation estimates, we suggest a scoring scheme that is aware of a reads local context rather than just treating all reads in an interval alike
 Furthermore, we show a way to pinpoint minimal regions of high variability across cells, which we call variably methylated regions (VMRs).
 By reanalyzing two published datasets we could show that these improvements to data preprocessing help to increase signal and decrease noise, resulting in a more informative intermediate-dimensional representation of the data. As examples of practical benefits, we demonstrate that our preprocessing allows for better distinction of cell sub-types, especially for smaller data sets with limited numbers of cells. In addition to this improvement of global signal-to-noise ratio (with regards to cell dissimilarity quantification), we also show that the determination of VMRs improve biological interpretability by pinpointing the regions that actually change and hence have a putative regulatory role.
