@@ -56,7 +56,7 @@ June 2022
 
 \begin{minipage}{0.7\textwidth}
 \small
-\textit{Abstract} -- Single-cell-bisulfite sequencing (scBS) allows for assessing DNA methylation with single-basepair and single-cell resolution. Analysing the big data sets thus obtained requires preprocessing to reduce data size, improve signal over noise, and provide interpretability. Typically, this is simply done by dividing the genome into large tiles and averaging in these. We show that this coarse-graining dilutes signal, and suggest improved approaches to determine more informative regions quantify methylation in, and a better quantitation method than simple averaging. We demonstrate how our approach enables better distinguishing of cell types and reduces demands on cell number. We also show that our method of finding variably-methylated regions finds biologically meaningful loci. Finally, we present a software tool, \texttt{scbs}, that implements this approach and offers further functionality required to work with scBS data.
+\textit{Abstract} -- Single-cell-bisulfite sequencing (scBS) allows for assessing DNA methylation with single-basepair and single-cell resolution. Analysing the big data sets thus obtained requires preprocessing to reduce data size, improve signal over noise, and provide interpretability. Typically, this is simply done by dividing the genome into large tiles and averaging in these. We show that this coarse-graining dilutes signal, and suggest improved approaches to determine more informative regions quantify methylation in, and a better quantitation method than simple averaging. We demonstrate how our approach enables better distinguishing of cell types and reduces demands on cell number. We also show that our method of finding variably methylated regions finds biologically meaningful loci. Finally, we present a software tool, \texttt{scbs}, that implements this approach and offers further functionality required to work with scBS data.
 \end{minipage}
 \vspace{6.5ex}
 
@@ -215,7 +215,7 @@ Again, the difference is even more pronounced in the sub-sampled analysis with o
 		\texttt{scbs} also produces cell-wise summary statistics and quality plots (here: average methylation around the transcription start site) that are used to detect low-quality cells.
 		These cells can be discarded with \texttt{scbs filter}.
 		To obtain a methylation matrix, similar to the count matrices used in scRNA-seq, the user must first decide in which genomic intervals methylation should be quantified.
-		The user may either provide genomic regions of \emph{a priori} interest, or they may choose to discover VMRs (variably-methylated regions) in the data with \texttt{scbs scan}.
+		The user may either provide genomic regions of \emph{a priori} interest, or they may choose to discover VMRs (variably methylated regions) in the data with \texttt{scbs scan}.
 		The resulting methylation matrix can then be used for downstream analysis such as cell clustering and dimensionality reduction.
 	}
 	\label{workflow}
@@ -240,7 +240,7 @@ The source code is hosted at \href{https://github.com/LKremer/scbs}{https://gith
 
 Here, we have proposed an improved strategy to preprocess single-cell bisulfite-sequencing data.
 Based on the observation that incomplete read coverage of a genomic interval can lead to inaccurate methylation estimates, we suggest a scoring scheme that is aware of a reads local context rather than just treating all reads in an interval alike
-Furthermore, we show a way to pinpoint minimal regions of high variability across cells, which we call variably-methylated regions (VMRs).
+Furthermore, we show a way to pinpoint minimal regions of high variability across cells, which we call variably methylated regions (VMRs).
 By reanalyzing two published datasets we could show that these improvements to data preprocessing help to increase signal and decrease noise, resulting in a more informative intermediate-dimensional representation of the data. As examples of practical benefits, we demonstrate that our preprocessing allows for better distinction of cell sub-types, especially for smaller data sets with limited numbers of cells. In addition to this improvement of global signal-to-noise ratio (with regards to cell dissimilarity quantification), we also show that the determination of VMRs improve biological interpretability by pinpointing the regions that actually change and hence have a putative regulatory role.
 
 Furthermore, we have presented and published an open source software tool, called \texttt{scbs}, that provides an easy-to-use implementation of the described algorithms. The package also offers functionality for all other steps of data preprocessing that are needed to get from the output of methylation callers such as Bismark and methylpy to a cell\texttimes region matrix that is suitable as input for standard analysis tools that work in a reduced-dimensionality setting, thus allowing the user to use, e.g., well established tools from scRNA-seq analysis, including visualization tools such as t-SNE and UMAP, Leiden/Louvain clustering, pseudotime trajectory analyses etc. By offering these functions, \texttt{scbs} bridges a gap in the chain of existing tools that so far hindered practitioners in their data analysis.
