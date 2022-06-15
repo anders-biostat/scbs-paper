@@ -159,7 +159,7 @@ This effect is also observed when using our proposed measure of methylation, the
     \end{center}
     \caption{\small \textbf{Correlation of DNA methylation and gene expression}.
     \textbf{(A)} Correlation of each gene's RNA expression values to the the methylation fractions that were measured at promoters (y-axis), or to methylation fractions of the nearest VMR (x-axis). Promoters are defined as intervals \textpm2~kb around the TSS.
-    \textbf{(B)} Same as in (A), but using mean shrunken residuals as a measure of methylation.
+    \textbf{(B)} Same as in (A), but using the shrunken mean of residuals as a measure of methylation.
     \textbf{(C)} Mean smoothed methylation near the gene Ube2l6 (ENSMUSG00000027078, marked in orange in A \& B). Cells are assigned to 4 groups based on Ube2l6 expression (group 0: cells with no Ube2l6 expression, groups 1-3: cells that express Ube2l6, divided into three equally large groups with group 3 having the highest expression). The mean methylation level of each group was smoothed with a tricube kernel of bandwidth 2000.
     Data from \citet{argelaguet2019gastru}.}
     \label{figure:correlation}
@@ -179,19 +179,19 @@ Dividing all cells into four groups according to their level of Ube2l6 expressio
         \hspace{.3cm}\includegraphics[width=.75\textwidth]{part_leonie_git/leonie_plots/UMAP_fulldataset.pdf}\\
         D\hspace*{.7\textwidth}~\\
         \hspace{.3cm}\includegraphics[width=.75\textwidth]{part_leonie_git/leonie_plots/UMAP_reduceddataset.pdf}
-        \caption{\small \textbf{Benchmark of our methods on single-cell methylomes of 16 neuronal subtypes}. \textbf{(A)} Nearest neighbor count score using four different method combinations and a variable number of genomic regions (VMRs or 100~kb tiles) as input to PCA. Exemplary UMAPs for encircled analyses are shown in (C). \textbf{(B)} Same benchmark as in (A), but for a smaller data set consisting of 500 randomly subsampled cells. Exemplary UMAPs for analyses are shown in (D). \textbf{(C)} Two exemplary UMAPs of the full data set and methylation fractions of 100~kb tiles (left) or mean shrunken residuals of VMRs (right) \textbf{(D)} Two exemplary UMAPs of the smaller data set and methylation fractions of 100~kb tiles (left) or mean shrunken residuals of VMRs (right). Data from \citet{luo2017single}.}
+        \caption{\small \textbf{Benchmark of our methods on single-cell methylomes of 16 neuronal subtypes}. \textbf{(A)} Nearest neighbor count score using four different method combinations and a variable number of genomic regions (VMRs or 100~kb tiles) as input to PCA. Exemplary UMAPs for encircled analyses are shown in (C). \textbf{(B)} Same benchmark as in (A), but for a smaller data set consisting of 500 randomly subsampled cells. Exemplary UMAPs for analyses are shown in (D). \textbf{(C)} Two exemplary UMAPs of the full data set and methylation fractions of 100~kb tiles (left) or shrunken means of residuals of VMRs (right) \textbf{(D)} Two exemplary UMAPs of the smaller data set and methylation fractions of 100~kb tiles (left) or shrunken means of residuals of VMRs (right). Data from \citet{luo2017single}.}
         \label{figure:score}
     \end{center}
 \end{figure*}
 
 To assess the impact of our methods on dimensionality reduction and the ability to distinguish different (sub)types of cells, we used a data set from \citet{luo2017single}. This data set consists of 3377 single-cell CpG methylomes from the murine frontal cortex, comprising 16 neuronal subtypes.
 We subjected this data set to the standard scBS workflow: defining a set of genomic intervals, quantifying methylation in these intervals, and subjecting the resulting matrix to PCA.
-We repeated this analysis several times, either using 100~kb tiles or VMRs, and either using methylation fractions or the shrunken mean of residuals as a measure of methylation. 
+We repeated this analysis several times, either using 100~kb tiles or VMRs, and either using methylation fractions or the shrunken means of residuals as a measure of methylation. 
 For both types of regions, we varied the number of input regions, ranging from 100 to 50,000 regions with the highest sequencing coverage that were selected for PCA.
 
 To assess performance of each combination of methods, we used a nearest neighbor count score (see Methods) that quantifies how well the different neuronal subtypes are separated in 15 dimensional PC space. We used the original assignment of cells to cell types from \citet{luo2017single}.
 The results demonstrate that the 16 neuronal subtypes are more cleanly separated when using our proposed methods (Figure \ref{figure:score}A).
-Most of this gain in performance can be attributed to the use of VMRs over genomic tiles. The use of mean shrunken residuals over methylation fractions provides an additional small improvement.
+Most of this gain in performance can be attributed to the use of VMRs over genomic tiles. The use of the shrunken means of residuals over methylation fractions provides an additional small improvement.
 
 Since scBS protocols are still rather costly and labor-intensive, only few laboratories are currently able to obtain thousands of single cell methylomes.
 To simulate a smaller data set, we subsampled the frontal cortex data set to 500 cells and repeated our analysis.
@@ -348,7 +348,7 @@ Let us write $A$ for the matrix to which the PCA is to be applied, with the feat
 Our iterative imputation strategy is now simply the following: we first replace all missing values in the row-centered input matrix $A$ with zeroes and perform the (truncated) PCA. Then, we use the PCA predictions for the missing values, i.e., the $a_{ij}=\sum_r x_{ir} r_{jr}$, as refined stand-ins for the missing values in $A$ and run PCA once more. This can now be iterated until convergence, which is typically achieved after at most 4--5 rounds of PCA.
 
 \subsection{Re-analysis of published scBS datasets}
-To re-analyze scBS data sets by \citet{luo2017single} and \citet{argelaguet2019gastru}, the genome was first annotated with genomic intervals that were either obtained by tiling the genome into non-overlapping 100~kb tiles, or by acquiring VMRs with \texttt{scbs scan} using the current default options (bandwidth $=2000$, stepsize $=10$, variance threshold $= 2\%$). For all regions (VMRs and 100~kb tiles), the mean methylation fractions and mean shrunken residuals were obtained with \texttt{scbs matrix}. Regions containing less than four measured CpGs, or that were measured in less than 10\% of cells, were discarded. To select $n$ intervals for further analysis, the top $n$ intervals were picked based on the number of cells that the region was measured in. 
+To re-analyze scBS data sets by \citet{luo2017single} and \citet{argelaguet2019gastru}, the genome was first annotated with genomic intervals that were either obtained by tiling the genome into non-overlapping 100~kb tiles, or by acquiring VMRs with \texttt{scbs scan} using the current default options (bandwidth $=2000$, stepsize $=10$, variance threshold $= 2\%$). For all regions (VMRs and 100~kb tiles), the mean methylation fractions and the shrunken means of residuals were obtained with \texttt{scbs matrix}. Regions containing less than four measured CpGs, or that were measured in less than 10\% of cells, were discarded. To select $n$ intervals for further analysis, the top $n$ intervals were picked based on the number of cells that the region was measured in. 
 For dimensionality reduction, missing values were imputed with the iterative PCA described in the previous section. To visualize data, UMAP was performed on the final 15 principal components.
 
 \subsection{Nearest neighbor count score}
