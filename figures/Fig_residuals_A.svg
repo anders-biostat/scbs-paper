@@ -13,9 +13,9 @@
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
    version="1.1"
    id="svg6198"
-   viewBox="0 0 2304.3751 1507.5"
-   height="425.44998mm"
-   width="650.34583mm"
+   viewBox="0 0 2304.3669 1126.9308"
+   height="318.04489mm"
+   width="650.34351mm"
    sodipodi:docname="Fig_residuals_A.svg"
    inkscape:export-filename="/home/lukas/code/scbs-paper/figures/Fig_residuals_A.png"
    inkscape:export-xdpi="250"
@@ -29,9 +29,9 @@
      showgrid="false"
      inkscape:current-layer="layer1"
      inkscape:document-units="px"
-     inkscape:cy="798.43566"
-     inkscape:cx="49.311179"
-     inkscape:zoom="0.1767767"
+     inkscape:cy="382.86047"
+     inkscape:cx="1181.3982"
+     inkscape:zoom="0.3535534"
      inkscape:pageshadow="2"
      inkscape:pageopacity="1"
      borderopacity="1.0"
@@ -124,7 +124,7 @@
      id="layer1"
      inkscape:groupmode="layer"
      inkscape:label="Layer 1"
-     transform="translate(-763.70129,1012.7987)">
+     transform="translate(-763.70679,1012.7797)">
     <path
        style="fill:#050578;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 1464.1932,-799.39367 c 5.5101,27.79361 160.6705,4.06136 206.1709,-47.56443 13.8752,17.4802 17.5274,25.6625 56.7639,44.99609 90.6971,22.4848 174.6438,-3.95869 265.5894,8.7267 44.433,19.82852 86.8316,-31.33929 39.8128,-56.01199 -74.5517,-6.6268 -146.3867,4.9663 -221.4021,-0.5533 -35.8967,0.526 -86.5654,-7.5576 -113.1194,-30.0725 25.5138,-23.687 75.6441,-39.5265 111.5278,-40.6165 74.6911,-8.8901 149.5942,-6.0899 223.7719,-16.065 45.8609,-26.7639 -1.4165,-70.4246 -44.9122,-48.6164 -90.2827,16.7657 -169.361,-4.6359 -258.9545,21.9079 -38.3881,18.3371 -46.5628,32.731 -59.6372,50.8178 -47.7778,-49.5257 -198.9944,-70.5608 -199.5778,-34.7802 1.3985,39.0341 73.3202,27.7149 102.9769,32.5366 22.582,5.0895 54.7367,21.1694 68.8906,36.9894 -13.4278,16.4411 -43.2047,28.0667 -66.6066,37.3816 -62.4472,14.6677 -119.9722,-1.6465 -111.2944,40.92423 z"
@@ -1777,15 +1777,7 @@
            x="484.87323"
            y="58.372078" /></flowRegion><flowPara
          style="font-size:40px;line-height:150%;text-align:end;text-anchor:end"
-         id="flowPara27380-2-7" /><flowPara
-         style="font-size:40px;line-height:150%;text-align:end;text-anchor:end"
-         id="flowPara1070" /><flowPara
-         style="font-size:40px;line-height:150%;text-align:end;text-anchor:end"
-         id="flowPara1072" /><flowPara
-         style="font-size:40px;line-height:150%;text-align:end;text-anchor:end"
-         id="flowPara1074" /><flowPara
-         style="font-size:40px;line-height:150%;text-align:end;text-anchor:end"
-         id="flowPara27431-3">n/a</flowPara></flowRoot>    <g
+         id="flowPara27431-3">NA</flowPara></flowRoot>    <g
        transform="matrix(2.9108226,0,0,2.7224438,367.77654,146.5224)"
        id="g6150"
        clip-path="url(#cpMC4wMHw0NTMuNTR8MTcwLjA4fDAuMDA=)"

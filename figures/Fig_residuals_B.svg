@@ -28,8 +28,8 @@
      showgrid="false"
      inkscape:current-layer="layer1"
      inkscape:document-units="px"
-     inkscape:cy="195.78274"
-     inkscape:cx="1264.5176"
+     inkscape:cy="380.92257"
+     inkscape:cx="1731.7374"
      inkscape:zoom="0.3535534"
      inkscape:pageshadow="2"
      inkscape:pageopacity="1"
@@ -866,5 +866,23 @@
              id="flowPara2918"
              style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle">cell 1</flowPara></flowRoot>      </g>
     </g>
-  </g>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot27370-9-07"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:33.75000381px;line-height:0.01%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="translate(2174.5769,721.34539)"
+       inkscape:export-xdpi="250"
+       inkscape:export-ydpi="250"><flowRegion
+         id="flowRegion27372-9-1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:33.75000381px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle"><rect
+           id="rect27374-60-8"
+           width="540.8103"
+           height="213.01591"
+           x="484.87323"
+           y="58.372078"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:33.75000381px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle" /></flowRegion><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:33.75000381px;line-height:100%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle"
+         id="flowPara27380-9-8">mean methylation</flowPara><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:33.75000381px;line-height:100%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle"
+         id="flowPara134">across all cells</flowPara></flowRoot>  </g>
 </svg>
