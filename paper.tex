@@ -44,7 +44,7 @@
 
 \twocolumn[{%
 \centering
-\textbf{\Large Analysing single-cell bisulfite sequencing data with \texttt{scbs}}\\[1.5ex]
+\textbf{\Large Analyzing single-cell bisulfite sequencing data with \texttt{scbs}}\\[1.5ex]
 
 Lukas P.~M. Kremer\textsuperscript{1,2,*}, Leonie Küchenhoff\textsuperscript{1,2}, Santiago Cerrizuela\textsuperscript{2}, Ana Martin-Villalba\textsuperscript{2}, Simon Anders\textsuperscript{1,*}\\[1ex]
 {\footnotesize \textsuperscript{1} BioQuant Centre, University of Heidelberg, Heidelberg, Germany\\[-.5ex]
@@ -56,7 +56,7 @@ June 2022
 
 \begin{minipage}{0.7\textwidth}
 \small
-\textit{Abstract} -- Single-cell bisulfite sequencing (scBS) allows for assessing DNA methylation at single-base pair and single-cell resolution. Analysing the big data sets thus obtained requires preprocessing to reduce data size, improve signal over noise, and provide interpretability. Typically, this is simply done by dividing the genome into large tiles and averaging in these. We show that this coarse-graining dilutes signal, and suggest improved approaches to determine more informative regions to quantify methylation in, and a better quantitation method than simple averaging. We demonstrate how our approach enables better distinguishing of cell types and reduces demands on cell number. We also show that our method of finding variably methylated regions finds biologically meaningful loci. Finally, we present a software tool, \texttt{scbs}, that implements this approach and offers further functionality required to work with scBS data.
+\textit{Abstract} -- Single-cell bisulfite sequencing (scBS) allows for assessing DNA methylation at single-base pair and single-cell resolution. Analyzing the big data sets thus obtained requires preprocessing to reduce data size, improve signal over noise, and provide interpretability. Typically, this is simply done by dividing the genome into large tiles and averaging in these. We show that this coarse-graining dilutes signal, and suggest improved approaches to determine more informative regions to quantify methylation in, and a better quantitation method than simple averaging. We demonstrate how our approach enables better distinguishing of cell types and reduces demands on cell number. We also show that our method of finding variably methylated regions finds biologically meaningful loci. Finally, we present a software tool, \texttt{scbs}, that implements this approach and offers further functionality required to work with scBS data.
 \end{minipage}
 \vspace{6.5ex}
 
@@ -167,7 +167,7 @@ This effect is also observed when using our proposed measure of methylation, the
     \label{figure:correlation}
 \end{figure}
 
-To illustrate this effect with an example, we picked a gene where VMR methylation is a much better predictor of gene expression than promoter methylation (Ube2l6, highlighted in orange in Figure \ref{figure:correlation}A,B).
+To illustrate this effect with an example, we picked a gene where VMR methylation is a much better predictor of gene expression than promoter methylation (Ube2l6, highlighted in orange in Figure \ref{figure:correlation}A-B).
 Dividing all cells into four groups according to their level of Ube2l6 expression, it is clearly visible that the promoter of this gene is lowly methylated regardless of gene expression, while methylation at the nearest VMR is greatly decreased in cells with high Ube2l6 expression (Figure \ref{figure:correlation}C).
 
 \subsection{Identification of cellular sub-types}
