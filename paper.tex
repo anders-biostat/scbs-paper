@@ -333,7 +333,7 @@ This is a shrunken average, with denominator $n+1$. This extra pseudocount has t
 
 For any interval $I$, we denote by $v_I$ the variance of its residual averages $r_{Ij}$:
 
-$$ v_I = \frac{\scriptsize{1}}{\scriptsize{|C_I|}}\left( r_{Ij} - \langle r_{Ij'}\rangle_{j'\in C_I} \right)^2,$$
+$$ v_I = \frac{\scriptsize{1}}{\scriptsize{|C_I|}}\sum_{j\in C_I}\left( r_{Ij} - \langle r_{Ij'}\rangle_{j'\in C_I} \right)^2,$$
 
 where the average runs only over the set $C_I=\bigcup_{i\in I}C_i$ of those cells $j$ which have reads covering interval I.
 
