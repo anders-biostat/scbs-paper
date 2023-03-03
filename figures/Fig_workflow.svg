@@ -17,20 +17,20 @@
    height="476.77924mm"
    width="579.44122mm"
    sodipodi:docname="Fig_workflow.svg"
-   inkscape:export-filename="/home/lukas/code/scbs-paper/figures/Fig_residuals.png"
+   inkscape:export-filename="/home/lukas/code/scbs-paper/figures/Fig_workflow.png"
    inkscape:export-xdpi="250"
    inkscape:export-ydpi="250">
   <sodipodi:namedview
      inkscape:window-maximized="1"
      inkscape:window-y="27"
      inkscape:window-x="0"
-     inkscape:window-height="1136"
-     inkscape:window-width="1920"
+     inkscape:window-height="1376"
+     inkscape:window-width="2560"
      showgrid="false"
      inkscape:current-layer="layer1"
      inkscape:document-units="px"
-     inkscape:cy="846.932"
-     inkscape:cx="1247.2674"
+     inkscape:cy="1002.932"
+     inkscape:cx="896.2674"
      inkscape:zoom="0.5"
      inkscape:pageshadow="2"
      inkscape:pageopacity="1"
@@ -1461,7 +1461,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
