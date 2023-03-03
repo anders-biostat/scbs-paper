@@ -177,10 +177,10 @@
      pagecolor="#ffffff"
      bordercolor="#666666"
      borderopacity="1.0"
-     inkscape:pageopacity="0.0"
+     inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="532.89189"
+     inkscape:cx="534.32046"
      inkscape:cy="920.4842"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -198,6 +198,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -206,7 +207,9 @@
      inkscape:groupmode="layer"
      id="layer1">
     <g
-       id="g39339">
+       id="g39339"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
       <g
          id="g21612">
         <g
@@ -1217,15 +1220,21 @@
        d="M 77.196893,19.936424 101.29868,67.424657"
        id="path21633"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc" />
+       sodipodi:nodetypes="cc"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
     <path
        style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.2, 0.2;stroke-dashoffset:0;stroke-opacity:1"
        d="M 77.196895,6.0793136 101.29868,4.0740647"
        id="path21633-3"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc" />
+       sodipodi:nodetypes="cc"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
     <g
-       id="g39248">
+       id="g39248"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
       <rect
          x="101.29868"
          y="4.0740647"
@@ -10664,7 +10673,9 @@
       </text>
     </g>
     <g
-       id="g37673">
+       id="g37673"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
       <rect
          x="101.29868"
          y="67.42466"
@@ -20103,7 +20114,9 @@
       </text>
     </g>
     <g
-       id="g40941">
+       id="g40941"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
       <g
          transform="translate(-105.17056,49.391139)"
          id="g26431">
@@ -29681,7 +29694,9 @@
        y="5.0758953"
        x="5.9709301"
        style="font-size:3.88055539px;font-family:'Liberation Sans';text-anchor:middle;stroke-width:0.35277778"
-       id="text165-2">
+       id="text165-2"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
       <tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle"
          id="tspan35940">A</tspan>
@@ -29690,7 +29705,9 @@
        y="5.0758905"
        x="96.45842"
        style="font-size:3.88055539px;font-family:'Liberation Sans';text-anchor:middle;stroke-width:0.35277778"
-       id="text165-2-2">
+       id="text165-2-2"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
       <tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.35277778"
          id="tspan35940-6">C</tspan>
@@ -29699,7 +29716,9 @@
        y="68.046722"
        x="5.9709301"
        style="font-size:3.88055539px;font-family:'Liberation Sans';text-anchor:middle;stroke-width:0.35277778"
-       id="text165-2-4">
+       id="text165-2-4"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
       <tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.35277778"
          id="tspan35940-5">B</tspan>
@@ -29708,7 +29727,9 @@
        y="68.046722"
        x="95.929253"
        style="font-size:3.88055539px;font-family:'Liberation Sans';text-anchor:middle;stroke-width:0.35277778"
-       id="text165-2-4-3">
+       id="text165-2-4-3"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
       <tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.35277778"
          id="tspan35940-5-2">D</tspan>
