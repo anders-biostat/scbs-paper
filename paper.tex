@@ -196,6 +196,8 @@ Then, calculate for each of these larger VMRs the methylation signal, as before,
 
 In this manner, we obtain a methylation matrix, with one row per cell and one column per VMR, that is, in a sense, richer in information and has better signal-to-noise ratio than the matrix obtained by the simple analysis sketched at the very beginning.
 As we demonstrate below, a PCA performed on such a matrix provided a distance metric for the cells that contains more information on biological detail than one from a simpler analysis.
+Since not all genomic intervals have sequencing coverage in all cells, the resulting matrix contains missing values.
+To enable PCA in the presence of missing values, we propose to use a simple iterative approach (for details see Methods).
 
 \subsection{Finding differentially methylated regions}
 
@@ -281,22 +283,27 @@ While the promoter of this gene is lowly methylated regardless of gene expressio
 \end{figure}
 
 To assess the impact of our proposed methods, we next tested whether our methods improve the ability to distinguish cell types and cell states (Fig.~\ref{fig:score}).
-To this end, we obtained cluster labels based on the single-cell transcriptomes from \citet{kremer_scnmt} (Fig.~\ref{fig:score}B).
+To this end, we obtained cluster labels based on the single-cell transcriptomes from \citet{kremer_scnmt} (Fig.~\ref{fig:score}A).
 We consider these cell labels as ground truth and next tested whether we are able to distinguish the same groups of cells based on their methylomes.
 To do this, we subjected the methylomes to the standard scBS workflow:
 defining a set of genomic intervals, quantifying methylation in these intervals, and subjecting the resulting matrix to PCA.
 To determine genomic features for distance calculation, we either tiled the genome into 100~kb bins as is commonly done, or we used our VMR detection approach.
 To quantify methylation in these intervals, we either averaged in these intervals, obtaining methylation percentages ("classic" pre-processing), or we calculated the shrunken mean of residuals.
-Visual inspection of the resulting UMAPs revealed that our proposed combination of methods results in more clearly separated cell types, compared to a UMAP obtained with default analysis methods (Fig.~\ref{fig:score}C,D).
+Visual inspection of the resulting UMAPs revealed that our proposed combination of methods results in more clearly separated cell types, compared to a UMAP obtained with default analysis methods (Fig.~\ref{fig:score}B,C).
 While all cells form a continuous point cloud when using default methods, our improvements led to a clear separation of oligodendrocytes, OPCs and endothelial cells.
 Furthermore, even cellular sub-types of cells in the continuous neural stem cell lineage were partially separated.
 
-To quantify this performance gain in a more rigorious manner, we used a score that quantifies whether cells were placed in a neighborhood consisting of cells with the same cell type in 15-dimensional PC space ("neighbor score", see \ref{methods:score}).
+To quantify this performance gain in a more rigorous manner, we used a score that quantifies whether cells were placed in a neighborhood consisting of cells with the same cell type in 15-dimensional PC space ("neighbor score", for details see Methods).
 Since scBS protocols are costly and labor-intensive, only few laboratories are currently able to obtain thousands of single cell methylomes.
-To simulate smaller data sets, we thus sub-sampled the 1566-cell data set into smaller data sets, analyzed them with different method combinations, and calculated the mean neighbor score for each (Figure \ref{fig:score}A).
+To simulate smaller data sets, we sub-sampled the 1566-cell data set into smaller data sets, analyzed them with different method combinations, and calculated the mean neighbor score for each (Figure \ref{fig:score}D,E).
 The results demonstrate that the forebrain cell clusters are more cleanly separated when using our proposed methods.
 This performance gain was observed also in smaller data sets, although cell cluster separation generally becomes more difficult in those.
 Both the use of VMRs instead of genomic tiles, as well as the use of the mean shrunken residuals over methylation averages improved cell cluster separation.
+
+We repeated this benchmark on a second data set published by \citet{luo2017single}.
+This data set consists of 3377 single-cell CpG methylomes from the murine frontal cortex, comprising 16 neuronal subtypes.
+The authors annotated cell types based on CH-methylation instead of CpG-methylation, and we used these labels as ground truth (\ref{fig:score_luo}A).
+
 
 
 \subsection{Identification of biologically relevant DMRs}
@@ -548,7 +555,7 @@ To select $n$ intervals for further analysis, the top $n$ intervals were picked 
 For dimensionality reduction, missing values were imputed with the iterative PCA described in the previous section.
 To visualize data, UMAP was performed on the final 15 principal components.
 
-\subsection{Nearest neighbor count score}
+\subsection{Nearest neighbor count score} \label{methods:score}
 To assess performance of our methods, we processed mouse CpG methylation data from \citet{luo2017single} with several method combinations and scored each result.
 The score evaluates the ability of each method combination to separate cell types in 15-dimensional PCA space, based on their CpG methylation.
 Each score varies between 0 and 1, where higher scores reflect better separation.
