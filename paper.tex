@@ -144,32 +144,30 @@ In Figure \ref{fig:smoothres}B, the curved line depicts such an average over all
 We take the lengths of the red lines as signed values (``residual''), positive for lines extending upwards from the curve (methylated CpG) and negative for lines extending downwards (unmethylated CpG), and take the average over the residual for all the CpGs in the interval that are covered by reads from this cell.
 In this average, we perform shrinkage towards zero via a pseudocount (to trade bias for variance, see Methods for detail) in order to dampen the signal in cells with low coverage of the interval.
 
-The average thus obtained is what we use to quantify this cell's (relative) methylation in the interval.
+The average thus obtained, the shrunken mean of the residuals, is what we use to quantify this cell's (relative) methylation in the interval.
 For a genome tiled into such intervals, we thus obtain a matrix, one row per cell, one column per interval, that can be used for downstream analysis, e.g., as input for PCA.
 The signal-to-noise ratio in this matrix will be better than in a matrix obtained by simply averaging absolute methylation (0 or 1) over all the cells' covered CpG sites in a region.
 The reason for this is that we reduce the variation in situations as the one depicted in Figure \ref{fig:smoothres}A, where the methylation of the reads might differ strongly even though there is no actual evidence for a difference between the two cells.
 
-How should one obtain the ensemble average (the curved line in Fig.~\ref{fig:smoothres}B)? A simple approach to get a value for a specific CpG would be to take all cells with read coverage for the CpG and use the fraction of these that show the CpG as methylated.
+How should one obtain the ensemble average (the curved line in Fig.~\ref{fig:smoothres}B)?
+A simple approach to get a value for a specific CpG would be to take all cells with read coverage for the CpG and use the fraction of these that show the CpG as methylated.
 However, especially when only few cells offer coverage, these averages will be very noisy.
 Therefore, we propose to smoothen using a kernel smoother, i.e., by performing a kernel-weighted average over the CpG site's neighborhood.
 The kernel bandwidth (i.e., the size of the neighborhood to average over) is a tuning parameter; for the examples presented here we used 1000~bp.
 
 
 % remove or shorten this section cause it's not really novel, methods like this are already implemented in e.g. the "missMDA" R package
-\subsection{PCA with imputation}
+%\subsection{PCA with imputation}
+%The standard PCA algorithm cannot deal with missing data.
+%Therefore, one would need to make intervals wide enough to ensure that every interval is covered by at least one read for most tiles and discard any interval that is not covered by any single cell.
+%Hence, a naive analysis has to resort to a coarse tiling of the genome.
+%To counter this, we propose a simple and straightforward way to deal with missing data in the input matrix to a PCA: In a first iteration, we replace each missing value in the centered input matrix with zero, then run the PCA.
+%Then, only these zeroes are replaced by the value predicted by the PCA and the PCA is rerun.
+%Convergence is typically achieved after two to five iterations.
+%For details, see Methods.
+%The possibility to perform PCA with missing data allows us to use shorter, and thus more intervals and hence provide the PCA with richer input data.
 
-The standard PCA algorithm cannot deal with missing data.
-Therefore, one would need to make intervals wide enough to ensure that every interval is covered by at least one read for most tiles and discard any interval that is not covered by any single cell.
-Hence, a naive analysis has to resort to a coarse tiling of the genome.
-To counter this, we propose a simple and straightforward way to deal with missing data in the input matrix to a PCA: In a first iteration, we replace each missing value in the centered input matrix with zero, then run the PCA.
-Then, only these zeroes are replaced by the value predicted by the PCA and the PCA is rerun.
-Convergence is typically achieved after two to five iterations.
-For details, see Methods.
-
-
-The possibility to perform PCA with missing data allows us to use shorter, and thus more intervals and hence provide the PCA with richer input data.
-
-\subsection{Finding variably methylated regions (VMRs)}
+\subsection{Finding variably methylated regions}
 
 \begin{figure}
     \includegraphics[width=\columnwidth]{figures/Fig_sliding.png}
@@ -199,7 +197,7 @@ Then, calculate for each of these larger VMRs the methylation signal, as before,
 In this manner, we obtain a methylation matrix, with one row per cell and one column per VMR, that is, in a sense, richer in information and has better signal-to-noise ratio than the matrix obtained by the simple analysis sketched at the very beginning.
 As we demonstrate below, a PCA performed on such a matrix provided a distance metric for the cells that contains more information on biological detail than one from a simpler analysis.
 
-\subsection{Finding differentially methylated regions (DMRs)}
+\subsection{Finding differentially methylated regions}
 
 \begin{figure}
     \includegraphics[width=\columnwidth]{figures/Fig_DMRdetection.png}
@@ -217,32 +215,34 @@ As DNA methylation affects gene expression, DMRs can provide insights into the u
 However, to date no approach to detect DMRs in scBS data has been reported.
 To enable DMR detection in scBS data, we thus developed an approach that detects DMRs of variable size between two groups of cells, and controls the false discovery rate (Fig.~\ref{fig:dmrscan}):
 
-Similar to the previously described VMR identification approach (Fig.~\ref{fig:vmr}), divide each chromosome into overlapping windows shifted by a small and fixed size (step size) and quantify the methylation of each cell in each window as described (Fig.~\ref{fig:smoothres}b).
-Next, instead of calculating the variance, obtain the t-statistic % Welch t-test
+Similar to the previously described VMR identification approach (Fig.~\ref{fig:vmr}), divide each chromosome into overlapping windows shifted by a small and fixed size (step size) and quantify the methylation of each cell in each window.
+Next, instead of the variance, obtain the t-statistic % Welch t-test
 as a measure of differential methylation between the two cell groups.
-Mark the windows with the most extreme t-statistics (e.g. 2\% upper and lower tails) as DMRs.
-Distinguishing between high and low t-statistics, merge any overlapping marked windows into larger DMRs.
-Re-calculate the t-statistic for each larger DMR.
+Identify the windows with the most extreme t-statistics, e.g. windows in the 2\% upper and lower tails.
+Merge any overlapping windows in the upper tail into larger DMRs.
+Repeat for windows in the lower tail, then re-calculate the t-statistic for each larger DMR.
 
-
-
-To assess statistical significance of DMRs, we repeat the same procedure on permutations of the scBS data.
+To assess statistical significance of DMRs, repeat the same procedure on permutations of the scBS data, i.e. the same data set with randomly shuffled cell labels.
 The DMR t-statistics obtained from permuted data are then used to estimate the false-discovery rate (FDR), yielding an adjusted p-value for each DMR.
 
+\subsection{Utility of DMRs and VMRs} % not sure if we need a subsection here
 
-
-\subsection{???}  % guess we have to rewrite this closing paragraph a little bit, to include both DMRs and VMRs
-
-Besides providing better input for the distance calculations, the small size of identified VMRs also means that they can be readily compared with genomic annotation, which aids in their functional interpretation.
-While a large 100~kb tile will often contain multiple genes with distinct expression patterns, small VMRs located in known regulatory elements or gene bodies are more easily associated with individual genes and their associated function.
+While the primary purpose of VMRs is to provide better input for the distance calculations, their small size also means that they can be readily compared with genomic annotation, which aids in their functional interpretation.
+Large 100~kb tiles will often contain multiple genes with distinct expression patterns, small VMRs located in known regulatory elements or gene bodies are more easily associated with individual genes and their associated function.
 Thus, VMRs provide a useful starting point for examining the data with methods from functional genomics.
+To enable a more targeted characterization of 
+The same principles may also be applied to DMRs, thus enabling in-depth characterization of epigenomic and gene regulatory differences between tissues, cell types or conditions.
 
-\section{Benchmarks} % re-name this to something more general? Application and benchmarks or something?
+
+\section{Application and benchmarks}
 
 To demonstrate the value of our proposed improvements, we obtained two previously published scBS data sets and re-analyzed them.
 
 \phantomsection
-\subsection{Correlation with gene expression}
+\subsection{Correlation of VMR methylation with gene expression}
+
+The first data set used to test our methods is a single-cell multi-omics data set generated by \citet{kremer_scnmt}.
+This data set comprises the methylomes of 1566 cells isolated from mouse forebrains, as well as single-cell transcriptomes of the same cells.
 
 The first data set used for benchmarking is a single-cell multi-omics data set generated by \citet{argelaguet2019gastru}.
 In their work, the authors obtained single-cell methylomes of mouse embryo cells across different stages of development (E4.5--E7.5) as well as single-cell transcriptomes from the same cells.
@@ -261,7 +261,7 @@ This effect is also observed when using our proposed measure of methylation, the
     \end{center}
     \caption{\small \textbf{Correlation of DNA methylation and gene expression}.
     \textbf{(A)} Distribution of Pearson correlations between gene expression and promoter methylation (black) and gene expression and methylation of the nearest VMR (red).
-    \textbf{(B)} Correlation of each gene's RNA expression values to methylation (mean shrunken residuals) at promoters (y-axis), or to methylation of the nearest VMR (x-axis).
+    \textbf{(B)} Correlation of each gene's RNA expression values to methylation (shrunken mean of residuals) at promoters (y-axis), or to methylation of the nearest VMR (x-axis).
     Promoters are defined as intervals \textpm2~kb around the TSS.
     \textbf{(C)} Mean methylation near the gene Htra1 (ENSMUSG00000006205).
     Cells are assigned to 4 groups based on Htra1 expression (group 0: cells with no Htra1 expression, groups 1-3: cells that express Htra1, divided into three equally large groups with group 3 having the highest expression).
