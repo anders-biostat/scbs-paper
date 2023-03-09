@@ -90,10 +90,10 @@ In the present paper, we discuss strategies to analyze single-cell bisulfite-seq
     \end{center}
     \caption{\small \textbf{Improved quantification of DNA methylation in genomic intervals:}
     \textbf{(A)} Depicted is a genomic interval along a chromosome, for which DNA methylation is to be quantified.
-Two cells cover differing parts of the interval with one read each.
-If one simply counts for each cell which fraction of the covered CpG sites are methylated, one obtains very different values for the two cells.
+    Two cells cover differing parts of the interval with one read each.
+    If one simply counts for each cell which fraction of the covered CpG sites are methylated, one obtains very different values for the two cells.
     \textbf{(B)} By averaging each CpG site's methylation over all cells and subsequent smoothing, the thick black ``average methylation curve'' is obtained.
-To quantify the methylation of cell 1 from (A) relative to this average over all cells, we propose to use the cell's residuals to the smoothed curve (lengths of the vertical red lines) and take their average, counting residuals of methylated CpGs positive and residuals of unmethylated CpGs negative.}
+    To quantify the methylation of cell 1 from (A) relative to this average over all cells, we propose to use the cell's residuals to the smoothed curve (lengths of the vertical red lines) and take their average, counting residuals of methylated CpGs positive and residuals of unmethylated CpGs negative.}
     \label{fig:smoothres}
 \end{figure*}
 
@@ -172,8 +172,8 @@ The kernel bandwidth (i.e., the size of the neighborhood to average over) is a t
 \begin{figure}
     \includegraphics[width=\columnwidth]{figures/Fig_sliding.png}
     \caption{\small \textbf{Finding variably methylated regions (VMRs):} The chromosomes are divided up into overlapping windows (first five shown at the bottom), and for each window, the cells' methylation values are calculated as described and as depicted in Fig.~\ref{fig:smoothres}B.
-Then, the variance of these values is calculated (each point represents one of the overlapping windows), a threshold (dashed line) is chosen such that a chosen quantile of windows have a variance exceeding the threshold.
-Windows with above-threshold variance are merged if they overlap, yielding the ``variably methylated regions''.}
+    Then, the variance of these values is calculated (each point represents one of the overlapping windows), a threshold (dashed line) is chosen such that a chosen quantile of windows have a variance exceeding the threshold.
+    Windows with above-threshold variance are merged if they overlap, yielding the ``variably methylated regions''.}
     \label{fig:vmr}
 \end{figure}
 
@@ -268,19 +268,21 @@ While the promoter of this gene is lowly methylated regardless of gene expressio
 
 \subsection{Effects of our methods on cell type identification}
 
-\begin{figure}
+\begin{figure*}[t]
     \begin{center}
-        \includegraphics[width=\columnwidth]{figures/Fig_benchmark.png}
+        \includegraphics[width=0.8\textwidth]{figures/Fig_benchmark.png}
     \end{center}
     \caption{\small \textbf{Benchmark of our methods on single-cell multi-omic data of cells of the murine forebrain}.
-    \textbf{(A)} Mean neighbor score obtained when analyzing data from \citet{kremer_scnmt} with different combinations of methods.
+    \textbf{(A)} Cell labels based on clustering of single-cell transcriptomes from \citet{kremer_scnmt}.
+    \textbf{(B, C)} Exemplary UMAPs obtained when analyzing the data set with our proposed methods (B) or conventional methods based on genome tiling (C).
+    \textbf{(D, E)} Mean neighbor score \textbf{(D)} obtained after analysing single-cell methylomes with different combinations of methods.
     Either 100~kb genomic tiles or VMRs were subjected to PCA and UMAP.
-    Tiles or VMRs were pre-processed as proposed in this work (shrunken mean of residuals subjected to iterative PCA, labeled "pre-processing: ours") or using conventional methods (PCA on lightly imputed methylation fractions, based on \citep{luo2017single}).
+    Tiles or VMRs were pre-processed as proposed in this work (shrunken mean of residuals subjected to iterative PCA, labeled "pre-processing: ours") or using conventional methods (PCA on lightly imputed methylation percentages, based on \citep{luo2017single}).
     The full 1566-cell data set was sub-sampled to simulate smaller data sets (x axis).
-    A higher neighbor score implies better separation of cell types inferred from single-cell transcriptomes of the same cells \textbf{(B)}.
-    \textbf{(C, D)} Exemplary UMAPs obtained when analyzing the data set with our proposed methods (C) or conventional methods based on genome tiling (D).}
+    A higher neighbor score implies better separation of cell types inferred from single-cell transcriptomes of the same cells \textbf{(A)}.
+    }
     \label{fig:score}
-\end{figure}
+\end{figure*}
 
 To assess the impact of our proposed methods, we next tested whether our methods improve the ability to distinguish cell types and cell states (Fig.~\ref{fig:score}).
 To this end, we obtained cluster labels based on the single-cell transcriptomes from \citet{kremer_scnmt} (Fig.~\ref{fig:score}A).
@@ -304,6 +306,16 @@ We repeated this benchmark on a second data set published by \citet{luo2017singl
 This data set consists of 3377 single-cell CpG methylomes from the murine frontal cortex, comprising 16 neuronal subtypes.
 The authors annotated cell types based on CH-methylation instead of CpG-methylation, and we used these labels as ground truth (\ref{fig:score_luo}A).
 
+
+\begin{figure}
+    \begin{center}
+        \includegraphics[width=0.9\columnwidth]{figures/SFig_benchmark.png}
+    \end{center}
+    \caption{\small \textbf{Benchmark of our methods on single-cell methylomes of neural subtypes of the murine frontal cortex}.
+    Our methods were benchmarked on single-cell methylomes from \citet{luo2017single} as described in Fig.~\ref{fig:score}.
+    }
+    \label{fig:score_luo}
+\end{figure}
 
 
 \subsection{Identification of biologically relevant DMRs}
