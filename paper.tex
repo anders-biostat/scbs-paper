@@ -304,21 +304,13 @@ Both the use of VMRs instead of genomic tiles, as well as the use of the mean sh
 
 We repeated this benchmark on a second data set published by \citet{luo2017single}.
 This data set consists of 3377 single-cell CpG methylomes from the murine frontal cortex, comprising 16 neuronal subtypes.
-The authors annotated cell types based on CH-methylation instead of CpG-methylation, and we used these labels as ground truth (\ref{fig:score_luo}A).
+The authors annotated cell types based on CH-methylation instead of CpG-methylation.
+Using these labels as ground truth we re-analyzed the full and sub-sampled data set with four methods combinations and found that our suggested methods consistently outperformed default methods (Fig.~\ref{fig:score_luo}).
 
+\section{note to Simon: this is how far I got}   % todo rm
 
-\begin{figure}
-    \begin{center}
-        \includegraphics[width=0.9\columnwidth]{figures/SFig_benchmark.png}
-    \end{center}
-    \caption{\small \textbf{Benchmark of our methods on single-cell methylomes of neural subtypes of the murine frontal cortex}.
-    Our methods were benchmarked on single-cell methylomes from \citet{luo2017single} as described in Fig.~\ref{fig:score}.
-    }
-    \label{fig:score_luo}
-\end{figure}
-
-
-\subsection{Identification of biologically relevant DMRs}
+\phantomsection
+\subsection{Detecting DMRs between oligodendrocytes and neuroblasts}
 
 \begin{figure*}[t]
     \begin{center}
@@ -335,7 +327,9 @@ The left side shows GO-terms for genes near the 3000 most significant neuroblast
     \label{fig:dmr}
 \end{figure*}
 
-As a demonstration and to assess the ability of the presented approach to detect relevant DMRs, the method was used to find regions differing in CpG methylation between vSVZ neuroblasts and oligodendrocytes.
+
+Next, we used the single-cell multi-omics data set \citep{kremer_scnmt} to assess the ability of our DMR detection approach.
+We first selected two cell populations from the murine ventricular-subventricular zone, neuroblasts and oligodendrocytes, and then used the method depicted in Fig.~\ref{fig:dmrscan} to identify regions with differing methylation.
 Fig.~\ref{fig:dmr} gives an overview of all identified DMRs and the relation of the adjusted p-value to the number of cells included in a DMR, and the difference in methylation between the cell types.
 Logically, if a DMR contains few cells, the methylation difference between cell types must be higher to obtain a low (and thus more significant) p-value.
 A low p-value is maintained, although the methylation difference decreases if the number of cells in the DMR increases.
@@ -426,6 +420,24 @@ In addition, by pinpointing exact regions of interest, the VMR functionality pro
 Depending on the research question at hand, individual VMRs can be related to nearby genomic features such as gene bodies or known regulatory elements, tested for methylation differences between groups of cells, or subjected to gene ontology enrichment or motif enrichment.
 
 In conclusion, we have presented powerful improvements to scBS data preprocessing and a software tool that implements these and bridges a gap in existing tool chains.
+
+
+\section{Supplementary Figures}
+
+\setcounter{figure}{0}
+%\renewcommand{\figurename}{Supplementary Figure}
+\renewcommand{\thefigure}{S\arabic{figure}}
+
+\begin{figure}
+    \begin{center}
+        \includegraphics[width=0.9\columnwidth]{figures/SFig_benchmark.png}
+    \end{center}
+    \caption{\small \textbf{Benchmark of our methods on single-cell methylomes of neural subtypes of the murine frontal cortex}.
+    Our methods were benchmarked on single-cell methylomes from \citet{luo2017single} as described in Fig.~\ref{fig:score}.
+    }
+    \label{fig:score_luo}
+\end{figure}
+
 
 
 \vspace{1.4ex}
