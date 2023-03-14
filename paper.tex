@@ -400,8 +400,6 @@ The package is available on the Python Package Index (PyPI) and can be installed
 The source code is hosted at \href{https://github.com/LKremer/scbs}{https://github.com/LKremer/scbs}, where we also provide detailed documentation including a tutorial that demonstrates a complete \texttt{scbs} analysis on an example data set.
 
 
-\section{note to Simon: this is how far I got}   % todo rm
-
 \section{Discussion and Conclusion}
 
 Here, we have proposed an improved strategy to preprocess single-cell bisulfite sequencing data.
@@ -409,15 +407,20 @@ Based on the observation that incomplete read coverage of a genomic interval can
 
 Furthermore, we show a way to pinpoint minimal regions of high variability across cells, which we call variably methylated regions (VMRs).
 By re-analyzing two published data sets, we could show that these improvements to data preprocessing help to increase signal and decrease noise, resulting in a more informative intermediate-dimensional representation of the data.
-As examples of practical benefits, we demonstrate that our preprocessing allows for better distinction of cell sub-types, especially for smaller data sets with a limited number of cells.
-In addition to this improvement of global signal-to-noise ratio (with regards to cell dissimilarity quantification), we also show that the determination of VMRs improve biological interpretability by pinpointing the regions that actually change and hence have a putative regulatory role.
+As examples of practical benefits, we demonstrate that our preprocessing allows for better distinction of cell sub-types, especially for challenging data sets comprising cellular sub-states and lineage transitions.
+
+To furthermore aid interpretation of scBS data, we developed and implemented the first single-cell DMR detection algorithm.
+FDR estimation via permutation allows us to report statistical significance of each DMR.
+% maybe here discuss pseudoreplication issues?
+Applying our approach to NSCs and oligodendrocytes demonstrated that the obtained DMRs locate near meaningful loci associated with cell-type specific functions.
+Thus, our method aids biological interpretability by pinpointing the regions that differ between groups of cells and hence have a putative regulatory role.
 
 We also presented and published an open source software tool, called \texttt{scbs}, that provides an easy-to-use implementation of the described algorithms.
 The package also offers functionality for all other steps of data preprocessing that are needed to get from the output of methylation callers such as Bismark and methylpy to a cell\texttimes region matrix that is suitable as input for standard analysis tools that work in a reduced-dimensionality setting, thus allowing the user to use, e.g., well established tools from scRNA-seq analysis, including visualization tools such as t-SNE and UMAP, Leiden/Louvain clustering, pseudotime trajectory analyses, etc.
 By offering these functions, \texttt{scbs} bridges a gap in the chain of existing tools that so far hindered practitioners in their data analysis.
 
-In addition, by pinpointing exact regions of interest, the VMR functionality provides useful input for genomics-style analyses.
-Depending on the research question at hand, individual VMRs can be related to nearby genomic features such as gene bodies or known regulatory elements, tested for methylation differences between groups of cells, or subjected to gene ontology enrichment or motif enrichment.
+In addition, by pinpointing exact regions of interest, the VMR and DMR functionalities provide useful input for genomics-style analyses.
+Depending on the research question at hand, individual DMRs can be related to nearby genomic features such as gene bodies or known regulatory elements, tested for methylation differences between groups of cells, or subjected to gene ontology enrichment or motif enrichment.
 
 In conclusion, we have presented powerful improvements to scBS data preprocessing and a software tool that implements these and bridges a gap in existing tool chains.
 
@@ -451,7 +454,7 @@ L.\ P.\ M.\ K., L.\ K., S.\ C.\ and A.\ M.-V.\ acknowledge funding from the Euro
 We thank Alexey Uvarovskii for code refactoring and helpful suggestions on the source code.
 
 \phantomsection
-\section{Methods}
+\section{Methods (note to Simon: didnt go through this yet)}  % todo rm
 
 \phantomsection
 \subsection{Raw data}
@@ -477,8 +480,7 @@ $$ G_j=\{i: x_{ij}\neq\text{NA}\}.$$
 
 \subsection{Data storage}
 
-The function \texttt{scbs prepare} reads a set of methylation files (e.g.
-produced by Bismark) and produces a file that stores the matrix $x$ in a space-efficient format, as follows: $x$ is represented as a SciPy sparse matrix \citep{SciPy}, encoding the actual values 0, 1, and NA as -1, 1, and 0, respectively.
+The function \texttt{scbs prepare} reads a set of methylation files (e.g. produced by Bismark) and produces a file that stores the matrix $x$ in a space-efficient format, as follows: $x$ is represented as a SciPy sparse matrix \citep{SciPy}, encoding the actual values 0, 1, and NA as -1, 1, and 0, respectively.
 Coding NA (the most common value) as 0 leverages SciPy's sparse matrix storage.
 In all the follows here, any mention of $x$ will, however, always mean the encoding as $x_{ij}\in\{0,1,\text{NA}\}$.
 
