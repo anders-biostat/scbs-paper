@@ -88,7 +88,7 @@ In the present paper, we discuss strategies to analyze single-cell bisulfite-seq
     \begin{center}
         \includegraphics[width=0.7\textwidth]{figures/Fig_residuals_AB.png}\\
     \end{center}
-    \caption{\small \textbf{Improved quantification of DNA methylation in genomic intervals:}
+    \caption{\small \textbf{Improved quantification of DNA methylation in genomic intervals.}\\
     \textbf{(A)} Depicted is a genomic interval along a chromosome, for which DNA methylation is to be quantified.
     Two cells cover differing parts of the interval with one read each.
     If one simply counts for each cell which fraction of the covered CpG sites are methylated, one obtains very different values for the two cells.
@@ -173,9 +173,10 @@ The kernel bandwidth (i.e., the size of the neighborhood to average over) is a t
     \begin{center}
     \includegraphics[width=0.85\columnwidth]{figures/Fig_sliding.png}
     \end{center}
-    \caption{\small \textbf{Finding variably methylated regions (VMRs):} The chromosomes are divided up into overlapping windows (first five shown at the bottom), and for each window, the cells' methylation values are calculated as described and as depicted in Fig.~\ref{fig:smoothres}B.
+    \caption{\small \textbf{Finding variably methylated regions.}\\
+    The chromosomes are divided up into overlapping windows (first five shown at the bottom), and for each window, the cells' methylation values are calculated as described and as depicted in Fig.~\ref{fig:smoothres}B.
     Then, the variance of these values is calculated (each point represents one of the overlapping windows), a threshold (dashed line) is chosen such that a chosen quantile of windows have a variance exceeding the threshold.
-    Windows with above-threshold variance are merged if they overlap, yielding the ``variably methylated regions''.}
+    Windows with above-threshold variance are merged if they overlap, yielding the ``variably methylated regions'' (VMRs).}
     \label{fig:vmr}
 \end{figure}
 
@@ -205,12 +206,12 @@ To enable PCA in the presence of missing values, we propose to use a simple iter
 
 \begin{figure}
     \includegraphics[width=\columnwidth]{figures/Fig_DMRdetection.png}
-    \caption{\small \textbf{Identification of differentially methylated regions (DMRs):}
+    \caption{\small \textbf{Identification of differentially methylated regions.}\\
     The chromosome is divided into windows overlapping by a small and fixed size.
     For each window, the cell’s methylation values are calculated as described and as depicted in Fig.~\ref{fig:smoothres}B.
     Then the t-statistic of these values is obtained as a measure of methylation difference (each point represents one of the windows).
     Upper and lower thresholds (dashed lines) are chosen such that a defined quantile of windows have a t-statistic above or below the threshold.
-    Windows exceeding either threshold are merged if they overlap, yielding the ``differentially methylated regions``.}
+    Windows exceeding either threshold are merged if they overlap, yielding the differentially methylated regions (DMRs).}
     \label{fig:dmrscan}
 \end{figure}
 
@@ -257,7 +258,7 @@ While the promoter of this gene is lowly methylated regardless of gene expressio
     \begin{center}
     \includegraphics[width=.95\columnwidth]{figures/Fig_correlation.png}
     \end{center}
-    \caption{\small \textbf{Correlation of DNA methylation and gene expression}.
+    \caption{\small \textbf{Correlation of DNA methylation and gene expression}.\\
     \textbf{(A)} Distribution of Pearson correlations between gene expression and promoter methylation (black) and gene expression and methylation of the nearest VMR (red).
     \textbf{(B)} Correlation of each gene's RNA expression values to methylation (shrunken mean of residuals) at promoters (y-axis), or to methylation of the nearest VMR (x-axis).
     Promoters are defined as intervals \textpm2~kb around the TSS.
@@ -268,13 +269,13 @@ While the promoter of this gene is lowly methylated regardless of gene expressio
 \end{figure}
 
 
-\subsection{Effects of our methods on cell type identification}
+\subsection{Our proposed methods improve identification of cell types}
 
 \begin{figure*}[t]
     \begin{center}
         \includegraphics[width=0.8\textwidth]{figures/Fig_benchmark.png}
     \end{center}
-    \caption{\small \textbf{Benchmark of our methods on single-cell multi-omic data of cells of the murine forebrain}.
+    \caption{\small \textbf{Benchmark of our methods on single-cell multi-omic data of cells of the murine forebrain}.\\
     \textbf{(A)} Cell labels based on clustering of single-cell transcriptomes from \citet{kremer_scnmt}.
     \textbf{(B, C)} Exemplary UMAPs obtained when analyzing the data set with our proposed methods (B) or conventional methods based on genome tiling (C).
     \textbf{(D, E)} Mean neighbor score \textbf{(D)} obtained after analysing single-cell methylomes with different combinations of methods.
@@ -318,13 +319,14 @@ Using these labels as ground truth we re-analyzed the full and sub-sampled data 
     \begin{center}
         \includegraphics[width=.7\textwidth]{figures/Fig_DMRs.png}
     \end{center}
-    \caption{\small \textbf{identified neuroblast and oligodendrocyte DMRs have a putative regulatory role:} \textbf{(A)} Difference in methylation between oligodendrocytes and neuroblasts of DMRs plotted against the number of cells contained in a DMR.
-Colored by p-value.
-\textbf{(B)} Mean methylation of cells in the DMR covering MBP.
-Line indicates median.
-\textbf{(C)} Mean methylation of reads at individual sites along the DMR covering MBP.
-\textbf{(D)} GREAT \citet{mclean2010great} was used for GO-term analysis.
-The left side shows GO-terms for genes near the 3000 most significant neuroblast DMRs sorted by GO-enrichment p-value and t-statistic (green arrow) and the right side for oligodendrocyte DMRs (yellow arrow) respectively.
+    \caption{\small \textbf{Detection of differentially methylated regions between neural stem cells and oligodendrocytes.}\\
+    \textbf{(A)} DMRs detected between neural stem cells (NSCs) and oligodendrocytes (ODs) from \citep{kremer_scnmt} (top) and DMRs detected in the same data with randomly permuted cell labels (bottom, used to estimate FDR and determine adjusted p-values).
+    \textbf{(B)} Enrichment of GO terms associated with DMRs lowly methylated in ODs (top) or NSCs (bottom).
+    Depicted are the top 5 GO terms of the "Biological Process" (GO:BP) and "Cellular Component" (GO:CC) GO category, and their binomial test p-value and enrichment, as reported by GREAT \citep{mclean2010great}.
+    \textbf{(C)} Mean methylation of NSCs and ODs at an exemplary DMR.
+    Each point corresponds to a cell, black lines denote the median.
+    \textbf{(D)} Detailed view of the DMR (yellow dashed rectangle) from \textbf{C} in pseudo-bulk samples consisting of NSCs or ODs.
+    Vertical bars represent CpG sites.
     }
     \label{fig:dmr}
 \end{figure*}
@@ -355,7 +357,7 @@ Therefore, DMRs occur in the proximity of genes associated with oligodendrocyte 
     \begin{center}
         \includegraphics[width=.8\textwidth]{figures/Fig_workflow.png}
     \end{center}
-    \caption{\small \textbf{Overview of the functionalities implemented in the \texttt{scbs} package.}
+    \caption{\small \textbf{Overview of the functionalities implemented in the \texttt{scbs} package.}\\
         \texttt{scbs prepare} parses methylation files produced by common bisulfite sequencing mappers and stores their contents in a compressed format optimised for efficient access to genomic intervals.
         \texttt{scbs} also produces cell-wise summary statistics and quality plots (here: average methylation around the transcription start site) that are used to detect low-quality cells.
         These cells can be discarded with \texttt{scbs filter}.
@@ -430,11 +432,11 @@ In conclusion, we have presented powerful improvements to scBS data preprocessin
 %\renewcommand{\figurename}{Supplementary Figure}
 \renewcommand{\thefigure}{S\arabic{figure}}
 
-\begin{figure}
+\begin{figure}[h]
     \begin{center}
         \includegraphics[width=0.9\columnwidth]{figures/SFig_benchmark.png}
     \end{center}
-    \caption{\small \textbf{Benchmark of our methods on single-cell methylomes of neural subtypes of the murine frontal cortex}.
+    \caption{\small \textbf{Benchmark of our methods on single-cell methylomes of neural subtypes of the murine frontal cortex}.\\
     Our methods were benchmarked on single-cell methylomes from \citet{luo2017single} as described in Fig.~\ref{fig:score}.
     }
     \label{fig:score_luo}
