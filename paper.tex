@@ -170,7 +170,9 @@ The kernel bandwidth (i.e., the size of the neighborhood to average over) is a t
 \subsection{Finding variably methylated regions}
 
 \begin{figure}
-    \includegraphics[width=\columnwidth]{figures/Fig_sliding.png}
+    \begin{center}
+    \includegraphics[width=0.85\columnwidth]{figures/Fig_sliding.png}
+    \end{center}
     \caption{\small \textbf{Finding variably methylated regions (VMRs):} The chromosomes are divided up into overlapping windows (first five shown at the bottom), and for each window, the cells' methylation values are calculated as described and as depicted in Fig.~\ref{fig:smoothres}B.
     Then, the variance of these values is calculated (each point represents one of the overlapping windows), a threshold (dashed line) is chosen such that a chosen quantile of windows have a variance exceeding the threshold.
     Windows with above-threshold variance are merged if they overlap, yielding the ``variably methylated regions''.}
@@ -205,7 +207,7 @@ To enable PCA in the presence of missing values, we propose to use a simple iter
     \includegraphics[width=\columnwidth]{figures/Fig_DMRdetection.png}
     \caption{\small \textbf{Identification of differentially methylated regions (DMRs):}
     The chromosome is divided into windows overlapping by a small and fixed size.
-    For each window, the cell’s methylation values are calculated as described and as depicted in Fig.~ \ref{fig:smoothres}B.
+    For each window, the cell’s methylation values are calculated as described and as depicted in Fig.~\ref{fig:smoothres}B.
     Then the t-statistic of these values is obtained as a measure of methylation difference (each point represents one of the windows).
     Upper and lower thresholds (dashed lines) are chosen such that a defined quantile of windows have a t-statistic above or below the threshold.
     Windows exceeding either threshold are merged if they overlap, yielding the ``differentially methylated regions``.}
@@ -314,7 +316,7 @@ Using these labels as ground truth we re-analyzed the full and sub-sampled data 
 
 \begin{figure*}[t]
     \begin{center}
-        \includegraphics[width=.8\textwidth]{figures/Fig_DMRs.png}
+        \includegraphics[width=.7\textwidth]{figures/Fig_DMRs.png}
     \end{center}
     \caption{\small \textbf{identified neuroblast and oligodendrocyte DMRs have a putative regulatory role:} \textbf{(A)} Difference in methylation between oligodendrocytes and neuroblasts of DMRs plotted against the number of cells contained in a DMR.
 Colored by p-value.
