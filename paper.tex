@@ -443,12 +443,13 @@ In conclusion, we have presented powerful improvements to scBS data preprocessin
 
 \begin{figure}[h]
     \begin{center}
-        \includegraphics[width=0.9\columnwidth]{figures/SFig_benchmark.png}
+        \includegraphics[width=\columnwidth]{figures/SFig_parameter_sweep.png}
     \end{center}
-    \caption{\small \textbf{Benchmark of our methods on single-cell methylomes of neural subtypes of the murine frontal cortex}.\\
-    Our methods were benchmarked on single-cell methylomes from \citet{luo2017single} as described in Fig.~\ref{fig:score}.
+    \caption{\small \textbf{Effect of VMR detection parameters on separation of cell types}.\\
+    \texttt{(A - B)} Neighbor score obtained after analyzing single-cell methylomes from \citet{kremer_scnmt} (\textbf{A}) or \citettt{luo2017single} (\textbf{B}) with our proposed methods.
+    VMRs were detected with \citettt{scbs scan} using various sliding window bandwidths (\citettt{--bandwidth} parameter) or variance thresholds (\citettt{--var-threshold} parameter).
     }
-    \label{fig:score_luo}
+    \label{fig:sweep}
 \end{figure}
 
 
