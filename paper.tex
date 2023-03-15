@@ -303,7 +303,7 @@ Since scBS protocols are costly and labor-intensive, only few laboratories are c
 To simulate smaller data sets, we sub-sampled the 1566-cell data set into smaller data sets, analyzed them with different method combinations, and calculated the mean neighbor score for each (Figure \ref{fig:score}D,E).
 The results demonstrate that the forebrain cell clusters are more cleanly separated when using our proposed methods.
 This performance gain was observed also in smaller data sets, although cell cluster separation generally becomes more difficult in those.
-Both the use of VMRs instead of genomic tiles, as well as the use of the mean shrunken residuals over methylation averages improved cell cluster separation.
+Both the use of VMRs instead of genomic tiles, as well as the use of the shrunken mean of the residuals over methylation averages improved cell cluster separation.
 
 We repeated this benchmark on a second data set published by \citet{luo2017single}.
 This data set consists of 3377 single-cell CpG methylomes from the murine frontal cortex, comprising 16 neuronal subtypes.
@@ -441,6 +441,15 @@ In conclusion, we have presented powerful improvements to scBS data preprocessin
     \label{fig:score_luo}
 \end{figure}
 
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[width=0.9\columnwidth]{figures/SFig_benchmark.png}
+    \end{center}
+    \caption{\small \textbf{Benchmark of our methods on single-cell methylomes of neural subtypes of the murine frontal cortex}.\\
+    Our methods were benchmarked on single-cell methylomes from \citet{luo2017single} as described in Fig.~\ref{fig:score}.
+    }
+    \label{fig:score_luo}
+\end{figure}
 
 
 \vspace{1.4ex}
@@ -559,7 +568,7 @@ Thus, the matrix of PC scores can be used as input to dimension reduction method
 \subsection{PCA with imputation}
 
 Whenever a region is not covered by any read in a cell, the corresponding data entry in the input data matrix for PCA will be missing.
-The standard approach to calculate PCA (commonly done using the IRLBA algorithm, \citep{Baglama2005}) is not suited to deal with missing data.
+The standard approach to calculate PCA, commonly done using the IRLBA algorithm \citep{Baglama2005}, is not suited to deal with missing data.
 We circumvent this issue by simply using the PCA itself to impute the missing value.
 
 Let us write $A$ for the matrix to which the PCA is to be applied, with the features (here: regions) represented by the matrix rows.
@@ -570,11 +579,14 @@ To reconstruct the input data $A$ from the PCA representation, one may use $A=XR
 
 Our iterative imputation strategy is now simply the following: we first replace all missing values in the row-centered input matrix $A$ with zeroes and perform the (truncated) PCA.
 Then, we use the PCA predictions for the missing values, i.e., the $a_{ij}=\sum_r x_{ir} r_{jr}$, as refined stand-ins for the missing values in $A$ and run PCA once more.
-This can now be iterated until convergence, which is typically achieved after at most 4--5 rounds of PCA.
+This can now be iterated until convergence.
 
 \subsection{Re-analysis of published scBS datasets}
-To re-analyze scBS data sets by \citet{luo2017single} and \citet{argelaguet2019gastru}, the genome was first annotated with genomic intervals that were either obtained by tiling the genome into non-overlapping 100~kb tiles, or by acquiring VMRs with \texttt{scbs scan} using the current default options (bandwidth $=2000$, stepsize $=10$, variance threshold $= 2\%$).
-For all regions (VMRs and 100~kb tiles), the mean methylation fractions and the shrunken means of residuals were obtained with \texttt{scbs matrix}.
+To re-analyze scBS data sets by \citet{kremer_scnmt} and \citet{luo2017single}, the genome was first annotated with genomic intervals that were either obtained by tiling the genome into non-overlapping 100~kb tiles, or by acquiring VMRs with \texttt{scbs scan} using the current default options (bandwidth $=2000$, stepsize $=10$, variance threshold $= 2\%$).
+For all regions (VMRs and 100~kb tiles), the mean methylation fractions and the shrunken means of the residuals were obtained with \texttt{scbs matrix}.
+
+
+
 Regions containing less than four measured CpGs, or that were measured in less than 10\% of cells, were discarded.
 To select $n$ intervals for further analysis, the top $n$ intervals were picked based on the number of cells that the region was measured in.
 
