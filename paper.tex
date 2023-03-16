@@ -61,7 +61,7 @@ Analyzing the big data sets thus obtained requires preprocessing to reduce data 
 Typically, this is simply done by dividing the genome into large tiles and averaging in these.
 We show that this coarse-graining dilutes signal, and suggest improved approaches to determine more informative regions to quantify methylation in, and a better quantitation method than simple averaging.
 We demonstrate how our approach enables better distinguishing of cell types and reduces demands on cell number.
-We also implement an approach to detect differentially methylated regions (DMRs) between groups of cells.
+We also implement an approach to detect differentially methylated regions (DMRs) between groups of cells, and demonstrate its ability to detect biologically meaningful regions near 
 Finally, we present a software tool, \texttt{scbs}, that implements these methods and offers further functionality required to work with scBS data.
 \end{minipage}
 \vspace{6.5ex}
@@ -106,7 +106,7 @@ of counts of distinct RNA molecules), one row for each cell and one column for e
 A first goal is usually to assign cell types or states to cells.
 To this end, one needs to establish which cells are similar to each other, i.e., quantify the distance (i.e., dissimilarity) between any two given cells' transcriptional profile.
 A standard approach, used with minor variation in virtually all recent research and automated by popular software such as Seurat \citep{Hao_2021} or ScanPy \citep{Wolf_2018}, is as follows: One first accounts for cell-to-cell variation in sequencing depth by dividing each UMI count by the respective cell's total UMI count, then transforms to a homoskedastic scale by taking the logarithm.
-\textbf{In order to avoid matrix elements with zero count to be transformed to minus infinity, one typically adds a very small ``pseudocount'' (often $10^{-4}$) to the normalized fractions before taking the logarithm.}  % is this even correct?
+In order to avoid matrix elements with zero count to be transformed to minus infinity, one typically adds a very small ``pseudocount'' (often $10^{-4}$) to the normalized fractions before taking the logarithm \todo{is this even correct?}.
 Now, one could use Euclidean distances of these vectors of logarithmized fractions as dissimilarity score.
 However, these scores would be exceedingly noisy due to the strong Poisson noise introduced by the many genes with very low counts.
 Therefore, one performs a principal component analysis (PCA), keeping only the top few (typically, 20 to 50) components.
@@ -264,7 +264,7 @@ While the promoter of this gene is lowly methylated regardless of gene expressio
     \textbf{(A)} Distribution of Pearson correlations between gene expression and promoter methylation (black) and gene expression and methylation of the nearest VMR (red).
     \textbf{(B)} Correlation of each gene's RNA expression values to methylation (shrunken mean of residuals) at promoters (y-axis), or to methylation of the nearest VMR (x-axis).
     Promoters are defined as intervals \textpm2~kb around the TSS.
-    \textbf{(C)} Mean methylation near the gene Htra1 (ENSMUSG00000006205).
+    \textbf{(C)} \todo{plot this as discussed, as in Fig.~6D} Mean methylation near the gene Htra1 (ENSMUSG00000006205).
     Cells are assigned to 4 groups based on Htra1 expression (group 0: cells with no Htra1 expression, groups 1-3: cells that express Htra1, divided into three equally large groups with group 3 having the highest expression).
     Data from \citet{kremer_scnmt}.}
     \label{fig:correlation}
@@ -447,7 +447,7 @@ We thank Alexey Uvarovskii for code refactoring and helpful suggestions on the s
 
 
 \phantomsection
-\section{Methods (note to Simon: didnt go through this yet)}  % todo rm
+\section{Methods}
 
 \phantomsection
 \subsection{Raw data}
@@ -483,8 +483,6 @@ For each CpG position $i$, we write
 $$\overline{x}_i=\langle x_{ij} \rangle_{j\in C_i} = \frac{1}{|C_i|}\sum_{j\in C_i} x_{ij}$$ 
 for the average methylation at position $i$, where $\langle\cdot\rangle$ denotes averaging, and the average runs over all the cells $j\in C_i$, i.e.
 over those cells for which methylation data is available for position $i$.
-
-%\todo{NOTE: Here, we could already do shrinkage and use $\frac{1}{|C_i|+1}\sum_i x_{ij}$ instead. But we don't do that, right?}
 
 We then run a kernel smoother over these per-position averages to obtain the smoothed averages $\tilde x_i$.
 Specifically, we use
@@ -568,10 +566,10 @@ Then, we use the PCA predictions for the missing values, i.e., the $a_{ij}=\sum_
 This can now be iterated until convergence.
 
 \subsection{Re-analysis of published scBS datasets}
-To re-analyze scBS data from \citet{kremer_scnmt}, single-cell CpG methylation reports were first stored with \texttt{scbs prepare} and then smoothed with \texttt{scbs smooth} using the default bandwidth of 1000~bp.
+To re-analyze scBS data from \citet{kremer_scnmt}, single-cell CpG methylation reports from all conditions were first stored with \texttt{scbs prepare} and then smoothed with \texttt{scbs smooth} using the default bandwidth of 1000~bp.
 The mm10 mouse genome was then annotated with genomic intervals that were either obtained by tiling the genome into non-overlapping 100~kb tiles, or by acquiring VMRs with \texttt{scbs scan} using the current default options (bandwidth $=2000$, stepsize $=10$, variance threshold $= 0.02$, minimum cell requirement $=6$).
 Methylation fractions, commonly represented as percentages, and the shrunken means of residuals were quantified with \texttt{scbs matrix} for both VMRs and tiles.
-The same analysis was repeated for scBS data from \citet{luo2017single}, and for smaller data sets generated by randomly sub-sampling cells separately from both data sets.
+The same analysis was repeated for mouse scBS data from \citet{luo2017single}, and for smaller data sets generated by randomly sub-sampling cells separately from both data sets.
 For each data set, we thus obtained four methylation matrices:
 either 100~kb tiles or VMRs, quantified either by simple averaging (methylation fractions) or with the shrunken mean of the residuals.
 All four matrices were then subjected to PCA.
@@ -590,6 +588,18 @@ The score, based on the $\Gamma$-score \citep{Kireeva_2014}, varies between 0 an
 For each cell $j$, we count how many of its $k$ nearest neighbors have been assigned to the same cell type as cell $j$.
 We denote this count $a^k_j$, where we have chosen $k=\frac{\sqrt{n}}{1.5}$.
 The overall score used to evaluate a given combination of methods is then simply the mean of all cell-wise scores.
+
+\subsection{Correlation of DNA methylation and gene expression}
+To assess correlation between gene expression and the methylation status of VMRs or promoters, we
+first detected VMRs with \texttt{scbs scan --bandwidth 1000 --var-treshold 0.05}.
+We then quantified DNA methylation at VMRs and promoters with \citettt{scbs matrix}.
+We defined promoters as $\pm2000$~bp regions centered on a genes transcription start site (TSS).
+When multiple TSSs were annotated, we chose the TSS of the "principal" isoform \citep{appris}.
+Log-normalized expression values reported by \citet{kremer_scnmt} were then correlated with methylation of the genes promoter, or with methylation of the VMR closest to the gene body.
+When multiple VMRs intersected the gene body, we chose the VMR with the highest methylation variance.
+As a measure of methylation we used the shrunken mean of the residuals.
+We omitted lowly expressed genes (with scRNA-seq counts in $\lt5\%$ of cells) and promoters and VMRs with low scBS coverage (in $\lt10$ cells).
+
 
 
 
