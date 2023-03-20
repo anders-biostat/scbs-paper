@@ -127,6 +127,7 @@ While this simple procedure is straight-forward and produces satisfactory result
 Here, we propose three improvements that, as we show afterwards, considerably increase the information content of the processed data.
 We will first explain the proposed improvement in a qualitative manner, while mathematical details are given later in the Methods section.
 Then, we will demonstrate the improvement using benchmarks.
+Finally, we describe an approach to detect differentially methylated regions (DMRs) in scBS data, and showcase it on real data.
 
 \section{Improved processing of scBS data}
 
@@ -232,12 +233,7 @@ Repeat for windows in the lower tail, then re-calculate the t-statistic for each
 To assess statistical significance of DMRs, repeat the same procedure on permutations of the scBS data, i.e. the same data set with randomly shuffled cell labels.
 The DMR t-statistics obtained from permuted data are then used to estimate the false-discovery rate (FDR), yielding an adjusted p-value for each DMR.
 
-\subsection{Utility of DMRs and VMRs} % not sure if we need a subsection here
-
-While the primary purpose of VMRs is to provide better input for the distance calculations, their small size also means that they can be readily compared with genomic annotation, which aids in their functional interpretation.
-Large 100~kb tiles will often contain multiple genes with distinct expression patterns, small VMRs located in known regulatory elements or gene bodies are more easily associated with individual genes and their associated function.
-Thus, VMRs provide a useful starting point for examining the data with methods from functional genomics.
-To enable a targeted characterization of epigenomic and gene regulatory differences between conditions or cell types, the same principles may also be applied to DMRs.
+While the primary purpose of VMRs is to provide better input for PCA and distance calculations, DMR detection facilitates the discovery of epigenetic differences between conditions or cell types.
 
 
 \section{Application and benchmarks}
