@@ -56,13 +56,14 @@ January 2023
 
 \begin{minipage}{0.7\textwidth}
 \small
-\textit{Abstract} -- Single-cell bisulfite sequencing (scBS) allows for assessing DNA methylation at single-base pair and single-cell resolution.
-Analyzing the big data sets thus obtained requires preprocessing to reduce data size, improve signal over noise, and provide interpretability.
-Typically, this is simply done by dividing the genome into large tiles and averaging in these.
-We show that this coarse-graining dilutes signal, and suggest improved approaches to determine more informative regions to quantify methylation in, and a better quantitation method than simple averaging.
-We demonstrate how our approach enables better distinguishing of cell types and reduces demands on cell number.
-We also implement an approach to detect differentially methylated regions (DMRs) between groups of cells, and demonstrate its ability to detect biologically meaningful regions near genes involved in core functions of specific cell types.
-Finally, we present a software tool, \texttt{scbs}, that implements these methods and offers further functionality required to work with scBS data.
+\textit{Abstract} -- Single-cell bisulfite sequencing (scBS) is a technique that enables the assessment of DNA methylation at single-base pair and single-cell resolution.
+However, the analysis of the large datasets obtained from scBS requires preprocessing to reduce data size, improve signal-to-noise ratio, and provide interpretability.
+Typically, this is achieved by dividing the genome into large tiles and averaging the methylation signals within each tile.
+Here, we demonstrate that this coarse-graining approach can lead to signal dilution, and propose improved strategies to identify more informative regions for methylation quantification, and a more accurate quantitation method than simple averaging.
+Our approach enables better discrimination of cell types and reduces the need for large numbers of cells.
+We also present an approach to detect differentially methylated regions (DMRs) between groups of cells, and demonstrate its ability to identify biologically meaningful regions that are associated with genes involved in the core functions of specific cell types.
+To facilitate the analysis of scBS data, we have developed a software tool called "\textttt{scbs}" that implements these methods and provides additional functionality.
+In summary, our work provides a more robust and accurate approach to analyze scBS data, which has the potential to enhance our understanding of DNA methylation dynamics in single cells and improve the identification of epigenetic changes associated with different cell states or diseases.
 \end{minipage}
 \vspace{6.5ex}
 }]
