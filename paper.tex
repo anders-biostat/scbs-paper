@@ -90,7 +90,7 @@ In the present paper, we discuss strategies to analyze single-cell bisulfite-seq
         \includegraphics[width=0.7\textwidth]{figures/Fig_residuals_AB.png}\\
     \end{center}
     \caption{\small \textbf{Improved quantification of DNA methylation in a given genomic interval.}\\
-    \textbf{(A)} Depicted is a genomic interval along a chromosome, for which DNA methylation is to be quantified.
+    \textbf{(A)} Depicted is a genomic interval (between vertical blue lines) along a chromosome, for which DNA methylation is to be quantified.
     Two cells cover differing parts of the interval with one read each.
     If one simply counts for each cell which fraction of the covered CpG sites are methylated, one obtains very different values for the two cells.
     \textbf{(B)} By averaging each CpG site's methylation over all cells and subsequent smoothing, the thick black ``average methylation curve'' is obtained.
@@ -178,15 +178,15 @@ A remaining issue is how to deal with the case that a cell has no reads at all w
 
 
 Typically, some regions in a chromosome will have very similar methylation status in all cells, while other regions show variability in methylation across cells.
-For instance, it is long known that CpG-rich promoters of housekeeping genes are unmethylated, and that a large proportion of the remaining genome is highly methylated regardless of cell type \citep{bird1986cpg}.
-In contrast, DNA methylation at certain genomic features such as enhancers is more dynamic \citep{argelaguet2019gastru}, and thus more variable across cells.
+For instance, it is known  since long that CpG-rich promoters of housekeeping genes are unmethylated, and that a large proportion of the remaining genome is highly methylated regardless of cell type \citep{bird1986cpg}.
+In contrast, DNA methylation at certain genomic features such as enhancers is more dynamic (e.g., \citet{argelaguet2019gastru}), and thus more variable across cells.
 Only the latter regions are of value for our goal of quantitating dissimilarity between cells.
 We call these the variably methylated regions (VMRs). % maybe mention the parallel to highly variable genes in scRNAseq?
 
 In the standard approach, one divides up (tiles) each chromosome into non-overlapping, equal-sized intervals, and quantitates the methylation of each tile.
-Such rigid placing of interval boundaries is unlikely to be optimal: for example, a VMR might be much smaller than a tile and its signal will hence be drowned out by the larger part of uninformative CpG sites that are equal in all cells, when averaging over all the CpG sites in the tile.
+Such rigid placing of interval boundaries is unlikely to be optimal: for example, a VMR might be much smaller than a tile and the signal from its CpG sites will hence be drowned out by the larger number of uninformative CpG sites that are equal in all cells, when averaging over all the CpG sites in the tile.
 
-Therefore, we propose the following approach (Fig.~\ref{fig:vmr}): Divide up the chromosome into many \emph{overlapping} windows, that start at regular multiples of a fixed, small, step size.
+Therefore, we propose the following approach (Fig.~\ref{fig:vmr}): Divide up the chromosome into many \emph{overlapping} windows that start at regular multiples of a fixed, small, step size.
 Quantify the methylation of each cell in each window by averaging the cell's methylation residuals over all CpGs in the window, as described above and depicted in Fig.~\ref{fig:smoothres}B.
 Then, calculate for each window the variance of these values over all cells.
 Select, say, the top 2\% windows with the highest variances and mark them as VMRs.
