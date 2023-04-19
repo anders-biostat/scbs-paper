@@ -80,6 +80,7 @@ ENTRY
     volume
     year
     doi
+    url
   }
   {}
   { label extra.label sort.label short.list }
@@ -1060,6 +1061,10 @@ FUNCTION {format.doi}
 { "\href{https://doi.org/" doi * "}{\footnotesize{[Link]}}" *
 }
 
+FUNCTION {format.url.as.link}
+{ "\href{" url * "}{\footnotesize{[Link]}}" *
+}
+
 FUNCTION {article}
 { output.bibitem
   format.authors "author" output.check
@@ -1086,7 +1091,13 @@ FUNCTION {article}
   new.block
   add.period$
   doi missing$
-  	{
+  	{ url missing$
+        {
+        }
+        {
+          format.url.as.link output
+        }
+      if$
   	}
   	{
   	  format.doi output
