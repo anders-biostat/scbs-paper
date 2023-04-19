@@ -40,14 +40,12 @@
 
 \begin{document}
 
-\setcounter{secnumdepth}{0}
-
 \twocolumn[{%
 \centering
 \textbf{\Large Analyzing single-cell bisulfite sequencing data with \texttt{scbs}}\\[1.5ex]
 
 Lukas P.~M. Kremer\textsuperscript{1,2,*}, Martina Braun\textsuperscript{2}, Leonie Küchenhoff\textsuperscript{1,2}, Santiago Cerrizuela\textsuperscript{2},\\Ana Martin-Villalba\textsuperscript{2}, Simon Anders\textsuperscript{1,*}\\[1ex]
-{\footnotesize \textsuperscript{1} BioQuant Centre, University of Heidelberg, Heidelberg, Germany\\[-.5ex]
+{\footnotesize \textsuperscript{1} BioQuant Centre, University of Heidelberg, Heidelberg, Germany\\[-.5ex] 
 \textsuperscript{2} Molecular Neurobiology Dept., German Cancer Research Center (DKFZ), Heidelberg, Germany}
 \vspace{1.5ex}
 
@@ -67,20 +65,22 @@ In summary, our work provides a more robust and accurate approach to analyze scB
 \end{minipage}
 \vspace{6.5ex}
 }]
+\setcounter{secnumdepth}{0} 
 
 \section{Introduction}
 
 Sequencing-based assays with single-cell resolution have offered new means to understand the differences between the cells making up a sample.
 Single-cell RNA sequencing (scRNA-seq) techniques have matured at great pace in recent years, with well developed analysis methodology, and methods to study epigenetics at single-cell resolution are rapidly catching up.
 
-\blfootnote{\hspace{-.5cm}\raggedright\textsuperscript{*} e-mail:  \texttt{l.kremer@dkfz-heidelberg.de} and\\ \hspace{1cm}\texttt{simon.anders@bioquant.uni-heidelberg.de}}
 
 Here, we discuss bisulfite sequencing, a method to study DNA methylation.
 In brief, DNA is treated with bisulfite, which converts unmethylated cytosines to uracils which are read as thymine in subsequent PCR, while methylated cytosines are protected from conversion.
 After sequencing, these conversions allow to determine the methylation status of all cytosines covered by reads \citep{Frommer_1992}.
 Bisulfite sequencing can also be performed at single-cell resolution \citep{Smallwood_2014} and even in parallel with scRNA-seq \citep{scMTseq,Clark2018}.
 
-In the present paper, we discuss strategies to analyze single-cell bisulfite-sequencing (scBS) data, suggest improvements to current approaches, show their value in a benchmark, and present software to perform the improved analysis methods.
+In the present paper, we discuss strategies to analyze single-cell bisulfite-sequencing (scBS) data. We suggest improvements to current approaches, and demonstrate their value in benchmarks, using two real-world datasets. Furthermore, we discuss how to perform comparative analyses. Finally, we present ``scbs'', a comprehensive software toolkit to perform scBS data analysis, using the described methods. 
+\blfootnote{\hspace{-.5cm}\raggedright\textsuperscript{*} e-mail:  \texttt{l.kremer@dkfz-heidelberg.de} and\\ \hspace{1cm}\texttt{simon.anders@bioquant.uni-heidelberg.de}}
+
 
 \phantomsection  % idk why we need this to silence hyperref's warning
 \subsection{Standard approach}
@@ -89,7 +89,7 @@ In the present paper, we discuss strategies to analyze single-cell bisulfite-seq
     \begin{center}
         \includegraphics[width=0.7\textwidth]{figures/Fig_residuals_AB.png}\\
     \end{center}
-    \caption{\small \textbf{Improved quantification of DNA methylation in genomic intervals.}\\
+    \caption{\small \textbf{Improved quantification of DNA methylation in a given genomic interval.}\\
     \textbf{(A)} Depicted is a genomic interval along a chromosome, for which DNA methylation is to be quantified.
     Two cells cover differing parts of the interval with one read each.
     If one simply counts for each cell which fraction of the covered CpG sites are methylated, one obtains very different values for the two cells.
@@ -107,7 +107,7 @@ of counts of distinct RNA molecules), one row for each cell and one column for e
 A first goal is usually to assign cell types or states to cells.
 To this end, one needs to establish which cells are similar to each other, i.e., quantify the distance (i.e., dissimilarity) between any two given cells' transcriptional profile.
 A standard approach, used with minor variation in virtually all recent research and automated by popular software such as Seurat \citep{Hao_2021} or ScanPy \citep{Wolf_2018}, is as follows: One first accounts for cell-to-cell variation in sequencing depth by dividing each UMI count by the respective cell's total UMI count, then transforms to a homoskedastic scale by taking the logarithm.
-In order to avoid matrix elements with zero count to be transformed to minus infinity, one typically adds a very small ``pseudocount'' (often $10^{-4}$) \todo{is this even correct?} to the normalized fractions before taking the logarithm.
+In order to avoid matrix elements with zero count to be transformed to minus infinity, one typically adds a very small ``pseudocount'' (often $10^{-4}$) to the normalized fractions before taking the logarithm.
 Now, one could use Euclidean distances of these vectors of logarithmized fractions as dissimilarity score.
 However, these scores would be exceedingly noisy due to the strong Poisson noise introduced by the many genes with very low counts.
 Therefore, one performs a principal component analysis (PCA), keeping only the top few (typically, 20 to 50) components.
@@ -115,38 +115,30 @@ As Poisson noise is uncorrelated between genes, it will average out in the top p
 Therefore, Euclidean distances between these ``PCA space'' vectors provide a robust dissimilarity score.
 Hence, the PCA space representation is suitable as input to methods like t-SNE and UMAP, which provide a two-dimensional representation of the data, or to methods for clustering (assigning cells to groups by similarity) and trajectory finding (identifying elongated manifolds in PCA space and assigning cells to quasi-1D positions along them).
 
-This procedure is commonly adapted when working with single-cell DNA methylation data, so that established methods used in scRNA-seq can be used.
-The task is therefore how to construct a suitable matrix as input for PCA.
+This procedure is commonly adapted when working with single-cell DNA methylation data, because once on gets to the PCA step, one can then continue with the established methods just mentioned. The task is therefore to construct from the methylation data a matrix suitable as input for PCA.
 A simple and common approach, used for instance by \citet{luo2017single}, is to divide the genome into tiles of e.g. 100~kb size, and calculate for each cell the average methylation of the DNA within each tile.
-To this end, we identify all CpG sites in the tile for which we have coverage with at least one read and can hence call the CpG to be either unmethylated or methylated in the cell.
-Then we denote as average DNA methylation of this tile in a given cell the proportion of observed CpG sites in the tile that were found to be methylated (Figure \ref{fig:smoothres}A).
-This yields a matrix, with one row for each cell and one column for each genomic tile, comprising numbers (methylation fractions) between 0 and 1.
+To this end, one identifies in the tile all CpG sites that are covered by at least one read and averages their methylation state, i.e., one denotes the as average DNA methylation of the tile in a given cell the proportion of the observed CpG sites in the tile that were found to be methylated (Figure \ref{fig:smoothres}A).
+This yields a matrix, with one row for each cell and one column for each genomic tile, comprising numbers (``methylation fractions'') between 0 and 1.
 This matrix is now subjected to PCA.
 After PCA, one can proceed with dimensionality reduction and clustering approaches known from scRNA-seq.
 
-While this simple procedure is straight-forward and produces satisfactory results, the coarse resolution of large genomic tiles and the sparse read coverage of single-cell methylomes still pose significant challenges in the analysis of scBS data.
-Here, we propose three improvements that, as we show afterwards, considerably increase the information content of the processed data.
-We will first explain the proposed improvement in a qualitative manner, while mathematical details are given later in the Methods section.
-Then, we will demonstrate the improvement using benchmarks.
-Finally, we describe an approach to detect differentially methylated regions (DMRs) in scBS data, and showcase it on real data.
+While this simple procedure is straight-forward and produces useable results, it is not optimal. In this paper, we discuss weaknesses of the simple approach and suggest several refinements to overcome them. Using benchmarks and application to real data, we show that our improvements substantially increase the information content of the processed data. In the main text, we explain the proposed methods and their motivation in a qualitative manner, while mathematical details are given later in the Methods section. Then, we will demonstrate the value of our methods using benchmarks and application to real data. Finally, we describe and demonstrate an approach to detect differentially methylated regions (DMRs) in scBS data. We also describe our software toolkit, scbs, that facilitates all these analyses.
 
 \section{Improved processing of scBS data}
 
 \phantomsection
 \subsection{Read-position aware quantitation} \label{residuals}
 
-We first discuss the task of quantifying the level of methylation in a given, fixed, genomic interval.
-In Figure \ref{fig:smoothres}A, such an interval is covered by a single read for two of the three cells shown.
-The read from cell 2 shows much more methylation than the read from cell 1, and the standard analysis would therefore consider that cell as having higher methylation in the interval.
+We first discuss the task of quantifying the level of methylation in a given, fixed, genomic interval. Typically, read coverage per cell is sparse in scBS data. In the example of Figure \ref{fig:smoothres}A, teh depicted interval is covered by a single read for two of the three cells shown and no read in the third. The read from cell 2 shows much more methylation than the read from cell 1, and the standard analysis would therefore consider cell 1 to have higher methylation in the interval than cell 2.
 However, given that the two reads agree wherever they overlap, a more parsimonious interpretation would be that the cells do not show difference in methylation within the interval.
 Rather, both cells, and similarly maybe most other cells, might have stronger methylation in the left third of the interval than in the middle one.
 
 Therefore, we propose to first obtain, for each CpG position, an average of the methylation across all cells, and then quantify for each individual cell its deviation from this average.
 In Figure \ref{fig:smoothres}B, the curved line depicts such an average over all cells, and the red vertical lines show an individual cell's deviation from the ensemble average.
-We take the lengths of the red lines as signed values (``residual''), positive for lines extending upwards from the curve (methylated CpG) and negative for lines extending downwards (unmethylated CpG), and take the average over the residual for all the CpGs in the interval that are covered by reads from this cell.
+We take the lengths of the red lines as signed values (``residuals''), positive for lines extending upwards from the curve (methylated CpG) and negative for lines extending downwards (unmethylated CpG). For each cell, we then take the average over the residuals for all the CpGs in the interval that are covered by reads from this cell.
 In this average, we perform shrinkage towards zero via a pseudocount (to trade bias for variance, see Methods for detail) in order to dampen the signal in cells with low coverage of the interval.
 
-The average thus obtained, the shrunken mean of the residuals, is what we use to quantify this cell's (relative) methylation in the interval.
+The average thus obtained, the shrunken mean of the residuals, is what we use to quantify the cell's (relative) methylation in the interval.
 For a genome tiled into such intervals, we thus obtain a matrix, one row per cell, one column per interval, that can be used for downstream analysis, e.g., as input for PCA.
 The signal-to-noise ratio in this matrix will be better than in a matrix obtained by simply averaging absolute methylation (0 or 1) over all the cells' covered CpG sites in a region.
 The reason for this is that we reduce the variation in situations as the one depicted in Figure \ref{fig:smoothres}A, where the methylation of the reads might differ strongly even though there is no actual evidence for a difference between the two cells.
@@ -157,7 +149,9 @@ However, especially when only few cells offer coverage, these averages will be v
 Therefore, we propose to smoothen using a kernel smoother, i.e., by performing a kernel-weighted average over the CpG site's neighborhood.
 The kernel bandwidth (i.e., the size of the neighborhood to average over) is a tuning parameter; for the examples presented here we used 1000~bp.
 
+A remaining issue is how to deal with the case that a cell has no reads at all within a given interval. Here, it is justified to simply put zero into the matrix element, because a shrunken residual average of zero indicates that there is no evidence of the cell deviating from the mean. We slightly refine this by using an iterative imputation within the PCA (see Methdos for details).
 
+\todo{Make sure this is shown in the methods.}
 % remove or shorten this section cause it's not really novel, methods like this are already implemented in e.g. the "missMDA" R package
 %\subsection{PCA with imputation}
 %The standard PCA algorithm cannot deal with missing data.
