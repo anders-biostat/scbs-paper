@@ -1,3 +1,7 @@
+%% This file is derived from genome_research.bst denoted below
+%% It hass been manually amended by S. Anders to include hyperlinks
+%% to DOIs.
+%%
 %%
 %% This is file `genome_research.bst',
 %% generated with the docstrip utility.
@@ -75,6 +79,7 @@ ENTRY
     type
     volume
     year
+    doi
   }
   {}
   { label extra.label sort.label short.list }
@@ -124,6 +129,11 @@ FUNCTION {fin.entry}
   write$
   newline$
 }
+FUNCTION {fin.entry.without.period}
+{ write$
+newline$
+}
+
 
 FUNCTION {new.block}
 { output.state before.all =
@@ -1046,6 +1056,10 @@ FUNCTION {format.organization.address}
 { organization "organization" bibinfo.check format.org.or.pub
 }
 
+FUNCTION {format.doi}
+{ "\href{https://doi.org/" doi * "}{\footnotesize{[Link]}}" *
+}
+
 FUNCTION {article}
 { output.bibitem
   format.authors "author" output.check
@@ -1069,7 +1083,16 @@ FUNCTION {article}
   if$
   new.block
   format.note output
-  fin.entry
+  new.block
+  add.period$
+  doi missing$
+  	{
+  	}
+  	{
+  	  format.doi output
+  	}
+  if$	
+  fin.entry.without.period
 }
 FUNCTION {book}
 { output.bibitem

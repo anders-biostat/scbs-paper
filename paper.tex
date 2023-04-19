@@ -11,7 +11,7 @@
 \usepackage{hyperref}
 \urlstyle{same} % no tt font for URLs
 \usepackage{natbib}
-\bibliographystyle{genome_research}
+\bibliographystyle{simon}
 \setlength{\bibsep}{0.3ex plus 0.2ex}
 %\setcitestyle{aysep={}} 
 \usepackage[dvipsnames]{xcolor}
@@ -50,19 +50,18 @@ Lukas P.~M. Kremer\textsuperscript{1,2,*}, Martina Braun\textsuperscript{2}, Leo
 \textsuperscript{2} Molecular Neurobiology Dept., German Cancer Research Center (DKFZ), Heidelberg, Germany}
 \vspace{1.5ex}
 
-January 2023
+April 2023
 \vspace{5.5ex}
 
 \begin{minipage}{0.7\textwidth}
-\small
-\textit{Abstract} -- Single-cell bisulfite sequencing (scBS) is a technique that enables the assessment of DNA methylation at single-base pair and single-cell resolution.
-However, the analysis of the large datasets obtained from scBS requires preprocessing to reduce data size, improve signal-to-noise ratio, and provide interpretability.
-Typically, this is achieved by dividing the genome into large tiles and averaging the methylation signals within each tile.
-Here, we demonstrate that this coarse-graining approach can lead to signal dilution, and propose improved strategies to identify more informative regions for methylation quantification, and a more accurate quantitation method than simple averaging.
-Our approach enables better discrimination of cell types and reduces the need for large numbers of cells.
-We also present an approach to detect differentially methylated regions (DMRs) between groups of cells, and demonstrate its ability to identify biologically meaningful regions that are associated with genes involved in the core functions of specific cell types.
+\small \setlength{\parindent}{1em}
+\noindent \textit{Abstract} -- Single-cell bisulfite sequencing (scBS) is a technique that enables the assessment of DNA methylation at single-base pair and single-cell resolution. The analysis of the large datasets obtained from scBS requires preprocessing to reduce data size, improve signal-to-noise ratio, and provide interpretability. Typically, this is achieved by dividing the genome into large tiles and averaging the methylation signals within each tile.
+
+Here, we demonstrate that this coarse-graining approach can lead to signal dilution, and propose improved strategies to identify more informative regions for methylation quantification, and a more accurate quantitation method than simple averaging. Our approach enables better discrimination of cell types and reduces the need for large numbers of cells. We also present an approach to detect differentially methylated regions (DMRs) between groups of cells, and demonstrate its ability to identify biologically meaningful regions that are associated with genes involved in the core functions of specific cell types.
+
 To facilitate the analysis of scBS data, we have developed a software tool called ``\texttt{scbs}'' that implements these methods and provides additional functionality.
-In summary, our work provides a more robust and accurate approach to analyze scBS data, which has the potential to enhance our understanding of DNA methylation dynamics in single cells and improve the identification of epigenetic changes associated with different cell states or diseases.
+
+%In summary, our work provides a more robust and accurate approach to analyze scBS data, which has the potential to enhance our understanding of DNA methylation dynamics in single cells and improve the identification of epigenetic changes associated with different cell states or diseases.
 \end{minipage}
 \vspace{6.5ex}
 }]
@@ -134,7 +133,7 @@ We first discuss the task of quantifying the level of methylation in a given, fi
 However, given that the two reads agree wherever they overlap, a more parsimonious interpretation would be that the cells do not show difference in methylation within the interval.
 Rather, both cells, and similarly maybe most other cells, might have stronger methylation in the left third of the interval than in the middle one.
 
-Therefore, we propose to first obtain, for each CpG position, an average of the methylation across all cells, and then quantify for each individual cell its deviation from this average.
+Therefore, we propose to first obtain, for each CpG position, an average of the methylation across all cells, and then quantify each cell's deviation from this average.
 In Figure \ref{fig:smoothres}B, the curved line depicts such an average over all cells, and the red vertical lines show an individual cell's deviation from the ensemble average.
 We take the lengths of the red lines as signed values (``residuals''), positive for lines extending upwards from the curve (methylated CpG) and negative for lines extending downwards (unmethylated CpG). For each cell, we then take the average over the residuals for all the CpGs in the interval that are covered by reads from this cell.
 In this average, we perform shrinkage towards zero via a pseudocount (to trade bias for variance, see Methods for detail) in order to dampen the signal in cells with low coverage of the interval.
@@ -150,19 +149,8 @@ However, especially when only few cells offer coverage, these averages will be v
 Therefore, we propose to smoothen using a kernel smoother, i.e., by performing a kernel-weighted average over the CpG site's neighborhood.
 The kernel bandwidth (i.e., the size of the neighborhood to average over) is a tuning parameter; for the examples presented here we used 1000~bp.
 
-A remaining issue is how to deal with the case that a cell has no reads at all within a given interval. Here, it is justified to simply put zero into the matrix element, because a shrunken residual average of zero indicates that there is no evidence of the cell deviating from the mean. We slightly refine this by using an iterative imputation within the PCA (see Methdos for details).
+A remaining issue is how to deal with the case that a cell has no reads at all within a given interval. Here, it is justified to simply put zero into the matrix element, because a shrunken residual average of zero indicates that there is no evidence of the cell deviating from the mean. We slightly refine this by using an iterative imputation within the PCA (see Methods for details).
 
-\todo{Make sure this is shown in the methods.}
-% remove or shorten this section cause it's not really novel, methods like this are already implemented in e.g. the "missMDA" R package
-%\subsection{PCA with imputation}
-%The standard PCA algorithm cannot deal with missing data.
-%Therefore, one would need to make intervals wide enough to ensure that every interval is covered by at least one read for most tiles and discard any interval that is not covered by any single cell.
-%Hence, a naive analysis has to resort to a coarse tiling of the genome.
-%To counter this, we propose a simple and straightforward way to deal with missing data in the input matrix to a PCA: In a first iteration, we replace each missing value in the centered input matrix with zero, then run the PCA.
-%Then, only these zeroes are replaced by the value predicted by the PCA and the PCA is rerun.
-%Convergence is typically achieved after two to five iterations.
-%For details, see Methods.
-%The possibility to perform PCA with missing data allows us to use shorter, and thus more intervals and hence provide the PCA with richer input data.
 
 \subsection{Finding variably methylated regions}
 
@@ -214,6 +202,20 @@ To enable PCA in the presence of missing values, we propose to use a simple iter
     \label{fig:dmrscan}
 \end{figure*}
 
+\begin{figure*}
+	\begin{center}
+		\includegraphics[width=.65\textwidth]{figures/Fig_correlation.png}
+	\end{center}
+	\caption{\small \textbf{Correlation of DNA methylation and gene expression}.\\
+		\textbf{(A)} \todo{maybe remove panel A or B, and put the remaining panel left of C?} Distribution of Pearson correlations between gene expression and promoter methylation (black) and gene expression and methylation of the nearest VMR (red).
+		\textbf{(B)} Correlation of each gene's RNA expression values to methylation (shrunken mean of residuals) at promoters (y-axis), or to methylation of the nearest VMR (x-axis).
+		Promoters are defined as intervals \textpm2~kb around the TSS.
+		\textbf{(C)} Mean methylation near the gene Htra1 (ENSMUSG00000006205).
+		Cells are assigned to 4 groups based on Htra1 expression (group 0: cells with no Htra1 expression, groups 1-3: cells that express Htra1, divided into three equally large groups with group 3 having the highest expression).
+		Data from \citet{kremer_scnmt}.}
+	\label{fig:correlation}
+\end{figure*}
+
 A common task in the analysis of bulk bisulfite-sequencing data is the detection of differentially methylated regions (DMRs) between conditions, tissues, or cell types \citep{Hebestreit2013, dmrseq}.
 As DNA methylation affects gene expression, DMRs can provide insights into the unique epigenetic and gene regulatory characteristics of cell types.
 However, to date no approach to detect DMRs in scBS data has been reported.
@@ -248,23 +250,6 @@ Indeed, a gene-wise comparison revealed many genes whose expression is correlate
 One such example gene, Htra1, is depicted in Fig.~\ref{fig:correlation}C.
 While the promoter of this gene is lowly methylated regardless of gene expression, a VMR located downstream of the promoter is lowly methylated in cells with high Htra1 expression.
 
-\begin{figure*}
-    \begin{center}
-    \includegraphics[width=.65\textwidth]{figures/Fig_correlation.png}
-    \end{center}
-    \caption{\small \textbf{Correlation of DNA methylation and gene expression}.\\
-    \textbf{(A)} \todo{maybe remove panel A or B, and put the remaining panel left of C?} Distribution of Pearson correlations between gene expression and promoter methylation (black) and gene expression and methylation of the nearest VMR (red).
-    \textbf{(B)} Correlation of each gene's RNA expression values to methylation (shrunken mean of residuals) at promoters (y-axis), or to methylation of the nearest VMR (x-axis).
-    Promoters are defined as intervals \textpm2~kb around the TSS.
-    \textbf{(C)} Mean methylation near the gene Htra1 (ENSMUSG00000006205).
-    Cells are assigned to 4 groups based on Htra1 expression (group 0: cells with no Htra1 expression, groups 1-3: cells that express Htra1, divided into three equally large groups with group 3 having the highest expression).
-    Data from \citet{kremer_scnmt}.}
-    \label{fig:correlation}
-\end{figure*}
-
-
-\subsection{Our proposed methods improve identification of cell types}
-
 \begin{figure*}[t]
     \begin{center}
         \includegraphics[width=0.7\textwidth]{figures/Fig_benchmark.png}
@@ -280,6 +265,8 @@ While the promoter of this gene is lowly methylated regardless of gene expressio
     }
     \label{fig:score}
 \end{figure*}
+
+\subsection{Our proposed methods improve identification of cell types}
 
 To assess the impact of our proposed methods, we next tested whether our methods improve the ability to distinguish cell types and cell states (Fig.~\ref{fig:score}).
 To this end, we obtained cluster labels based on the single-cell transcriptomes from \citet{kremer_scnmt} (Fig.~\ref{fig:score}A).
@@ -559,6 +546,8 @@ Our iterative imputation strategy is now simply the following: we first replace 
 Then, we use the PCA predictions for the missing values, i.e., the $a_{ij}=\sum_r x_{ir} r_{jr}$, as refined stand-ins for the missing values in $A$ and run PCA once more.
 This can now be iterated until convergence.
 
+We note that similar approaches have also been used elsewhere, e.g., in the missMDA method of \citet{missMDA}.
+
 \subsection{Re-analysis of published scBS datasets}
 To re-analyze scBS data from \citet{kremer_scnmt}, single-cell CpG methylation reports from all conditions were first stored with \texttt{scbs prepare} and then smoothed with \texttt{scbs smooth} using the default bandwidth of 1000~bp.
 The mm10 mouse genome was then annotated with genomic intervals that were either obtained by tiling the genome into non-overlapping 100~kb tiles, or by acquiring VMRs with \texttt{scbs scan} using the current default options (bandwidth $=2000$, stepsize $=10$, variance threshold $= 0.02$, minimum cell requirement $=6$).
@@ -607,7 +596,7 @@ We omitted lowly expressed genes (with scRNA-seq counts in $<5\%$ of cells) and 
 \onecolumn 
 \newpage
 \section{Supplementary Figures}
-\bigskip
+\vspace{6ex}
 
 \setcounter{figure}{0}
 %\renewcommand{\figurename}{Supplementary Figure}
@@ -616,14 +605,14 @@ We omitted lowly expressed genes (with scRNA-seq counts in $<5\%$ of cells) and 
 \noindent%
 \begin{minipage}{\linewidth}
 	\begin{center}
-	    \includegraphics[width=0.6\textwidth]{figures/SFig_benchmark.png}
+	    \includegraphics[width=0.4\textwidth]{figures/SFig_benchmark.png}
 	\end{center}
 	\captionof{figure}{\small \textbf{Benchmark of our methods on single-cell methylomes of neural subtypes of the murine frontal cortex}.\\
 	Our methods were benchmarked on single-cell methylomes from \citet{luo2017single} as described in Fig.~\ref{fig:score}. 
 	}
 	\label{fig:score_luo}
 \end{minipage}
-\bigskip
+\vspace{6ex}
 
 \noindent%
 \begin{minipage}{\linewidth}
