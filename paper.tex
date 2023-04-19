@@ -124,7 +124,7 @@ After PCA, one can proceed with dimensionality reduction and clustering approach
 
 While this simple procedure is straight-forward and produces useable results, it is not optimal. In this paper, we discuss weaknesses of the simple approach and suggest several refinements to overcome them. Using benchmarks and application to real data, we show that our improvements substantially increase the information content of the processed data. In the main text, we explain the proposed methods and their motivation in a qualitative manner, while mathematical details are given later in the Methods section. Then, we will demonstrate the value of our methods using benchmarks and application to real data. Finally, we describe and demonstrate an approach to detect differentially methylated regions (DMRs) in scBS data. We also describe our software toolkit, scbs, that facilitates all these analyses.
 
-\section{Improved processing of scBS data}
+\section{Improved preprocessing of scBS data}
 
 \phantomsection
 \subsection{Read-position aware quantitation} \label{residuals}
@@ -166,6 +166,20 @@ Taken together, this shrunken mean of residuals quantitation reduces variance in
     \label{fig:vmr}
 \end{figure}
 
+\begin{figure*}
+	\begin{center}
+		\includegraphics[width=.65\textwidth]{figures/Fig_correlation.png}
+	\end{center}
+	\caption{\small \textbf{Correlation of DNA methylation and gene expression}.\\
+		\textbf{(A)} \todo{maybe remove panel A or B, and put the remaining panel left of C?} Distribution of Pearson correlations between gene expression and promoter methylation (black) and gene expression and methylation of the nearest VMR (red): for most promotors, correlation is weak.
+		\textbf{(B)} Correlation of each gene's RNA expression values to methylation (shrunken mean of residuals) at promoters (y-axis), or to methylation of the nearest VMR (x-axis). \todo{Yes, I would remove B.}
+		Promoters are defined as intervals \textpm2~kb around the TSS.
+		\textbf{(C)} Mean methylation near the gene Htra1 (ENSMUSG00000006205).
+		Cells are assigned to 4 groups based on Htra1 expression (group 0: cells with no Htra1 expression, groups 1-3: cells that express Htra1, divided into three equally large groups with group 3 having the highest expression).
+		Data from \citet{kremer_scnmt}.}
+	\label{fig:correlation}
+\end{figure*}
+
 
 Typically, some regions in a chromosome will have very similar methylation status in all cells, while other regions show variability in methylation across cells.
 For instance, it is known  since long that CpG-rich promoters of housekeeping genes are unmethylated, and that a large proportion of the remaining genome is highly methylated regardless of cell type \citep{bird1986cpg}.
@@ -185,155 +199,140 @@ Then, calculate for each of these larger VMRs the methylation signal, as before,
 
 In this manner, we obtain a methylation matrix, with one row per cell and one column per VMR, that is, in a sense, richer in information and has better signal-to-noise ratio than the matrix obtained by the simple analysis sketched at the very beginning.
 As we demonstrate below, a PCA performed on such a matrix provided a distance metric for the cells that contains more information on biological detail than one from a simpler analysis.
-Since not all genomic intervals have sequencing coverage in all cells, the resulting matrix contains missing values.
-To enable PCA in the presence of missing values, we propose to use a simple iterative approach (for details see Methods).
-
-\subsection{Finding differentially methylated regions}
-
-\begin{figure*}
-    \begin{center}
-    \includegraphics[width=.65\textwidth]{figures/Fig_DMRdetection.png}
-    \end{center}
-    \caption{\small \textbf{Identification of differentially methylated regions.}\\
-    The chromosome is divided into windows overlapping by a small and fixed size.
-    For each window, the cell’s methylation values are calculated as described and as depicted in Fig.~\ref{fig:smoothres}B.
-    Then the t-statistic of these values is obtained as a measure of methylation difference (each point represents one of the windows).
-    Upper and lower thresholds (dashed lines) are chosen such that a defined quantile of windows have a t-statistic above or below the threshold.
-    Windows exceeding either threshold are merged if they overlap, yielding the differentially methylated regions (DMRs).}
-    \label{fig:dmrscan}
-\end{figure*}
 
 \begin{figure*}
 	\begin{center}
-		\includegraphics[width=.65\textwidth]{figures/Fig_correlation.png}
+		\includegraphics[width=0.7\textwidth]{figures/Fig_benchmark.png}
 	\end{center}
-	\caption{\small \textbf{Correlation of DNA methylation and gene expression}.\\
-		\textbf{(A)} \todo{maybe remove panel A or B, and put the remaining panel left of C?} Distribution of Pearson correlations between gene expression and promoter methylation (black) and gene expression and methylation of the nearest VMR (red).
-		\textbf{(B)} Correlation of each gene's RNA expression values to methylation (shrunken mean of residuals) at promoters (y-axis), or to methylation of the nearest VMR (x-axis).
-		Promoters are defined as intervals \textpm2~kb around the TSS.
-		\textbf{(C)} Mean methylation near the gene Htra1 (ENSMUSG00000006205).
-		Cells are assigned to 4 groups based on Htra1 expression (group 0: cells with no Htra1 expression, groups 1-3: cells that express Htra1, divided into three equally large groups with group 3 having the highest expression).
-		Data from \citet{kremer_scnmt}.}
-	\label{fig:correlation}
+	\caption{\small \textbf{Benchmark of our methods on single-cell multi-omic data of cells of the murine forebrain}.\\
+		\textbf{(A)} Cell labels based on clustering of single-cell transcriptomes from \citet{kremer_scnmt}.
+		\textbf{(B, C)} Exemplary UMAPs obtained when analyzing the data set with our proposed methods (B) or conventional methods based on genome tiling (C).
+		\textbf{(D)} Illustration of the neighbor score. Note that, actually,
+		distances are measured in 15-dimensional PC space, not in the 2-dimensional
+		UMAP space.
+		\textbf{(E)} Mean neighbor score obtained after analysing single-cell methylomes with different combinations of methods.
+		Either 100~kb genomic tiles or VMRs were subjected to PCA and UMAP.
+		Tiles or VMRs were pre-processed as proposed in this work (shrunken mean of residuals subjected to iterative PCA) or using conventional methods (PCA on methylation percentages, lightly imputed, as done in \citet{luo2017single}).
+		The full 1566-cell data set was sub-sampled to simulate smaller data sets (x axis).
+		A higher neighbor score implies better separation of cell types inferred from single-cell transcriptomes of the same cells \textbf{(A)}.
+	}
+	\label{fig:score}
 \end{figure*}
+
+
+\subsection{Application and benchmarks}
+
+To demonstrate the value of our proposed improvements, we employ our own data \citep{kremer_scnmt} as well as a previously published data set, namely the one by  \citet{luo2017single} already mentioned in the introduction.
+
+\phantomsection
+\subsubsection{Correlating VMR methylation with gene expression}
+
+Our data set \citep{kremer_scnmt} comprises the methylomes of 1566 cells isolated from mouse forebrains, as well as matched single-cell transcriptomes of the same cells.
+Among these cells are distinct cell types such as oligodendrocytes, oligodendrocyte precursor cells (OPCs) and endothelial cells, as well as cellular sub-states that are part of the continuous neural stem cell differentiation trajectory.
+To assess whether our VMR detection method captures genomic intervals that are biologically meaningful, we probed whether their methylation level correlates with the expression of nearby genes.
+
+We first note that gene expression is more strongly correlated with the methylation of nearby VMRs than with the methylation of their promotors (Fig.~\ref{fig:correlation}A), indicating that VMR methylation is often a better predictor of gene expression than promoter methylation.
+Indeed, a gene-wise comparison revealed many genes whose expression is correlated with the nearest VMR, but not with promoter methylation (Fig.~\ref{fig:correlation}B).
+One such example gene, Htra1, is depicted in Fig.~\ref{fig:correlation}C.
+While the promoter of this gene is lowly methylated regardless of gene expression, a VMR located downstream of the promoter is lowly methylated in cells with high Htra1 expression.
+
+\subsubsection{Improved identification of cell types}
+
+We next tested whether our methods improve the ability to distinguish cell types and cell states (Fig.~\ref{fig:score}).
+To this end, we obtained cell type/state labels based on the single-cell transcriptomes from \citet{kremer_scnmt} (Fig.~\ref{fig:score}A).
+We consider these cell labels as ground truth and tested whether we are able to distinguish the same groups of cells based on their methylomes.
+To do this, we subjected the methylomes to four variants of the workflow described above: we defining genomic intervals in two ways and quantified methylation in these intervals in two ways, then always subjected the resulting matrix to PCA.
+To define the intervals, we either simply tiled the genome into 100~kb bins as is commonly done, or we used our VMR detection approach.
+To quantify methylation in these intervals, we either averaged in these intervals, obtaining methylation percentages (``classic'' pre-processing), or we calculated the shrunken mean of residuals.
+
+Visual inspection of the resulting UMAPs revealed that our proposed combination of methods results in more clearly separated cell types, compared to a UMAP obtained with default analysis methods (Fig.~\ref{fig:score}B,C).
+While all cells form a continuous point cloud when using default methods, our improvements led to a clear separation of oligodendrocytes, OPCs and endothelial cells.
+Furthermore, even cellular sub-types of cells in the continuous neural stem cell lineage were partially separated.
+
+\begin{figure*}
+	\begin{center}
+		\includegraphics[width=.65\textwidth]{figures/Fig_DMRdetection.png}
+	\end{center}
+	\caption{\small \textbf{Identification of differentially methylated regions.}\\
+		The chromosome is divided into windows overlapping by a small and fixed size.
+		For each window, the cell’s methylation values are calculated as described and as depicted in Fig.~\ref{fig:smoothres}B.
+		Then the t-statistic of these values is obtained as a measure of methylation difference (each point represents one of the windows).
+		Upper and lower thresholds (dashed lines) are chosen such that a defined quantile of windows have a t-statistic above or below the threshold.
+		Windows exceeding either threshold are merged if they overlap, yielding the differentially methylated regions (DMRs).}
+	\label{fig:dmrscan}
+\end{figure*}
+
+To quantify this performance gain in a more rigorous manner, we used a score that quantifies whether cells were placed, in 15-dimensional PC space, in a neighborhood comprising cells of the same cell type ("neighbor score", see Figure \ref{fig:score}D, and Methods for details).
+We then ask how this score depends on the number of available cells. This is relevant as scBS protocols are costly and labor-intensive, and only few laboratories are currently able to obtain thousands of single cell methylomes. To simulate smaller data sets, we sub-sampled the 1566-cell data set into smaller data sets, analyzed them again with the four workflow variants, and calculated the mean neighbor score for each (Figure \ref{fig:score}E).
+The results demonstrate that the forebrain cell clusters are more cleanly separated when using our proposed methods.
+This performance gain was observed also in smaller data sets, although cell cluster separation generally becomes more difficult in those.
+Both the use of VMRs instead of genomic tiles, as well as the use of the shrunken mean of the residuals over methylation averages improved cell cluster separation.
+
+We repeated this benchmark on the data set published by \citet{luo2017single}, which consists of 3377 single-cell CpG methylomes from the murine frontal cortex, comprising 16 neuronal subtypes.
+The authors annotated cell types based on CH-methylation instead of CpG-methylation.
+Using these labels as ground truth we re-analyzed the full and sub-sampled CpG methylation data with the four methods combinations and found that our suggested methods consistently outperformed default methods (Fig.~\ref{fig:score_luo}).
+
+\subsubsection{Robustness to parameter changes}
+
+Lastly, we assessed whether our proposed workflow requires fine-tuning of parameters (Fig.~\ref{fig:sweep}).
+To this end, we re-analyzed both data sets, as well as sub-samples of the data with different VMR detection parameters, namely the width of the sliding window in bp, (set with option \texttt{--bandwidth} in our ``scbs'' software, default 2000 )and the variance threshold above which windows are merged to VMRs (\texttt{--var-threshold}, default 0.02).
+This parameter sweep showed that our workflow gives good results over a wide range of parameter values. For the data of \citet{luo2017single}, results are nearly independent of the parameters (Fig.~\ref{fig:sweep}B). In the more challenging data set of \citet{kremer_scnmt} (Fig.~\ref{fig:sweep}A), cell types were less cleanly separated when very large bandwidths, or very strict variance thresholds were selected.
+However, very small bandwidths or very lenient thresholds resulted in a much higher number of VMRs and thus long computing times. Overall, however, our default parameter combination provided good results and fast compute times in both data sets.
+
+\begin{figure*}
+	\begin{center}
+		\includegraphics[width=.7\textwidth]{figures/Fig_DMRs.png}
+	\end{center}
+	\caption{\small \textbf{Detection of differentially methylated regions between oligodendrocytes and neural stem cells.}\\
+		\textbf{(A)} DMRs detected between 58 oligodendrocytes (ODs) and 130 neural stem cells (NSCs) from \citep{kremer_scnmt} (top) and DMRs detected in the same data with randomly permuted cell labels (bottom, used to estimate FDR and determine adjusted p-values).
+		\textbf{(B)} Enrichment of GO terms associated with DMRs lowly methylated in ODs (top) or NSCs (bottom).
+		Depicted are the top 5 GO terms of the "Biological Process" (GO:BP) and "Cellular Component" (GO:CC) GO category, and their binomial test p-value and enrichment, as reported by GREAT \citep{mclean2010great}.
+		\textbf{(C)} Mean methylation of NSCs and ODs at an exemplary DMR.
+		Each point corresponds to a cell, black lines denote the median.
+		\textbf{(D)} Detailed view of the DMR (yellow dashed rectangle) from \textbf{C} in pseudo-bulk samples consisting of NSCs or ODs.
+		Vertical bars represent CpG sites.
+	}
+	\label{fig:dmr}
+\end{figure*}
+
+
+
+\section{Finding differentially methylated regions}
 
 A common task in the analysis of bulk bisulfite-sequencing data is the detection of differentially methylated regions (DMRs) between conditions, tissues, or cell types \citep{Hebestreit2013, dmrseq}.
 As DNA methylation affects gene expression, DMRs can provide insights into the unique epigenetic and gene regulatory characteristics of cell types.
 However, to date no approach to detect DMRs in scBS data has been reported.
 To enable DMR detection in scBS data, we thus developed an approach that detects DMRs of variable size between two groups of cells, and controls the false discovery rate (Fig.~\ref{fig:dmrscan}):
 
-Similar to the previously described VMR identification approach (Fig.~\ref{fig:vmr}), divide each chromosome into overlapping windows shifted by a small and fixed size (step size) and quantify the methylation of each cell in each window.
-Next, instead of the variance, obtain the t-statistic % Welch t-test
+Similar to the previously described approach for VMR identification (Fig.~\ref{fig:vmr}), we divide each chromosome into overlapping windows shifted by a small and fixed size (step size) and quantify the methylation of each cell in each window.
+Next, instead of the variance, we obtain the t-statistic % Welch t-test
 as a measure of differential methylation between the two cell groups.
-Identify the windows with the most extreme t-statistics, e.g. windows in the 2\% upper and lower tails.
-Merge any overlapping windows in the upper tail into larger DMRs.
-Repeat for windows in the lower tail, then re-calculate the t-statistic for each larger DMR.
+We identify the windows with the most extreme t-statistics, e.g. windows in the 2\% upper and lower tails. We the merge any overlapping windows in the upper tail into larger DMRs, and do the same for windows in the lower tail, and then we re-calculate the t-statistic for each larger DMR.
 
-To assess statistical significance of DMRs, repeat the same procedure on permutations of the scBS data, i.e. the same data set with randomly shuffled cell labels.
-The DMR t-statistics obtained from permuted data are then used to estimate the false-discovery rate (FDR), yielding an adjusted p-value for each DMR.
+To assess statistical significance of DMRs, we repeat the same procedure on permutations of the scBS data, i.e. the same data set with randomly shuffled cell labels. The DMR t-statistics obtained from permuted data are then used to estimate the false-discovery rate (FDR), yielding an adjusted p-value for each DMR.
 
-While the primary purpose of VMRs is to provide better input for PCA and distance calculations, DMR detection facilitates the discovery of epigenetic differences between conditions or cell types.
+While the primary purpose of VMRs is to provide better input for PCA and distance calculations, DMR detection facilitates the discovery of epigenetic differences between conditions or cell types, as we demonstrate next.
 
-
-\section{Application and benchmarks}
-
-To demonstrate the value of our proposed improvements, we obtained two previously published scBS data sets and re-analyzed them using our methods.
-
-\phantomsection
-\subsection{Correlating VMR methylation with gene expression}
-
-The first data set used to test our methods is a single-cell multi-omics data set generated by \citet{kremer_scnmt}.
-This data set comprises the methylomes of 1566 cells isolated from mouse forebrains, as well as matched single-cell transcriptomes of the same cells.
-Among these cells are distinct cell types such as oligodendrocytes, oligodendrocyte precursor cells (OPCs) and endothelial cells, as well as cellular sub-states that are part of the continuous neural stem cell differentiation trajectory.
-To assess whether our VMR detection method captures genomic intervals that are biologically meaningful, we probed whether their methylation level correlates with the expression of nearby genes.
-Compared to promoter methylation, the obtained correlation coefficients are more extreme, indicating that VMR methylation often is a better predictor of gene expression than promoter methylation (Fig.~\ref{fig:correlation}A).
-Indeed, a gene-wise comparison revealed many genes whose expression is correlated with the nearest VMR, but not with promoter methylation (Fig.~\ref{fig:correlation}B).
-One such example gene, Htra1, is depicted in Fig.~\ref{fig:correlation}C.
-While the promoter of this gene is lowly methylated regardless of gene expression, a VMR located downstream of the promoter is lowly methylated in cells with high Htra1 expression.
-
-\begin{figure*}[t]
-    \begin{center}
-        \includegraphics[width=0.7\textwidth]{figures/Fig_benchmark.png}
-    \end{center}
-    \caption{\small \textbf{Benchmark of our methods on single-cell multi-omic data of cells of the murine forebrain}.\\
-    \textbf{(A)} Cell labels based on clustering of single-cell transcriptomes from \citet{kremer_scnmt}.
-    \textbf{(B, C)} Exemplary UMAPs obtained when analyzing the data set with our proposed methods (B) or conventional methods based on genome tiling (C).
-    \textbf{(D, E)} Mean neighbor score \textbf{(D)} obtained after analysing single-cell methylomes with different combinations of methods.
-    Either 100~kb genomic tiles or VMRs were subjected to PCA and UMAP.
-    Tiles or VMRs were pre-processed as proposed in this work (shrunken mean of residuals subjected to iterative PCA) or using conventional methods (PCA on lightly imputed methylation percentages, based on \citep{luo2017single}).
-    The full 1566-cell data set was sub-sampled to simulate smaller data sets (x axis).
-    A higher neighbor score implies better separation of cell types inferred from single-cell transcriptomes of the same cells \textbf{(A)}.
-    }
-    \label{fig:score}
-\end{figure*}
-
-\subsection{Our proposed methods improve identification of cell types}
-
-To assess the impact of our proposed methods, we next tested whether our methods improve the ability to distinguish cell types and cell states (Fig.~\ref{fig:score}).
-To this end, we obtained cluster labels based on the single-cell transcriptomes from \citet{kremer_scnmt} (Fig.~\ref{fig:score}A).
-We consider these cell labels as ground truth and next tested whether we are able to distinguish the same groups of cells based on their methylomes.
-To do this, we subjected the methylomes to the standard scBS workflow:
-defining a set of genomic intervals, quantifying methylation in these intervals, and subjecting the resulting matrix to PCA.
-To determine genomic features for distance calculation, we either tiled the genome into 100~kb bins as is commonly done, or we used our VMR detection approach.
-To quantify methylation in these intervals, we either averaged in these intervals, obtaining methylation percentages ("classic" pre-processing), or we calculated the shrunken mean of residuals.
-Visual inspection of the resulting UMAPs revealed that our proposed combination of methods results in more clearly separated cell types, compared to a UMAP obtained with default analysis methods (Fig.~\ref{fig:score}B,C).
-While all cells form a continuous point cloud when using default methods, our improvements led to a clear separation of oligodendrocytes, OPCs and endothelial cells.
-Furthermore, even cellular sub-types of cells in the continuous neural stem cell lineage were partially separated.
-
-To quantify this performance gain in a more rigorous manner, we used a score that quantifies whether cells were placed in a neighborhood consisting of cells with the same cell type in 15-dimensional PC space ("neighbor score", for details see Methods).
-Since scBS protocols are costly and labor-intensive, only few laboratories are currently able to obtain thousands of single cell methylomes.
-To simulate smaller data sets, we sub-sampled the 1566-cell data set into smaller data sets, analyzed them with different method combinations, and calculated the mean neighbor score for each (Figure \ref{fig:score}D,E).
-The results demonstrate that the forebrain cell clusters are more cleanly separated when using our proposed methods.
-This performance gain was observed also in smaller data sets, although cell cluster separation generally becomes more difficult in those.
-Both the use of VMRs instead of genomic tiles, as well as the use of the shrunken mean of the residuals over methylation averages improved cell cluster separation.
-
-We repeated this benchmark on a second data set published by \citet{luo2017single}.
-This data set consists of 3377 single-cell CpG methylomes from the murine frontal cortex, comprising 16 neuronal subtypes.
-The authors annotated cell types based on CH-methylation instead of CpG-methylation.
-Using these labels as ground truth we re-analyzed the full and sub-sampled data set with four methods combinations and found that our suggested methods consistently outperformed default methods (Fig.~\ref{fig:score_luo}).
-
-Lastly, we assessed whether our proposed workflow requires fine-tuning of parameters (Fig.~\ref{fig:sweep}).
-To this end, we re-analyzed both data sets, as well as sub-samples of the data with different VMR detection parameters (the width of the sliding window in bp, \texttt{--bandwidth}, default 2000 and the variance threshold above which windows are merged to VMRs, \texttt{--var-threshold}, default 0.02).
-This parameter sweep showed that our workflow is robust to various parameter selections and depends mostly on the overall cell number.
-In the more challenging data set (Fig.~\ref{fig:sweep}A), cell types were less cleanly separated when very large bandwidths, or very strict variance thresholds were selected.
-However, in our experience small bandwidths or lenient thresholds resulted in a much higher number of VMRs and thus longer computing times.
-Our default parameter combination provided good results and fast compute times in both data sets.
 
 
 \phantomsection
 \subsection{Detecting DMRs between oligodendrocytes and neural stem cells}
 
-\begin{figure*}[t]
-    \begin{center}
-        \includegraphics[width=.7\textwidth]{figures/Fig_DMRs.png}
-    \end{center}
-    \caption{\small \textbf{Detection of differentially methylated regions between oligodendrocytes and neural stem cells.}\\
-    \textbf{(A)} DMRs detected between 58 oligodendrocytes (ODs) and 130 neural stem cells (NSCs) from \citep{kremer_scnmt} (top) and DMRs detected in the same data with randomly permuted cell labels (bottom, used to estimate FDR and determine adjusted p-values).
-    \textbf{(B)} Enrichment of GO terms associated with DMRs lowly methylated in ODs (top) or NSCs (bottom).
-    Depicted are the top 5 GO terms of the "Biological Process" (GO:BP) and "Cellular Component" (GO:CC) GO category, and their binomial test p-value and enrichment, as reported by GREAT \citep{mclean2010great}.
-    \textbf{(C)} Mean methylation of NSCs and ODs at an exemplary DMR.
-    Each point corresponds to a cell, black lines denote the median.
-    \textbf{(D)} Detailed view of the DMR (yellow dashed rectangle) from \textbf{C} in pseudo-bulk samples consisting of NSCs or ODs.
-    Vertical bars represent CpG sites.
-    }
-    \label{fig:dmr}
-\end{figure*}
 
-
-Next, we used the single-cell multi-omics data set \citep{kremer_scnmt} to evaluate our DMR detection approach.
+We used the single-cell multi-omics data set \citep{kremer_scnmt} to evaluate our DMR detection approach.
 We first selected two cell populations from the healthy murine ventricular-subventricular zone: neural stem cells (NSCs, 130 cells) and oligodendrocytes (58 cells).
-Then we used the method depicted in Fig.~\ref{fig:dmrscan} to identify DMRs between these two cell types (Fig.~\ref{fig:dmr}).
-To estimate the false discovery rate and obtain adjusted p-values, we repeated the DMR detection approach on a permutation of the same data set, generated by shuffling cell labels.
-DMRs detected in this manner showed more modest methylation differences, and as a result many DMRs detected in the original data were assigned low adjusted p-values (Fig.~\ref{fig:dmr}A).
+Then we used the method just described to identify DMRs between these two cell types (Fig.~\ref{fig:dmr}A). Repeating this after permuting the cell-type labels, in order to obtain a null distribution fo the t statistics, yielded
+DMRs with much weaker methylation differences. Consequently, we could assign to many of the DMRs detected in the unpermuted data a low adjusted p-values (colours in Fig.~\ref{fig:dmr}A).
 
 Gene ontology (GO) enrichment with GREAT \citep{mclean2010great} revealed that DMRs lowly methylated in oligodendrocytes are located near genes involved in myelination, the main function of oligodendrocytes.
 Similarly, DMRs specifically demethylated in NSCs occur near genes involved in stem cell population maintenance.
 This demonstrates that our DMR detection approach is able to identify biologically meaningful DMRs, even in scBS data sets of modest cell number.
+
 Fig.~\ref{fig:dmr}C-D depicts an exemplary DMR, located at the gene body of myelin-basic protein (Mbp), the major component of myelin that is essential for myelination of neuronal axons \citep{mbp}.
 Our results suggest that oligodendrocyte-specific gene expression of Mbp is supported by low methylation at the detected DMR.
 
 
-\section{The \texttt{scbs} Python package}
+\section{The \texttt{scbs} software toolkit}
 
 \begin{figure*}[t]
     \begin{center}
@@ -352,7 +351,7 @@ Our results suggest that oligodendrocyte-specific gene expression of Mbp is supp
 \end{figure*}
 
 We have implemented the approach just described in a Python package with a command line interface, called \texttt{scbs}, which also offers a number of other functionalities for the analysis of scBS data (Figure \ref{fig:workflow}).
-The starting point of such an analysis are methylation files generated by tools such as Bismark \citep{bismark}, methylpy \citep{methylpy} or BISCUIT.
+The starting point of such an analysis are methylation files generated by tools such as Bismark \citep{bismark}, methylpy \citep{methylpy} or BISCUIT \citep{biscuit}.
 For each cell, these tools produce a text file that lists the methylation status of all CpG sites.
 Since it is inconvenient to work with hundreds or thousands of text files, \texttt{scbs} provides the \texttt{prepare} command which parses these methylation files and stores their content in a compressed format that enables efficient access to all CpG sites of the genome.
 \texttt{scbs prepare} is flexible and accepts all tabular input formats including Bismark .cov-files, methylpy .allc-files, or custom user-defined formats.
@@ -373,9 +372,10 @@ Cells that do not show this pattern, or cells with few observed CpG sites, may t
 After quality control, the user has access to the genome-wide VMR detection approach described earlier, using the \texttt{scbs scan} command.
 This produces a BED file that lists the genome coordinates of VMRs.
 To finally obtain a methylation matrix analogous to a scRNA-seq count matrix, this BED file can be used as input for \texttt{scbs matrix}, which quantifies methylation at genomic intervals in all cells.
-The command produces both the percentage of methylated CpG sites, as well as our proposed methylation measure (shrunken mean of the residuals) that is more robust to variation in sequencing coverage or stochastic differences in read position between cells.
-We note that both \texttt{matrix} and \texttt{profile} accept any valid BED file as input, which means that the user can quantify and visualize methylation at any genomic feature of interest, such as promoters, enhancers or transcription factor binding sites, in single cells.
-The obtained methylation matrix can then serve as input for common single-cell analysis methods such as dimensionality reduction and cell clustering.
+The command produces both, the simple percentage of methylated CpG sites, as well as our proposed methylation measure, the shrunken mean of the residuals, which is more robust to variation in sequencing coverage or stochastic differences in read position between cells.
+We note that both \texttt{matrix} and \texttt{profile} accept any valid BED file as input, which means that the user can quantify and visualize methylation at any set of genomic features of interest, such as promoters, enhancers or transcription factor binding sites, obtaining one profile plot per cell.
+
+The methylation matrix produces by the \texttt{matrix} function can then serve as input for standard single-cell analysis tools like Seurat \citep{seurat} or scanpy \citep{scanpy}, in order to perform, e.g., dimensionality reduction and cell clustering. For this, the methylation matrix should in lieu of the log-normalized expression matrix usually expected by these tools.
 
 Finally, after annotation and exploration of the data set, the user may specify two groups of cells for DMR detection with \texttt{scbs diff}.
 This command produces a BED file listing the genome coordinates, adjusted p-values, as well as several other metrics associated with DMRs.
@@ -385,18 +385,18 @@ These DMRs may then be associated with nearby genes, or used for GO enrichment w
 \subsection{Availability}
 
 \texttt{scbs} is free and open source.
-The package is available on the Python Package Index (PyPI) and can be installed with the Python package installer pip.
+The package is available on the Python Package Index (PyPI) and can be installed with the Python package installer \texttt{pip}.
 The source code is hosted at \href{https://github.com/LKremer/scbs}{https://github.com/LKremer/scbs}, where we also provide detailed documentation including a tutorial that demonstrates a complete \texttt{scbs} analysis on an example data set.
 
 
 \section{Discussion and Conclusion}
 
 Here, we have proposed an improved strategy to preprocess single-cell bisulfite sequencing data.
-Based on the observation that incomplete read coverage of a genomic interval can lead to inaccurate methylation estimates, we suggest a scoring scheme that is aware of a reads local context rather than just treating all reads in an interval alike.
+Based on the observation that incomplete read coverage of a genomic interval can lead to inaccurate methylation estimates, we suggest a scoring scheme that is aware of a read's local context rather than just treating all reads in an interval alike.
 
 Furthermore, we show a way to pinpoint minimal regions of high variability across cells, which we call variably methylated regions (VMRs).
 By re-analyzing two published data sets, we could show that these improvements to data preprocessing help to increase signal and decrease noise, resulting in a more informative intermediate-dimensional representation of the data.
-As examples of practical benefits, we demonstrate that our preprocessing allows for better distinction of cell sub-types, especially for challenging data sets comprising cellular sub-states and lineage transitions.
+As examples of practical benefits, we demonstrate that our preprocessing allows for better distinction of cell sub-types, especially for challenging data sets comprising cellular sub-states and lineage transitions or for data sets with small cell number.
 
 To furthermore aid interpretation of scBS data, we developed and implemented the first single-cell DMR detection algorithm.
 FDR estimation via permutation allows us to report statistical significance of each DMR.
@@ -405,7 +405,7 @@ Applying our approach to NSCs and oligodendrocytes demonstrated that the obtaine
 Thus, our method aids biological interpretability by pinpointing the regions that differ between groups of cells and hence have a putative regulatory role.
 
 We also presented and published an open source software tool, called \texttt{scbs}, that provides an easy-to-use implementation of the described algorithms.
-The package also offers functionality for all other steps of data preprocessing that are needed to get from the output of methylation callers such as Bismark and methylpy to a cell\texttimes region matrix that is suitable as input for standard analysis tools that work in a reduced-dimensionality setting, thus allowing the user to use, e.g., well established tools from scRNA-seq analysis, including visualization tools such as t-SNE and UMAP, Leiden/Louvain clustering, pseudotime trajectory analyses, etc.
+The package also offers functionality for all other steps of data preprocessing that are needed to get from the output of methylation callers such as Bismark and methylpy to a cell\texttimes region matrix that is suitable as input for standard analysis tools that work in a reduced-dimensionality setting. This allows the user to use well established tools from scRNA-seq analysis, including visualization tools such as t-SNE and UMAP, Leiden/Louvain clustering, pseudotime trajectory analyses, etc.
 By offering these functions, \texttt{scbs} bridges a gap in the chain of existing tools that so far hindered practitioners in their data analysis.
 
 In addition, by pinpointing exact regions of interest, the VMR and DMR functionalities provide useful input for genomics-style analyses.
