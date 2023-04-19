@@ -149,8 +149,9 @@ However, especially when only few cells offer coverage, these averages will be v
 Therefore, we propose to smoothen using a kernel smoother, i.e., by performing a kernel-weighted average over the CpG site's neighborhood.
 The kernel bandwidth (i.e., the size of the neighborhood to average over) is a tuning parameter; for the examples presented here we used 1000~bp.
 
-A remaining issue is how to deal with the case that a cell has no reads at all within a given interval. Here, it is justified to simply put zero into the matrix element, because a shrunken residual average of zero indicates that there is no evidence of the cell deviating from the mean. We slightly refine this by using an iterative imputation within the PCA (see Methods for details).
+A minor remaining issue is how to deal with the case that a cell has no reads at all within a given interval. Here, it is justified to simply put zero into the matrix element, because a shrunken residual average of zero indicates that there is no evidence of the cell deviating from the mean. We slightly refine this by using an iterative imputation within the PCA (see Methods for details).
 
+Taken together, this shrunken mean of residuals quantitation reduces variance in comparison to simple averaging of raw methylation calls. We will show further below how this improves results.
 
 \subsection{Finding variably methylated regions}
 
