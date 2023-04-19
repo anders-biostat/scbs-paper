@@ -5,6 +5,7 @@
 %\usepackage{microtype} % nice typesetting  % doesn't work for me :-( -S
 \usepackage{amsmath}
 \usepackage{graphicx}
+\usepackage{caption}
 
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
@@ -432,10 +433,10 @@ In conclusion, we have presented powerful improvements to scBS data preprocessin
 \phantomsection
 \subsection{Acknowledgments}
 
-S.\ A.\ and L.\ P.\ M.\ K.\ acknowledge funding by the Klaus Tschira Foundation.
-L.\ P.\ M.\ K., L.\ K., S.\ C.\ and A.\ M.-V.\ acknowledge funding from the European Commission via ERC grant 771376.
+SA and LPMK acknowledge funding by the Klaus Tschira Foundation (project 00.022.2019).
+LPMK, LK, SC, and AMV acknowledge funding from the European Commission via ERC grant 771376.
 We thank Alexey Uvarovskii for code refactoring and helpful suggestions on the source code.
-
+\bigskip
 
 \phantomsection
 \section{Methods}
@@ -603,33 +604,37 @@ We omitted lowly expressed genes (with scRNA-seq counts in $<5\%$ of cells) and 
 
 {\small \bibliography{scbs}}
 
+\onecolumn 
 \newpage
 \section{Supplementary Figures}
+\bigskip
 
 \setcounter{figure}{0}
 %\renewcommand{\figurename}{Supplementary Figure}
 \renewcommand{\thefigure}{S\arabic{figure}}
 
-\begin{figure*}
-    \begin{center}
-        \includegraphics[width=0.8\columnwidth]{figures/SFig_benchmark.png}
-    \end{center}
-    \caption{\small \textbf{Benchmark of our methods on single-cell methylomes of neural subtypes of the murine frontal cortex}.\\
-    Our methods were benchmarked on single-cell methylomes from \citet{luo2017single} as described in Fig.~\ref{fig:score}.
-    }
-    \label{fig:score_luo}
-\end{figure*}
+\noindent%
+\begin{minipage}{\linewidth}
+	\begin{center}
+	    \includegraphics[width=0.6\textwidth]{figures/SFig_benchmark.png}
+	\end{center}
+	\captionof{figure}{\small \textbf{Benchmark of our methods on single-cell methylomes of neural subtypes of the murine frontal cortex}.\\
+	Our methods were benchmarked on single-cell methylomes from \citet{luo2017single} as described in Fig.~\ref{fig:score}. 
+	}
+	\label{fig:score_luo}
+\end{minipage}
+\bigskip
 
-
-\begin{figure*}
+\noindent%
+\begin{minipage}{\linewidth}
     \begin{center}
         \includegraphics[width=.6\textwidth]{figures/SFig_parameter_sweep.png}
     \end{center}
-    \caption{\small \textbf{Effect of VMR detection parameters on separation of cell types}.\\
+    \captionof{figure}{\small \textbf{Effect of VMR detection parameters on separation of cell types}.\\
     \textbf{(A-B)} Mean neighbor scores obtained after analyzing single-cell methylomes from \citet{kremer_scnmt} (\textbf{A}) or \citet{luo2017single} (\textbf{B}) with our proposed methods.
     VMRs were detected with \texttt{scbs scan} using various sliding window bandwidths or variance thresholds, and on sub-samples of the full data sets.
     }
     \label{fig:sweep}
-\end{figure*}
+\end{minipage}
 
 \end{document}
