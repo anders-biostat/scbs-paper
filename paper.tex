@@ -54,7 +54,7 @@ Lukas P.~M. Kremer\textsuperscript{1,2,*}, Martina Braun\textsuperscript{2}, Leo
 \vspace{1.5ex}
 
 April 2023
-\vspace{5.5ex}
+\vspace{4.5ex}
 
 \begin{minipage}{0.7\textwidth}
 \small \setlength{\parindent}{1em}
@@ -523,7 +523,7 @@ $$ v^g_I = \frac{1}{|C_\text{g}|-1}  \sum_{j\in g} \left( r_{Ij} - \mu_I^g \righ
 \qquad g=\text{A},\text{B}$$
 
 From this, we calculate Welch's t statistic as usual:
-$$ t_I = \frac{\mu^\text{A}_I - \mu^\text{B}_I}{\sqrt{v^\text{A}_I/|C_A| + v^\text{B}_I/|C_B|}}.$$
+$$ t_I = \frac{\mu^\text{A}_I - \mu^\text{B}_I}{\sqrt{\frac{v^\text{A}_I}{|C_A|} + \frac{v^\text{B}_I}{|C_B|}}}.$$
 
 In order to find candidate DMRs, we again define overlapping and stepwise shifted intervals $I_1, I_2, \dots$ as for the VMRs and calulate t statistics $t_1, t_2, \dots$ for these. As before, we take the top 2-percentile of these values, fuse intervals that overlap and call the regions thus obtained candidate DMRs. We repeat the procedure for the bottom 2-percentile to get the candidate DMRs for the other sign.
 
