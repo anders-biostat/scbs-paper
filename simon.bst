@@ -156,8 +156,16 @@ FUNCTION {add.blank}
 {  " " * before.all 'output.state :=
 }
 
+FUNCTION {add.colon}
+{ duplicate$ empty$
+    'skip$
+    { ":" * add.blank }
+  if$
+}
+
 FUNCTION {date.block}
 {
+  add.colon
   new.block
 }
 
@@ -552,7 +560,7 @@ FUNCTION {format.key}
 }
 
 FUNCTION {format.authors}
-{ author "author" format.names * "." %added to give period at end of author list
+{ author "author" format.names
 }
 FUNCTION {get.bbl.editor}
 { editor num.names$ #1 > 'bbl.editors 'bbl.editor if$ }
@@ -592,6 +600,11 @@ FUNCTION {format.title}
     { "t" change.case$ }
   if$
   "title" bibinfo.check
+  duplicate$ empty$ 'skip$
+    {
+      emphasize
+    }
+  if$
 }
 FUNCTION {format.full.names}
 {'s :=
@@ -605,11 +618,9 @@ FUNCTION {format.full.names}
       't :=
       nameptr #1 >
         {
-          nameptr #0
-          #10 +
+          nameptr #1
           #1 + =
-          numnames #0
-          #10 +
+          numnames #6
           > and
             { "others" 't :=
               #1 'namesleft := }
@@ -743,7 +754,8 @@ FUNCTION {word.in}
   " " * }
 
 FUNCTION {format.date}
-{ year "year" bibinfo.check duplicate$ empty$
+{ "(" year * ")" *
+  "year" bibinfo.check duplicate$ empty$
     {
       "empty year in " cite$ * "; set to ????" * warning$
        pop$ "????"
@@ -1077,7 +1089,6 @@ FUNCTION {article}
     {
       journal
       "journal" bibinfo.check
-      emphasize
       "journal" output.check
       add.blank
       format.vol.num.pages output
