@@ -583,7 +583,7 @@ For visualization, the first 15 PCs were subjected to UMAP with parameters min\_
 To flexibly adapt to data sets of different sizes, we set n\_neighbors  $=\frac{\sqrt{n}}{1.5}$ (rounded to the nearest integer), where $n$ is the total cell number.
 
 To test our DMR detection approach, we selected oligodendrocytes and NSCs from healthy wild type mice of \citet{kremer_scnmt} and ran \texttt{scbs diff} with default parameters.
-For GO enrichment analysis, DMRs with an adjusted p-value $<0.01$ were uploaded to GREAT \citep{mclean2010great} with association rules basal plus extension, 0~bp upstream, 20~kb downstream, 1~Mbp max extension, curated regulatory domains included.
+For GO enrichment analysis, DMRs with $p^\text{adj}<0.01$ were uploaded to GREAT \citep{mclean2010great} with the association rule "basal plus extension, 0~bp upstream, 20~kb downstream, 1~Mbp max extension, curated regulatory domains included".
 
 \subsection{Mean neighbor score} \label{methods:score}
 To assess performance of our methods, we employed a score that quantifies how well cell types (or cell states) are separated in 15-dimensional PCA space.
@@ -596,8 +596,7 @@ We denote this count $a^k_j$, where we have chosen $k=\frac{\sqrt{n}}{1.5}$, rou
 The overall score used to evaluate a given combination of methods is then simply the mean of all cell-wise scores.
 
 \subsection{Correlation of DNA methylation and gene expression}
-To assess correlation between gene expression and the methylation status of VMRs or promoters, we
-first detected VMRs with \texttt{scbs scan --bandwidth 1000 --var-treshold 0.05}.
+To assess correlation between gene expression and the methylation status of VMRs or promoters, we first detected VMRs with \texttt{scbs scan --bandwidth 1000 --var-treshold 0.05}.
 We then quantified DNA methylation at VMRs and promoters with \texttt{scbs matrix}.
 We defined promoters as $\pm2000$~bp regions centered on a genes transcription start site (TSS).
 When multiple TSSs were annotated, we chose the TSS of the "principal" isoform \citep{appris}.
