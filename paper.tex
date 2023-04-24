@@ -45,7 +45,7 @@
 \begin{document}
 
 \twocolumn[{%
-\centering
+\centering\phantomsection\addcontentsline{toc}{section}{Title}
 \textbf{\Large Analyzing single-cell bisulfite sequencing data with \texttt{scbs}}\\[1.5ex]
 
 Lukas P.~M. Kremer\textsuperscript{1,2,*}, Martina Braun\textsuperscript{2}, Leonie Küchenhoff\textsuperscript{1,2}, Santiago Cerrizuela\textsuperscript{2},\\Ana Martin-Villalba\textsuperscript{2}, Simon Anders\textsuperscript{1,*}\\[1ex]
@@ -58,6 +58,7 @@ April 2023
 
 \begin{minipage}{0.7\textwidth}
 \small \setlength{\parindent}{1em}
+\phantomsection\addcontentsline{toc}{subsection}{Abstract}
 \noindent \textit{Abstract} -- Single-cell bisulfite sequencing (scBS) is a technique that enables the assessment of DNA methylation at single-base pair and single-cell resolution.
 The analysis of the large datasets obtained from scBS requires preprocessing to reduce data size, improve signal-to-noise ratio, and provide interpretability.
 Typically, this is achieved by dividing the genome into large tiles and averaging the methylation signals within each tile.
