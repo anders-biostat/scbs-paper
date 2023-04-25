@@ -84,7 +84,7 @@ Single-cell RNA sequencing (scRNA-seq) techniques have matured at great pace in 
 
 Here, we discuss bisulfite sequencing, a method to study DNA methylation.
 In brief, DNA is treated with bisulfite, which converts unmethylated cytosines to uracils which are read as thymine in subsequent PCR, while methylated cytosines are protected from conversion.
-After sequencing, these conversions allow to determine the methylation status of all cytosines covered by reads \citep{Frommer_1992}.
+After sequencing, these conversions allow for the determination of the methylation status of all cytosines covered by reads \citep{Frommer_1992}.
 Bisulfite sequencing can also be performed at single-cell resolution \citep{Smallwood_2014} and even in parallel with scRNA-seq \citep{scMTseq,Clark2018}.
 
 In the present paper, we discuss strategies to analyze single-cell bisulfite-sequencing (scBS) data. We suggest improvements to current approaches, and demonstrate their value in benchmarks, using two real-world datasets. Furthermore, we discuss how to perform comparative analyses. Finally, we present ``\texttt{scbs}'', a comprehensive software toolkit to perform scBS data analysis, using the described methods. 
@@ -125,16 +125,16 @@ Therefore, Euclidean distances between these ``PCA space'' vectors provide a rob
 Hence, the PCA space representation is suitable as input to methods like t-SNE and UMAP, which provide a two-dimensional representation of the data, or to methods for clustering (assigning cells to groups by similarity) and trajectory finding (identifying elongated manifolds in PCA space and assigning cells to quasi-1D positions along them).
 
 This procedure is commonly adapted when working with single-cell DNA methylation data, because once one gets to the PCA step, one can then continue with the established methods just mentioned.
-However, constructing a matrix suitable as input for PCA from methylation data is requires deviation from the standard scRNA-seq workflow due to considerable differences in data structure.
+However, constructing a matrix suitable as input for PCA from methylation data requires deviation from the standard scRNA-seq workflow due to considerable differences in data structure.
 First, while scRNA-seq quantifies RNA abundance of genes or transcripts, scBS is genome-wide and thus lacks a natural choice for features in which methylation is to be quantified.
 Second, instead of counts, scBS generates binary data that informs us whether certain cytosines in a given cell are methylated or not.
-A simple and common approach to construct a methylation matrix suitable for PCA, used for instance by \citet{luo2017single}, is to divide the genome into tiles of e.g. 100~kb size, and calculate for each cell the average methylation of the DNA within each tile.
+A simple and common approach to construct a methylation matrix suitable for PCA, used for instance by \citet{luo2017single}, is to divide the genome into tiles of e.g., 100~kb size, and calculate for each cell the average methylation of the DNA within each tile.
 To this end, one identifies in the tile all CpG sites that are covered by at least one read and averages their methylation state, i.e., one denotes as average DNA methylation of the tile in a given cell the proportion of the observed CpG sites in the tile that were found to be methylated (Figure \ref{fig:smoothres}A).
 This yields a matrix, with one row for each cell and one column for each genomic tile, comprising numbers (``methylation fractions'') between 0 and 1.
 This matrix is now subjected to PCA.
 After PCA, one can proceed with dimensionality reduction and clustering approaches known from scRNA-seq.
 
-While this simple procedure is straight-forward and produces usable results, it is not optimal. In this paper, we discuss weaknesses of the simple approach and suggest several refinements to overcome them. Using benchmarks and application to real data, we show that our improvements substantially increase the information content of the processed data. In the main text, we explain the proposed methods and their motivation in a qualitative manner, while mathematical details are given later in the Methods section. Then, we will demonstrate the value of our methods using benchmarks and application to real data. Finally, we describe and demonstrate an approach to detect differentially methylated regions (DMRs) in scBS data. We also describe our software toolkit, scbs, that facilitates all these analyses.
+While this simple procedure is straight-forward and produces usable results, it is not optimal. In this paper, we discuss weaknesses of the simple approach and suggest several refinements to overcome them. Using benchmarks and application to real data, we show that our improvements substantially increase the information content of the processed data. In the main text, we explain the proposed methods and their motivation in a qualitative manner, while mathematical details are given later in the Methods section. Then, we will demonstrate the value of our methods using benchmarks and application to real data. Finally, we describe and demonstrate an approach to detect differentially methylated regions (DMRs) in scBS data. We also describe our software toolkit, \texttt{scbs}, that facilitates all these analyses.
 
 \section{Improved preprocessing of scBS data}
 
@@ -184,14 +184,14 @@ Only the latter regions are of value for our goal of quantitating dissimilarity 
 We call these the variably methylated regions (VMRs). % maybe mention the parallel to highly variable genes in scRNAseq?
 
 In the standard approach, one divides up (tiles) each chromosome into non-overlapping, equal-sized intervals, and quantitates the methylation of each tile.
-Such rigid placing of interval boundaries is unlikely to be optimal: for example, a VMR might be much smaller than a tile and the signal from its CpG sites will hence be drowned out by the larger number of uninformative CpG sites that are equal in all cells, when averaging over all the CpG sites in the tile.
+Such rigid placement of interval boundaries is unlikely to be optimal: for example, a VMR might be much smaller than a tile and the signal from its CpG sites will hence be drowned out by the larger number of uninformative CpG sites that are equal in all cells, when averaging over all the CpG sites in the tile.
 
 Therefore, we propose the following approach (Fig.~\ref{fig:vmr}): Divide up the chromosome into many \emph{overlapping} windows that start at regular multiples of a fixed, small, step size.
 Quantify the methylation of each cell in each window by averaging the cell's methylation residuals over all CpGs in the window, as described above and depicted in Fig.~\ref{fig:smoothres}B.
-Then, calculate for each window the variance of these values over all cells.
+Next, calculate for each window the variance of these values over all cells.
 Select, say, the top 2\% windows with the highest variances and mark them as VMRs.
 Wherever thus marked windows overlap, merge them into one larger VMR.
-Then, calculate for each of these larger VMRs the methylation signal, as before, by averaging for each cell over the residuals of all contained CpG sites.
+Then, calculate for each of these merged VMRs the methylation signal, as before, by averaging for each cell over the residuals of all contained CpG sites.
 
 In this manner, we obtain a methylation matrix, with one row per cell and one column per VMR, that is, in a sense, richer in information and has better signal-to-noise ratio than the matrix obtained by the simple analysis sketched at the very beginning.
 As we demonstrate below, a PCA performed on such a matrix provided a distance metric for the cells that contains more information on biological detail than one from a simpler analysis.
@@ -240,7 +240,7 @@ Using these labels as ground truth we re-analyzed the full and sub-sampled CpG m
 \subsubsection{Robustness to parameter changes}
 
 Lastly, we assessed whether our proposed workflow requires fine-tuning of parameters (Fig.~\ref{fig:sweep}).
-To this end, we re-analyzed both data sets, as well as sub-samples of the data with different VMR detection parameters, namely the width of the sliding window in bp, (set with option \texttt{--bandwidth} in our ``scbs'' software, default 2000) and the variance threshold above which windows are merged to VMRs (\texttt{--var-threshold}, default 0.02).
+To this end, we re-analyzed both data sets, as well as sub-samples of the data with different VMR detection parameters, namely the width of the sliding window in bp, (set with option \texttt{--bandwidth} in our \texttt{scbs} software, default 2000) and the variance threshold above which windows are merged to VMRs (\texttt{--var-threshold}, default 0.02).
 This parameter sweep showed that our workflow gives good results over a wide range of parameter values. For the data of \citet{luo2017single}, results are nearly independent of the parameters (Fig.~\ref{fig:sweep}B). In the more challenging data set of \citet{kremer_scnmt} (Fig.~\ref{fig:sweep}A), cell types were less cleanly separated when very large bandwidths, or very strict variance thresholds were selected.
 However, very small bandwidths or very lenient thresholds resulted in a much higher number of VMRs and thus long computing times. Overall, however, our default parameter combination provided good results and fast compute times in both data sets.
 
@@ -417,7 +417,7 @@ The package also offers functionality for all other steps of data preprocessing 
 By offering these functions, \texttt{scbs} bridges a gap in the chain of existing tools that so far hindered practitioners in their data analysis.
 
 In addition, by pinpointing exact regions of interest, the VMR and DMR functionalities provide useful input for genomics-style analyses.
-Depending on the research question at hand, individual DMRs can be related to nearby genomic features such as gene bodies or known regulatory elements, tested for methylation differences between groups of cells, or subjected to gene ontology enrichment or motif enrichment.
+Depending on the research question at hand, individual DMRs may be related to nearby genomic features such as gene bodies or known regulatory elements, tested for methylation differences between groups of cells, or subjected to gene ontology and motif enrichment.
 
 In conclusion, we have presented powerful improvements to scBS data preprocessing and a software tool that implements these.
 
@@ -433,7 +433,7 @@ In conclusion, we have presented powerful improvements to scBS data preprocessin
 
 Let us write $x_{ij}$ for the methylation status of CpG $i$ in cell $j$.
 The index $i$ runs over all CpG positions present in the genome, the index $j$ over all cells in the assay.
-We write $x_{ij}=0$ if position $i$ was found to be unmethylated in cell $j$ by bisulfite sequencing, $x_{ij}=1$ if it was methylated, and $x_{ij}=\text{NA}$ if position $i$ was not covered by reads from cell $j$ and the methylation status is therefore not available (``NA''),
+We write $x_{ij}=0$ if position $i$ was found to be unmethylated in cell $j$ by bisulfite sequencing, $x_{ij}=1$ if it was methylated, and $x_{ij}=\text{NA}$ if position $i$ was not covered by reads from cell $j$ and the methylation status is therefore not available (``NA'').
 
 These values can be readily obtained from single-cell bisulfite sequencing data using tools like Bismark.
 
