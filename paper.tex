@@ -48,7 +48,7 @@
 \centering\phantomsection\addcontentsline{toc}{section}{Title}
 \textbf{\Large Analyzing single-cell bisulfite sequencing data with \texttt{scbs}}\\[1.5ex]
 
-Lukas P.~M. Kremer\textsuperscript{1,2,*}, Martina Braun\textsuperscript{2}, Leonie Küchenhoff\textsuperscript{1,2}, Santiago Cerrizuela\textsuperscript{2},\\Ana Martin-Villalba\textsuperscript{2}, Simon Anders\textsuperscript{1,*}\\[1ex]
+Lukas P.~M. Kremer\textsuperscript{1,2,*}, Martina M. Braun\textsuperscript{2}, Leonie Küchenhoff\textsuperscript{1,2}, Santiago Cerrizuela\textsuperscript{2},\\Ana Martin-Villalba\textsuperscript{2}, Simon Anders\textsuperscript{1,*}\\[1ex]
 {\footnotesize \textsuperscript{1} BioQuant Centre, University of Heidelberg, Heidelberg, Germany\\[-.5ex] 
 \textsuperscript{2} Molecular Neurobiology Dept., German Cancer Research Center (DKFZ), Heidelberg, Germany}
 \vspace{1.5ex}
@@ -87,7 +87,7 @@ In brief, DNA is treated with bisulfite, which converts unmethylated cytosines t
 After sequencing, these conversions allow to determine the methylation status of all cytosines covered by reads \citep{Frommer_1992}.
 Bisulfite sequencing can also be performed at single-cell resolution \citep{Smallwood_2014} and even in parallel with scRNA-seq \citep{scMTseq,Clark2018}.
 
-In the present paper, we discuss strategies to analyze single-cell bisulfite-sequencing (scBS) data. We suggest improvements to current approaches, and demonstrate their value in benchmarks, using two real-world datasets. Furthermore, we discuss how to perform comparative analyses. Finally, we present ``scbs'', a comprehensive software toolkit to perform scBS data analysis, using the described methods. 
+In the present paper, we discuss strategies to analyze single-cell bisulfite-sequencing (scBS) data. We suggest improvements to current approaches, and demonstrate their value in benchmarks, using two real-world datasets. Furthermore, we discuss how to perform comparative analyses. Finally, we present ``\texttt{scbs}'', a comprehensive software toolkit to perform scBS data analysis, using the described methods. 
 \blfootnote{\hspace{-.5cm}\raggedright\textsuperscript{*} e-mail:  \texttt{l.kremer@dkfz-heidelberg.de} and\\ \hspace{1cm}\texttt{simon.anders@bioquant.uni-heidelberg.de}}
 
 
@@ -300,9 +300,11 @@ To enable DMR detection in scBS data, we thus developed an approach that detects
 Similar to the previously described approach for VMR identification (Fig.~\ref{fig:vmr}), we divide each chromosome into overlapping windows shifted by a small and fixed size (step size) and quantify the methylation of each cell in each window.
 Next, instead of the variance, we obtain the t statistic % Welch t-test
 as a measure of differential methylation between the two cell groups.
-We identify the windows with the most extreme t statistics, e.g. windows in the 2\% upper and lower tails. We then merge any overlapping windows in the upper tail into larger DMRs, and do the same for windows in the lower tail, and then we re-calculate the t statistic for each larger DMR.
+We identify the windows with the most extreme t statistics, e.g. windows in the 2\% upper and lower tails.
+We then merge any overlapping windows in the upper tail into larger DMRs, and do the same for windows in the lower tail, and then we re-calculate the t statistic for each larger DMR.
 
-To assess statistical significance of DMRs, we repeat the same procedure on permutations of the scBS data, i.e. the same data set with randomly shuffled cell labels. The DMR t statistics obtained from permuted data are then used to estimate the false-discovery rate (FDR), yielding an adjusted p-value for each DMR.
+To assess statistical significance of DMRs, we repeat the same procedure on permutations of the scBS data, i.e. the same data set with randomly shuffled cell labels.
+The DMR t statistics obtained from permuted data are then used to estimate the false-discovery rate (FDR), yielding an adjusted p-value for each DMR.
 
 While the primary purpose of VMRs is to provide better input for PCA and distance calculations, DMR detection facilitates the discovery of epigenetic differences between conditions or cell types, as we demonstrate next.
 
@@ -369,8 +371,7 @@ Methylated and unmethylated sites are coded as $+1$ and $-1$, respectively.
 Since the vast majority of values in this matrix are missing due to the sparsity of scBS data (and because rows for base-pairs not corresponding to a CpG site contain no data), we encode missing values as zero and then store the data in Compressed Sparse Row (CSR) format.
 This format does not explicitly store zeroes (here: missing values) and is optimized for row-wise access, which results in significant compression and allows fast access to the methylation status of genomic intervals.
 
-\texttt{scbs prepare} also computes a number of summary statistics for each cell, including the mean genome-wide methylation level and the number of observed CpG sites, i.e.
-the number of CpG sites that have sequencing coverage.
+\texttt{scbs prepare} also computes a number of summary statistics for each cell, including the mean genome-wide methylation level and the number of observed CpG sites, i.e. the number of CpG sites that have sequencing coverage.
 These summary statistics can be used to detect cells with poor quality.
 The quality of each single cell methylome can furthermore be inspected with \texttt{scbs profile}, which computes the average methylation profile of a set of user-defined genomic regions such as transcription start sites (TSS) at single-cell resolution.
 The TSS profile is a useful quality control plot since methylation shows a characteristic dip roughly \textpm1~kb around the transcription start site in mammalian genomes.
@@ -382,8 +383,8 @@ This produces a BED file that lists the genome coordinates of VMRs.
 To finally obtain a methylation matrix analogous to a scRNA-seq count matrix, this BED file can be used as input for \texttt{scbs matrix}, which quantifies methylation at genomic intervals in all cells.
 The command produces both, the simple percentage of methylated CpG sites, as well as our proposed methylation measure, the shrunken mean of the residuals, which is more robust to variation in sequencing coverage or stochastic differences in read position between cells.
 We note that both \texttt{matrix} and \texttt{profile} accept any valid BED file as input, which means that the user can quantify and visualize methylation at any set of genomic features of interest, such as promoters, enhancers or transcription factor binding sites, obtaining one profile plot per cell.
-
-The methylation matrix produces by the \texttt{matrix} function can then serve as input for standard single-cell analysis tools like Seurat \citep{seurat} or ScanPy \citep{Wolf_2018}, in order to perform, e.g., dimensionality reduction and cell clustering. For this, the methylation matrix should be provided in lieu of the log-normalized expression matrix usually expected by these tools.
+% This is not really true cause you still need to deal with missing values and all the default transformations don't make sense when you're not dealing with count data: "The methylation matrix produced by the \texttt{matrix} function can then serve as input for standard single-cell analysis tools like Seurat \citep{seurat} or ScanPy \citep{Wolf_2018}, in order to perform, e.g., dimensionality reduction and cell clustering. For this, the methylation matrix should be provided in lieu of the log-normalized expression matrix usually expected by these tools.
+The methylation matrix produced by the \texttt{matrix} function can then serve as input for established methods used for the exploration of single-cell data, such as dimensionality reduction and cell clustering.
 
 Finally, after annotation and exploration of the data set, the user may specify two groups of cells for DMR detection with \texttt{scbs diff}.
 This command produces a BED file listing the genome coordinates, adjusted p-values, as well as several other metrics associated with DMRs.
@@ -408,18 +409,17 @@ As examples of practical benefits, we demonstrate that our preprocessing allows 
 
 To furthermore aid interpretation of scBS data, we developed and implemented the first single-cell DMR detection algorithm.
 FDR estimation via permutation allows us to report statistical significance of each DMR.
-% maybe here discuss pseudoreplication issues?
 Applying our approach to NSCs and oligodendrocytes demonstrated that the obtained DMRs locate near meaningful loci associated with cell-type specific functions.
 Thus, our method aids biological interpretability by pinpointing the regions that differ between groups of cells and hence have a putative regulatory role.
 
 We also presented and published an open source software tool, called \texttt{scbs}, that provides an easy-to-use implementation of the described algorithms.
 The package also offers functionality for all other steps of data preprocessing that are needed to get from the output of methylation callers such as Bismark and methylpy to a cell\texttimes region matrix that is suitable as input for standard analysis tools that work in a reduced-dimensionality setting. This allows the user to use well established tools from scRNA-seq analysis, including visualization tools such as t-SNE and UMAP, Leiden/Louvain clustering, pseudotime trajectory analyses, etc.
-By offering these functions, \texttt{scbs} \todo{bridges a gap in the chain of existing tools} that so far hindered practitioners in their data analysis.
+By offering these functions, \texttt{scbs} bridges a gap in the chain of existing tools that so far hindered practitioners in their data analysis.
 
 In addition, by pinpointing exact regions of interest, the VMR and DMR functionalities provide useful input for genomics-style analyses.
 Depending on the research question at hand, individual DMRs can be related to nearby genomic features such as gene bodies or known regulatory elements, tested for methylation differences between groups of cells, or subjected to gene ontology enrichment or motif enrichment.
 
-In conclusion, we have presented powerful improvements to scBS data preprocessing and a software tool that implements these and \todo{bridges a gap in existing tool chains}.
+In conclusion, we have presented powerful improvements to scBS data preprocessing and a software tool that implements these.
 
 
 \vspace{1.4ex}
