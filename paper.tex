@@ -469,9 +469,9 @@ When there is disagreement, we put $x_{ij}=\text{NA}$ by default, or optionally 
 
 For later use: We define $C$ as the set of all cells in the assay (i.e., $C$ is the index set for the cell indices $j$).
 Moreover, we define $C_i\subset C$ as the set of all those cells $j$ that have reads covering position $i$,
-$$ C_i=\{j\in C: x_{ij}\neq\text{NA}\}.$$
+\[ C_i=\{j\in C: x_{ij}\neq\text{NA}\}.\]
 Conversely, we define $G_j$ as the set of all the CpG positions $i$ covered by reads from cell $j$ 
-$$ G_j=\{i: x_{ij}\neq\text{NA}\}.$$
+\[ G_j=\{i: x_{ij}\neq\text{NA}\}.\]
 
 \subsection{Data storage}
 
@@ -483,7 +483,7 @@ In all that follows here, any mention of $x$ will, however, always mean the enco
 \subsection{Smoothing}
 
 For each CpG position $i$, we write 
-$$\overline{x}_i=\langle x_{ij} \rangle_{j\in C_i} = \frac{1}{|C_i|}\sum_{j\in C_i} x_{ij}$$ 
+\[\overline{x}_i=\langle x_{ij} \rangle_{j\in C_i} = \frac{1}{|C_i|}\sum_{j\in C_i} x_{ij}\] 
 for the average methylation at position $i$, where $\langle\cdot\rangle$ denotes averaging, and the average runs over all the cells $j\in C_i$, i.e.
 over those cells for which methylation data is available for position $i$.
 
@@ -508,16 +508,16 @@ Next, we discuss averaging methylation over a range of CpG sites.
 Given an interval $I$ on the chromosome, we wish to quantify the average methylation $m_{Ij}$ of the CpG sites within the interval for cell $j$.
 If we interpret $I$ as the set of CpG positions $i$ in the interval, we may write
 
-$$ m_{Ij} = \left< x_{ij} \right>_{i\in I\cap G_j}.$$
+\[ m_{Ij} = \left< x_{ij} \right>_{i\in I\cap G_j}.\]
 
 Here, the average runs over all those sites $i$ that lie within the interval $I$ and are covered by reads from cell $j$.
 
 If we wish to compare cells, it can be helpful to center this quantity by subtracting its average:
 
-$$ z_{Ij} = m_{Ij} - \langle m_{Ij'}\rangle_{j'\in C}.$$
+\[ z_{Ij} = m_{Ij} - \langle m_{Ij'}\rangle_{j'\in C}.\]
 
 As an alternative, we suggest to consider the residuals of the individual CpG methylation values $x_{ij}$ from the smoothed average $\tilde x_i$,
-$$ r_{ij} = x_{ij} - \tilde x_i, $$
+\[ r_{ij} = x_{ij} - \tilde x_i, \]
 and averaging over these, obtaining
 \begin{equation} 
 r_{Ij} = \frac{\scriptsize{1}}{\scriptsize{|I\cap C_i|+1}}\sum_{i\in I\cap C_i}\left( x_{ij} - \tilde x_i \right).
@@ -549,14 +549,14 @@ We take all the intervals with variance in the top 2-percentile, fuse intervals 
 
 When searching for DMRs, we compare two groups of cells, whose index sets we denote with $C_\text{A}$ and $C_\text{B}$.
 For a given interval $I$, we calculate the mean each of the mean shrunken residuals $r_{ij}$ (see Eq.~(\ref{avgres})) over the cells $j$ in each of the two groups,
-$$ \mu^g_I = \langle r_{Ij} \rangle_{j\in g},\qquad g=\text{A},\text{B} $$
+\[ \mu^g_I = \langle r_{Ij} \rangle_{j\in g},\qquad g=\text{A},\text{B}. \]
 
 We also calculate a variance as in Eq.(\ref{var}):
-$$ v^g_I = \frac{1}{|C_\text{g}|-1}  \sum_{j\in g} \left( r_{Ij} - \mu_I^g \right)^2, 
-\qquad g=\text{A},\text{B}$$
+\[ v^g_I = \frac{1}{|C_\text{g}|-1}  \sum_{j\in g} \left( r_{Ij} - \mu_I^g \right)^2, 
+\qquad g=\text{A},\text{B}.\]
 
 From this, we calculate Welch's t statistic as usual:
-$$ t_I = \frac{\mu^\text{A}_I - \mu^\text{B}_I}{\sqrt{\frac{v^\text{A}_I}{|C_A|} + \frac{v^\text{B}_I}{|C_B|}}}.$$
+\[ t_I = \frac{\mu^\text{A}_I - \mu^\text{B}_I}{\sqrt{\frac{v^\text{A}_I}{|C_A|} + \frac{v^\text{B}_I}{|C_B|}}}.\]
 
 In order to find candidate DMRs, we again define overlapping and stepwise shifted intervals $I_1, I_2, \dots$ as for the VMRs and calulate t statistics $t_1, t_2, \dots$ for these.
 As before, we take the top 2-percentile of these values, fuse intervals that overlap and call the regions thus obtained candidate DMRs.
@@ -582,8 +582,8 @@ All the t values obtained from this permutation procedure are taken together to 
 Then, we can use this null distribution to control false discovery rate (FDR) by applying the Benjamini-Hochberg procedure in its p-value-free form:
 Let us write $T$ for the set of all t values obtained from the ``real'' assignment of cells to group labels and $T_0$ from the set of all t values obtained from the shuffled assignments, i.e., the empirical null distribution.
 To adjust a specific t value $t_i\in T$, we calculate
-$$ p^\text{adj}_i = \frac{ \left|\left\{t_j\in T_0\mid|t_j| > |t_i| \right\}\right| \big/ |T_0|}
-{ \left|\left\{t_j\in T\mid|t_j| > |t_i| \right\}\right| \big/ |T|}.$$
+\[ p^\text{adj}_i = \frac{ \left|\left\{t_j\in T_0\mid|t_j| > |t_i| \right\}\right| \big/ |T_0|}
+{ \left|\left\{t_j\in T\mid|t_j| > |t_i| \right\}\right| \big/ |T|}.\]
 
 In words: we calculate which fraction of the null t values is greater than t by absolute value, and which fraction of the real t values is.
 The ratio gives us the false discovery rate we should expect if we used the t value as threshold.
