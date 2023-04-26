@@ -87,7 +87,10 @@ In brief, DNA is treated with bisulfite, which converts unmethylated cytosines t
 After sequencing, these conversions allow for the determination of the methylation status of all cytosines covered by reads \citep{Frommer_1992}.
 Bisulfite sequencing can also be performed at single-cell resolution \citep{Smallwood_2014} and even in parallel with scRNA-seq \citep{scMTseq,Clark2018}.
 
-In the present paper, we discuss strategies to analyze single-cell bisulfite-sequencing (scBS) data. We suggest improvements to current approaches, and demonstrate their value in benchmarks, using two real-world datasets. Furthermore, we discuss how to perform comparative analyses. Finally, we present ``\texttt{scbs}'', a comprehensive software toolkit to perform scBS data analysis, using the described methods. 
+In the present paper, we discuss strategies to analyze single-cell bisulfite-sequencing (scBS) data.
+We suggest improvements to current approaches, and demonstrate their value in benchmarks, using two real-world datasets.
+Furthermore, we discuss how to perform comparative analyses.
+Finally, we present ``\texttt{scbs}'', a comprehensive software toolkit to perform scBS data analysis, using the described methods.
 \blfootnote{\hspace{-.5cm}\raggedright\textsuperscript{*} e-mail:  \texttt{l.kremer@dkfz-heidelberg.de} and\\ \hspace{1cm}\texttt{simon.anders@bioquant.uni-heidelberg.de}}
 
 
@@ -134,19 +137,29 @@ This yields a matrix, with one row for each cell and one column for each genomic
 This matrix is now subjected to PCA.
 After PCA, one can proceed with dimensionality reduction and clustering approaches known from scRNA-seq.
 
-While this simple procedure is straight-forward and produces usable results, it is not optimal. In this paper, we discuss weaknesses of the simple approach and suggest several refinements to overcome them. Using benchmarks and application to real data, we show that our improvements substantially increase the information content of the processed data. In the main text, we explain the proposed methods and their motivation in a qualitative manner, while mathematical details are given later in the Methods section. Then, we will demonstrate the value of our methods using benchmarks and application to real data. Finally, we describe and demonstrate an approach to detect differentially methylated regions (DMRs) in scBS data. We also describe our software toolkit, \texttt{scbs}, that facilitates all these analyses.
+While this simple procedure is straight-forward and produces usable results, it is not optimal.
+In this paper, we discuss weaknesses of the simple approach and suggest several refinements to overcome them.
+Using benchmarks and application to real data, we show that our improvements substantially increase the information content of the processed data.
+In the main text, we explain the proposed methods and their motivation in a qualitative manner, while mathematical details are given later in the Methods section.
+Then, we will demonstrate the value of our methods using benchmarks and application to real data.
+Finally, we describe and demonstrate an approach to detect differentially methylated regions (DMRs) in scBS data.
+We also describe our software toolkit, \texttt{scbs}, that facilitates all these analyses.
 
 \section{Improved preprocessing of scBS data}
 
 \subsection{Read-position aware quantitation} \label{residuals}
 
-We first discuss the task of quantifying the level of methylation in a given, fixed, genomic interval. Typically, read coverage per cell is sparse in scBS data. In the example of Figure \ref{fig:smoothres}A, the depicted interval is covered by a single read for two of the three cells shown and no read in the third. The read from cell 2 shows much more methylation than the read from cell 1, and the standard analysis would therefore consider cell 2 to have higher methylation in the interval than cell 1.
+We first discuss the task of quantifying the level of methylation in a given, fixed, genomic interval.
+Typically, read coverage per cell is sparse in scBS data.
+In the example of Figure \ref{fig:smoothres}A, the depicted interval is covered by a single read for two of the three cells shown and no read in the third.
+The read from cell 2 shows much more methylation than the read from cell 1, and the standard analysis would therefore consider cell 2 to have higher methylation in the interval than cell 1.
 However, given that the two reads agree wherever they overlap, a more parsimonious interpretation would be that the cells do not show difference in methylation within the interval.
 Rather, both cells, and similarly maybe most other cells, might have stronger methylation in the left third of the interval than in the middle one.
 
 Therefore, we propose to first obtain, for each CpG position, an average of the methylation across all cells, and then quantify each cell's deviation from this average.
 In Figure \ref{fig:smoothres}B, the curved line depicts such an average over all cells, and the red vertical lines show an individual cell's deviation from the ensemble average.
-We take the lengths of the red lines as signed values (``residuals''), positive for lines extending upwards from the curve (methylated CpG) and negative for lines extending downwards (unmethylated CpG). For each cell, we then take the average over the residuals for all the CpGs in the interval that are covered by reads from this cell.
+We take the lengths of the red lines as signed values (``residuals''), positive for lines extending upwards from the curve (methylated CpG) and negative for lines extending downwards (unmethylated CpG).
+For each cell, we then take the average over the residuals for all the CpGs in the interval that are covered by reads from this cell.
 In this average, we perform shrinkage towards zero via a pseudocount (to trade bias for variance, see Methods for detail) in order to dampen the signal in cells with low coverage of the interval.
 
 The average thus obtained, the shrunken mean of the residuals, is what we use to quantify the cell's (relative) methylation in the interval.
@@ -160,9 +173,12 @@ However, especially when only few cells offer coverage, these averages will be v
 Therefore, we propose to smoothen using a kernel smoother, i.e., by performing a kernel-weighted average over the CpG site's neighborhood.
 The kernel bandwidth (i.e., the size of the neighborhood to average over) is a tuning parameter; for the examples presented here we used 1000~bp.
 
-A minor remaining issue is how to deal with the case that a cell has no reads at all within a given interval. Here, it is justified to simply put zero into the matrix element, because a shrunken residual average of zero indicates that there is no evidence of the cell deviating from the mean. We slightly refine this by using an iterative imputation within the PCA (see Methods for details).
+A minor remaining issue is how to deal with the case that a cell has no reads at all within a given interval.
+Here, it is justified to simply put zero into the matrix element, because a shrunken residual average of zero indicates that there is no evidence of the cell deviating from the mean.
+We slightly refine this by using an iterative imputation within the PCA (see Methods for details).
 
-Taken together, this shrunken mean of residuals quantitation reduces variance in comparison to simple averaging of raw methylation calls. We will show further below how this improves results.
+Taken together, this shrunken mean of residuals quantitation reduces variance in comparison to simple averaging of raw methylation calls.
+We will show further below how this improves results.
 
 \subsection{Finding variably methylated regions}
 
@@ -179,14 +195,15 @@ Taken together, this shrunken mean of residuals quantitation reduces variance in
 
 Typically, some regions in a chromosome will have very similar methylation status in all cells, while other regions show variability in methylation across cells.
 For instance, it is known  since long that CpG-rich promoters of housekeeping genes are unmethylated, and that a large proportion of the remaining genome is highly methylated regardless of cell type \citep{bird1986cpg}.
-In contrast, DNA methylation at certain genomic features such as enhancers is more dynamic (e.g., \citet{argelaguet2019gastru}), and thus more variable across cells.
+In contrast, DNA methylation at certain genomic features such as enhancers is more dynamic \citep[e.g.,][]{argelaguet2019gastru}, and thus more variable across cells.
 Only the latter regions are of value for our goal of quantitating dissimilarity between cells.
 We call these the variably methylated regions (VMRs). % maybe mention the parallel to highly variable genes in scRNAseq?
 
 In the standard approach, one divides up (tiles) each chromosome into non-overlapping, equal-sized intervals, and quantitates the methylation of each tile.
 Such rigid placement of interval boundaries is unlikely to be optimal: for example, a VMR might be much smaller than a tile and the signal from its CpG sites will hence be drowned out by the larger number of uninformative CpG sites that are equal in all cells, when averaging over all the CpG sites in the tile.
 
-Therefore, we propose the following approach (Fig.~\ref{fig:vmr}): Divide up the chromosome into many \emph{overlapping} windows that start at regular multiples of a fixed, small, step size.
+Therefore, we propose the following approach (Fig.~\ref{fig:vmr}):
+Divide up the chromosome into many \emph{overlapping} windows that start at regular multiples of a fixed, small, step size.
 Quantify the methylation of each cell in each window by averaging the cell's methylation residuals over all CpGs in the window, as described above and depicted in Fig.~\ref{fig:smoothres}B.
 Next, calculate for each window the variance of these values over all cells.
 Select, say, the top 2\% windows with the highest variances and mark them as VMRs.
@@ -228,7 +245,9 @@ While all cells form a continuous point cloud when using default methods, our im
 Furthermore, even cellular sub-states of cells in the continuous neural stem cell lineage were partially separated.
 
 To quantify this performance gain in a more rigorous manner, we used a score that quantifies whether cells were placed, in 15-dimensional PC space, in a neighborhood comprising cells of the same cell type ("neighbor score", see Figure \ref{fig:score}D, and Methods for details).
-We then ask how this score depends on the number of available cells. This is relevant as scBS protocols are costly and labor-intensive, and only few laboratories are currently able to obtain thousands of single cell methylomes. To simulate smaller data sets, we sub-sampled the 1566-cell data set into smaller data sets, analyzed them again with the four workflow variants, and calculated the mean neighbor score for each (Figure \ref{fig:score}E).
+We then ask how this score depends on the number of available cells.
+This is relevant as scBS protocols are costly and labor-intensive, and only few laboratories are currently able to obtain thousands of single cell methylomes.
+To simulate smaller data sets, we sub-sampled the 1566-cell data set into smaller data sets, analyzed them again with the four workflow variants, and calculated the mean neighbor score for each (Figure \ref{fig:score}E).
 The results demonstrate that the forebrain cell clusters are more cleanly separated when using our proposed methods.
 This performance gain was observed also in smaller data sets, although cell cluster separation generally becomes more difficult in those.
 Both the use of VMRs instead of genomic tiles, as well as the use of the shrunken mean of the residuals over methylation averages improved cell cluster separation.
@@ -241,8 +260,11 @@ Using these labels as ground truth we re-analyzed the full and sub-sampled CpG m
 
 Lastly, we assessed whether our proposed workflow requires fine-tuning of parameters (Fig.~\ref{fig:sweep}).
 To this end, we re-analyzed both data sets, as well as sub-samples of the data with different VMR detection parameters, namely the width of the sliding window in bp, (set with option \texttt{--bandwidth} in our \texttt{scbs} software, default 2000) and the variance threshold above which windows are merged to VMRs (\texttt{--var-threshold}, default 0.02).
-This parameter sweep showed that our workflow gives good results over a wide range of parameter values. For the data of \citet{luo2017single}, results are nearly independent of the parameters (Fig.~\ref{fig:sweep}B). In the more challenging data set of \citet{kremer_scnmt} (Fig.~\ref{fig:sweep}A), cell types were less cleanly separated when very large bandwidths, or very strict variance thresholds were selected.
-However, very small bandwidths or very lenient thresholds resulted in a much higher number of VMRs and thus long computing times. Overall, however, our default parameter combination provided good results and fast compute times in both data sets.
+This parameter sweep showed that our workflow gives good results over a wide range of parameter values.
+For the data of \citet{luo2017single}, results are nearly independent of the parameters (Fig.~\ref{fig:sweep}B).
+In the more challenging data set of \citet{kremer_scnmt} (Fig.~\ref{fig:sweep}A), cell types were less cleanly separated when very large bandwidths, or very strict variance thresholds were selected.
+However, very small bandwidths or very lenient thresholds resulted in a much higher number of VMRs and thus long computing times.
+Overall, however, our default parameter combination provided good results and fast compute times in both data sets.
 
 
 \begin{figure*}
@@ -250,7 +272,8 @@ However, very small bandwidths or very lenient thresholds resulted in a much hig
 		\includegraphics[width=\textwidth]{figures/Fig_correlation.png}
 	\end{center}
 	\caption{\small \textbf{Correlation of DNA methylation and gene expression}.\\
-		\textbf{(A)} Distribution of Pearson correlations between gene expression and promoter methylation (black) and gene expression and methylation of the nearest VMR (red): for most promoters, correlation is weak. Promoters are defined as intervals \textpm2~kb around the TSS.
+		\textbf{(A)} Distribution of Pearson correlations between gene expression and promoter methylation (black) and gene expression and methylation of the nearest VMR (red): for most promoters, correlation is weak.
+        Promoters are defined as intervals \textpm2~kb around the TSS.
 		\textbf{(B)} Mean methylation near the gene \textit{Htra1}.
 		Cells are assigned to 4 groups based on \textit{Htra1} expression (group 0: cells with no \textit{Htra1} expression, groups 1-3: cells that express \textit{Htra1}, divided into three equally large groups with group 3 having the highest expression).
 		Data from \citet{kremer_scnmt}.}
@@ -264,12 +287,12 @@ However, very small bandwidths or very lenient thresholds resulted in a much hig
 	\caption{\small \textbf{Benchmark of our methods on single-cell multi-omic data of cells of the murine forebrain}.\\
 		\textbf{(A)} Cell labels based on clustering of single-cell transcriptomes from \citet{kremer_scnmt}.
 		\textbf{(B, C)} Exemplary UMAPs obtained when analyzing the data set with our proposed methods (B) or conventional methods based on genome tiling (C).
-		\textbf{(D)} Illustration of the neighbor score. Note that, actually,
-		distances are measured in 15-dimensional PC space, not in the 2-dimensional
-		UMAP space.
+		\textbf{(D)} Illustration of the neighbor score.
+        Note that, actually, distances are measured in 15-dimensional PC space, not in the 2-dimensional UMAP space.
 		\textbf{(E)} Mean neighbor score obtained after analyzing single-cell methylomes with different combinations of methods.
 		Either 100~kb genomic tiles or VMRs were subjected to PCA and UMAP.
-		Tiles or VMRs were pre-processed as proposed in this work (shrunken mean of residuals subjected to iterative PCA) or using conventional methods (PCA on methylation percentages, lightly imputed as done in \citet{luo2017single}; see Methods for details).
+		Tiles or VMRs were pre-processed as proposed in this work (shrunken mean of residuals subjected to iterative PCA) or using conventional methods (PCA on
+        methylation percentages, lightly imputed as done in \citet{luo2017single}; see Methods for details).
 		The full 1566-cell data set was sub-sampled to simulate smaller data sets (x axis).
 		A higher neighbor score implies better separation of cell types inferred from single-cell transcriptomes of the same cells \textbf{(A)}.
 	}
@@ -413,7 +436,8 @@ Applying our approach to NSCs and oligodendrocytes demonstrated that the obtaine
 Thus, our method aids biological interpretability by pinpointing the regions that differ between groups of cells and hence have a putative regulatory role.
 
 We also presented and published an open source software tool, called \texttt{scbs}, that provides an easy-to-use implementation of the described algorithms.
-The package also offers functionality for all other steps of data preprocessing that are needed to get from the output of methylation callers such as Bismark and methylpy to a cell\texttimes region matrix that is suitable as input for standard analysis tools that work in a reduced-dimensionality setting. This allows the user to use well established tools from scRNA-seq analysis, including visualization tools such as t-SNE and UMAP, Leiden/Louvain clustering, pseudotime trajectory analyses, etc.
+The package also offers functionality for all other steps of data preprocessing that are needed to get from the output of methylation callers such as Bismark and methylpy to a cell\texttimes region matrix that is suitable as input for standard analysis tools that work in a reduced-dimensionality setting.
+This allows the user to use well established tools from scRNA-seq analysis, including visualization tools such as t-SNE and UMAP, Leiden/Louvain clustering, pseudotime trajectory analyses, etc.
 By offering these functions, \texttt{scbs} bridges a gap in the chain of existing tools that so far hindered practitioners in their data analysis.
 
 In addition, by pinpointing exact regions of interest, the VMR and DMR functionalities provide useful input for genomics-style analyses.
@@ -451,7 +475,8 @@ $$ G_j=\{i: x_{ij}\neq\text{NA}\}.$$
 
 \subsection{Data storage}
 
-The function \texttt{scbs prepare} reads a set of methylation files (e.g. produced by Bismark) and produces a file that stores the matrix $x$ in a space-efficient format, as follows: $x$ is represented as a SciPy sparse matrix \citep{SciPy}, encoding the actual values 0, 1, and NA as -1, 1, and 0, respectively.
+The function \texttt{scbs prepare} reads a set of methylation files (e.g. produced by Bismark) and produces a file that stores the matrix $x$ in a space-efficient format, as follows:
+$x$ is represented as a SciPy sparse matrix \citep{SciPy}, encoding the actual values 0, 1, and NA as -1, 1, and 0, respectively.
 Coding NA (the most common value) as 0 leverages SciPy's sparse matrix storage.
 In all that follows here, any mention of $x$ will, however, always mean the encoding as $x_{ij}\in\{0,1,\text{NA}\}$.
 
@@ -517,11 +542,13 @@ where the average runs only over the set $C_I=\bigcup_{i\in I}C_i$ of those cell
 To find VMRs, we define intervals $I_1, I_2, ...$, all of the same width, and with step-wise increasing starts, then calculate $v_1, v_2, ...$ for these intervals.
 We then mark the intervals with the 2\% highest variances.
 We take the union of all these intervals, split the union into connected components, and call each component a VMR.
-Putting that last step in other words: We take all the intervals with variance in the top 2-percentile, fuse intervals that overlap and call the regions thus obtained the VMRs.
+Putting that last step in other words:
+We take all the intervals with variance in the top 2-percentile, fuse intervals that overlap and call the regions thus obtained the VMRs.
 
 \subsection{Finding differentially methylated regions}
 
-When searching for DMRs, we compare two groups of cells, whose index sets we denote with $C_\text{A}$ and $C_\text{B}$. For a given interval $I$, we calculate the mean each of the mean shrunken residuals $r_{ij}$ (see Eq.~(\ref{avgres})) over the cells $j$ in each of the two groups,
+When searching for DMRs, we compare two groups of cells, whose index sets we denote with $C_\text{A}$ and $C_\text{B}$.
+For a given interval $I$, we calculate the mean each of the mean shrunken residuals $r_{ij}$ (see Eq.~(\ref{avgres})) over the cells $j$ in each of the two groups,
 $$ \mu^g_I = \langle r_{Ij} \rangle_{j\in g},\qquad g=\text{A},\text{B} $$
 
 We also calculate a variance as in Eq.(\ref{var}):
@@ -531,19 +558,35 @@ $$ v^g_I = \frac{1}{|C_\text{g}|-1}  \sum_{j\in g} \left( r_{Ij} - \mu_I^g \righ
 From this, we calculate Welch's t statistic as usual:
 $$ t_I = \frac{\mu^\text{A}_I - \mu^\text{B}_I}{\sqrt{\frac{v^\text{A}_I}{|C_A|} + \frac{v^\text{B}_I}{|C_B|}}}.$$
 
-In order to find candidate DMRs, we again define overlapping and stepwise shifted intervals $I_1, I_2, \dots$ as for the VMRs and calulate t statistics $t_1, t_2, \dots$ for these. As before, we take the top 2-percentile of these values, fuse intervals that overlap and call the regions thus obtained candidate DMRs. We repeat the procedure for the bottom 2-percentile to get the candidate DMRs for the other sign.
+In order to find candidate DMRs, we again define overlapping and stepwise shifted intervals $I_1, I_2, \dots$ as for the VMRs and calulate t statistics $t_1, t_2, \dots$ for these.
+As before, we take the top 2-percentile of these values, fuse intervals that overlap and call the regions thus obtained candidate DMRs.
+We repeat the procedure for the bottom 2-percentile to get the candidate DMRs for the other sign.
 
-Next, we need to check these candidate DMRs for statistical significance. We first remind the readers here that, as this is a within-sample analysis, and cells, not samples, are the statistical unit. Therefore, a call as significant implies that the same DMR is likely to be called again if we repeated the analysis with another set of cells taken from the same biological sample, not that it would generalize to further samples. This fact, although often overlooked, is common to all within-sample analyses in the single-cell fields, e.g. also to the differential expression tests performed in scRNA-seq analyses to find marker genes that differentiate clusters.
+Next, we need to check these candidate DMRs for statistical significance.
+We first remind the readers here that, as this is a within-sample analysis, and cells, not samples, are the statistical unit.
+Therefore, a call as significant implies that the same DMR is likely to be called again if we repeated the analysis with another set of cells taken from the same biological sample, not that it would generalize to further samples.
+This fact, although often overlooked, is common to all within-sample analyses in the single-cell fields, e.g. also to the differential expression tests performed in scRNA-seq analyses to find marker genes that differentiate clusters.
 
-It may seem that we could use the standard procedure for the Welch t-test here, i.e. use the Welch-Satterthwaite formula to get an approximate degree of freedom and then calculate the tail probability of the corresponding t distribution. However, this is unlikely to hold for two reasons: First, the Welch-Satterthwaite degrees of freedom are only based on the number of cells per group and do not account for the fact that the read coverage might vary from cell to cell.  Second, the fusing of the DMRs obtained in the scanning step to obtain fused candidate DMRs would invalidate subsequent p-value based adjustment for multiple testing.
+It may seem that we could use the standard procedure for the Welch t-test here, i.e. use the Welch-Satterthwaite formula to get an approximate degree of freedom and then calculate the tail probability of the corresponding t distribution.
+However, this is unlikely to hold for two reasons:
+First, the Welch-Satterthwaite degrees of freedom are only based on the number of cells per group and do not account for the fact that the read coverage might vary from cell to cell.
+Second, the fusing of the DMRs obtained in the scanning step to obtain fused candidate DMRs would invalidate subsequent p-value based adjustment for multiple testing.
 
-Therefore, we have instead implemented a permutation procedure, which works as follows: We randomly shuffle the assignment of the cells in $C_\text{A}\cup C_\text{A}$ to either of the two groups and then rerun the whole procedure, i.e., the scanning step, the DMR fusing and the calculation of t values from the (potentially fused) candidate DMRs. This needs to be done for a sufficiently large number of permutations. Running through the whole genome for each permutation would be too computationally expensive. Instead, we go through the genome only once, but reshuffle the group labels every 2~Mbp.
+Therefore, we have instead implemented a permutation procedure, which works as follows:
+We randomly shuffle the assignment of the cells in $C_\text{A}\cup C_\text{A}$ to either of the two groups and then rerun the whole procedure, i.e., the scanning step, the DMR fusing and the calculation of t values from the (potentially fused) candidate DMRs.
+This needs to be done for a sufficiently large number of permutations.
+Running through the whole genome for each permutation would be too computationally expensive.
+Instead, we go through the genome only once, but reshuffle the group labels every 2~Mbp.
 
-All the t values obtained from this permutation procedure are taken together to get an empirical null distribution. Then, we can use this null distribution to control false discovery rate (FDR) by applying the Benjamini-Hochberg procedure in its p-value-free form: Let us write $T$ for the set of all t values obtained from the ``real'' assignment of cells to group labels and $T_0$ from the set of all t values obtained from the shuffled assignments, i.e., the empirical null distribution. To adjust a specific t value $t_i\in T$, we calculate
+All the t values obtained from this permutation procedure are taken together to get an empirical null distribution.
+Then, we can use this null distribution to control false discovery rate (FDR) by applying the Benjamini-Hochberg procedure in its p-value-free form:
+Let us write $T$ for the set of all t values obtained from the ``real'' assignment of cells to group labels and $T_0$ from the set of all t values obtained from the shuffled assignments, i.e., the empirical null distribution.
+To adjust a specific t value $t_i\in T$, we calculate
 $$ p^\text{adj}_i = \frac{ \left|\left\{t_j\in T_0\mid|t_j| > |t_i| \right\}\right| \big/ |T_0|}
 { \left|\left\{t_j\in T\mid|t_j| > |t_i| \right\}\right| \big/ |T|}.$$
 
-In words: we calculate which fraction of the null t values is greater than t by absolute value, and which fraction of the real t values is. The ratio gives us the false discovery rate we should expect if we used the t value as threshold.
+In words: we calculate which fraction of the null t values is greater than t by absolute value, and which fraction of the real t values is.
+The ratio gives us the false discovery rate we should expect if we used the t value as threshold.
 
 
 \subsection{Calculating cell to cell distances}
@@ -639,7 +682,7 @@ We thank Alexey Uvarovskii for code refactoring and helpful suggestions on the s
 	    \includegraphics[width=0.4\textwidth]{figures/SFig_benchmark.png}
 	\end{center}
 	\captionof{figure}{\small \textbf{Benchmark of our methods on single-cell methylomes of neural sub-types of the murine frontal cortex}.\\
-	Our methods were benchmarked on single-cell methylomes from \citet{luo2017single} as described in Fig.~\ref{fig:score}. 
+	Our methods were benchmarked on single-cell methylomes from \citet{luo2017single} as described in Fig.~\ref{fig:score}.
 	}
 	\label{fig:score_luo}
 \end{minipage}
