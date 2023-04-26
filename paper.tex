@@ -50,7 +50,7 @@
 
 Lukas P.~M. Kremer\textsuperscript{1,2,*}, Martina M. Braun\textsuperscript{2}, Leonie Küchenhoff\textsuperscript{1,2}, Santiago Cerrizuela\textsuperscript{2},\\Ana Martin-Villalba\textsuperscript{2}, Simon Anders\textsuperscript{1,*}\\[1ex]
 {\footnotesize \textsuperscript{1} BioQuant Centre, University of Heidelberg, Heidelberg, Germany\\[-.5ex] 
-\textsuperscript{2} Molecular Neurobiology Dept., German Cancer Research Center (DKFZ), Heidelberg, Germany}
+\textsuperscript{2} Division of Molecular Neurobiology, German Cancer Research Center (DKFZ), Heidelberg, Germany}
 \vspace{1.5ex}
 
 April 2023
@@ -140,7 +140,7 @@ While this simple procedure is straight-forward and produces usable results, it 
 
 \subsection{Read-position aware quantitation} \label{residuals}
 
-We first discuss the task of quantifying the level of methylation in a given, fixed, genomic interval. Typically, read coverage per cell is sparse in scBS data. In the example of Figure \ref{fig:smoothres}A, the depicted interval is covered by a single read for two of the three cells shown and no read in the third. The read from cell 2 shows much more methylation than the read from cell 1, and the standard analysis would therefore consider cell 1 to have higher methylation in the interval than cell 2.
+We first discuss the task of quantifying the level of methylation in a given, fixed, genomic interval. Typically, read coverage per cell is sparse in scBS data. In the example of Figure \ref{fig:smoothres}A, the depicted interval is covered by a single read for two of the three cells shown and no read in the third. The read from cell 2 shows much more methylation than the read from cell 1, and the standard analysis would therefore consider cell 2 to have higher methylation in the interval than cell 1.
 However, given that the two reads agree wherever they overlap, a more parsimonious interpretation would be that the cells do not show difference in methylation within the interval.
 Rather, both cells, and similarly maybe most other cells, might have stronger methylation in the left third of the interval than in the middle one.
 
@@ -618,7 +618,7 @@ We omitted lowly expressed genes (with scRNA-seq counts in $<5\%$ of cells) and 
 \subsection{Acknowledgments}
 
 SA and LPMK acknowledge funding by the Klaus Tschira Foundation (project 00.022.2019).
-LPMK, MB, LK, SC, and AMV acknowledge funding from the European Commission via ERC grant 771376.
+LPMK, MMB, LK, SC, and AMV acknowledge funding from the European Commission via ERC grant 771376.
 We thank Alexey Uvarovskii for code refactoring and helpful suggestions on the source code.
 
 
