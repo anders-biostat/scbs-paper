@@ -9,13 +9,16 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    class="svglite"
-   width="680.31pt"
-   height="425.20pt"
-   viewBox="0 0 680.31 425.20"
+   width="563.02942pt"
+   height="401.23257pt"
+   viewBox="0 0 563.02942 401.23256"
    version="1.1"
    id="svg1083"
    sodipodi:docname="Fig_DMRs.svg"
-   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   inkscape:export-filename="/home/lukas/code/scbs-paper/figures/Fig_DMRs.png"
+   inkscape:export-xdpi="250"
+   inkscape:export-ydpi="250">
   <metadata
      id="metadata1087">
     <rdf:RDF>
@@ -35,19 +38,23 @@
      objecttolerance="10"
      gridtolerance="10"
      guidetolerance="10"
-     inkscape:pageopacity="0"
+     inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:window-width="1280"
+     inkscape:window-width="1866"
      inkscape:window-height="1376"
      id="namedview1085"
      showgrid="false"
-     inkscape:zoom="0.83254936"
-     inkscape:cx="397.14177"
-     inkscape:cy="382.1137"
+     inkscape:zoom="1.1774026"
+     inkscape:cx="324.23117"
+     inkscape:cy="363.17684"
      inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="0"
-     inkscape:current-layer="layer2" />
+     inkscape:current-layer="layer2"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
   <defs
      id="defs4">
     <style
@@ -71,7 +78,8 @@
          y="0"
          width="680.31"
          height="425.20001"
-         id="rect8-6" />
+         id="rect8-6"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
     <clipPath
        id="cpNjkuMTR8MjEwLjY4fDI3Ljk3fDEwOC40OA==-4">
@@ -80,7 +88,8 @@
          y="27.969999"
          width="141.53999"
          height="80.510002"
-         id="rect37-7" />
+         id="rect37-7"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
     <clipPath
        id="cpNDkyLjM0fDU2My4xMXwyNy45N3w2OS43NA==-3">
@@ -89,7 +98,8 @@
          y="27.969999"
          width="70.769997"
          height="41.77"
-         id="rect186" />
+         id="rect186"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
     <clipPath
        id="cpNDkyLjM0fDU2My4xMXw3NS4yMnwxMTYuOTg=-2">
@@ -98,7 +108,8 @@
          y="75.220001"
          width="70.769997"
          height="41.77"
-         id="rect207" />
+         id="rect207"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
     <clipPath
        id="cpNDkyLjM0fDU2My4xMXwxMjIuNDZ8MTY0LjIz-6">
@@ -107,7 +118,8 @@
          y="122.46"
          width="70.769997"
          height="41.77"
-         id="rect228" />
+         id="rect228"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
     <clipPath
        id="cpNDkyLjM0fDU2My4xMXwxNjkuNzF8MjExLjQ4-5">
@@ -116,7 +128,8 @@
          y="169.71001"
          width="70.769997"
          height="41.77"
-         id="rect249" />
+         id="rect249"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
     <clipPath
        id="cpNTYzLjExfDU4MC4xMnwxNjkuNzF8MjExLjQ4-9">
@@ -125,7 +138,8 @@
          y="169.71001"
          width="17.01"
          height="41.77"
-         id="rect364-4" />
+         id="rect364-4"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
     <clipPath
        id="cpNTYzLjExfDU4MC4xMnwxMjIuNDZ8MTY0LjIz-5">
@@ -134,7 +148,8 @@
          y="122.46"
          width="17.01"
          height="41.77"
-         id="rect333-9" />
+         id="rect333-9"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
     <clipPath
        id="cpNTYzLjExfDU4MC4xMnw3NS4yMnwxMTYuOTg=-3">
@@ -143,7 +158,8 @@
          y="75.220001"
          width="17.01"
          height="41.77"
-         id="rect302-5" />
+         id="rect302-5"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
     <clipPath
        id="cpNTYzLjExfDU4MC4xMnwyNy45N3w2OS43NA==-7">
@@ -152,7 +168,8 @@
          y="27.969999"
          width="17.01"
          height="41.77"
-         id="rect271-0" />
+         id="rect271-0"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
     <clipPath
        id="cpNDkyLjM0fDU2My4xMXwxNjkuNzF8MjExLjQ4-8">
@@ -161,7 +178,8 @@
          y="169.71001"
          width="70.769997"
          height="41.77"
-         id="rect243-1" />
+         id="rect243-1"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
     <clipPath
        id="cpNDkyLjM0fDU2My4xMXwxMjIuNDZ8MTY0LjIz-9">
@@ -170,7 +188,8 @@
          y="122.46"
          width="70.769997"
          height="41.77"
-         id="rect222-9" />
+         id="rect222-9"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
     <clipPath
        id="cpNDkyLjM0fDU2My4xMXw3NS4yMnwxMTYuOTg=-7">
@@ -179,7 +198,8 @@
          y="75.220001"
          width="70.769997"
          height="41.77"
-         id="rect201-82" />
+         id="rect201-82"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
     <clipPath
        id="cpNDkyLjM0fDU2My4xMXwyNy45N3w2OS43NA==-5">
@@ -188,7 +208,8 @@
          y="27.969999"
          width="70.769997"
          height="41.77"
-         id="rect180-3" />
+         id="rect180-3"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -196,11 +217,12 @@
     <clipPath
        id="cpMC4wMHw2ODAuMzF8MC4wMHw0MjUuMjA=">
       <rect
-         x="0.00"
-         y="0.00"
+         x="0"
+         y="0"
          width="680.31"
-         height="425.20"
-         id="rect8" />
+         height="425.20001"
+         id="rect8"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -208,11 +230,12 @@
     <clipPath
        id="cpNjkuMTR8NTYzLjExfDI3Ljk3fDIxMS40OA==">
       <rect
-         x="69.14"
-         y="27.97"
+         x="69.139999"
+         y="27.969999"
          width="493.97"
-         height="183.51"
-         id="rect17" />
+         height="183.50999"
+         id="rect17"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -222,9 +245,10 @@
       <rect
          x="5.48"
          y="5.48"
-         width="275.93"
-         height="237.70"
-         id="rect26" />
+         width="275.92999"
+         height="237.7"
+         id="rect26"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -232,11 +256,12 @@
     <clipPath
        id="cpNjkuMTR8MjEwLjY4fDI3Ljk3fDEwOC40OA==">
       <rect
-         x="69.14"
-         y="27.97"
-         width="141.54"
-         height="80.51"
-         id="rect37" />
+         x="69.139999"
+         y="27.969999"
+         width="141.53999"
+         height="80.510002"
+         id="rect37"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -244,11 +269,12 @@
     <clipPath
        id="cpNjkuMTR8MjEwLjY4fDEzMC45N3wyMTEuNDg=">
       <rect
-         x="69.14"
+         x="69.139999"
          y="130.97"
-         width="141.54"
-         height="80.51"
-         id="rect52" />
+         width="141.53999"
+         height="80.510002"
+         id="rect52"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -256,11 +282,12 @@
     <clipPath
        id="cpNjkuMTR8MjEwLjY4fDExMy45NnwxMzAuOTc=">
       <rect
-         x="69.14"
+         x="69.139999"
          y="113.96"
-         width="141.54"
+         width="141.53999"
          height="17.01"
-         id="rect67" />
+         id="rect67"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -268,11 +295,12 @@
     <clipPath
        id="cpNjkuMTR8MjEwLjY4fDEwLjk2fDI3Ljk3">
       <rect
-         x="69.14"
+         x="69.139999"
          y="10.96"
-         width="141.54"
+         width="141.53999"
          height="17.01"
-         id="rect78" />
+         id="rect78"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -280,11 +308,12 @@
     <clipPath
        id="cpMjgxLjQwfDY3NC44NHw1LjQ4fDI0My4xOA==">
       <rect
-         x="281.40"
+         x="281.39999"
          y="5.48"
-         width="393.43"
-         height="237.70"
-         id="rect169" />
+         width="393.42999"
+         height="237.7"
+         id="rect169"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -293,10 +322,11 @@
        id="cpNDkyLjM0fDU2My4xMXwyNy45N3w2OS43NA==">
       <rect
          x="492.34"
-         y="27.97"
-         width="70.77"
+         y="27.969999"
+         width="70.769997"
          height="41.77"
-         id="rect180" />
+         id="rect180"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -305,10 +335,11 @@
        id="cpNDkyLjM0fDU2My4xMXw3NS4yMnwxMTYuOTg=">
       <rect
          x="492.34"
-         y="75.22"
-         width="70.77"
+         y="75.220001"
+         width="70.769997"
          height="41.77"
-         id="rect201" />
+         id="rect201"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -318,9 +349,10 @@
       <rect
          x="492.34"
          y="122.46"
-         width="70.77"
+         width="70.769997"
          height="41.77"
-         id="rect222" />
+         id="rect222"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -329,10 +361,11 @@
        id="cpNDkyLjM0fDU2My4xMXwxNjkuNzF8MjExLjQ4">
       <rect
          x="492.34"
-         y="169.71"
-         width="70.77"
+         y="169.71001"
+         width="70.769997"
          height="41.77"
-         id="rect243" />
+         id="rect243"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -340,11 +373,12 @@
     <clipPath
        id="cpNTYzLjExfDU5Ny4xM3wyNy45N3w2OS43NA==">
       <rect
-         x="563.11"
-         y="27.97"
+         x="563.10999"
+         y="27.969999"
          width="34.02"
          height="41.77"
-         id="rect264" />
+         id="rect264"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -352,11 +386,12 @@
     <clipPath
        id="cpNTYzLjExfDU4MC4xMnwyNy45N3w2OS43NA==">
       <rect
-         x="563.11"
-         y="27.97"
+         x="563.10999"
+         y="27.969999"
          width="17.01"
          height="41.77"
-         id="rect271" />
+         id="rect271"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -365,10 +400,11 @@
        id="cpNTgwLjEyfDU5Ny4xM3wyNy45N3w2OS43NA==">
       <rect
          x="580.12"
-         y="27.97"
+         y="27.969999"
          width="17.01"
          height="41.77"
-         id="rect282" />
+         id="rect282"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -376,11 +412,12 @@
     <clipPath
        id="cpNTYzLjExfDU5Ny4xM3w3NS4yMnwxMTYuOTg=">
       <rect
-         x="563.11"
-         y="75.22"
+         x="563.10999"
+         y="75.220001"
          width="34.02"
          height="41.77"
-         id="rect295" />
+         id="rect295"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -388,11 +425,12 @@
     <clipPath
        id="cpNTYzLjExfDU4MC4xMnw3NS4yMnwxMTYuOTg=">
       <rect
-         x="563.11"
-         y="75.22"
+         x="563.10999"
+         y="75.220001"
          width="17.01"
          height="41.77"
-         id="rect302" />
+         id="rect302"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -401,10 +439,11 @@
        id="cpNTgwLjEyfDU5Ny4xM3w3NS4yMnwxMTYuOTg=">
       <rect
          x="580.12"
-         y="75.22"
+         y="75.220001"
          width="17.01"
          height="41.77"
-         id="rect313" />
+         id="rect313"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -412,11 +451,12 @@
     <clipPath
        id="cpNTYzLjExfDU5Ny4xM3wxMjIuNDZ8MTY0LjIz">
       <rect
-         x="563.11"
+         x="563.10999"
          y="122.46"
          width="34.02"
          height="41.77"
-         id="rect326" />
+         id="rect326"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -424,11 +464,12 @@
     <clipPath
        id="cpNTYzLjExfDU4MC4xMnwxMjIuNDZ8MTY0LjIz">
       <rect
-         x="563.11"
+         x="563.10999"
          y="122.46"
          width="17.01"
          height="41.77"
-         id="rect333" />
+         id="rect333"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -440,7 +481,8 @@
          y="122.46"
          width="17.01"
          height="41.77"
-         id="rect344" />
+         id="rect344"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -448,11 +490,12 @@
     <clipPath
        id="cpNTYzLjExfDU5Ny4xM3wxNjkuNzF8MjExLjQ4">
       <rect
-         x="563.11"
-         y="169.71"
+         x="563.10999"
+         y="169.71001"
          width="34.02"
          height="41.77"
-         id="rect357" />
+         id="rect357"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -460,11 +503,12 @@
     <clipPath
        id="cpNTYzLjExfDU4MC4xMnwxNjkuNzF8MjExLjQ4">
       <rect
-         x="563.11"
-         y="169.71"
+         x="563.10999"
+         y="169.71001"
          width="17.01"
          height="41.77"
-         id="rect364" />
+         id="rect364"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -473,10 +517,11 @@
        id="cpNTgwLjEyfDU5Ny4xM3wxNjkuNzF8MjExLjQ4">
       <rect
          x="580.12"
-         y="169.71"
+         y="169.71001"
          width="17.01"
          height="41.77"
-         id="rect375" />
+         id="rect375"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -484,11 +529,12 @@
     <clipPath
        id="cpNjkuMTR8NTYzLjExfDI2NS42N3wzODguMDE=">
       <rect
-         x="69.14"
-         y="265.67"
+         x="69.139999"
+         y="265.67001"
          width="493.97"
          height="122.34"
-         id="rect486" />
+         id="rect486"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -497,10 +543,11 @@
        id="cpNS40OHwxMTguNjF8MjQzLjE4fDQxOS43Mg==">
       <rect
          x="5.48"
-         y="243.18"
+         y="243.17999"
          width="113.13"
          height="176.53"
-         id="rect495" />
+         id="rect495"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -508,11 +555,12 @@
     <clipPath
        id="cpNjkuMTR8MTEzLjEzfDI2NS42N3wzODguMDE=">
       <rect
-         x="69.14"
-         y="265.67"
-         width="43.99"
+         x="69.139999"
+         y="265.67001"
+         width="43.990002"
          height="122.34"
-         id="rect506" />
+         id="rect506"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -520,11 +568,12 @@
     <clipPath
        id="cpMTY3LjIxfDU2My4xMXwyNjUuNjd8Mzg4LjAx">
       <rect
-         x="167.21"
-         y="265.67"
-         width="395.90"
+         x="167.21001"
+         y="265.67001"
+         width="395.89999"
          height="122.34"
-         id="rect909" />
+         id="rect909"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -533,10 +582,11 @@
        id="cpMTE4LjYxfDY3NC44NHwyNDMuMTh8Mzc0Ljc5">
       <rect
          x="118.61"
-         y="243.18"
-         width="556.23"
+         y="243.17999"
+         width="556.22998"
          height="131.61"
-         id="rect918" />
+         id="rect918"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -544,11 +594,12 @@
     <clipPath
        id="cpMTY3LjIxfDU2My4xMXwyOTguNjF8MzE1LjYz">
       <rect
-         x="167.21"
-         y="298.61"
-         width="395.90"
+         x="167.21001"
+         y="298.60999"
+         width="395.89999"
          height="17.01"
-         id="rect945" />
+         id="rect945"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -556,11 +607,12 @@
     <clipPath
        id="cpMTY3LjIxfDU2My4xMXwyNDguNjZ8MjY1LjY3">
       <rect
-         x="167.21"
+         x="167.21001"
          y="248.66"
-         width="395.90"
+         width="395.89999"
          height="17.01"
-         id="rect956" />
+         id="rect956"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -569,10 +621,11 @@
        id="cpMTE4LjYxfDY3NC44NHwzNzQuNzl8NDE5Ljcy">
       <rect
          x="118.61"
-         y="374.79"
-         width="556.23"
+         y="374.79001"
+         width="556.22998"
          height="44.93"
-         id="rect1013" />
+         id="rect1013"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <defs
@@ -580,18 +633,21 @@
     <clipPath
        id="cpMTY3LjIxfDU2My4xMXwzODAuMjd8Mzg4LjAx">
       <rect
-         x="167.21"
-         y="380.27"
-         width="395.90"
-         height="7.74"
-         id="rect1024" />
+         x="167.21001"
+         y="380.26999"
+         width="395.89999"
+         height="7.7399998"
+         id="rect1024"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
   <g
      inkscape:groupmode="layer"
      id="layer1"
      inkscape:label="abc"
-     style="display:inline">
+     style="display:inline"
+     sodipodi:insensitive="true"
+     transform="translate(-7.9996901,-13.419754)">
     <flowRoot
        xml:space="preserve"
        id="flowRoot1313"
@@ -661,7 +717,8 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="main"
-     style="display:inline">
+     style="display:inline"
+     transform="translate(-7.9996901,-13.419754)">
     <g
        style="display:inline"
        clip-path="url(#cpMC4wMHw2ODAuMzF8MC4wMHw0MjUuMjA=)"
