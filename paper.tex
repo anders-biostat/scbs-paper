@@ -41,6 +41,7 @@
 }
 
 \newcommand{\todo}[1]{[\textcolor{orange}{#1}]}
+\newcommand{\new}[1]{\textcolor{blue}{#1}}
 
 \begin{document}
 
@@ -48,7 +49,13 @@
 \centering\phantomsection\addcontentsline{toc}{section}{Title}
 \textbf{\Large Analyzing single-cell bisulfite sequencing data with \texttt{scbs}}\\[1.5ex]
 
-Lukas P.~M. Kremer\textsuperscript{1,2,*}, Martina M. Braun\textsuperscript{2}, Leonie Küchenhoff\textsuperscript{1,2}, Santiago Cerrizuela\textsuperscript{2},\\Ana Martin-Villalba\textsuperscript{2}, Simon Anders\textsuperscript{1,*}\\[1ex]
+Lukas P.~M. Kremer\textsuperscript{1,2,*},
+Martina M. Braun\textsuperscript{2},
+Svetlana Ovchinnikova\textsuperscript{1},
+Leonie Küchenhoff\textsuperscript{1,2},\\
+Santiago Cerrizuela\textsuperscript{2},
+Ana Martin-Villalba\textsuperscript{2},
+Simon Anders\textsuperscript{1,*}\\[1ex]
 {\footnotesize \textsuperscript{1} BioQuant Centre, University of Heidelberg, Heidelberg, Germany\\[-.5ex] 
 \textsuperscript{2} Division of Molecular Neurobiology, German Cancer Research Center (DKFZ), Heidelberg, Germany}
 \vspace{1.5ex}
@@ -217,7 +224,7 @@ As we demonstrate below, a PCA performed on such a matrix provided a distance me
 
 \subsection{Application and benchmarks}
 
-To demonstrate the value of our proposed improvements, we employ our own data \citep{kremer_scnmt} as well as a previously published data set, namely the one by  \citet{luo2017single} already mentioned in the introduction.
+To demonstrate the value of our proposed improvements, we benchmarked various combinations of analysis methods on \new{\todo{N} diverse single-cell methylome data sets.}
 
 %\phantomsection
 \subsubsection{Correlating VMR methylation with gene expression}
@@ -236,25 +243,41 @@ While the promoter of this gene is lowly methylated regardless of gene expressio
 We next tested whether our methods improve the ability to distinguish cell types and cell states (Fig.~\ref{fig:score}).
 To this end, we obtained cell type/state labels based on the single-cell transcriptomes from \citet{kremer_scnmt} (Fig.~\ref{fig:score}A).
 We consider these cell labels as ground truth and tested whether we are able to distinguish the same groups of cells based on their methylomes.
-To do this, we subjected the methylomes to four variants of the workflow described above: we defined genomic intervals in two ways and quantified methylation in these intervals in two ways, then always subjected the resulting matrix to PCA.
-To define the intervals, we either simply tiled the genome into 100~kb bins as is commonly done, or we used our VMR detection approach.
-To quantify methylation in these intervals, we either averaged in these intervals, obtaining methylation percentages (``classic'' pre-processing), or we calculated the shrunken mean of residuals.
-
+\new{
+To do this, we subjected the methylomes to various combinations of analysis methods including our own proposed methods and others that are commonly used.
+Specifically, we selected four different sets of genomic intervals at which DNA methylation is to be quantified:
+either VMRs detected with our approach, 100~kb genomic tiles, promoter regions (TSS\textpm2000~bp), or candidate cis-regulatory elements \citep[ENCODE cCREs,][]{encode2020expanded}.
+To quantify methylation at these features, we either averaged in these intervals, obtaining methylation percentages, or we calculated the shrunken mean of residuals.
+Finally, the resulting methylation matrices were subjected to iterative PCA (see Methods).
+}
 Visual inspection of the resulting UMAPs revealed that our proposed combination of methods results in more clearly separated cell types, compared to a UMAP obtained with default analysis methods (Fig.~\ref{fig:score}B,C).
 While all cells form a continuous point cloud when using default methods, our improvements led to a clear separation of oligodendrocytes, OPCs and endothelial cells.
 Furthermore, even cellular sub-states of cells in the continuous neural stem cell lineage were partially separated.
 
-To quantify this performance gain in a more rigorous manner, we used a score that quantifies whether cells were placed, in 15-dimensional PC space, in a neighborhood comprising cells of the same cell type ("neighbor score", see Figure \ref{fig:score}D, and Methods for details).
+To quantify this performance gain in a more rigorous manner, we used a score that quantifies whether cells were placed, in 15-dimensional PC space, in a neighborhood comprising cells of the same cell type ("neighbor score", see Fig.~\ref{fig:score}E, and Methods for details).
 We then ask how this score depends on the number of available cells.
 This is relevant as scBS protocols are costly and labor-intensive, and only few laboratories are currently able to obtain thousands of single cell methylomes.
-To simulate smaller data sets, we sub-sampled the 1566-cell data set into smaller data sets, analyzed them again with the four workflow variants, and calculated the mean neighbor score for each (Figure \ref{fig:score}E).
-The results demonstrate that the forebrain cell clusters are more cleanly separated when using our proposed methods.
-This performance gain was observed also in smaller data sets, although cell cluster separation generally becomes more difficult in those.
-Both the use of VMRs instead of genomic tiles, as well as the use of the shrunken mean of the residuals over methylation averages improved cell cluster separation.
+To simulate smaller data sets, we sub-sampled the 1566-cell data set into smaller data sets, analyzed them again with all combinations of analysis methods, and calculated the mean neighbor score for each (Figure \ref{fig:score}D).
+\new{
+The results demonstrate that quantifying methylation at VMRs or regulatory elements leads to a cleaner separation of cell states than using promoter regions or 100~kb tiles.
+Using the shrunken mean of residuals as a measure of DNA methylation furthermore improved results.
+This effect was most noticeable in promoters and genomic tiles, presumably because an individual promoter region or tile might span genomic regions with varying levels of DNA methylation as depicted in Fig.~\ref{fig:smoothres}B, which our method accounts for.
+Although cell cluster separation generally becomes more difficult in those, performance gains were observed also in smaller data sets.
+}
 
-We repeated this benchmark on the data set published by \citet{luo2017single}, which consists of 3377 single-cell CpG methylomes from the murine frontal cortex, comprising 16 neuronal sub-types.
-The authors annotated cell types based on CH-methylation instead of CpG-methylation.
-Using these labels as ground truth we re-analyzed the full and sub-sampled CpG methylation data with the four methods combinations and found that our suggested methods consistently outperformed default methods (Fig.~\ref{fig:score_luo}).
+\new{
+We repeated this benchmark on \todo{N} published single-cell methylome data sets.
+These include neuronal sub-types of the murine cortex \citep[][using cell type labels derived from CH-methylation in genomic tiles, instead of CpG-methylation, as ground truth]{luo2017single}, cells isolated from mouse embryos during the onset of gastrulation \citep[][using RNA-derived cell clusters, or alternatively embryonic stage as ground truth]{argelaguet2019gastru} and human colorectal cancer cells \citep[][using \todo{tumor region(?)} as ground truth]{bian2018single}.
+Again, we subjected each data set to all possible combinations of genomic feature selection and methylation quantification.
+We furthermore included three additional approaches to perform dimensionality reduction in our benchmarks, including PCA with two different pre-processing strategies, as well as MOFA+, a dimensionality reduction technique designed for multi-modal single-cell data that can also process methylation data \citep{argelaguet2020mofa}.
+}
+
+\new{
+These extensive benchmarks revealed that our proposed combination of methods, i.e.~using the shrunken means of residuals of VMRs for dimensionality reduction, is able to distinguish diverse cellular properties such as cell type, \todo{colorectal cancer sampling region(?)}, embryonic stage, and germ layer (Fig.~\ref{fig:score_luo}).
+In addition, the use of ENCODE regulatory elements as input features also yielded good results.
+However, due to their large number (339\,815 in mouse, 1\,063\,878 in human) using regulatory regions as features resulted in greater run times and increased RAM usage, even when accounting for the additional step of VMR detection (Fig.~\ref{fig:score}F).
+}
+
 
 \subsubsection{Robustness to parameter changes}
 
@@ -282,7 +305,7 @@ Overall, however, our default parameter combination provided good results and fa
 
 \begin{figure*}
 	\begin{center}
-		\includegraphics[width=0.8\textwidth]{figures/Fig_benchmark.png}
+		\includegraphics[width=0.9\textwidth]{figures/Fig_benchmark.png}
 	\end{center}
 	\caption{\small \textbf{Benchmark of our methods on single-cell multi-omic data of cells of the murine forebrain}.\\
 		\textbf{(A)} Cell labels based on clustering of single-cell transcriptomes from \citet{kremer_scnmt}.
