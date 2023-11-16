@@ -245,11 +245,12 @@ To this end, we obtained cell type/state labels based on the single-cell transcr
 We consider these cell labels as ground truth and tested whether we are able to distinguish the same groups of cells based on their methylomes.
 \new{
 To do this, we subjected the methylomes to various combinations of analysis methods including our own proposed methods and others that are commonly used.
-Specifically, we selected four different sets of genomic intervals at which DNA methylation is to be quantified:
+Specifically, we selected four different sets of genomic intervals at which CpG methylation is to be quantified:
 either VMRs detected with our approach, 100~kb genomic tiles, promoter regions (TSS\textpm2000~bp), or candidate cis-regulatory elements \citep[ENCODE cCREs,][]{encode2020expanded}.
 To quantify methylation at these features, we either averaged in these intervals, obtaining methylation percentages, or we calculated the shrunken mean of residuals.
-Finally, the resulting methylation matrices were subjected to iterative PCA (see Methods).
+Finally, the resulting methylation matrices were subjected to iterative PCA (see Methods) and subsequent UMAP for visualization.
 }
+
 Visual inspection of the resulting UMAPs revealed that our proposed combination of methods results in more clearly separated cell types, compared to a UMAP obtained with default analysis methods (Fig.~\ref{fig:score}B,C).
 While all cells form a continuous point cloud when using default methods, our improvements led to a clear separation of oligodendrocytes, OPCs and endothelial cells.
 Furthermore, even cellular sub-states of cells in the continuous neural stem cell lineage were partially separated.
@@ -259,35 +260,39 @@ We then ask how this score depends on the number of available cells.
 This is relevant as scBS protocols are costly and labor-intensive, and only few laboratories are currently able to obtain thousands of single cell methylomes.
 To simulate smaller data sets, we sub-sampled the 1566-cell data set into smaller data sets, analyzed them again with all combinations of analysis methods, and calculated the mean neighbor score for each (Figure \ref{fig:score}D).
 \new{
-The results demonstrate that quantifying methylation at VMRs or regulatory elements leads to a cleaner separation of cell states than using promoter regions or 100~kb tiles.
+The results confirmed that quantifying methylation at VMRs leads to a cleaner separation of cell states than using promoter regions or 100~kb tiles.
 Using the shrunken mean of residuals as a measure of DNA methylation furthermore improved results.
 This effect was most noticeable in promoters and genomic tiles, presumably because an individual promoter region or tile might span genomic regions with varying levels of DNA methylation as depicted in Fig.~\ref{fig:smoothres}B, which our method accounts for.
 Although cell cluster separation generally becomes more difficult in those, performance gains were observed also in smaller data sets.
 }
 
 \new{
-We repeated this benchmark on \todo{N} published single-cell methylome data sets.
-These include neuronal sub-types of the murine cortex \citep[][using cell type labels derived from CH-methylation in genomic tiles, instead of CpG-methylation, as ground truth]{luo2017single}, cells isolated from mouse embryos during the onset of gastrulation \citep[][using RNA-derived cell clusters, or alternatively embryonic stage as ground truth]{argelaguet2019gastru} and human colorectal cancer cells \citep[][using \todo{tumor region(?)} as ground truth]{bian2018single}.
-Again, we subjected each data set to all possible combinations of genomic feature selection and methylation quantification.
-We furthermore included three additional approaches to perform dimensionality reduction in our benchmarks, including PCA with two different pre-processing strategies, as well as MOFA+, a dimensionality reduction technique designed for multi-modal single-cell data that can also process methylation data \citep{argelaguet2020mofa}.
+Overall, VMR quantification yielded results similar to those obtained when quantifying ENCODE regulatory regions.
+This demonstrates that our VMR detection approach identifies genomic regions in scBS data that are as informative as state-of-the-art epigenomic annotations.
+An added benefit of VMR detection is that this approach is available even in the absence of such annotations, for instance when studying species other than human or mouse.
+Furthermore, using VMRs over regulatory regions resulted in decreased RAM requirements as well as a shorter runtime, even when accounting for the additional step of VMR detection (Fig.~\ref{fig:score}F).
+This is likely due to the large number of annotated regulatory features (339\,815 in mouse, 1\,063\,878 in human) as opposed to the 63\,421 detected VMRs.
+Filtering regulatory regions by sequencing coverage reduced resource requirements, but at the cost of a reduced ability to distinguish cell types (Fig.~\ref{fig:todo}F).
 }
 
 \new{
-These extensive benchmarks revealed that our proposed combination of methods, i.e.~using the shrunken means of residuals of VMRs for dimensionality reduction, is able to distinguish diverse cellular properties such as cell type, \todo{colorectal cancer sampling region(?)}, embryonic stage, and germ layer (Fig.~\ref{fig:score_luo}).
-In addition, the use of ENCODE regulatory elements as input features also yielded good results.
-However, due to their large number (339\,815 in mouse, 1\,063\,878 in human) using regulatory regions as features resulted in greater run times and increased RAM usage, even when accounting for the additional step of VMR detection (Fig.~\ref{fig:score}F).
+We repeated this benchmark on an additional \todo{3(?)} published single-cell methylome data sets.
+These include neuronal sub-types of the murine cortex \citep[][using cell type labels derived from CH-methylation in genomic tiles, instead of CpG-methylation, as ground truth]{luo2017single}, cells isolated from mouse embryos during the onset of gastrulation \citep[][using RNA-derived cell clusters, or alternatively embryonic stage as ground truth]{argelaguet2019gastru} and human colorectal cancer cells \citep[][using \todo{tumor region(?)} as ground truth]{bian2018single}.
+Again, we subjected each data set to all possible combinations of genomic feature selection and methylation quantification.
+We furthermore included three additional approaches to perform dimensionality reduction in our benchmarks, including PCA with two different pre-processing strategies, as well as MOFA+, a dimensionality reduction technique designed for multi-modal single-cell data that can also process methylation data \citep{argelaguet2020mofa}.
+These extensive benchmarks confirmed that our proposed combination of methods, i.e.~using the shrunken means of residuals of VMRs for dimensionality reduction, is able to distinguish diverse cellular properties such as cell type, \todo{colorectal cancer sampling region(?)}, embryonic stage, and germ layer (Fig.~\ref{fig:todo}).
 }
 
 
 \subsubsection{Robustness to parameter changes}
 
 Lastly, we assessed whether our proposed workflow requires fine-tuning of parameters (Fig.~\ref{fig:sweep}).
-To this end, we re-analyzed both data sets, as well as sub-samples of the data with different VMR detection parameters, namely the width of the sliding window in bp, (set with option \texttt{--bandwidth} in our \texttt{scbs} software, default 2000) and the variance threshold above which windows are merged to VMRs (\texttt{--var-threshold}, default 0.02).
+To this end, we re-analyzed \new{two} data sets, as well as sub-samples of the data with different VMR detection parameters namely the width of the sliding window in bp, (set with option \texttt{--bandwidth} in our \texttt{scbs} software, default 2000), the variance threshold above which windows are merged to VMRs (\texttt{--var-threshold}, default 0.02) \new{and the step size of the sliding window (\texttt{--stepsize}, default 100bp).}
 This parameter sweep showed that our workflow gives good results over a wide range of parameter values.
 For the data of \citet{luo2017single}, results are nearly independent of the parameters (Fig.~\ref{fig:sweep}B).
-In the more challenging data set of \citet{kremer_scnmt} (Fig.~\ref{fig:sweep}A), cell types were less cleanly separated when very large bandwidths, or very strict variance thresholds were selected.
+In the more challenging data set of \citet{kremer_scnmt} (Fig.~\ref{fig:sweep}A), cell types were less cleanly separated when very large bandwidths, very strict variance thresholds, \new{or a very large step size was} selected.
 However, very small bandwidths or very lenient thresholds resulted in a much higher number of VMRs and thus long computing times.
-Overall, however, our default parameter combination provided good results and fast compute times in both data sets.
+Overall, our default parameter combination´ provided good results and fast compute times in both data sets.
 
 
 \begin{figure*}
