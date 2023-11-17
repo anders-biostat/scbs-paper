@@ -314,15 +314,18 @@ Overall, our default parameter combination´ provided good results and fast comp
 	\end{center}
 	\caption{\small \textbf{Benchmark of our methods on single-cell multi-omic data of cells of the murine forebrain}.\\
 		\textbf{(A)} Cell labels based on clustering of single-cell transcriptomes from \citet{kremer_scnmt}.
-		\textbf{(B, C)} Exemplary UMAPs obtained when analyzing the data set with our proposed methods (B) or conventional methods based on genome tiling (C).
-		\textbf{(D)} Illustration of the neighbor score.
-        Note that, actually, distances are measured in 15-dimensional PC space, not in the 2-dimensional UMAP space.
-		\textbf{(E)} Mean neighbor score obtained after analyzing single-cell methylomes with different combinations of methods.
-		Either 100~kb genomic tiles or VMRs were subjected to PCA and UMAP.
-		Tiles or VMRs were pre-processed as proposed in this work (shrunken mean of residuals subjected to iterative PCA) or using conventional methods (PCA on
-        methylation percentages, lightly imputed as done in \citet{luo2017single}; see Methods for details).
+		\textbf{(B, C)} Exemplary UMAPs obtained when analyzing the data set with \new{conventional methods based on genome tiling (B) or our proposed methods (C)}.
+		\new{
+		\textbf{(D, E)} Mean degree of cell type separation (neighbor score, E, computed in 15-dimensional PC space) obtained when analyzing single-cell methylomes with different combinations of methods.
+		Either VMRs, ENCODE regulatory elements, 100~kb genomic tiles or promoter regions (TSS\textpm2kb) were subjected to iterative PCA and UMAP.
+		CpG methylation in these intervals was either quantified by averaging (dotted lines) or using the shrunken mean of the residuals as proposed in this work (solid lines).
+	    }
 		The full 1566-cell data set was sub-sampled to simulate smaller data sets (x axis).
-		A higher neighbor score implies better separation of cell types inferred from single-cell transcriptomes of the same cells \textbf{(A)}.
+		A higher neighbor score implies better separation of cell types inferred from single-cell transcriptomes of the same cells (A).
+		\new{
+		\textbf{(F)} Resource and time requirements for dimensionality reduction of VMRs, regulatory elements and genomic tiles.
+		VMR runtime includes VMR detection (light blue).
+		}
 	}
 	\label{fig:score}
 \end{figure*}
@@ -469,10 +472,14 @@ Applying our approach to NSCs and oligodendrocytes demonstrated that the obtaine
 Thus, our method aids biological interpretability by pinpointing the regions that differ between groups of cells and hence have a putative regulatory role.
 
 We also presented and published an open source software tool, called \texttt{scbs}, that provides an easy-to-use implementation of the described algorithms.
-The package also offers functionality for all other steps of data preprocessing that are needed to get from the output of methylation callers such as Bismark and methylpy to a cell\texttimes region matrix that is suitable as input for standard analysis tools that work in a reduced-dimensionality setting.
+\todo{Rewrite this part to discuss other tools: The package also offers functionality for all other steps of data preprocessing that are needed to get from the output of methylation callers such as Bismark and methylpy to a cell\texttimes region matrix that is suitable as input for standard analysis tools that work in a reduced-dimensionality setting.
 This allows the user to use well established tools from scRNA-seq analysis, including visualization tools such as t-SNE and UMAP, Leiden/Louvain clustering, pseudotime trajectory analyses, etc.
-By offering these functions, \texttt{scbs} bridges a gap in the chain of existing tools that so far hindered practitioners in their data analysis.
-
+By offering these functions, \texttt{scbs} bridges a gap in the chain of existing tools that so far hindered practitioners in their data analysis.}
+\new{
+Our benchmarks demonstrate that selecting informative genomic features is a crucial aspect of scBS data analysis.
+Unlike other tools for scBS data analysis \citep{}, which rely on the user to manually specify which genomic intervals should be quantified, \texttt{scbs} implements an approach to discover these intervals in the data itself.
+Furthermore, \todo{DMR detection and residuals}
+}
 In addition, by pinpointing exact regions of interest, the VMR and DMR functionalities provide useful input for genomics-style analyses.
 Depending on the research question at hand, individual DMRs may be related to nearby genomic features such as gene bodies or known regulatory elements, tested for methylation differences between groups of cells, or subjected to gene ontology and motif enrichment.
 
@@ -650,7 +657,7 @@ We note that similar approaches have also been used elsewhere \citep{josse2012}.
 
 \subsection{Analysis of scBS datasets for benchmarks}
 To analyze scBS data from \citet{kremer_scnmt}, single-cell CpG methylation reports from all conditions were first stored with \texttt{scbs prepare} and then smoothed with \texttt{scbs smooth} using the default bandwidth of 1000~bp.
-The mm10 mouse genome was then annotated with genomic intervals that were either obtained by tiling the genome into non-overlapping 100~kb tiles, or by acquiring VMRs with \texttt{scbs scan} using the current default options (bandwidth $=2000$, stepsize $=10$, variance threshold $= 0.02$, minimum cell requirement $=6$).
+The mm10 mouse genome was then annotated with genomic intervals that were either obtained by tiling the genome into non-overlapping 100~kb tiles, or by acquiring VMRs with \texttt{scbs scan} using the current default options (bandwidth $=2000$, \new{stepsize $=100$}, variance threshold $= 0.02$, minimum cell requirement $=6$).
 Methylation fractions, commonly represented as percentages, and the shrunken means of residuals were quantified with \texttt{scbs matrix} for both VMRs and tiles.
 The same analysis was repeated for mouse scBS data from \citet{luo2017single}, and for smaller data sets generated by randomly sub-sampling cells separately from both data sets.
 For each data set, we thus obtained four methylation matrices:
@@ -694,7 +701,7 @@ We omitted lowly expressed genes (with scRNA-seq counts in $<5\%$ of cells) and 
 \subsection{Acknowledgments}
 
 SA and LPMK acknowledge funding by the Klaus Tschira Foundation (project 00.022.2019).
-LPMK, MMB, LK, SC, and AMV acknowledge funding from the European Commission via ERC grant 771376.
+LPMK, MMB, LK, SC, and AMV acknowledge funding from the European Commission via ERC grant 771376 \todo{add synergy ERC?}.
 We thank Alexey Uvarovskii for code refactoring and helpful suggestions on the source code.
 \bigskip
 
