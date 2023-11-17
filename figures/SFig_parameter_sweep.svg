@@ -5,7 +5,6 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    class="svglite"
@@ -24,7 +23,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -37,13 +36,13 @@
      guidetolerance="10"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:window-width="2560"
-     inkscape:window-height="1376"
+     inkscape:window-width="1920"
+     inkscape:window-height="1136"
      id="namedview2207"
      showgrid="false"
      inkscape:zoom="0.88305718"
-     inkscape:cx="449.72206"
-     inkscape:cy="328.15141"
+     inkscape:cx="864.26985"
+     inkscape:cy="530.6198"
      inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
@@ -68,6 +67,65 @@
       white-space: pre;
     }
   ]]></style>
+    <style
+       id="style1154"
+       type="text/css"><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+  ]]></style>
+    <clipPath
+       id="cpMC4wMHwzOTYuODV8MC4wMHwyODMuNDY=">
+      <rect
+         id="rect1160"
+         height="283.46"
+         width="396.85"
+         y="0.00"
+         x="0.00" />
+    </clipPath>
+    <clipPath
+       id="cpMzcuNDR8MzI0LjMyfDIzLjMyfDI1MS43Ng==">
+      <rect
+         id="rect1169"
+         height="228.44"
+         width="286.87"
+         y="23.32"
+         x="37.44" />
+    </clipPath>
+    <clipPath
+       id="cpMC4wMHwyNTUuMTJ8MC4wMHwyNTUuMTI=">
+      <rect
+         x="0"
+         y="0"
+         width="255.12"
+         height="255.12"
+         id="rect8-1" />
+    </clipPath>
+    <clipPath
+       id="cpMzcuNDR8MTgyLjU4fDIzLjMyfDIyMy40MQ==">
+      <rect
+         x="37.439999"
+         y="23.32"
+         width="145.14"
+         height="200.09"
+         id="rect17-5" />
+    </clipPath>
+    <clipPath
+       id="clipPath262">
+      <rect
+         x="0"
+         y="0"
+         width="255.12"
+         height="255.12"
+         id="rect260" />
+    </clipPath>
   </defs>
   <defs
      id="defs11">
@@ -417,90 +475,6 @@
          style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
-  <g
-     id="g3178"
-     transform="translate(-14.438476,-2.13078)">
-    <image
-       width="5.6700001"
-       height="42.52"
-       x="591.5"
-       y="137.44"
-       preserveAspectRatio="none"
-       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAEsCAYAAAACUNnVAAAA2ElEQVQ4jZWRyRVDIQhFL/SS/stKFUIWOSoomp8NR3gDg7T3y9UQ1FxQQ0mpPEz5G+21FsgkbZa11WUxIALtahCtiAZzllYCoO7SA/JHeqVYqeAnZRxs+tkJtUDpe1iwJ6f5P5ZPmWca2jbSeStxUBxUXPqLWQOlABZFheLSDQqgVgy0BEAFqYGoSBQ/NT/2gP61cdWuEF+CR8p2ukTG/UJZGn3JBWU7ne9oseCc4M4jr3W8c+UXBxoAnmt7iN0yumoLShm4dHvkMijWa76glhUztaydBrahH9ZJlv7ajQdXAAAAAElFTkSuQmCC"
-       id="image1030" />
-    <text
-       x="602.65002"
-       y="172.5"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';white-space:pre"
-       id="text1032">0.5</text>
-    <text
-       x="602.65002"
-       y="160.91"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';white-space:pre"
-       id="text1034">0.6</text>
-    <text
-       x="602.65002"
-       y="149.33"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';white-space:pre"
-       id="text1036">0.7</text>
-    <text
-       x="591.5"
-       y="107.05"
-       style="font-size:11px;font-family:'Liberation Sans';white-space:pre"
-       id="text1038">mean</text>
-    <text
-       x="591.5"
-       y="118.93"
-       style="font-size:11px;font-family:'Liberation Sans';white-space:pre"
-       id="text1040">neighbor</text>
-    <text
-       x="591.5"
-       y="130.81"
-       style="font-size:11px;font-family:'Liberation Sans';white-space:pre"
-       id="text1042">score</text>
-    <line
-       x1="591.5"
-       y1="169.28999"
-       x2="592.64001"
-       y2="169.28999"
-       style="fill:none;stroke:#ffffff;stroke-width:0.38;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
-       id="line1044" />
-    <line
-       x1="591.5"
-       y1="157.71001"
-       x2="592.64001"
-       y2="157.71001"
-       style="fill:none;stroke:#ffffff;stroke-width:0.38;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
-       id="line1046" />
-    <line
-       x1="591.5"
-       y1="146.12"
-       x2="592.64001"
-       y2="146.12"
-       style="fill:none;stroke:#ffffff;stroke-width:0.38;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
-       id="line1048" />
-    <line
-       x1="596.03998"
-       y1="169.28999"
-       x2="597.16998"
-       y2="169.28999"
-       style="fill:none;stroke:#ffffff;stroke-width:0.38;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
-       id="line1050" />
-    <line
-       x1="596.03998"
-       y1="157.71001"
-       x2="597.16998"
-       y2="157.71001"
-       style="fill:none;stroke:#ffffff;stroke-width:0.38;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
-       id="line1052" />
-    <line
-       x1="596.03998"
-       y1="146.12"
-       x2="597.16998"
-       y2="146.12"
-       style="fill:none;stroke:#ffffff;stroke-width:0.38;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
-       id="line1054" />
-  </g>
   <defs
      id="defs1063">
     <clipPath
@@ -818,90 +792,6 @@
          style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
-  <g
-     id="g3163"
-     transform="translate(-14.438476,-2.13078)">
-    <image
-       width="5.6700001"
-       height="42.52"
-       x="591.5"
-       y="415.42001"
-       preserveAspectRatio="none"
-       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAEsCAYAAAACUNnVAAAA2ElEQVQ4jZWRyRVDIQhFL/SS/stKFUIWOSoomp8NR3gDg7T3y9UQ1FxQQ0mpPEz5G+21FsgkbZa11WUxIALtahCtiAZzllYCoO7SA/JHeqVYqeAnZRxs+tkJtUDpe1iwJ6f5P5ZPmWca2jbSeStxUBxUXPqLWQOlABZFheLSDQqgVgy0BEAFqYGoSBQ/NT/2gP61cdWuEF+CR8p2ukTG/UJZGn3JBWU7ne9oseCc4M4jr3W8c+UXBxoAnmt7iN0yumoLShm4dHvkMijWa76glhUztaydBrahH9ZJlv7ajQdXAAAAAElFTkSuQmCC"
-       id="image2175" />
-    <text
-       x="602.65002"
-       y="457.39001"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';white-space:pre"
-       id="text2177">0.6</text>
-    <text
-       x="602.65002"
-       y="443.82001"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';white-space:pre"
-       id="text2179">0.7</text>
-    <text
-       x="602.65002"
-       y="430.25"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';white-space:pre"
-       id="text2181">0.8</text>
-    <text
-       x="591.5"
-       y="385.04001"
-       style="font-size:11px;font-family:'Liberation Sans';white-space:pre"
-       id="text2183">mean</text>
-    <text
-       x="591.5"
-       y="396.92001"
-       style="font-size:11px;font-family:'Liberation Sans';white-space:pre"
-       id="text2185">neighbor</text>
-    <text
-       x="591.5"
-       y="408.79999"
-       style="font-size:11px;font-family:'Liberation Sans';white-space:pre"
-       id="text2187">score</text>
-    <line
-       x1="591.5"
-       y1="454.19"
-       x2="592.64001"
-       y2="454.19"
-       style="fill:none;stroke:#ffffff;stroke-width:0.38;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
-       id="line2189" />
-    <line
-       x1="591.5"
-       y1="440.60999"
-       x2="592.64001"
-       y2="440.60999"
-       style="fill:none;stroke:#ffffff;stroke-width:0.38;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
-       id="line2191" />
-    <line
-       x1="591.5"
-       y1="427.04001"
-       x2="592.64001"
-       y2="427.04001"
-       style="fill:none;stroke:#ffffff;stroke-width:0.38;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
-       id="line2193" />
-    <line
-       x1="596.03998"
-       y1="454.19"
-       x2="597.16998"
-       y2="454.19"
-       style="fill:none;stroke:#ffffff;stroke-width:0.38;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
-       id="line2195" />
-    <line
-       x1="596.03998"
-       y1="440.60999"
-       x2="597.16998"
-       y2="440.60999"
-       style="fill:none;stroke:#ffffff;stroke-width:0.38;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
-       id="line2197" />
-    <line
-       x1="596.03998"
-       y1="427.04001"
-       x2="597.16998"
-       y2="427.04001"
-       style="fill:none;stroke:#ffffff;stroke-width:0.38;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
-       id="line2199" />
-  </g>
   <flowRoot
      xml:space="preserve"
      id="flowRoot2215"
@@ -972,7 +862,7 @@
          x="63.859699"
          y="-22.220776"
          style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" /></flowRegion><flowPara
-       id="flowPara1142"></flowPara></flowRoot>  <flowRoot
+       id="flowPara1142" /></flowRoot>  <flowRoot
      xml:space="preserve"
      id="flowRoot1144"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -984,7 +874,7 @@
          x="64.460258"
          y="-24.222647"
          style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" /></flowRegion><flowPara
-       id="flowPara1150"></flowPara></flowRoot>  <g
+       id="flowPara1150" /></flowRoot>  <g
      id="g2644"
      transform="translate(-14.438476,-2.13078)"
      inkscape:export-xdpi="300"
@@ -3128,7 +3018,7 @@
          transform="rotate(-90,271.685,-139.075)">1000</text>
       <text
          id="text874"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+         style="font-size:8.80000056px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1;-inkscape-font-specification:'Liberation Sans, Bold';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;text-align:end;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
          transform="rotate(-90,281.43,-148.82)">2000</text>
       <text
          id="text876"
@@ -3147,7 +3037,11 @@
          id="text882"
          style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
          y="99.699997"
-         x="50.93">0.02</text>
+         x="50.93">
+        <tspan
+           style="fill:#000000;-inkscape-font-specification:'Liberation Sans, Bold';font-family:'Liberation Sans';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;font-size:8.80000056px;text-anchor:end;text-align:end;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal"
+           id="tspan1152">0.02</tspan>
+      </text>
       <text
          id="text884"
          style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
@@ -3181,7 +3075,7 @@
          x="50.93">0.01</text>
       <text
          id="text898"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+         style="font-size:8.80000056px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1;-inkscape-font-specification:'Liberation Sans, Bold';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;text-align:end;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
          y="204.05"
          x="50.93">0.02</text>
       <text
@@ -3315,7 +3209,7 @@
        y="109.74"
        x="-236.96001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.80000056px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1;-inkscape-font-specification:'Liberation Sans, Bold';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;text-align:end;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
        id="text980">2000</text>
     <text
        y="129.24001"
@@ -3365,7 +3259,7 @@
        y="216.58"
        x="-236.96001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.80000056px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1;-inkscape-font-specification:'Liberation Sans, Bold';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;text-align:end;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
        id="text1000">2000</text>
     <text
        y="236.07001"
@@ -3415,7 +3309,7 @@
        y="323.42001"
        x="-236.96001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.80000056px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1;-inkscape-font-specification:'Liberation Sans, Bold';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;text-align:end;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
        id="text1020">2000</text>
     <text
        y="342.91"
@@ -5870,7 +5764,7 @@
          x="50.93">0.01</text>
       <text
          id="text2007"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+         style="font-size:8.80000056px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1;-inkscape-font-specification:'Liberation Sans, Bold';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;text-align:end;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
          y="377.67999"
          x="50.93">0.02</text>
       <text
@@ -5906,7 +5800,7 @@
          x="50.93">0.01</text>
       <text
          id="text2023"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+         style="font-size:8.80000056px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1;-inkscape-font-specification:'Liberation Sans, Bold';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;text-align:end;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
          y="482.04001"
          x="50.93">0.02</text>
       <text
@@ -6040,7 +5934,7 @@
        y="109.74"
        x="-514.95001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.80000056px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1;-inkscape-font-specification:'Liberation Sans, Bold';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;text-align:end;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
        id="text2105">2000</text>
     <text
        y="129.24001"
@@ -6090,7 +5984,7 @@
        y="216.58"
        x="-514.95001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.80000056px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1;-inkscape-font-specification:'Liberation Sans, Bold';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;text-align:end;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
        id="text2125">2000</text>
     <text
        y="236.07001"
@@ -6140,7 +6034,7 @@
        y="323.42001"
        x="-514.95001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.80000056px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1;-inkscape-font-specification:'Liberation Sans, Bold';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;text-align:end;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
        id="text2145">2000</text>
     <text
        y="342.91"
@@ -6190,7 +6084,7 @@
        y="430.25"
        x="-514.95001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.80000056px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1;-inkscape-font-specification:'Liberation Sans, Bold';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;text-align:end;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
        id="text2165">2000</text>
     <text
        y="449.73999"
@@ -6226,4 +6120,596 @@
          id="flowPara1160-9">Luo <flowSpan
    id="flowSpan1164-2"
    style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.33333397px;font-family:Arial;-inkscape-font-specification:'Arial, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1">et al.</flowSpan> dataset</flowPara></flowRoot>  </g>
+  <g
+     clip-path="url(#cpMC4wMHwyNTUuMTJ8MC4wMHwyNTUuMTI=)"
+     id="g15-4"
+     transform="translate(567.34724,-97.672088)">
+    <rect
+       x="0"
+       y="0"
+       width="255.12"
+       height="255.12"
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:1.07000005;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="rect13" />
+  </g>
+  <g
+     clip-path="url(#cpMzcuNDR8MTgyLjU4fDIzLjMyfDIyMy40MQ==)"
+     id="g116"
+     transform="translate(567.34724,-97.672088)">
+    <rect
+       x="37.439999"
+       y="23.32"
+       width="145.14"
+       height="200.09"
+       style="fill:#ffffff;stroke:none;stroke-width:1.07000005;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="rect22" />
+    <polyline
+       points="37.44,206.12 182.58,206.12 "
+       style="fill:none;stroke:#ebebeb;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="polyline24" />
+    <polyline
+       points="37.44,142.39 182.58,142.39 "
+       style="fill:none;stroke:#ebebeb;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="polyline26" />
+    <polyline
+       points="37.44,78.65 182.58,78.65 "
+       style="fill:none;stroke:#ebebeb;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="polyline28" />
+    <polyline
+       points="44.04,223.41 44.04,23.32 "
+       style="fill:none;stroke:#ebebeb;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="polyline30" />
+    <polyline
+       points="57.54,223.41 57.54,23.32 "
+       style="fill:none;stroke:#ebebeb;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="polyline32" />
+    <polyline
+       points="80.04,223.41 80.04,23.32 "
+       style="fill:none;stroke:#ebebeb;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="polyline34" />
+    <polyline
+       points="102.54,223.41 102.54,23.32 "
+       style="fill:none;stroke:#ebebeb;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="polyline36" />
+    <polyline
+       points="125.04,223.41 125.04,23.32 "
+       style="fill:none;stroke:#ebebeb;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="polyline38" />
+    <polyline
+       points="147.55,223.41 147.55,23.32 "
+       style="fill:none;stroke:#ebebeb;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="polyline40" />
+    <polyline
+       points="175.99,223.41 175.99,23.32 "
+       style="fill:none;stroke:#ebebeb;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="polyline42" />
+    <polyline
+       points="44.04,195.20 57.54,138.45 102.54,66.43 175.99,32.48 "
+       style="fill:none;stroke:#30123b;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="polyline44" />
+    <polyline
+       points="44.04,197.02 57.54,139.14 102.54,66.52 175.99,32.82 "
+       style="fill:none;stroke:#4686fb;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="polyline46" />
+    <polyline
+       points="44.04,196.11 57.54,136.59 102.54,67.23 175.99,32.42 "
+       style="fill:none;stroke:#1ae4b6;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="polyline48" />
+    <polyline
+       points="44.04,200.66 57.54,137.06 102.54,66.61 175.99,33.09 "
+       style="fill:none;stroke:#a2fc3c;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="polyline50" />
+    <polyline
+       points="44.04,195.20 57.54,137.06 102.54,67.61 175.99,32.71 "
+       style="fill:none;stroke:#faba39;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="polyline52" />
+    <polyline
+       points="44.04,198.84 57.54,145.17 102.54,65.86 175.99,37.57 "
+       style="fill:none;stroke:#e4460a;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="polyline54" />
+    <polyline
+       points="44.04,214.32 57.54,154.21 102.54,74.12 175.99,41.43 "
+       style="fill:none;stroke:#7a0403;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="polyline56" />
+    <circle
+       cx="44.040001"
+       cy="195.2"
+       r="1.95"
+       style="fill:#30123b;stroke:#30123b;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle58" />
+    <circle
+       cx="44.040001"
+       cy="197.02"
+       r="1.95"
+       style="fill:#4686fb;stroke:#4686fb;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle60" />
+    <circle
+       cx="44.040001"
+       cy="196.11"
+       r="1.95"
+       style="fill:#1ae4b6;stroke:#1ae4b6;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle62" />
+    <circle
+       cx="44.040001"
+       cy="200.66"
+       r="1.95"
+       style="fill:#a2fc3c;stroke:#a2fc3c;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle64" />
+    <circle
+       cx="44.040001"
+       cy="195.2"
+       r="1.95"
+       style="fill:#faba39;stroke:#faba39;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle66" />
+    <circle
+       cx="44.040001"
+       cy="198.84"
+       r="1.95"
+       style="fill:#e4460a;stroke:#e4460a;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle68" />
+    <circle
+       cx="44.040001"
+       cy="214.32001"
+       r="1.95"
+       style="fill:#7a0403;stroke:#7a0403;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle70" />
+    <circle
+       cx="57.540001"
+       cy="138.45"
+       r="1.95"
+       style="fill:#30123b;stroke:#30123b;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle72" />
+    <circle
+       cx="57.540001"
+       cy="139.14"
+       r="1.95"
+       style="fill:#4686fb;stroke:#4686fb;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle74" />
+    <circle
+       cx="57.540001"
+       cy="136.59"
+       r="1.95"
+       style="fill:#1ae4b6;stroke:#1ae4b6;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle76" />
+    <circle
+       cx="57.540001"
+       cy="137.06"
+       r="1.95"
+       style="fill:#a2fc3c;stroke:#a2fc3c;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle78" />
+    <circle
+       cx="57.540001"
+       cy="137.06"
+       r="1.95"
+       style="fill:#faba39;stroke:#faba39;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle80" />
+    <circle
+       cx="57.540001"
+       cy="145.17"
+       r="1.95"
+       style="fill:#e4460a;stroke:#e4460a;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle82" />
+    <circle
+       cx="57.540001"
+       cy="154.21001"
+       r="1.95"
+       style="fill:#7a0403;stroke:#7a0403;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle84" />
+    <circle
+       cx="102.54"
+       cy="66.43"
+       r="1.95"
+       style="fill:#30123b;stroke:#30123b;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle86" />
+    <circle
+       cx="102.54"
+       cy="66.519997"
+       r="1.95"
+       style="fill:#4686fb;stroke:#4686fb;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle88" />
+    <circle
+       cx="102.54"
+       cy="67.230003"
+       r="1.95"
+       style="fill:#1ae4b6;stroke:#1ae4b6;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle90" />
+    <circle
+       cx="102.54"
+       cy="66.610001"
+       r="1.95"
+       style="fill:#a2fc3c;stroke:#a2fc3c;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle92" />
+    <circle
+       cx="102.54"
+       cy="67.610001"
+       r="1.95"
+       style="fill:#faba39;stroke:#faba39;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle94" />
+    <circle
+       cx="102.54"
+       cy="65.860001"
+       r="1.95"
+       style="fill:#e4460a;stroke:#e4460a;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle96" />
+    <circle
+       cx="102.54"
+       cy="74.120003"
+       r="1.95"
+       style="fill:#7a0403;stroke:#7a0403;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle98" />
+    <circle
+       cx="175.99001"
+       cy="32.48"
+       r="1.95"
+       style="fill:#30123b;stroke:#30123b;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle100" />
+    <circle
+       cx="175.99001"
+       cy="32.82"
+       r="1.95"
+       style="fill:#4686fb;stroke:#4686fb;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle102" />
+    <circle
+       cx="175.99001"
+       cy="32.419998"
+       r="1.95"
+       style="fill:#1ae4b6;stroke:#1ae4b6;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle104" />
+    <circle
+       cx="175.99001"
+       cy="33.09"
+       r="1.95"
+       style="fill:#a2fc3c;stroke:#a2fc3c;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle106" />
+    <circle
+       cx="175.99001"
+       cy="32.709999"
+       r="1.95"
+       style="fill:#faba39;stroke:#faba39;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle108" />
+    <circle
+       cx="175.99001"
+       cy="37.57"
+       r="1.95"
+       style="fill:#e4460a;stroke:#e4460a;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle110" />
+    <circle
+       cx="175.99001"
+       cy="41.43"
+       r="1.95"
+       style="fill:#7a0403;stroke:#7a0403;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle112" />
+    <rect
+       x="37.439999"
+       y="23.32"
+       width="145.14"
+       height="200.09"
+       style="fill:none;stroke:#333333;stroke-width:1.07000005;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="rect114" />
+  </g>
+  <g
+     clip-path="url(#cpMC4wMHwyNTUuMTJ8MC4wMHwyNTUuMTI=)"
+     id="g240"
+     transform="translate(567.34724,-97.672088)">
+    <text
+       x="32.509998"
+       y="209.33"
+       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       id="text118">0.5</text>
+    <text
+       x="32.509998"
+       y="145.60001"
+       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       id="text120">0.6</text>
+    <text
+       x="32.509998"
+       y="81.860001"
+       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       id="text122">0.7</text>
+    <polyline
+       points="34.70,206.12 37.44,206.12 "
+       style="fill:none;stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="polyline124" />
+    <polyline
+       points="34.70,142.39 37.44,142.39 "
+       style="fill:none;stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="polyline126" />
+    <polyline
+       points="34.70,78.65 37.44,78.65 "
+       style="fill:none;stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="polyline128" />
+    <polyline
+       points="44.04,226.15 44.04,223.41 "
+       style="fill:none;stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="polyline130" />
+    <polyline
+       points="80.04,226.15 80.04,223.41 "
+       style="fill:none;stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="polyline134" />
+    <polyline
+       points="102.54,226.15 102.54,223.41 "
+       style="fill:none;stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="polyline136" />
+    <polyline
+       points="125.04,226.15 125.04,223.41 "
+       style="fill:none;stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="polyline138" />
+    <polyline
+       points="147.55,226.15 147.55,223.41 "
+       style="fill:none;stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="polyline140" />
+    <polyline
+       points="175.99,226.15 175.99,223.41 "
+       style="fill:none;stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="polyline142" />
+    <text
+       x="44.040001"
+       y="234.75999"
+       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+       id="text144">100</text>
+    <text
+       x="80.040001"
+       y="234.75999"
+       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+       id="text148">500</text>
+    <text
+       x="102.54"
+       y="234.75999"
+       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+       id="text150">750</text>
+    <text
+       x="125.04"
+       y="234.75999"
+       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+       id="text152">1000</text>
+    <text
+       x="147.55"
+       y="234.75999"
+       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+       id="text154">1250</text>
+    <text
+       x="175.99001"
+       y="234.75999"
+       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+       id="text156">1566</text>
+    <text
+       x="67.410004"
+       y="247.35001"
+       style="font-size:11px;font-family:'Liberation Sans';white-space:pre"
+       id="text158">number</text>
+    <text
+       x="113.84"
+       y="247.35001"
+       style="font-size:11px;font-family:'Liberation Sans';white-space:pre"
+       id="text160">of</text>
+    <text
+       x="127.95"
+       y="247.35001"
+       style="font-size:11px;font-family:'Liberation Sans';white-space:pre"
+       id="text162">cells</text>
+    <text
+       transform="rotate(-90,97.615,84.115)"
+       style="font-size:11px;font-family:'Liberation Sans';white-space:pre"
+       id="text164">mean</text>
+    <text
+       transform="rotate(-90,80.27,66.77)"
+       style="font-size:11px;font-family:'Liberation Sans';white-space:pre"
+       id="text166">neighbor</text>
+    <text
+       transform="rotate(-90,54.03,40.53)"
+       style="font-size:11px;font-family:'Liberation Sans';white-space:pre"
+       id="text168">score</text>
+    <rect
+       x="193.53999"
+       y="49.509998"
+       width="56.099998"
+       height="147.71001"
+       style="fill:#ffffff;stroke:none;stroke-width:1.07000005;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="rect170-9" />
+    <text
+       x="199.02"
+       y="64.160004"
+       style="font-size:11px;font-family:'Liberation Sans';white-space:pre"
+       id="text172">stepsize</text>
+    <rect
+       x="199.02"
+       y="70.779999"
+       width="17.280001"
+       height="17.280001"
+       style="fill:#ffffff;stroke:none;stroke-width:1.07000005;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="rect174-2" />
+    <line
+       x1="200.75"
+       y1="79.419998"
+       x2="214.57001"
+       y2="79.419998"
+       style="fill:none;stroke:#30123b;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="line176" />
+    <circle
+       cx="207.66"
+       cy="79.419998"
+       r="1.95"
+       style="fill:#30123b;stroke:#30123b;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle178" />
+    <rect
+       x="199.02"
+       y="88.059998"
+       width="17.280001"
+       height="17.280001"
+       style="fill:#ffffff;stroke:none;stroke-width:1.07000005;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="rect180-5" />
+    <line
+       x1="200.75"
+       y1="96.699997"
+       x2="214.57001"
+       y2="96.699997"
+       style="fill:none;stroke:#4686fb;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="line182" />
+    <circle
+       cx="207.66"
+       cy="96.699997"
+       r="1.95"
+       style="fill:#4686fb;stroke:#4686fb;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle184" />
+    <rect
+       x="199.02"
+       y="105.34"
+       width="17.280001"
+       height="17.280001"
+       style="fill:#ffffff;stroke:none;stroke-width:1.07000005;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="rect186-7" />
+    <line
+       x1="200.75"
+       y1="113.98"
+       x2="214.57001"
+       y2="113.98"
+       style="fill:none;stroke:#1ae4b6;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="line188" />
+    <circle
+       cx="207.66"
+       cy="113.98"
+       r="1.95"
+       style="fill:#1ae4b6;stroke:#1ae4b6;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle190" />
+    <rect
+       x="199.02"
+       y="122.62"
+       width="17.280001"
+       height="17.280001"
+       style="fill:#ffffff;stroke:none;stroke-width:1.07000005;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="rect192-4" />
+    <line
+       x1="200.75"
+       y1="131.25999"
+       x2="214.57001"
+       y2="131.25999"
+       style="fill:none;stroke:#a2fc3c;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="line194" />
+    <circle
+       cx="207.66"
+       cy="131.25999"
+       r="1.95"
+       style="fill:#a2fc3c;stroke:#a2fc3c;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle196" />
+    <rect
+       x="199.02"
+       y="139.89999"
+       width="17.280001"
+       height="17.280001"
+       style="fill:#ffffff;stroke:none;stroke-width:1.07000005;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="rect198-9" />
+    <line
+       x1="200.75"
+       y1="148.53999"
+       x2="214.57001"
+       y2="148.53999"
+       style="fill:none;stroke:#faba39;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="line200" />
+    <circle
+       cx="207.66"
+       cy="148.53999"
+       r="1.95"
+       style="fill:#faba39;stroke:#faba39;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle202" />
+    <rect
+       x="199.02"
+       y="157.17999"
+       width="17.280001"
+       height="17.280001"
+       style="fill:#ffffff;stroke:none;stroke-width:1.07000005;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="rect204" />
+    <line
+       x1="200.75"
+       y1="165.82001"
+       x2="214.57001"
+       y2="165.82001"
+       style="fill:none;stroke:#e4460a;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="line206" />
+    <circle
+       cx="207.66"
+       cy="165.82001"
+       r="1.95"
+       style="fill:#e4460a;stroke:#e4460a;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle208" />
+    <rect
+       x="199.02"
+       y="174.46001"
+       width="17.280001"
+       height="17.280001"
+       style="fill:#ffffff;stroke:none;stroke-width:1.07000005;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="rect210" />
+    <line
+       x1="200.75"
+       y1="183.10001"
+       x2="214.57001"
+       y2="183.10001"
+       style="fill:none;stroke:#7a0403;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       id="line212" />
+    <circle
+       cx="207.66"
+       cy="183.10001"
+       r="1.95"
+       style="fill:#7a0403;stroke:#7a0403;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+       id="circle214" />
+    <text
+       x="221.78"
+       y="82.629997"
+       style="font-size:8.80000019px;font-family:'Liberation Sans';white-space:pre"
+       id="text216-9">5</text>
+    <text
+       x="221.78"
+       y="99.910004"
+       style="font-size:8.80000019px;font-family:'Liberation Sans';white-space:pre"
+       id="text218-4">10</text>
+    <text
+       x="221.78"
+       y="117.19"
+       style="font-size:8.80000019px;font-family:'Liberation Sans';white-space:pre"
+       id="text220-5">50</text>
+    <text
+       x="221.78"
+       y="134.47"
+       style="font-size:8.80000019px;font-family:'Liberation Sans';white-space:pre"
+       id="text222-9">100</text>
+    <text
+       x="221.78"
+       y="151.75"
+       style="font-size:8.80000019px;font-family:'Liberation Sans';white-space:pre"
+       id="text224-3">200</text>
+    <text
+       x="221.78"
+       y="169.03"
+       style="font-size:8.80000019px;font-family:'Liberation Sans';white-space:pre"
+       id="text226-5">500</text>
+    <text
+       x="221.78"
+       y="186.31"
+       style="font-size:8.80000019px;font-family:'Liberation Sans';white-space:pre"
+       id="text228-7">1000</text>
+    <text
+       x="37.439999"
+       y="15.1"
+       style="font-size:13.19999981px;font-family:'Liberation Sans';white-space:pre"
+       id="text230-0">Kremer</text>
+    <text
+       x="89.919998"
+       y="15.1"
+       style="font-style:italic;font-size:13.19999981px;font-family:'Liberation Sans';white-space:pre"
+       id="text232-8">et</text>
+    <text
+       x="107.39"
+       y="15.1"
+       style="font-style:italic;font-size:13.19999981px;font-family:'Liberation Sans';white-space:pre"
+       id="text234-1">al.</text>
+    <text
+       x="127.52"
+       y="15.1"
+       style="font-size:13.19999981px;font-family:'Liberation Sans';white-space:pre"
+       id="text236-9">data</text>
+    <text
+       x="161.42999"
+       y="15.1"
+       style="font-size:13.19999981px;font-family:'Liberation Sans';white-space:pre"
+       id="text238-9">set</text>
+  </g>
 </svg>
