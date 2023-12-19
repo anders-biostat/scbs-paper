@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    class="svglite"
    width="680.32056pt"
    height="555.43781pt"
@@ -14,10 +7,17 @@
    version="1.1"
    id="svg2205"
    sodipodi:docname="SFig_parameter_sweep.svg"
-   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    inkscape:export-filename="/home/lukas/code/scbs-paper/figures/SFig_parameter_sweep.png"
    inkscape:export-xdpi="250"
-   inkscape:export-ydpi="250">
+   inkscape:export-ydpi="250"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <metadata
      id="metadata2209">
     <rdf:RDF>
@@ -26,7 +26,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -39,21 +39,23 @@
      guidetolerance="10"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:window-width="2560"
-     inkscape:window-height="1376"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
      id="namedview2207"
      showgrid="false"
-     inkscape:zoom="0.44152859"
-     inkscape:cx="-179.49005"
-     inkscape:cy="-319.15325"
+     inkscape:zoom="0.62441572"
+     inkscape:cx="533.29855"
+     inkscape:cy="311.4912"
      inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg2205"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0" />
+     fit-margin-bottom="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="pt" />
   <defs
      id="defs4">
     <style
@@ -984,7 +986,8 @@
          x="-105.69881"
          y="367.54361"
          style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" /></flowRegion><flowPara
-       id="flowPara2221" /></flowRoot>  <flowRoot
+       id="flowPara2221" /></flowRoot>
+  <flowRoot
      xml:space="preserve"
      id="flowRoot2223"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -998,7 +1001,8 @@
          x="-152.14223"
          y="357.9346"
          style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" /></flowRegion><flowPara
-       id="flowPara2229" /></flowRoot>  <flowRoot
+       id="flowPara2229" /></flowRoot>
+  <flowRoot
      xml:space="preserve"
      id="flowRoot2231"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1013,7 +1017,8 @@
          y="321.90094"
          style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" /></flowRegion><flowPara
        id="flowPara2237"
-       style="font-size:26.66666603px">B</flowPara></flowRoot>  <flowRoot
+       style="font-size:26.6667px">B</flowPara></flowRoot>
+  <flowRoot
      xml:space="preserve"
      id="flowRoot2231-9"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1028,7 +1033,8 @@
          y="321.90094"
          style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" /></flowRegion><flowPara
        id="flowPara2237-7"
-       style="font-size:26.66666603px">A</flowPara></flowRoot>  <flowRoot
+       style="font-size:26.6667px">A</flowPara></flowRoot>
+  <flowRoot
      xml:space="preserve"
      id="flowRoot1136"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1040,7 +1046,8 @@
          x="63.859699"
          y="-22.220776"
          style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" /></flowRegion><flowPara
-       id="flowPara1142" /></flowRoot>  <flowRoot
+       id="flowPara1142" /></flowRoot>
+  <flowRoot
      xml:space="preserve"
      id="flowRoot1144"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1052,7 +1059,8 @@
          x="64.460258"
          y="-24.222647"
          style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" /></flowRegion><flowPara
-       id="flowPara1150" /></flowRoot>  <g
+       id="flowPara1150" /></flowRoot>
+  <g
      id="g2644"
      transform="translate(-14.185196,-1.9760191)"
      inkscape:export-xdpi="300"
@@ -1245,102 +1253,102 @@
          x="135.77" />
       <text
          id="text93"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="118.57"
          x="67.550003">0.59</text>
       <text
          id="text95"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="118.57"
          x="87.050003">0.56</text>
       <text
          id="text97"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="118.57"
          x="106.54">0.53</text>
       <text
          id="text99"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="118.57"
          x="126.03">0.51</text>
       <text
          id="text101"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="118.57"
          x="145.52">0.41</text>
       <text
          id="text103"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="99.080002"
          x="67.550003">0.58</text>
       <text
          id="text105"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="99.080002"
          x="87.050003">0.55</text>
       <text
          id="text107"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="99.080002"
          x="106.54">0.54</text>
       <text
          id="text109"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="99.080002"
          x="126.03">0.50</text>
       <text
          id="text111"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="99.080002"
          x="145.52">0.43</text>
       <text
          id="text113"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="79.589996"
          x="67.550003">0.57</text>
       <text
          id="text115"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="79.589996"
          x="87.050003">0.57</text>
       <text
          id="text117"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="79.589996"
          x="106.54">0.56</text>
       <text
          id="text119"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="79.589996"
          x="126.03">0.53</text>
       <text
          id="text121"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="79.589996"
          x="145.52">0.47</text>
       <text
          id="text123"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="60.099998"
          x="67.550003">0.58</text>
       <text
          id="text125"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="60.099998"
          x="87.050003">0.55</text>
       <text
          id="text127"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="60.099998"
          x="106.54">0.56</text>
       <text
          id="text129"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="60.099998"
          x="126.03">0.52</text>
       <text
          id="text131"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="60.099998"
          x="145.52">0.50</text>
       <rect
@@ -1539,102 +1547,102 @@
          x="135.77" />
       <text
          id="text204"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="222.92999"
          x="67.550003">0.75</text>
       <text
          id="text206"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="222.92999"
          x="87.050003">0.75</text>
       <text
          id="text208"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="222.92999"
          x="106.54">0.74</text>
       <text
          id="text210"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="222.92999"
          x="126.03">0.66</text>
       <text
          id="text212"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="222.92999"
          x="145.52">0.61</text>
       <text
          id="text214"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="203.44"
          x="67.550003">0.75</text>
       <text
          id="text216"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="203.44"
          x="87.050003">0.75</text>
       <text
          id="text218"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="203.44"
          x="106.54">0.74</text>
       <text
          id="text220"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="203.44"
          x="126.03">0.70</text>
       <text
          id="text222"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="203.44"
          x="145.52">0.63</text>
       <text
          id="text224"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="183.95"
          x="67.550003">0.75</text>
       <text
          id="text226"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="183.95"
          x="87.050003">0.75</text>
       <text
          id="text228"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="183.95"
          x="106.54">0.75</text>
       <text
          id="text230"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="183.95"
          x="126.03">0.73</text>
       <text
          id="text232"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="183.95"
          x="145.52">0.68</text>
       <text
          id="text234"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="164.45"
          x="67.550003">0.75</text>
       <text
          id="text236"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="164.45"
          x="87.050003">0.76</text>
       <text
          id="text238"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="164.45"
          x="106.54">0.75</text>
       <text
          id="text240"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="164.45"
          x="126.03">0.74</text>
       <text
          id="text242"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="164.45"
          x="145.52">0.70</text>
       <rect
@@ -1833,102 +1841,102 @@
          x="242.61" />
       <text
          id="text315"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="118.57"
          x="174.39">0.64</text>
       <text
          id="text317"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="118.57"
          x="193.88">0.63</text>
       <text
          id="text319"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="118.57"
          x="213.37">0.61</text>
       <text
          id="text321"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="118.57"
          x="232.86">0.53</text>
       <text
          id="text323"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="118.57"
          x="252.36">0.51</text>
       <text
          id="text325"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="99.080002"
          x="174.39">0.65</text>
       <text
          id="text327"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="99.080002"
          x="193.88">0.64</text>
       <text
          id="text329"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="99.080002"
          x="213.37">0.61</text>
       <text
          id="text331"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="99.080002"
          x="232.86">0.55</text>
       <text
          id="text333"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="99.080002"
          x="252.36">0.53</text>
       <text
          id="text335"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="79.589996"
          x="174.39">0.65</text>
       <text
          id="text337"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="79.589996"
          x="193.88">0.63</text>
       <text
          id="text339"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="79.589996"
          x="213.37">0.62</text>
       <text
          id="text341"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="79.589996"
          x="232.86">0.58</text>
       <text
          id="text343"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="79.589996"
          x="252.36">0.57</text>
       <text
          id="text345"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="60.099998"
          x="174.39">0.64</text>
       <text
          id="text347"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="60.099998"
          x="193.88">0.62</text>
       <text
          id="text349"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="60.099998"
          x="213.37">0.62</text>
       <text
          id="text351"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="60.099998"
          x="232.86">0.61</text>
       <text
          id="text353"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="60.099998"
          x="252.36">0.60</text>
       <rect
@@ -2127,102 +2135,102 @@
          x="242.61" />
       <text
          id="text426"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="222.92999"
          x="174.39">0.77</text>
       <text
          id="text428"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="222.92999"
          x="193.88">0.76</text>
       <text
          id="text430"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="222.92999"
          x="213.37">0.75</text>
       <text
          id="text432"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="222.92999"
          x="232.86">0.70</text>
       <text
          id="text434"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="222.92999"
          x="252.36">0.63</text>
       <text
          id="text436"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="203.44"
          x="174.39">0.77</text>
       <text
          id="text438"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="203.44"
          x="193.88">0.76</text>
       <text
          id="text440"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="203.44"
          x="213.37">0.76</text>
       <text
          id="text442"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="203.44"
          x="232.86">0.72</text>
       <text
          id="text444"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="203.44"
          x="252.36">0.65</text>
       <text
          id="text446"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="183.95"
          x="174.39">0.77</text>
       <text
          id="text448"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="183.95"
          x="193.88">0.77</text>
       <text
          id="text450"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="183.95"
          x="213.37">0.77</text>
       <text
          id="text452"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="183.95"
          x="232.86">0.75</text>
       <text
          id="text454"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="183.95"
          x="252.36">0.70</text>
       <text
          id="text456"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="164.45"
          x="174.39">0.77</text>
       <text
          id="text458"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="164.45"
          x="193.88">0.77</text>
       <text
          id="text460"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="164.45"
          x="213.37">0.77</text>
       <text
          id="text462"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="164.45"
          x="232.86">0.76</text>
       <text
          id="text464"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="164.45"
          x="252.36">0.73</text>
       <rect
@@ -2421,102 +2429,102 @@
          x="349.45001" />
       <text
          id="text537"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="118.57"
          x="281.23001">0.71</text>
       <text
          id="text539"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="118.57"
          x="300.72">0.71</text>
       <text
          id="text541"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="118.57"
          x="320.20999">0.68</text>
       <text
          id="text543"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="118.57"
          x="339.70001">0.60</text>
       <text
          id="text545"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="118.57"
          x="359.19">0.55</text>
       <text
          id="text547"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="99.080002"
          x="281.23001">0.71</text>
       <text
          id="text549"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="99.080002"
          x="300.72">0.70</text>
       <text
          id="text551"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="99.080002"
          x="320.20999">0.69</text>
       <text
          id="text553"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="99.080002"
          x="339.70001">0.62</text>
       <text
          id="text555"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="99.080002"
          x="359.19">0.58</text>
       <text
          id="text557"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="79.589996"
          x="281.23001">0.70</text>
       <text
          id="text559"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="79.589996"
          x="300.72">0.70</text>
       <text
          id="text561"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="79.589996"
          x="320.20999">0.70</text>
       <text
          id="text563"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="79.589996"
          x="339.70001">0.65</text>
       <text
          id="text565"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="79.589996"
          x="359.19">0.62</text>
       <text
          id="text567"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="60.099998"
          x="281.23001">0.70</text>
       <text
          id="text569"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="60.099998"
          x="300.72">0.70</text>
       <text
          id="text571"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="60.099998"
          x="320.20999">0.69</text>
       <text
          id="text573"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="60.099998"
          x="339.70001">0.68</text>
       <text
          id="text575"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="60.099998"
          x="359.19">0.64</text>
       <rect
@@ -2715,102 +2723,102 @@
          x="349.45001" />
       <text
          id="text648"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="222.92999"
          x="281.23001">0.77</text>
       <text
          id="text650"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="222.92999"
          x="300.72">0.77</text>
       <text
          id="text652"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="222.92999"
          x="320.20999">0.75</text>
       <text
          id="text654"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="222.92999"
          x="339.70001">0.71</text>
       <text
          id="text656"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="222.92999"
          x="359.19">0.63</text>
       <text
          id="text658"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="203.44"
          x="281.23001">0.77</text>
       <text
          id="text660"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="203.44"
          x="300.72">0.77</text>
       <text
          id="text662"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="203.44"
          x="320.20999">0.76</text>
       <text
          id="text664"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="203.44"
          x="339.70001">0.73</text>
       <text
          id="text666"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="203.44"
          x="359.19">0.66</text>
       <text
          id="text668"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="183.95"
          x="281.23001">0.77</text>
       <text
          id="text670"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="183.95"
          x="300.72">0.77</text>
       <text
          id="text672"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="183.95"
          x="320.20999">0.77</text>
       <text
          id="text674"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="183.95"
          x="339.70001">0.75</text>
       <text
          id="text676"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="183.95"
          x="359.19">0.70</text>
       <text
          id="text678"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="164.45"
          x="281.23001">0.77</text>
       <text
          id="text680"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="164.45"
          x="300.72">0.77</text>
       <text
          id="text682"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="164.45"
          x="320.20999">0.77</text>
       <text
          id="text684"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="164.45"
          x="339.70001">0.77</text>
       <text
          id="text686"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="164.45"
          x="359.19">0.73</text>
       <rect
@@ -3009,102 +3017,102 @@
          x="456.28" />
       <text
          id="text759"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="118.57"
          x="388.06">0.73</text>
       <text
          id="text761"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="118.57"
          x="407.54999">0.72</text>
       <text
          id="text763"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="118.57"
          x="427.04001">0.71</text>
       <text
          id="text765"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="118.57"
          x="446.54001">0.63</text>
       <text
          id="text767"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="118.57"
          x="466.03">0.58</text>
       <text
          id="text769"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="99.080002"
          x="388.06">0.73</text>
       <text
          id="text771"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="99.080002"
          x="407.54999">0.72</text>
       <text
          id="text773"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="99.080002"
          x="427.04001">0.71</text>
       <text
          id="text775"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="99.080002"
          x="446.54001">0.66</text>
       <text
          id="text777"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="99.080002"
          x="466.03">0.60</text>
       <text
          id="text779"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="79.589996"
          x="388.06">0.73</text>
       <text
          id="text781"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="79.589996"
          x="407.54999">0.72</text>
       <text
          id="text783"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="79.589996"
          x="427.04001">0.71</text>
       <text
          id="text785"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="79.589996"
          x="446.54001">0.70</text>
       <text
          id="text787"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="79.589996"
          x="466.03">0.63</text>
       <text
          id="text789"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="60.099998"
          x="388.06">0.72</text>
       <text
          id="text791"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="60.099998"
          x="407.54999">0.72</text>
       <text
          id="text793"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="60.099998"
          x="427.04001">0.73</text>
       <text
          id="text795"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="60.099998"
          x="446.54001">0.72</text>
       <text
          id="text797"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="60.099998"
          x="466.03">0.66</text>
       <rect
@@ -3127,7 +3135,7 @@
          x="55.860001" />
       <text
          id="text821"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
          y="144.87"
          x="106.54">1000 cells</text>
     </g>
@@ -3143,7 +3151,7 @@
          x="162.69" />
       <text
          id="text834"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
          y="144.87"
          x="213.37">1250 cells</text>
     </g>
@@ -3159,7 +3167,7 @@
          x="269.53" />
       <text
          id="text847"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
          y="144.87"
          x="320.20999">all 1566 cells</text>
     </g>
@@ -3188,46 +3196,44 @@
          points="466.03,130.42 466.03,127.68 " />
       <text
          id="text870"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
          transform="rotate(-90,261.94,-129.33)">500</text>
       <text
          id="text872"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
          transform="rotate(-90,271.685,-139.075)">1000</text>
       <text
          id="text874"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.80000019px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.8px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1"
          transform="rotate(-90,281.43,-148.82)">2000</text>
       <text
          id="text876"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
          transform="rotate(-90,291.175,-158.565)">5000</text>
       <text
          id="text878"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
          transform="rotate(-90,300.92,-168.31)">10000</text>
       <text
          id="text880"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
          y="119.19"
          x="50.93">0.01</text>
       <text
          id="text882"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
          y="99.699997"
-         x="50.93">
-        <tspan
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.80000019px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;fill:#000000"
-           id="tspan1152">0.02</tspan>
-      </text>
+         x="50.93"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.8px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;fill:#000000"
+           id="tspan1152">0.02</tspan></text>
       <text
          id="text884"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
          y="80.209999"
          x="50.93">0.05</text>
       <text
          id="text886"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
          y="60.709999"
          x="50.93">0.1</text>
       <polyline
@@ -3248,22 +3254,22 @@
          points="53.12,57.51 55.86,57.51 " />
       <text
          id="text896"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
          y="223.53999"
          x="50.93">0.01</text>
       <text
          id="text898"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.80000019px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.8px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1"
          y="204.05"
          x="50.93">0.02</text>
       <text
          id="text900"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
          y="184.56"
          x="50.93">0.05</text>
       <text
          id="text902"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
          y="165.07001"
          x="50.93">0.1</text>
       <polyline
@@ -3299,7 +3305,7 @@
          x="55.860001" />
       <text
          id="text923"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
          y="40.509998"
          x="106.54">100 cells</text>
     </g>
@@ -3315,7 +3321,7 @@
          x="162.69" />
       <text
          id="text936"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
          y="40.509998"
          x="213.37">250 cells</text>
     </g>
@@ -3331,7 +3337,7 @@
          x="269.53" />
       <text
          id="text949"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
          y="40.509998"
          x="320.20999">500 cells</text>
     </g>
@@ -3347,7 +3353,7 @@
          x="376.37" />
       <text
          id="text962"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
          y="40.509998"
          x="427.04001">750 cells</text>
     </g>
@@ -3375,31 +3381,31 @@
        y="70.760002"
        x="-236.96001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text976">500</text>
     <text
        y="90.25"
        x="-236.96001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text978">1000</text>
     <text
        y="109.74"
        x="-236.96001"
        transform="rotate(-90)"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.80000019px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.8px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1"
        id="text980">2000</text>
     <text
        y="129.24001"
        x="-236.96001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text982">5000</text>
     <text
        y="148.73"
        x="-236.96001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text984">10000</text>
     <polyline
        points="174.39,234.77 174.39,232.03 "
@@ -3425,31 +3431,31 @@
        y="177.60001"
        x="-236.96001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text996">500</text>
     <text
        y="197.09"
        x="-236.96001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text998">1000</text>
     <text
        y="216.58"
        x="-236.96001"
        transform="rotate(-90)"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.80000019px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.8px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1"
        id="text1000">2000</text>
     <text
        y="236.07001"
        x="-236.96001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text1002">5000</text>
     <text
        y="255.56"
        x="-236.96001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text1004">10000</text>
     <polyline
        points="281.23,234.77 281.23,232.03 "
@@ -3475,31 +3481,31 @@
        y="284.42999"
        x="-236.96001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text1016">500</text>
     <text
        y="303.92001"
        x="-236.96001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text1018">1000</text>
     <text
        y="323.42001"
        x="-236.96001"
        transform="rotate(-90)"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.80000019px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.8px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1"
        id="text1020">2000</text>
     <text
        y="342.91"
        x="-236.96001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text1022">5000</text>
     <text
        y="362.39999"
        x="-236.96001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text1024">10000</text>
     <text
        x="266.79001"
@@ -3519,10 +3525,11 @@
            height="43.440613"
            width="528.29388"
            id="rect1156" /></flowRegion><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.33333397px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.3333px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          id="flowPara1160">Kremer <flowSpan
    id="flowSpan1164"
-   style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.33333397px;font-family:Arial;-inkscape-font-specification:'Arial, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1">et al.</flowSpan> dataset</flowPara></flowRoot>  </g>
+   style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.3333px;font-family:Arial;-inkscape-font-specification:'Arial, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1">et al.</flowSpan> dataset</flowPara></flowRoot>
+  </g>
   <g
      id="g3148"
      transform="translate(-14.185196,-1.9760191)"
@@ -3716,102 +3723,102 @@
          x="135.77" />
       <text
          id="text1136"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="396.56"
          x="67.550003">0.59</text>
       <text
          id="text1138"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="396.56"
          x="87.050003">0.60</text>
       <text
          id="text1140"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="396.56"
          x="106.54">0.61</text>
       <text
          id="text1142"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="396.56"
          x="126.03">0.61</text>
       <text
          id="text1144"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="396.56"
          x="145.52">0.61</text>
       <text
          id="text1146"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="377.07001"
          x="67.550003">0.59</text>
       <text
          id="text1148"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="377.07001"
          x="87.050003">0.59</text>
       <text
          id="text1150"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="377.07001"
          x="106.54">0.60</text>
       <text
          id="text1152"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="377.07001"
          x="126.03">0.61</text>
       <text
          id="text1154"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="377.07001"
          x="145.52">0.60</text>
       <text
          id="text1156"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="357.57999"
          x="67.550003">0.58</text>
       <text
          id="text1158"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="357.57999"
          x="87.050003">0.60</text>
       <text
          id="text1160"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="357.57999"
          x="106.54">0.59</text>
       <text
          id="text1162"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="357.57999"
          x="126.03">0.58</text>
       <text
          id="text1164"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="357.57999"
          x="145.52">0.59</text>
       <text
          id="text1166"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="338.07999"
          x="67.550003">0.59</text>
       <text
          id="text1168"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="338.07999"
          x="87.050003">0.59</text>
       <text
          id="text1170"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="338.07999"
          x="106.54">0.59</text>
       <text
          id="text1172"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="338.07999"
          x="126.03">0.57</text>
       <text
          id="text1174"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#b3b3b3"
          y="338.07999"
          x="145.52">0.58</text>
       <rect
@@ -4010,102 +4017,102 @@
          x="135.77" />
       <text
          id="text1247"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="500.91"
          x="67.550003">0.86</text>
       <text
          id="text1249"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="500.91"
          x="87.050003">0.86</text>
       <text
          id="text1251"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="500.91"
          x="106.54">0.86</text>
       <text
          id="text1253"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="500.91"
          x="126.03">0.86</text>
       <text
          id="text1255"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="500.91"
          x="145.52">0.86</text>
       <text
          id="text1257"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="481.42001"
          x="67.550003">0.86</text>
       <text
          id="text1259"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="481.42001"
          x="87.050003">0.86</text>
       <text
          id="text1261"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="481.42001"
          x="106.54">0.87</text>
       <text
          id="text1263"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="481.42001"
          x="126.03">0.86</text>
       <text
          id="text1265"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="481.42001"
          x="145.52">0.86</text>
       <text
          id="text1267"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="461.92999"
          x="67.550003">0.86</text>
       <text
          id="text1269"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="461.92999"
          x="87.050003">0.86</text>
       <text
          id="text1271"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="461.92999"
          x="106.54">0.87</text>
       <text
          id="text1273"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="461.92999"
          x="126.03">0.87</text>
       <text
          id="text1275"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="461.92999"
          x="145.52">0.86</text>
       <text
          id="text1277"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="442.44"
          x="67.550003">0.86</text>
       <text
          id="text1279"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="442.44"
          x="87.050003">0.86</text>
       <text
          id="text1281"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="442.44"
          x="106.54">0.86</text>
       <text
          id="text1283"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="442.44"
          x="126.03">0.87</text>
       <text
          id="text1285"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="442.44"
          x="145.52">0.86</text>
       <rect
@@ -4304,102 +4311,102 @@
          x="242.61" />
       <text
          id="text1358"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="396.56"
          x="174.39">0.72</text>
       <text
          id="text1360"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="396.56"
          x="193.88">0.72</text>
       <text
          id="text1362"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="396.56"
          x="213.37">0.72</text>
       <text
          id="text1364"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="396.56"
          x="232.86">0.73</text>
       <text
          id="text1366"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="396.56"
          x="252.36">0.73</text>
       <text
          id="text1368"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="377.07001"
          x="174.39">0.71</text>
       <text
          id="text1370"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="377.07001"
          x="193.88">0.72</text>
       <text
          id="text1372"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="377.07001"
          x="213.37">0.72</text>
       <text
          id="text1374"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="377.07001"
          x="232.86">0.73</text>
       <text
          id="text1376"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="377.07001"
          x="252.36">0.73</text>
       <text
          id="text1378"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="357.57999"
          x="174.39">0.71</text>
       <text
          id="text1380"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="357.57999"
          x="193.88">0.72</text>
       <text
          id="text1382"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="357.57999"
          x="213.37">0.72</text>
       <text
          id="text1384"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="357.57999"
          x="232.86">0.73</text>
       <text
          id="text1386"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="357.57999"
          x="252.36">0.73</text>
       <text
          id="text1388"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="338.07999"
          x="174.39">0.71</text>
       <text
          id="text1390"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="338.07999"
          x="193.88">0.71</text>
       <text
          id="text1392"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="338.07999"
          x="213.37">0.72</text>
       <text
          id="text1394"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="338.07999"
          x="232.86">0.73</text>
       <text
          id="text1396"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="338.07999"
          x="252.36">0.73</text>
       <rect
@@ -4591,97 +4598,97 @@
          x="242.61" />
       <text
          id="text1467"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="500.91"
          x="174.39">0.86</text>
       <text
          id="text1469"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="500.91"
          x="193.88">0.86</text>
       <text
          id="text1471"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="500.91"
          x="213.37">0.87</text>
       <text
          id="text1473"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="500.91"
          x="232.86">0.86</text>
       <text
          id="text1475"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="500.91"
          x="252.36">0.86</text>
       <text
          id="text1477"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="481.42001"
          x="174.39">0.86</text>
       <text
          id="text1479"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="481.42001"
          x="193.88">0.86</text>
       <text
          id="text1481"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="481.42001"
          x="213.37">0.87</text>
       <text
          id="text1483"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="481.42001"
          x="232.86">0.87</text>
       <text
          id="text1485"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="481.42001"
          x="252.36">0.86</text>
       <text
          id="text1487"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="461.92999"
          x="174.39">0.86</text>
       <text
          id="text1489"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="461.92999"
          x="193.88">0.86</text>
       <text
          id="text1491"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="461.92999"
          x="213.37">0.87</text>
       <text
          id="text1493"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="461.92999"
          x="232.86">0.87</text>
       <text
          id="text1495"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="461.92999"
          x="252.36">0.87</text>
       <text
          id="text1497"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="442.44"
          x="193.88">0.86</text>
       <text
          id="text1499"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="442.44"
          x="213.37">0.87</text>
       <text
          id="text1501"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="442.44"
          x="232.86">0.87</text>
       <text
          id="text1503"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="442.44"
          x="252.36">0.87</text>
       <rect
@@ -4880,102 +4887,102 @@
          x="349.45001" />
       <text
          id="text1576"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="396.56"
          x="281.23001">0.76</text>
       <text
          id="text1578"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="396.56"
          x="300.72">0.77</text>
       <text
          id="text1580"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="396.56"
          x="320.20999">0.78</text>
       <text
          id="text1582"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="396.56"
          x="339.70001">0.78</text>
       <text
          id="text1584"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="396.56"
          x="359.19">0.77</text>
       <text
          id="text1586"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="377.07001"
          x="281.23001">0.77</text>
       <text
          id="text1588"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="377.07001"
          x="300.72">0.77</text>
       <text
          id="text1590"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="377.07001"
          x="320.20999">0.77</text>
       <text
          id="text1592"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="377.07001"
          x="339.70001">0.78</text>
       <text
          id="text1594"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="377.07001"
          x="359.19">0.77</text>
       <text
          id="text1596"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="357.57999"
          x="281.23001">0.76</text>
       <text
          id="text1598"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="357.57999"
          x="300.72">0.77</text>
       <text
          id="text1600"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="357.57999"
          x="320.20999">0.77</text>
       <text
          id="text1602"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="357.57999"
          x="339.70001">0.78</text>
       <text
          id="text1604"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="357.57999"
          x="359.19">0.78</text>
       <text
          id="text1606"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="338.07999"
          x="281.23001">0.76</text>
       <text
          id="text1608"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="338.07999"
          x="300.72">0.77</text>
       <text
          id="text1610"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="338.07999"
          x="320.20999">0.77</text>
       <text
          id="text1612"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="338.07999"
          x="339.70001">0.77</text>
       <text
          id="text1614"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="338.07999"
          x="359.19">0.78</text>
       <rect
@@ -5174,102 +5181,102 @@
          x="349.45001" />
       <text
          id="text1687"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="500.91"
          x="281.23001">0.87</text>
       <text
          id="text1689"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="500.91"
          x="300.72">0.87</text>
       <text
          id="text1691"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="500.91"
          x="320.20999">0.87</text>
       <text
          id="text1693"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="500.91"
          x="339.70001">0.87</text>
       <text
          id="text1695"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="500.91"
          x="359.19">0.87</text>
       <text
          id="text1697"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="481.42001"
          x="281.23001">0.87</text>
       <text
          id="text1699"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="481.42001"
          x="300.72">0.87</text>
       <text
          id="text1701"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="481.42001"
          x="320.20999">0.87</text>
       <text
          id="text1703"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="481.42001"
          x="339.70001">0.87</text>
       <text
          id="text1705"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="481.42001"
          x="359.19">0.87</text>
       <text
          id="text1707"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="461.92999"
          x="281.23001">0.87</text>
       <text
          id="text1709"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="461.92999"
          x="300.72">0.87</text>
       <text
          id="text1711"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="461.92999"
          x="320.20999">0.88</text>
       <text
          id="text1713"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="461.92999"
          x="339.70001">0.87</text>
       <text
          id="text1715"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="461.92999"
          x="359.19">0.87</text>
       <text
          id="text1717"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="442.44"
          x="281.23001">0.87</text>
       <text
          id="text1719"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="442.44"
          x="300.72">0.88</text>
       <text
          id="text1721"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="442.44"
          x="320.20999">0.88</text>
       <text
          id="text1723"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="442.44"
          x="339.70001">0.88</text>
       <text
          id="text1725"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="442.44"
          x="359.19">0.88</text>
       <rect
@@ -5468,102 +5475,102 @@
          x="456.28" />
       <text
          id="text1798"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="396.56"
          x="388.06">0.84</text>
       <text
          id="text1800"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="396.56"
          x="407.54999">0.84</text>
       <text
          id="text1802"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="396.56"
          x="427.04001">0.85</text>
       <text
          id="text1804"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="396.56"
          x="446.54001">0.85</text>
       <text
          id="text1806"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="396.56"
          x="466.03">0.84</text>
       <text
          id="text1808"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="377.07001"
          x="388.06">0.84</text>
       <text
          id="text1810"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="377.07001"
          x="407.54999">0.84</text>
       <text
          id="text1812"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="377.07001"
          x="427.04001">0.85</text>
       <text
          id="text1814"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="377.07001"
          x="446.54001">0.85</text>
       <text
          id="text1816"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="377.07001"
          x="466.03">0.84</text>
       <text
          id="text1818"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="357.57999"
          x="388.06">0.84</text>
       <text
          id="text1820"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="357.57999"
          x="407.54999">0.85</text>
       <text
          id="text1822"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="357.57999"
          x="427.04001">0.85</text>
       <text
          id="text1824"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="357.57999"
          x="446.54001">0.85</text>
       <text
          id="text1826"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="357.57999"
          x="466.03">0.85</text>
       <text
          id="text1828"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="338.07999"
          x="388.06">0.84</text>
       <text
          id="text1830"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="338.07999"
          x="407.54999">0.85</text>
       <text
          id="text1832"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="338.07999"
          x="427.04001">0.85</text>
       <text
          id="text1834"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="338.07999"
          x="446.54001">0.85</text>
       <text
          id="text1836"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="338.07999"
          x="466.03">0.85</text>
       <rect
@@ -5762,102 +5769,102 @@
          x="456.28" />
       <text
          id="text1909"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="500.91"
          x="388.06">0.88</text>
       <text
          id="text1911"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="500.91"
          x="407.54999">0.88</text>
       <text
          id="text1913"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="500.91"
          x="427.04001">0.88</text>
       <text
          id="text1915"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="500.91"
          x="446.54001">0.88</text>
       <text
          id="text1917"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="500.91"
          x="466.03">0.88</text>
       <text
          id="text1919"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="481.42001"
          x="388.06">0.88</text>
       <text
          id="text1921"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="481.42001"
          x="407.54999">0.88</text>
       <text
          id="text1923"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="481.42001"
          x="427.04001">0.88</text>
       <text
          id="text1925"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="481.42001"
          x="446.54001">0.88</text>
       <text
          id="text1927"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="481.42001"
          x="466.03">0.88</text>
       <text
          id="text1929"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="461.92999"
          x="388.06">0.88</text>
       <text
          id="text1931"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="461.92999"
          x="407.54999">0.88</text>
       <text
          id="text1933"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="461.92999"
          x="427.04001">0.88</text>
       <text
          id="text1935"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="461.92999"
          x="446.54001">0.88</text>
       <text
          id="text1937"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="461.92999"
          x="466.03">0.88</text>
       <text
          id="text1939"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="442.44"
          x="388.06">0.88</text>
       <text
          id="text1941"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="442.44"
          x="407.54999">0.89</text>
       <text
          id="text1943"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="442.44"
          x="427.04001">0.88</text>
       <text
          id="text1945"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="442.44"
          x="446.54001">0.88</text>
       <text
          id="text1947"
-         style="font-size:7.11000013px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
+         style="font-size:7.11px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre"
          y="442.44"
          x="466.03">0.88</text>
       <rect
@@ -5880,7 +5887,7 @@
          x="55.860001" />
       <text
          id="text1962"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
          y="422.85001"
          x="106.54">1500 cells</text>
     </g>
@@ -5896,7 +5903,7 @@
          x="162.69" />
       <text
          id="text1975"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
          y="422.85001"
          x="213.37">2000 cells</text>
     </g>
@@ -5912,7 +5919,7 @@
          x="269.53" />
       <text
          id="text1988"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
          y="422.85001"
          x="320.20999">2500 cells</text>
     </g>
@@ -5928,7 +5935,7 @@
          x="376.37" />
       <text
          id="text2001"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
          y="422.85001"
          x="427.04001">all 3373 cells</text>
     </g>
@@ -5937,22 +5944,22 @@
        clip-path="url(#cpMC4wMHw1NjYuOTN8MC4wMHw1NjYuOTM=)">
       <text
          id="text2005"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
          y="397.17001"
          x="50.93">0.01</text>
       <text
          id="text2007"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.80000019px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.8px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1"
          y="377.67999"
          x="50.93">0.02</text>
       <text
          id="text2009"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
          y="358.19"
          x="50.93">0.05</text>
       <text
          id="text2011"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
          y="338.70001"
          x="50.93">0.1</text>
       <polyline
@@ -5973,22 +5980,22 @@
          points="53.12,335.49 55.86,335.49 " />
       <text
          id="text2021"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
          y="501.53"
          x="50.93">0.01</text>
       <text
          id="text2023"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.80000019px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.8px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1"
          y="482.04001"
          x="50.93">0.02</text>
       <text
          id="text2025"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
          y="462.54999"
          x="50.93">0.05</text>
       <text
          id="text2027"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
          y="443.04999"
          x="50.93">0.1</text>
       <polyline
@@ -6024,7 +6031,7 @@
          x="55.860001" />
       <text
          id="text2048"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
          y="318.5"
          x="106.54">100 cells</text>
     </g>
@@ -6040,7 +6047,7 @@
          x="162.69" />
       <text
          id="text2061"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
          y="318.5"
          x="213.37">300 cells</text>
     </g>
@@ -6056,7 +6063,7 @@
          x="269.53" />
       <text
          id="text2074"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
          y="318.5"
          x="320.20999">500 cells</text>
     </g>
@@ -6072,7 +6079,7 @@
          x="376.37" />
       <text
          id="text2087"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+         style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
          y="318.5"
          x="427.04001">1000 cells</text>
     </g>
@@ -6100,31 +6107,31 @@
        y="70.760002"
        x="-514.95001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text2101">500</text>
     <text
        y="90.25"
        x="-514.95001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text2103">1000</text>
     <text
        y="109.74"
        x="-514.95001"
        transform="rotate(-90)"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.80000019px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.8px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1"
        id="text2105">2000</text>
     <text
        y="129.24001"
        x="-514.95001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text2107">5000</text>
     <text
        y="148.73"
        x="-514.95001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text2109">10000</text>
     <polyline
        points="174.39,512.76 174.39,510.02 "
@@ -6150,31 +6157,31 @@
        y="177.60001"
        x="-514.95001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text2121">500</text>
     <text
        y="197.09"
        x="-514.95001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text2123">1000</text>
     <text
        y="216.58"
        x="-514.95001"
        transform="rotate(-90)"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.80000019px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.8px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1"
        id="text2125">2000</text>
     <text
        y="236.07001"
        x="-514.95001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text2127">5000</text>
     <text
        y="255.56"
        x="-514.95001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text2129">10000</text>
     <polyline
        points="281.23,512.76 281.23,510.02 "
@@ -6200,31 +6207,31 @@
        y="284.42999"
        x="-514.95001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text2141">500</text>
     <text
        y="303.92001"
        x="-514.95001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text2143">1000</text>
     <text
        y="323.42001"
        x="-514.95001"
        transform="rotate(-90)"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.80000019px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.8px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1"
        id="text2145">2000</text>
     <text
        y="342.91"
        x="-514.95001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text2147">5000</text>
     <text
        y="362.39999"
        x="-514.95001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text2149">10000</text>
     <polyline
        points="388.06,512.76 388.06,510.02 "
@@ -6250,31 +6257,31 @@
        y="391.26999"
        x="-514.95001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text2161">500</text>
     <text
        y="410.76001"
        x="-514.95001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text2163">1000</text>
     <text
        y="430.25"
        x="-514.95001"
        transform="rotate(-90)"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.80000019px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.8px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;white-space:pre;fill:#000000;fill-opacity:1"
        id="text2165">2000</text>
     <text
        y="449.73999"
        x="-514.95001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text2167">5000</text>
     <text
        y="469.23001"
        x="-514.95001"
        transform="rotate(-90)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text2169">10000</text>
     <text
        x="266.79001"
@@ -6294,10 +6301,11 @@
            height="43.440613"
            width="528.29388"
            id="rect1156-3" /></flowRegion><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.33333397px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.3333px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          id="flowPara1160-9">Luo <flowSpan
    id="flowSpan1164-2"
-   style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.33333397px;font-family:Arial;-inkscape-font-specification:'Arial, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1">et al.</flowSpan> dataset</flowPara></flowRoot>  </g>
+   style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.3333px;font-family:Arial;-inkscape-font-specification:'Arial, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1">et al.</flowSpan> dataset</flowPara></flowRoot>
+  </g>
   <g
      clip-path="url(#cpMC4wMHwyNTUuMTJ8MC4wMHwyNTUuMTI=)"
      id="g15-4"
@@ -26555,37 +26563,35 @@
   </g>
   <text
      id="text6792"
-     style="font-size:6.01371717px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.54670155"
+     style="font-size:6.01372px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.546702"
      transform="rotate(-90)"
      x="-123.40828"
      y="494.34665">UMAP</text>
   <text
      id="text6794"
-     style="font-size:6.01371717px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.54670155"
+     style="font-size:6.01372px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.546702"
      transform="rotate(-90)"
      x="-104.16985"
      y="494.34665">2</text>
   <text
      id="text6796"
-     style="font-size:6.01371717px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.54670155"
+     style="font-size:6.01372px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.546702"
      y="196.46947"
      x="564.26984">UMAP</text>
   <text
      id="text6798"
-     style="font-size:6.01371717px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.54670155"
+     style="font-size:6.01372px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.546702"
      y="196.46947"
      x="583.51373">1</text>
   <text
      id="text6902"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.21650028px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;white-space:pre;stroke-width:0.54670155"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.2165px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;white-space:pre;stroke-width:0.546702"
      y="30.168331"
-     x="498.59451">
-    <tspan
+     x="498.59451"><tspan
        sodipodi:role="line"
        id="tspan24215"
        x="498.59451"
-       y="30.168331">mCH, averaged in 100kb genomic tiles</tspan>
-  </text>
+       y="30.168331">mCH, averaged in 100kb genomic tiles</tspan></text>
   <g
      transform="matrix(0.54670156,0,0,0.54670156,477.77614,18.917213)"
      clip-path="url(#cpMzguMDh8MzIwLjU0fDM1NS44Nnw2MzguMzI=)"
@@ -46862,14 +46868,12 @@
     <text
        x="38.080002"
        y="347.63"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.20007229px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;white-space:pre"
-       id="text13690">
-      <tspan
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.2001px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;white-space:pre"
+       id="text13690"><tspan
          sodipodi:role="line"
          id="tspan24217"
          x="38.080002"
-         y="347.63">mCH, shrunken mean of residuals in VMRs</tspan>
-    </text>
+         y="347.63">mCH, shrunken mean of residuals in VMRs</tspan></text>
   </g>
   <g
      transform="matrix(0.52994988,0,0,0.52994988,497.67206,15.202296)"
@@ -67157,14 +67161,12 @@
     <text
        x="38.080002"
        y="674.69"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.20007229px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;white-space:pre"
-       id="text20482">
-      <tspan
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.2001px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;white-space:pre"
+       id="text20482"><tspan
          sodipodi:role="line"
          id="tspan24219"
          x="38.080002"
-         y="674.69">CpG, shrunken mean of residuals in VMRs</tspan>
-    </text>
+         y="674.69">CpG, shrunken mean of residuals in VMRs</tspan></text>
   </g>
   <g
      clip-path="url(#cpMC4wMHwyNTUuMTJ8MC4wMHwxNzAuMDg=)"
@@ -67422,22 +67424,22 @@
     <text
        x="38.110001"
        y="117.18"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text112">0.60</text>
     <text
        x="38.110001"
        y="91.93"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text114">0.65</text>
     <text
        x="38.110001"
        y="66.68"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text116">0.70</text>
     <text
        x="38.110001"
        y="41.43"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text118">0.75</text>
     <polyline
        points="40.30,113.97 43.04,113.97 "
@@ -67470,17 +67472,17 @@
     <text
        x="46.16"
        y="140.22"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
        id="text134">250</text>
     <text
        x="69.879997"
        y="140.22"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
        id="text136">750</text>
     <text
        x="105.1357"
        y="140.22"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
        id="text138">1566</text>
     <text
        x="50.86845"
@@ -67489,7 +67491,7 @@
        id="text146">cell number</text>
     <text
        y="16.035713"
-       x="-129.77"
+       x="-136.69859"
        transform="rotate(-90)"
        style="font-size:11px;font-family:'Liberation Sans';white-space:pre"
        id="text150">mean neighbor score</text>
@@ -67509,7 +67511,7 @@
        id="g22553">
       <text
          id="text190"
-         style="font-size:10.15680027px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.92334551"
+         style="font-size:10.1568px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.923346"
          y="216.51826"
          x="1002.2992">stepsize</text>
       <rect
@@ -67619,37 +67621,37 @@
          cx="1049.9615" />
       <text
          id="text234-6"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';white-space:pre"
+         style="font-size:8.8px;font-family:'Liberation Sans';white-space:pre"
          y="232.81097"
          x="1028.4019">5</text>
       <text
          id="text236-7"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';white-space:pre"
+         style="font-size:8.8px;font-family:'Liberation Sans';white-space:pre"
          y="248.59097"
          x="1023.9019">10</text>
       <text
          id="text238-7"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';white-space:pre"
+         style="font-size:8.8px;font-family:'Liberation Sans';white-space:pre"
          y="264.37097"
          x="1023.9019">50</text>
       <text
          id="text240-4"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.80002785px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;white-space:pre"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.80003px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;white-space:pre"
          y="216.9312"
          x="1064.0815">100</text>
       <text
          id="text242-0"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';white-space:pre"
+         style="font-size:8.8px;font-family:'Liberation Sans';white-space:pre"
          y="232.71123"
          x="1064.0815">200</text>
       <text
          id="text244"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';white-space:pre"
+         style="font-size:8.8px;font-family:'Liberation Sans';white-space:pre"
          y="248.49123"
          x="1064.0815">500</text>
       <text
          id="text246"
-         style="font-size:8.80000019px;font-family:'Liberation Sans';white-space:pre"
+         style="font-size:8.8px;font-family:'Liberation Sans';white-space:pre"
          y="264.27118"
          x="1059.5815">1000</text>
     </g>
@@ -67669,7 +67671,24 @@
          y="321.90094"
          style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" /></flowRegion><flowPara
        id="flowPara2237-7-6"
-       style="font-size:26.66666603px">C</flowPara></flowRoot>  <g
+       style="font-size:26.6667px">D</flowPara></flowRoot>
+  <flowRoot
+     xml:space="preserve"
+     id="flowRoot2231-9-5-5"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     transform="matrix(0.75000003,0,0,0.75000003,453.82452,-80.585461)"
+     inkscape:export-xdpi="300"
+     inkscape:export-ydpi="300"><flowRegion
+       id="flowRegion2233-2-1-1"><rect
+         id="rect2235-5-6-6"
+         width="56.853149"
+         height="69.665123"
+         x="-132.12352"
+         y="321.90094"
+         style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" /></flowRegion><flowPara
+       id="flowPara2237-7-6-6"
+       style="font-size:26.6667px">C</flowPara></flowRoot>
+  <g
      id="g24271"
      transform="translate(-18.364126,21.774971)">
     <rect
@@ -67682,12 +67701,12 @@
     <text
        x="658.75037"
        y="34.280766"
-       style="font-size:7.24000359px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.65818214"
+       style="font-size:7.24px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.658182"
        id="text6802">neuronal</text>
     <text
        x="658.75037"
        y="41.066624"
-       style="font-size:7.24000359px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.65818214"
+       style="font-size:7.24px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.658182"
        id="text6804">sub-type</text>
     <circle
        cx="662.14703"
@@ -67788,82 +67807,82 @@
     <text
        x="670.56958"
        y="54.953915"
-       style="font-size:6.51513052px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.74035579"
+       style="font-size:6.51513px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.740356"
        id="text6870">mDL-1</text>
     <text
        x="670.56958"
        y="67.747261"
-       style="font-size:6.51513052px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.74035579"
+       style="font-size:6.51513px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.740356"
        id="text6872">mDL-2</text>
     <text
        x="670.56958"
        y="80.540619"
-       style="font-size:6.51513052px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.74035579"
+       style="font-size:6.51513px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.740356"
        id="text6874">mDL-3</text>
     <text
        x="670.56958"
        y="93.333954"
-       style="font-size:6.51513052px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.74035579"
+       style="font-size:6.51513px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.740356"
        id="text6876">mIn-1</text>
     <text
        x="670.56958"
        y="106.12731"
-       style="font-size:6.51513052px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.74035579"
+       style="font-size:6.51513px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.740356"
        id="text6878">mL2/3</text>
     <text
        x="670.56958"
        y="118.92065"
-       style="font-size:6.51513052px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.74035579"
+       style="font-size:6.51513px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.740356"
        id="text6880">mL4</text>
     <text
        x="670.56958"
        y="131.714"
-       style="font-size:6.51513052px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.74035579"
+       style="font-size:6.51513px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.740356"
        id="text6882">mL5-1</text>
     <text
        x="670.56958"
        y="144.50735"
-       style="font-size:6.51513052px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.74035579"
+       style="font-size:6.51513px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.740356"
        id="text6884">mL5-2</text>
     <text
        x="670.56958"
        y="157.3007"
-       style="font-size:6.51513052px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.74035579"
+       style="font-size:6.51513px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.740356"
        id="text6886">mL6-1</text>
     <text
        x="670.56958"
        y="170.09406"
-       style="font-size:6.51513052px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.74035579"
+       style="font-size:6.51513px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.740356"
        id="text6888">mL6-2</text>
     <text
        x="670.56958"
        y="182.88739"
-       style="font-size:6.51513052px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.74035579"
+       style="font-size:6.51513px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.740356"
        id="text6890">mNdnf-1</text>
     <text
        x="670.56958"
        y="195.68074"
-       style="font-size:6.51513052px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.74035579"
+       style="font-size:6.51513px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.740356"
        id="text6892">mNdnf-2</text>
     <text
        x="670.56958"
        y="208.47408"
-       style="font-size:6.51513052px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.74035579"
+       style="font-size:6.51513px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.740356"
        id="text6894">mPv</text>
     <text
        x="670.56958"
        y="221.26743"
-       style="font-size:6.51513052px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.74035579"
+       style="font-size:6.51513px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.740356"
        id="text6896">mSst-1</text>
     <text
        x="670.56958"
        y="234.06078"
-       style="font-size:6.51513052px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.74035579"
+       style="font-size:6.51513px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.740356"
        id="text6898">mSst-2</text>
     <text
        x="670.56958"
        y="246.85416"
-       style="font-size:6.51513052px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.74035579"
+       style="font-size:6.51513px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.740356"
        id="text6900">mVip</text>
   </g>
 </svg>
