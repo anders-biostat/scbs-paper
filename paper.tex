@@ -163,7 +163,7 @@ The read from cell 2 shows much more methylation than the read from cell 1, and 
 However, given that the two reads agree wherever they overlap, a more parsimonious interpretation would be that the cells do not show difference in methylation within the interval.
 Rather, both cells, and similarly maybe most other cells, might have stronger methylation in the left third of the interval than in the middle one.
 
-Therefore, we propose to first obtain, for each CpG position, an average of the methylation across all cells, and then quantify each cell's deviation from this average.
+Therefore, we propose to first obtain, for each CpG position, a \new{smoothed} average of the methylation across all cells, and then quantify each cell's deviation from this average.
 In Figure \ref{fig:smoothres}B, the curved line depicts such an average over all cells, and the red vertical lines show an individual cell's deviation from the ensemble average.
 We take the lengths of the red lines as signed values (``residuals''), positive for lines extending upwards from the curve (methylated CpG) and negative for lines extending downwards (unmethylated CpG).
 For each cell, we then take the average over the residuals for all the CpGs in the interval that are covered by reads from this cell.
@@ -273,7 +273,7 @@ An added benefit of VMR detection is that this approach is available even in the
 Furthermore, using VMRs over regulatory regions resulted in decreased RAM requirements as well as a shorter runtime, even when accounting for the additional step of VMR detection (Fig.~\ref{fig:score}F).
 This is likely due to the large number of annotated regulatory features (339\,815 in mouse, 1\,063\,878 in human) as opposed to the 63\,421 detected VMRs.
 Filtering regulatory regions by sequencing coverage reduced resource requirements, but at the cost of a reduced ability to distinguish cell types (Fig.~\ref{fig:todo}).
-\todo{simon suggested to stress here that our VMRs are more information-rich than encode regions, because you need fewer VMRs for the same results}
+\todo{simon suggested to stress here that our VMRs are more information-rich than encode regions, because you need fewer VMRs for the same results. We could also mention that encode regions perform poorly in combination with MOFA+ for some reason}
 }
 
 \new{
@@ -281,7 +281,12 @@ We repeated this benchmark on an additional \todo{3(?)} published single-cell me
 These include neuronal sub-types of the murine cortex \citep[][using cell type labels derived from CH-methylation in genomic tiles, instead of CpG-methylation, as ground truth]{luo2017single}, cells isolated from mouse embryos during the onset of gastrulation \citep[][using RNA-derived cell clusters, or alternatively embryonic stage as ground truth]{argelaguet2019gastru} and human colorectal cancer cells \citep[][using \todo{tumor region(?)} as ground truth]{bian2018single}.
 Again, we subjected each data set to all possible combinations of genomic feature selection and methylation quantification.
 We furthermore included three additional approaches to perform dimensionality reduction in our benchmarks, including PCA with two different pre-processing strategies, as well as MOFA+, a dimensionality reduction technique designed for multi-modal single-cell data that can also process methylation data \citep{argelaguet2020mofa}.
+}
+
+\new{
 These extensive benchmarks confirmed that our proposed combination of methods, i.e.~using the shrunken means of residuals of VMRs for dimensionality reduction, is able to distinguish diverse cellular properties such as cell type, \todo{colorectal cancer sampling region(?)}, embryonic stage, and germ layer (Fig.~\ref{fig:resource_usage}).
+Our benchmarks furthermore reveal that groups of cells are more readily separated in large data sets.
+As the neighbor score started to plateau at approximately 1000 cells, we propose that this represents a reasonable target cell number for future scBS studies.
 }
 
 
