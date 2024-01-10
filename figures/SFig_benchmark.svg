@@ -8,7 +8,7 @@
    id="svg3604"
    sodipodi:docname="SFig_benchmark.svg"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
-   inkscape:export-filename="/home/lukas/code/scbs-paper/SFig_benchmark.png"
+   inkscape:export-filename="/home/lukas/code/scbs-paper/figures/SFig_benchmark.png"
    inkscape:export-xdpi="250"
    inkscape:export-ydpi="250"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -26,7 +26,6 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -37,15 +36,15 @@
      objecttolerance="10"
      gridtolerance="10"
      guidetolerance="10"
-     inkscape:pageopacity="0"
+     inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:window-width="2560"
      inkscape:window-height="1376"
      id="namedview3606"
      showgrid="false"
-     inkscape:zoom="1.1279556"
-     inkscape:cx="801.44997"
-     inkscape:cy="353.29404"
+     inkscape:zoom="0.79758505"
+     inkscape:cx="671.40175"
+     inkscape:cy="488.34917"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -4917,12 +4916,12 @@
      xml:space="preserve"><tspan
        x="286.08575"
        y="9.9398298"
-       id="tspan18718">distinguishing mouse neuronal sub-types </tspan><tspan
+       id="tspan5540">distinguishing mouse neuronal sub-types </tspan><tspan
        x="286.08575"
        y="23.716552"
-       id="tspan18722">annotated by mCH (Luo <tspan
+       id="tspan5544">annotated by mCH (Luo <tspan
    style="font-style:italic;-inkscape-font-specification:'Liberation Sans, Italic'"
-   id="tspan18720">et al.</tspan>)</tspan></text>
+   id="tspan5542">et al.</tspan>)</tspan></text>
   <defs
      id="defs1850">
     <clipPath

@@ -292,16 +292,20 @@ As the neighbor score started to plateau at approximately 1000 cells, we propose
 
 \subsubsection{Robustness to parameter changes}
 
-Lastly, we assessed whether our proposed workflow requires fine-tuning of parameters (Fig.~\ref{fig:sweep}).
+\new{Next}, we assessed whether our proposed workflow requires fine-tuning of parameters (Fig.~\ref{fig:sweep}).
 To this end, we re-analyzed \new{two} data sets, as well as sub-samples of the data with different VMR detection parameters namely the width of the sliding window in bp, (set with option \texttt{--bandwidth} in our \texttt{scbs} software, default 2000), the variance threshold above which windows are merged to VMRs (\texttt{--var-threshold}, default 0.02) \new{and the step size of the sliding window (\texttt{--stepsize}, default 100bp).}
 This parameter sweep showed that our workflow gives good results over a wide range of parameter values.
 For the \new{CpG-methylation} data of \citet{luo2017single}, results are nearly independent of the parameters (Fig.~\ref{fig:sweep}B).
-\new{To assess whether our proposed methods are also suitable for the analysis of CH-methylation (mCH), we furthermore performed VMR detection with default options on the mCH-portion of this data set (Fig.~\ref{fig:sweep}C).
-We obtained results that are qualitatively similar to those reported in \citet{luo2017single}, who quantified mCH in 100~kb tiles, suggesting that our methods also function on mCH data.}
-
 In the more challenging data set of \citet{kremer_scnmt}, cell types were less cleanly separated when very large bandwidths, very strict variance thresholds, \new{or a very large step size was} selected (Fig.~\ref{fig:sweep}A,C).
 However, very small bandwidths or very lenient thresholds resulted in a much higher number of VMRs and thus long computing times.
 Overall, our default parameter combination provided good results and fast compute times in both data sets.
+
+\new{
+Lastly, we asked whether our methods are also suitable for the analysis of DNA methylation outside the default CpG context.
+To this end, we revisited the \citet{luo2017single} data set, but this time only considered CH-methylation (mCH).
+VMR detection with default options produced results that were qualitatively similar to those reported in \citet{luo2017single}, suggesting that our methods are also suitable for this data type (Fig.~\ref{fig:umaps}A).
+As single-cell methylome data sets are expected to rapidly grow in size in the coming years, we furthermore performed a stress test on a large data set comprising 100\,350 cells \citep{liu2021dna} (Fig.~\ref{fig:umaps}B).
+}
 
 
 \begin{figure*}
@@ -750,17 +754,13 @@ We thank Alexey Uvarovskii for code refactoring and helpful suggestions on the s
 \noindent%
 \begin{minipage}{\linewidth}
     \begin{center}
-        \includegraphics[width=.85\textwidth]{figures/SFig_parameter_sweep.png}
+        \includegraphics[width=.55\textwidth]{figures/SFig_parameter_sweep.png}
     \end{center}
-    \captionof{figure}{\small \textbf{Effect of VMR detection parameters \new{and methylation context} on separation of cell types.}\\
+    \captionof{figure}{\small \textbf{Effect of VMR detection parameters on separation of cell types.}\\
 	\new{
     \textbf{(A-B)} Mean neighbor scores obtained after analyzing single-cell methylomes from \citet{kremer_scnmt} (\textbf{A}) or \citet{luo2017single} (\textbf{B}) with our proposed methods.
     VMRs were detected with \texttt{scbs} \texttt{scan} using various sliding window bandwidths, variance thresholds, and on sub-samples of the full data sets.
     \textbf{(C)} Mean neighbor scores obtained after analyzing the \citet{kremer_scnmt} data set with various sliding window step sizes.
-    \textbf{(D)} UMAPs obtained when analysing data from \citep{luo2017single} with three different strategies for producing a methylation matrix:
-    top: averaging CH-methylation (mCH) in 100~kb genomic tiles \citep[as done in][to obtain the depicted cell type labels]{luo2017single},
-    center: using the shrunken mean of residuals to quantify mCH in mCH-VMRs,
-    bottom: shrunken mean of residuals in CpG-VMRs.
     }}
     \label{fig:sweep}
 \end{minipage}
@@ -776,6 +776,23 @@ We thank Alexey Uvarovskii for code refactoring and helpful suggestions on the s
 	\textbf{(C-D)} Runtime (top) and RAM usage (bottom) of the two dimensionality reduction techniques shown in A and B.
 	}}
 	\label{fig:resource_usage}
+\end{minipage}
+
+\noindent%
+\begin{minipage}{\linewidth}
+	\begin{center}
+		\includegraphics[width=.85\textwidth]{figures/SFig_100k_and_CH.png}
+	\end{center}
+	\captionof{figure}{\small \new{\textbf{\texttt{scbs} performs well on CH-methylation data and on extremely large data sets.}\\
+    \textbf{(A)} UMAPs obtained when analysing data from \citet{luo2017single} with three different strategies for producing a methylation matrix:
+	top: averaging CH-methylation (mCH) in 100~kb genomic tiles \citep[as done in][to obtain the depicted cell type labels]{luo2017single};
+	center: using the shrunken mean of residuals to quantify mCH in mCH-VMRs;
+	bottom: shrunken mean of residuals to quantify CpG methylation in CpG-VMRs.
+	\textbf{(B)} UMAP obtained when analysing 100\,350 neural single-cell methylomes \citep{liu2021dna} with the default \texttt{scbs} workflow.
+	The depicted cell labels were reported by \citet{liu2021dna}.
+	\todo{Analysing this large data set took approximately XXX hours and required approximately XXX GB of RAM. (Sveta, pls give some rough estimate here)}
+	}}
+	\label{fig:umaps}
 \end{minipage}
 
 \end{document}
