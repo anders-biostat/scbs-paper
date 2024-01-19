@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    class="svglite"
    width="1064.8358pt"
    height="520.25104pt"
@@ -14,10 +7,17 @@
    version="1.1"
    id="svg3604"
    sodipodi:docname="SFig_benchmark.svg"
-   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
-   inkscape:export-filename="/home/lukas/code/scbs-paper/SFig_benchmark.png"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   inkscape:export-filename="/home/lukas/code/scbs-paper/figures/SFig_benchmark.png"
    inkscape:export-xdpi="250"
-   inkscape:export-ydpi="250">
+   inkscape:export-ydpi="250"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <metadata
      id="metadata3608">
     <rdf:RDF>
@@ -26,7 +26,6 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -37,23 +36,25 @@
      objecttolerance="10"
      gridtolerance="10"
      guidetolerance="10"
-     inkscape:pageopacity="0"
+     inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:window-width="2560"
      inkscape:window-height="1376"
      id="namedview3606"
      showgrid="false"
-     inkscape:zoom="0.56397781"
-     inkscape:cx="1085.3892"
-     inkscape:cy="587.22676"
+     inkscape:zoom="0.79758505"
+     inkscape:cx="671.40175"
+     inkscape:cy="488.34917"
      inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg3604"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0" />
+     fit-margin-bottom="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="pt" />
   <defs
      id="defs4">
     <style
@@ -100,6 +101,15 @@
          d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
          transform="scale(-0.6)" />
     </marker>
+    <clipPath
+       id="cpNTQ2LjA2fDczNy42OXwxNzkuNjF8Mjg2LjA2-5">
+      <rect
+         x="546.06"
+         y="179.61"
+         width="191.63"
+         height="106.45"
+         id="rect2001-2" />
+    </clipPath>
   </defs>
   <defs
      id="defs11">
@@ -1967,7 +1977,7 @@
        id="rect691" />
     <text
        transform="rotate(90,59.475,180.375)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
        id="text693">iterative PCA</text>
   </g>
   <g
@@ -2000,7 +2010,7 @@
        id="rect704" />
     <text
        transform="rotate(90,3.505,236.345)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
        id="text706">PCA on HQ features</text>
   </g>
   <g
@@ -2033,7 +2043,7 @@
        id="rect717" />
     <text
        transform="rotate(90,-52.46,292.31)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
        id="text719">mean-imputed PCA</text>
   </g>
   <g
@@ -2066,7 +2076,7 @@
        id="rect730" />
     <text
        transform="rotate(90,-108.425,348.275)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
        id="text732">MOFA+</text>
   </g>
   <polyline
@@ -2106,67 +2116,67 @@
      transform="translate(-8.4042292,-15.14017)" />
   <text
      id="text750"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
      y="506.13986"
      x="43.225773">100</text>
   <text
      id="text752"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
      y="506.13986"
      x="64.055771">250</text>
   <text
      id="text754"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
      y="506.13986"
      x="90.76577">500</text>
   <text
      id="text756"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
      y="506.13986"
      x="120.47578">750</text>
   <text
      id="text758"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
      y="506.13986"
      x="150.18576">1000</text>
   <text
      id="text760"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
      y="506.13986"
      x="179.88576">1250</text>
   <text
      id="text762"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
      y="506.13986"
      x="217.44577">1566</text>
   <text
      id="text764"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
      y="515.63983"
      x="217.44577">(all)</text>
   <text
      id="text766"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="150.36983"
      x="-255.41422">0.4</text>
   <text
      id="text768"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="126.70984"
      x="-255.41422">0.5</text>
   <text
      id="text770"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="103.05983"
      x="-255.41422">0.6</text>
   <text
      id="text772"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="79.399834"
      x="-255.41422">0.7</text>
   <text
      id="text774"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="55.749828"
      x="-255.41422">0.8</text>
   <polyline
@@ -2196,27 +2206,27 @@
      transform="translate(-293.40423,-15.14017)" />
   <text
      id="text786"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="262.29984"
      x="29.585773">0.4</text>
   <text
      id="text788"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="238.64983"
      x="29.585773">0.5</text>
   <text
      id="text790"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="214.98984"
      x="29.585773">0.6</text>
   <text
      id="text792"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="191.33983"
      x="29.585773">0.7</text>
   <text
      id="text794"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="167.67984"
      x="29.585773">0.8</text>
   <polyline
@@ -2246,27 +2256,27 @@
      transform="translate(-8.4042292,-15.14017)" />
   <text
      id="text806"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="374.23984"
      x="29.585773">0.4</text>
   <text
      id="text808"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="350.57983"
      x="29.585773">0.5</text>
   <text
      id="text810"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="326.91983"
      x="29.585773">0.6</text>
   <text
      id="text812"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="303.26984"
      x="29.585773">0.7</text>
   <text
      id="text814"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="279.60983"
      x="29.585773">0.8</text>
   <polyline
@@ -2296,27 +2306,27 @@
      transform="translate(-8.4042292,-15.14017)" />
   <text
      id="text826"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="486.16983"
      x="29.585773">0.4</text>
   <text
      id="text828"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="462.50983"
      x="29.585773">0.5</text>
   <text
      id="text830"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="438.85983"
      x="29.585773">0.6</text>
   <text
      id="text832"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="415.19983"
      x="29.585773">0.7</text>
   <text
      id="text834"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="391.53983"
      x="29.585773">0.8</text>
   <polyline
@@ -2371,21 +2381,17 @@
      id="text858"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;white-space:pre"
      y="9.9398298"
-     x="34.51577">
-    <tspan
+     x="34.51577"><tspan
        sodipodi:role="line"
        id="tspan4023"
        x="34.51577"
-       y="9.9398298">distinguishing mouse brain</tspan>
-    <tspan
+       y="9.9398298">distinguishing mouse brain</tspan><tspan
        sodipodi:role="line"
        id="tspan4025"
        x="34.51577"
-       y="23.689833">scRNA-seq clusters (Kremer <tspan
-   style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.99999995px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr;text-anchor:start"
-   id="tspan4027">et al.</tspan>
-)</tspan>
-  </text>
+       y="23.716553">scRNA-seq clusters (Kremer <tspan
+   style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start"
+   id="tspan4027">et al.</tspan>)</tspan></text>
   <defs
      id="defs887">
     <clipPath
@@ -4453,7 +4459,7 @@
        id="rect1636" />
     <text
        transform="rotate(90,185.26,306.16)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
        id="text1638">iterative PCA</text>
   </g>
   <g
@@ -4486,7 +4492,7 @@
        id="rect1649" />
     <text
        transform="rotate(90,129.29,362.13)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
        id="text1651">PCA on HQ features</text>
   </g>
   <g
@@ -4519,7 +4525,7 @@
        id="rect1662" />
     <text
        transform="rotate(90,73.325,418.095)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
        id="text1664">mean-imputed PCA</text>
   </g>
   <g
@@ -4552,7 +4558,7 @@
        id="rect1675" />
     <text
        transform="rotate(90,17.36,474.06)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
        id="text1677">MOFA+</text>
   </g>
   <polyline
@@ -4597,72 +4603,72 @@
      transform="translate(-8.4042292,-15.14017)" />
   <text
      id="text1697"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
      y="506.13986"
      x="294.79578">100</text>
   <text
      id="text1701"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
      y="506.13986"
      x="316.08575">500</text>
   <text
      id="text1703"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
      y="506.13986"
      x="342.70575">1000</text>
   <text
      id="text1705"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
      y="506.13986"
      x="369.31577">1500</text>
   <text
      id="text1707"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
      y="506.13986"
      x="395.92575">2000</text>
   <text
      id="text1709"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
      y="506.13986"
      x="422.54578">2500</text>
   <text
      id="text1711"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
      y="506.13986"
      x="469.00577">3373</text>
   <text
      id="text1713"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
      y="515.63983"
      x="469.00577">(all)</text>
   <text
      id="text1715"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="162.19983"
      x="281.15576">0.4</text>
   <text
      id="text1717"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="142.10983"
      x="281.15576">0.5</text>
   <text
      id="text1719"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="122.02983"
      x="281.15576">0.6</text>
   <text
      id="text1721"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="101.93983"
      x="281.15576">0.7</text>
   <text
      id="text1723"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="81.859833"
      x="281.15576">0.8</text>
   <text
      id="text1725"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="61.769833"
      x="281.15576">0.9</text>
   <polyline
@@ -4697,32 +4703,32 @@
      transform="translate(-8.4042292,-15.14017)" />
   <text
      id="text1739"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="274.12982"
      x="281.15576">0.4</text>
   <text
      id="text1741"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="254.04984"
      x="281.15576">0.5</text>
   <text
      id="text1743"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="233.95984"
      x="281.15576">0.6</text>
   <text
      id="text1745"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="213.87984"
      x="281.15576">0.7</text>
   <text
      id="text1747"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="193.78983"
      x="281.15576">0.8</text>
   <text
      id="text1749"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="173.69983"
      x="281.15576">0.9</text>
   <polyline
@@ -4757,32 +4763,32 @@
      transform="translate(-8.4042292,-15.14017)" />
   <text
      id="text1763"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="386.05984"
      x="281.15576">0.4</text>
   <text
      id="text1765"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="365.97983"
      x="281.15576">0.5</text>
   <text
      id="text1767"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="345.88983"
      x="281.15576">0.6</text>
   <text
      id="text1769"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="325.80984"
      x="281.15576">0.7</text>
   <text
      id="text1771"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="305.71982"
      x="281.15576">0.8</text>
   <text
      id="text1773"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="285.63983"
      x="281.15576">0.9</text>
   <polyline
@@ -4817,32 +4823,32 @@
      transform="translate(-8.4042292,-15.14017)" />
   <text
      id="text1787"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="497.99985"
      x="281.15576">0.4</text>
   <text
      id="text1789"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="477.90982"
      x="281.15576">0.5</text>
   <text
      id="text1791"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="457.82983"
      x="281.15576">0.6</text>
   <text
      id="text1793"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="437.73984"
      x="281.15576">0.7</text>
   <text
      id="text1795"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="417.65982"
      x="281.15576">0.8</text>
   <text
      id="text1797"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="397.56982"
      x="281.15576">0.9</text>
   <polyline
@@ -4879,13 +4885,11 @@
      id="text1811"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;white-space:pre"
      y="517.7298"
-     x="339.30576">
-    <tspan
+     x="339.30576"><tspan
        sodipodi:role="line"
        id="tspan3967"
        x="339.30576"
-       y="517.7298">number of cells</tspan>
-  </text>
+       y="517.7298">number of cells</tspan></text>
   <text
      id="text1817"
      style="font-size:11px;font-family:'Liberation Sans';white-space:pre"
@@ -4906,23 +4910,18 @@
      y="262.14575">score</text>
   <text
      id="text1823"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;white-space:pre"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;white-space:pre;inline-size:203.841"
      y="9.9398298"
-     x="286.08575">
-    <tspan
-       sodipodi:role="line"
-       id="tspan4031"
+     x="286.08575"
+     xml:space="preserve"><tspan
        x="286.08575"
-       y="9.9398298">distinguishing mouse neuronal sub-</tspan>
-    <tspan
-       sodipodi:role="line"
-       id="tspan4033"
+       y="9.9398298"
+       id="tspan5540">distinguishing mouse neuronal sub-types </tspan><tspan
        x="286.08575"
-       y="23.689833">types annotated by mCH (Luo <tspan
-   style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.99999995px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr;text-anchor:start"
-   id="tspan4035">et al.</tspan>
-)</tspan>
-  </text>
+       y="23.716552"
+       id="tspan5544">annotated by mCH (Luo <tspan
+   style="font-style:italic;-inkscape-font-specification:'Liberation Sans, Italic'"
+   id="tspan5542">et al.</tspan>)</tspan></text>
   <defs
      id="defs1850">
     <clipPath
@@ -5349,339 +5348,6 @@
          style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
     </clipPath>
   </defs>
-  <g
-     clip-path="url(#cpNTQ2LjA2fDczNy42OXwxNzkuNjF8Mjg2LjA2)"
-     id="g2126"
-     transform="translate(-8.4042292,-15.14017)">
-    <rect
-       x="546.06"
-       y="179.61"
-       width="191.63"
-       height="106.45"
-       style="fill:#ffffff;stroke:none;stroke-width:1.07000005;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="rect2006" />
-    <polyline
-       points="546.06,266.36 737.69,266.36 "
-       style="fill:none;stroke:#ebebeb;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
-       id="polyline2008" />
-    <polyline
-       points="546.06,236.62 737.69,236.62 "
-       style="fill:none;stroke:#ebebeb;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
-       id="polyline2010" />
-    <polyline
-       points="546.06,206.88 737.69,206.88 "
-       style="fill:none;stroke:#ebebeb;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
-       id="polyline2012" />
-    <polyline
-       points="554.77,286.06 554.77,179.61 "
-       style="fill:none;stroke:#ebebeb;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
-       id="polyline2014" />
-    <polyline
-       points="576.64,286.06 576.64,179.61 "
-       style="fill:none;stroke:#ebebeb;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
-       id="polyline2016" />
-    <polyline
-       points="613.08,286.06 613.08,179.61 "
-       style="fill:none;stroke:#ebebeb;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
-       id="polyline2018" />
-    <polyline
-       points="649.53,286.06 649.53,179.61 "
-       style="fill:none;stroke:#ebebeb;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
-       id="polyline2020" />
-    <polyline
-       points="685.98,286.06 685.98,179.61 "
-       style="fill:none;stroke:#ebebeb;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
-       id="polyline2022" />
-    <polyline
-       points="728.98,286.06 728.98,179.61 "
-       style="fill:none;stroke:#ebebeb;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
-       id="polyline2024" />
-    <polyline
-       points="554.77,240.02 576.64,210.99 613.08,216.87 649.53,217.26 685.98,211.98 728.98,213.17 "
-       style="fill:none;stroke:#1665ab;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
-       id="polyline2026" />
-    <polyline
-       points="554.77,237.47 576.64,203.85 613.08,208.11 649.53,213.16 685.98,208.62 728.98,211.20 "
-       style="fill:none;stroke:#1665ab;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:2.85, 2.85"
-       id="polyline2028" />
-    <polyline
-       points="554.77,253.61 576.64,237.92 613.08,224.01 649.53,211.99 685.98,206.67 728.98,207.22 "
-       style="fill:none;stroke:#ffc107;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
-       id="polyline2030" />
-    <polyline
-       points="554.77,258.29 576.64,245.38 613.08,227.34 649.53,223.40 685.98,214.49 728.98,213.66 "
-       style="fill:none;stroke:#ffc107;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:2.85, 2.85"
-       id="polyline2032" />
-    <polyline
-       points="554.77,267.63 576.64,231.10 613.08,218.89 649.53,217.08 685.98,207.93 728.98,209.45 "
-       style="fill:none;stroke:#228b22;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
-       id="polyline2034" />
-    <polyline
-       points="554.77,281.23 576.64,248.51 613.08,229.40 649.53,226.02 685.98,218.12 728.98,218.63 "
-       style="fill:none;stroke:#228b22;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:2.85, 2.85"
-       id="polyline2036" />
-    <polyline
-       points="554.77,238.74 576.64,201.47 "
-       style="fill:none;stroke:#8b0000;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
-       id="polyline2038" />
-    <polyline
-       points="554.77,231.52 576.64,196.93 613.08,211.00 "
-       style="fill:none;stroke:#8b0000;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:2.85, 2.85"
-       id="polyline2040" />
-    <circle
-       cx="554.77002"
-       cy="258.29001"
-       r="1.95"
-       style="fill:none;stroke:#ffc107;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2042" />
-    <circle
-       cx="554.77002"
-       cy="281.23001"
-       r="1.95"
-       style="fill:none;stroke:#228b22;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2044" />
-    <circle
-       cx="554.77002"
-       cy="231.52"
-       r="1.95"
-       style="fill:none;stroke:#8b0000;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2046" />
-    <circle
-       cx="576.64001"
-       cy="245.38"
-       r="1.95"
-       style="fill:none;stroke:#ffc107;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2048" />
-    <circle
-       cx="576.64001"
-       cy="248.50999"
-       r="1.95"
-       style="fill:none;stroke:#228b22;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2050" />
-    <circle
-       cx="576.64001"
-       cy="196.92999"
-       r="1.95"
-       style="fill:none;stroke:#8b0000;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2052" />
-    <circle
-       cx="613.08002"
-       cy="227.34"
-       r="1.95"
-       style="fill:none;stroke:#ffc107;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2054" />
-    <circle
-       cx="613.08002"
-       cy="229.39999"
-       r="1.95"
-       style="fill:none;stroke:#228b22;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2056" />
-    <circle
-       cx="613.08002"
-       cy="211"
-       r="1.95"
-       style="fill:none;stroke:#8b0000;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2058" />
-    <circle
-       cx="649.53003"
-       cy="223.39999"
-       r="1.95"
-       style="fill:none;stroke:#ffc107;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2060" />
-    <circle
-       cx="649.53003"
-       cy="226.02"
-       r="1.95"
-       style="fill:none;stroke:#228b22;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2062" />
-    <circle
-       cx="685.97998"
-       cy="214.49001"
-       r="1.95"
-       style="fill:none;stroke:#ffc107;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2064" />
-    <circle
-       cx="685.97998"
-       cy="218.12"
-       r="1.95"
-       style="fill:none;stroke:#228b22;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2066" />
-    <circle
-       cx="728.97998"
-       cy="213.66"
-       r="1.95"
-       style="fill:none;stroke:#ffc107;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2068" />
-    <circle
-       cx="728.97998"
-       cy="218.63"
-       r="1.95"
-       style="fill:none;stroke:#228b22;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2070" />
-    <circle
-       cx="554.77002"
-       cy="253.61"
-       r="1.95"
-       style="fill:#ffc107;stroke:#ffc107;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2072" />
-    <circle
-       cx="554.77002"
-       cy="267.63"
-       r="1.95"
-       style="fill:#228b22;stroke:#228b22;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2074" />
-    <circle
-       cx="554.77002"
-       cy="238.74001"
-       r="1.95"
-       style="fill:#8b0000;stroke:#8b0000;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2076" />
-    <circle
-       cx="576.64001"
-       cy="237.92"
-       r="1.95"
-       style="fill:#ffc107;stroke:#ffc107;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2078" />
-    <circle
-       cx="576.64001"
-       cy="231.10001"
-       r="1.95"
-       style="fill:#228b22;stroke:#228b22;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2080" />
-    <circle
-       cx="576.64001"
-       cy="201.47"
-       r="1.95"
-       style="fill:#8b0000;stroke:#8b0000;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2082" />
-    <circle
-       cx="613.08002"
-       cy="224.00999"
-       r="1.95"
-       style="fill:#ffc107;stroke:#ffc107;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2084" />
-    <circle
-       cx="613.08002"
-       cy="218.89"
-       r="1.95"
-       style="fill:#228b22;stroke:#228b22;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2086" />
-    <circle
-       cx="649.53003"
-       cy="211.99001"
-       r="1.95"
-       style="fill:#ffc107;stroke:#ffc107;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2088" />
-    <circle
-       cx="649.53003"
-       cy="217.08"
-       r="1.95"
-       style="fill:#228b22;stroke:#228b22;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2090" />
-    <circle
-       cx="685.97998"
-       cy="206.67"
-       r="1.95"
-       style="fill:#ffc107;stroke:#ffc107;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2092" />
-    <circle
-       cx="685.97998"
-       cy="207.92999"
-       r="1.95"
-       style="fill:#228b22;stroke:#228b22;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2094" />
-    <circle
-       cx="728.97998"
-       cy="207.22"
-       r="1.95"
-       style="fill:#ffc107;stroke:#ffc107;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2096" />
-    <circle
-       cx="728.97998"
-       cy="209.45"
-       r="1.95"
-       style="fill:#228b22;stroke:#228b22;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2098" />
-    <circle
-       cx="554.77002"
-       cy="237.47"
-       r="1.95"
-       style="fill:none;stroke:#1665ab;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2100" />
-    <circle
-       cx="576.64001"
-       cy="203.85001"
-       r="1.95"
-       style="fill:none;stroke:#1665ab;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2102" />
-    <circle
-       cx="613.08002"
-       cy="208.11"
-       r="1.95"
-       style="fill:none;stroke:#1665ab;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2104" />
-    <circle
-       cx="649.53003"
-       cy="213.16"
-       r="1.95"
-       style="fill:none;stroke:#1665ab;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2106" />
-    <circle
-       cx="685.97998"
-       cy="208.62"
-       r="1.95"
-       style="fill:none;stroke:#1665ab;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2108" />
-    <circle
-       cx="728.97998"
-       cy="211.2"
-       r="1.95"
-       style="fill:none;stroke:#1665ab;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2110" />
-    <circle
-       cx="554.77002"
-       cy="240.02"
-       r="1.95"
-       style="fill:#1665ab;stroke:#1665ab;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2112" />
-    <circle
-       cx="576.64001"
-       cy="210.99001"
-       r="1.95"
-       style="fill:#1665ab;stroke:#1665ab;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2114" />
-    <circle
-       cx="613.08002"
-       cy="216.87"
-       r="1.95"
-       style="fill:#1665ab;stroke:#1665ab;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2116" />
-    <circle
-       cx="649.53003"
-       cy="217.25999"
-       r="1.95"
-       style="fill:#1665ab;stroke:#1665ab;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2118" />
-    <circle
-       cx="685.97998"
-       cy="211.98"
-       r="1.95"
-       style="fill:#1665ab;stroke:#1665ab;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2120" />
-    <circle
-       cx="728.97998"
-       cy="213.17"
-       r="1.95"
-       style="fill:#1665ab;stroke:#1665ab;stroke-width:0.70999998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="circle2122" />
-    <rect
-       x="546.06"
-       y="179.61"
-       width="191.63"
-       height="106.45"
-       style="fill:none;stroke:#333333;stroke-width:1.07000005;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-       id="rect2124" />
-  </g>
   <g
      clip-path="url(#cpMC4wMHwxMDc3LjE3fDAuMDB8NTY2Ljkz)"
      id="g2128"
@@ -6496,7 +6162,7 @@
        id="rect2421" />
     <text
        transform="rotate(90,311.045,431.945)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
        id="text2423">iterative PCA</text>
   </g>
   <g
@@ -6529,7 +6195,7 @@
        id="rect2434" />
     <text
        transform="rotate(90,255.075,487.915)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
        id="text2436">PCA on HQ features</text>
   </g>
   <g
@@ -6562,7 +6228,7 @@
        id="rect2447" />
     <text
        transform="rotate(90,199.11,543.88)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
        id="text2449">mean-imputed PCA</text>
   </g>
   <g
@@ -6595,7 +6261,7 @@
        id="rect2460" />
     <text
        transform="rotate(90,143.145,599.845)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
        id="text2462">MOFA+</text>
   </g>
   <polyline
@@ -6630,52 +6296,52 @@
      transform="translate(-8.4042292,-15.14017)" />
   <text
      id="text2478"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
      y="506.13986"
      x="546.36578">100</text>
   <text
      id="text2480"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
      y="506.13986"
      x="568.23578">250</text>
   <text
      id="text2482"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
      y="506.13986"
      x="604.67578">500</text>
   <text
      id="text2484"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
      y="506.13986"
      x="641.12579">750</text>
   <text
      id="text2486"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
      y="506.13986"
      x="677.57574">1000</text>
   <text
      id="text2488"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
      y="506.13986"
      x="720.57574">1295</text>
   <text
      id="text2490"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
      y="515.63983"
      x="720.57574">(all)</text>
   <text
      id="text2492"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="142.48984"
      x="532.72577">0.5</text>
   <text
      id="text2494"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="112.74983"
      x="532.72577">0.6</text>
   <text
      id="text2496"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="83.019836"
      x="532.72577">0.7</text>
   <polyline
@@ -6695,17 +6361,17 @@
      transform="translate(-8.4042292,-15.14017)" />
   <text
      id="text2504"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="254.41983"
      x="532.72577">0.5</text>
   <text
      id="text2506"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="224.68983"
      x="532.72577">0.6</text>
   <text
      id="text2508"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="194.94983"
      x="532.72577">0.7</text>
   <polyline
@@ -6725,17 +6391,17 @@
      transform="translate(-8.4042292,-15.14017)" />
   <text
      id="text2516"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="366.35983"
      x="532.72577">0.5</text>
   <text
      id="text2518"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="336.61984"
      x="532.72577">0.6</text>
   <text
      id="text2520"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="306.87982"
      x="532.72577">0.7</text>
   <polyline
@@ -6755,17 +6421,17 @@
      transform="translate(-8.4042292,-15.14017)" />
   <text
      id="text2528"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="478.28983"
      x="532.72577">0.5</text>
   <text
      id="text2530"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="448.54984"
      x="532.72577">0.6</text>
   <text
      id="text2532"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="418.80984"
      x="532.72577">0.7</text>
   <polyline
@@ -6787,13 +6453,11 @@
      id="text2540"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;white-space:pre"
      y="517.7298"
-     x="590.87579">
-    <tspan
+     x="590.87579"><tspan
        sodipodi:role="line"
        id="tspan3969"
        x="590.87579"
-       y="517.7298">number of cells</tspan>
-  </text>
+       y="517.7298">number of cells</tspan></text>
   <text
      id="text2546"
      style="font-size:11px;font-family:'Liberation Sans';white-space:pre"
@@ -6816,21 +6480,17 @@
      id="text2552"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;white-space:pre"
      y="9.9398298"
-     x="537.65576">
-    <tspan
+     x="537.65576"><tspan
        sodipodi:role="line"
        id="tspan4037"
        x="537.65576"
-       y="9.9398298">distinguishing human colorectal cancer</tspan>
-    <tspan
+       y="9.9398298">distinguishing human colorectal cancer</tspan><tspan
        sodipodi:role="line"
        id="tspan4039"
        x="537.65576"
-       y="23.689833">sampling regions (Bian <tspan
-   style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.99999995px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr;text-anchor:start"
-   id="tspan4041">et al.</tspan>
-)</tspan>
-  </text>
+       y="23.716553">sampling regions (Bian <tspan
+   style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start"
+   id="tspan4041">et al.</tspan>)</tspan></text>
   <defs
      id="defs2577">
     <clipPath
@@ -7865,7 +7525,7 @@
        id="rect2962" />
     <text
        transform="rotate(90,388.92,509.82)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
        id="text2964">iterative PCA</text>
   </g>
   <g
@@ -7898,7 +7558,7 @@
        id="rect2975" />
     <text
        transform="rotate(90,332.95,565.79)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
        id="text2977">PCA on HQ features</text>
   </g>
   <g
@@ -7931,7 +7591,7 @@
        id="rect2988" />
     <text
        transform="rotate(90,276.985,621.755)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
        id="text2990">mean-imputed PCA</text>
   </g>
   <g
@@ -7964,7 +7624,7 @@
        id="rect3001" />
     <text
        transform="rotate(90,221.02,677.72)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
        id="text3003">MOFA+</text>
   </g>
   <polyline
@@ -7984,47 +7644,47 @@
      transform="translate(-8.4042292,-15.14017)" />
   <text
      id="text3013"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
      y="506.13986"
      x="793.57574">100</text>
   <text
      id="text3015"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
      y="506.13986"
      x="833.58575">500</text>
   <text
      id="text3017"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
      y="506.13986"
      x="880.68579">971</text>
   <text
      id="text3019"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d"
      y="515.63983"
      x="880.68579">(all)</text>
   <text
      id="text3021"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="161.96983"
      x="784.29578">0.4</text>
   <text
      id="text3023"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="140.44983"
      x="784.29578">0.5</text>
   <text
      id="text3025"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="118.92984"
      x="784.29578">0.6</text>
   <text
      id="text3027"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="97.399834"
      x="784.29578">0.7</text>
   <text
      id="text3029"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="75.879829"
      x="784.29578">0.8</text>
   <polyline
@@ -8054,27 +7714,27 @@
      transform="translate(-8.4042292,-15.14017)" />
   <text
      id="text3041"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="273.90982"
      x="784.29578">0.4</text>
   <text
      id="text3043"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="252.37982"
      x="784.29578">0.5</text>
   <text
      id="text3045"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="230.85983"
      x="784.29578">0.6</text>
   <text
      id="text3047"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="209.33983"
      x="784.29578">0.7</text>
   <text
      id="text3049"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="187.80983"
      x="784.29578">0.8</text>
   <polyline
@@ -8104,27 +7764,27 @@
      transform="translate(-8.4042292,-15.14017)" />
   <text
      id="text3061"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="385.83984"
      x="784.29578">0.4</text>
   <text
      id="text3063"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="364.31982"
      x="784.29578">0.5</text>
   <text
      id="text3065"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="342.78983"
      x="784.29578">0.6</text>
   <text
      id="text3067"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="321.26984"
      x="784.29578">0.7</text>
   <text
      id="text3069"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="299.74985"
      x="784.29578">0.8</text>
   <polyline
@@ -8154,27 +7814,27 @@
      transform="translate(-8.4042292,-15.14017)" />
   <text
      id="text3081"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="497.76981"
      x="784.29578">0.4</text>
   <text
      id="text3083"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="476.24985"
      x="784.29578">0.5</text>
   <text
      id="text3085"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="454.72983"
      x="784.29578">0.6</text>
   <text
      id="text3087"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="433.19983"
      x="784.29578">0.7</text>
   <text
      id="text3089"
-     style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
      y="411.67984"
      x="784.29578">0.8</text>
   <polyline
@@ -8206,13 +7866,11 @@
      id="text3101"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;white-space:pre"
      y="517.7298"
-     x="794.53577">
-    <tspan
+     x="794.53577"><tspan
        sodipodi:role="line"
        id="tspan3971"
        x="794.53577"
-       y="517.7298">number of cells</tspan>
-  </text>
+       y="517.7298">number of cells</tspan></text>
   <text
      id="text3107"
      style="font-size:11px;font-family:'Liberation Sans';white-space:pre"
@@ -8235,21 +7893,17 @@
      id="text3113"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;white-space:pre"
      y="9.9398298"
-     x="789.22577">
-    <tspan
+     x="789.22577"><tspan
        sodipodi:role="line"
        id="tspan4045"
        x="789.22577"
-       y="9.9398298">distinguishing developmental stage, germ layer</tspan>
-    <tspan
+       y="9.9398298">distinguishing developmental stage, germ layer</tspan><tspan
        sodipodi:role="line"
        id="tspan4047"
        x="789.22577"
-       y="23.689833">and cell lineage in mouse gastrulation (Argelaguet <tspan
-   style="-inkscape-font-specification:'Liberation Sans, Italic';font-family:'Liberation Sans';font-weight:normal;font-style:italic;font-stretch:normal;font-variant:normal;font-size:10.99999995px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal"
-   id="tspan4051">et al.</tspan>
-) </tspan>
-  </text>
+       y="23.716553">and cell lineage in mouse gastrulation (Argelaguet <tspan
+   style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start"
+   id="tspan4051">et al.</tspan>) </tspan></text>
   <defs
      id="defs3136">
     <clipPath
@@ -9091,12 +8745,12 @@
     <text
        x="975.96002"
        y="55.547543"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
        id="text3447">E7.5</text>
     <text
        x="975.96002"
        y="65.047539"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
        id="text3449">germ layer</text>
   </g>
   <g
@@ -9123,12 +8777,12 @@
     <text
        x="1026.61"
        y="55.547543"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
        id="text3462">E7.5</text>
     <text
        x="1026.61"
        y="65.047539"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
        id="text3464">cell lineage</text>
   </g>
   <g
@@ -9161,7 +8815,7 @@
        id="rect3475" />
     <text
        transform="rotate(90,466.795,587.695)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
        id="text3477">iterative PCA</text>
   </g>
   <g
@@ -9194,7 +8848,7 @@
        id="rect3488" />
     <text
        transform="rotate(90,410.825,643.665)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
        id="text3490">PCA on HQ features</text>
   </g>
   <g
@@ -9227,7 +8881,7 @@
        id="rect3501" />
     <text
        transform="rotate(90,354.86,699.63)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
        id="text3503">mean-imputed PCA</text>
   </g>
   <g
@@ -9260,7 +8914,7 @@
        id="rect3514" />
     <text
        transform="rotate(90,298.895,755.595)"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a"
        id="text3516">MOFA+</text>
   </g>
   <g
@@ -9270,22 +8924,22 @@
     <text
        x="948.45001"
        y="177.34"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text3520">0.0</text>
     <text
        x="948.45001"
        y="145.03"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text3522">0.2</text>
     <text
        x="948.45001"
        y="112.72"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text3524">0.4</text>
     <text
        x="948.45001"
        y="80.410004"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text3526">0.6</text>
     <polyline
        points="950.64,174.13 953.38,174.13 "
@@ -9306,22 +8960,22 @@
     <text
        x="948.45001"
        y="289.26999"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text3536">0.0</text>
     <text
        x="948.45001"
        y="256.95999"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text3538">0.2</text>
     <text
        x="948.45001"
        y="224.64999"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text3540">0.4</text>
     <text
        x="948.45001"
        y="192.34"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text3542">0.6</text>
     <polyline
        points="950.64,286.06 953.38,286.06 "
@@ -9342,22 +8996,22 @@
     <text
        x="948.45001"
        y="401.20001"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text3552">0.0</text>
     <text
        x="948.45001"
        y="368.89001"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text3554">0.2</text>
     <text
        x="948.45001"
        y="336.57999"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text3556">0.4</text>
     <text
        x="948.45001"
        y="304.26999"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text3558">0.6</text>
     <polyline
        points="950.64,398.00 953.38,398.00 "
@@ -9378,22 +9032,22 @@
     <text
        x="948.45001"
        y="513.14001"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text3568">0.0</text>
     <text
        x="948.45001"
        y="480.82999"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text3570">0.2</text>
     <text
        x="948.45001"
        y="448.51999"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text3572">0.4</text>
     <text
        x="948.45001"
        y="416.20001"
-       style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
+       style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:end;white-space:pre;fill:#4d4d4d"
        id="text3574">0.6</text>
     <polyline
        points="950.64,509.93 953.38,509.93 "
@@ -9431,7 +9085,7 @@
      points="841.99,512.67 841.99,509.93 " />
   <text
      id="text3015-9"
-     style="font-size:8.80000114px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d;stroke-width:1"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d;stroke-width:1"
      y="506.13986"
      x="967.88037">392 </text>
   <polyline
@@ -9441,30 +9095,28 @@
      points="841.99,512.67 841.99,509.93 " />
   <text
      id="text3015-9-2"
-     style="font-size:8.80000114px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d;stroke-width:1"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#4d4d4d;stroke-width:1"
      y="506.13986"
      x="1018.5558">392</text>
   <text
      id="text3101-2"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;white-space:pre;stroke-width:1"
      y="517.7298"
-     x="956.21112">
-    <tspan
+     x="956.21112"><tspan
        style="stroke-width:1"
        sodipodi:role="line"
        id="tspan3971-0"
        x="956.21112"
-       y="517.7298">number of cells</tspan>
-  </text>
+       y="517.7298">number of cells</tspan></text>
   <text
      x="843.05579"
      y="40.407375"
-     style="font-size:8.80000114px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a;stroke-width:1"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a;stroke-width:1"
      id="text3447-0">E4.5 - E7.5</text>
   <text
      x="843.05579"
      y="49.907375"
-     style="font-size:8.80000114px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a;stroke-width:1"
+     style="font-size:8.8px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;fill:#1a1a1a;stroke-width:1"
      id="text3449-5">developmental stage</text>
   <g
      style="display:inline"
@@ -9490,7 +9142,7 @@
     <text
        x="111.10499"
        y="18.677893"
-       style="font-size:3.10444474px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.35277781"
+       style="font-size:3.10444px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.352778"
        id="text262">VMRs</text>
     <g
        transform="translate(0,-1.0583333)"
@@ -9513,7 +9165,7 @@
     <text
        x="111.10499"
        y="27.157827"
-       style="font-size:3.10444474px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.35277781"
+       style="font-size:3.10444px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.352778"
        id="text264">100 kb tiles</text>
     <g
        transform="translate(0,-2.1166667)"
@@ -9535,7 +9187,7 @@
     <text
        x="111.10499"
        y="31.337612"
-       style="font-size:3.10444474px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.35277781"
+       style="font-size:3.10444px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.352778"
        id="text266">promoters</text>
     <g
        id="g41465">
@@ -9556,17 +9208,17 @@
     <text
        x="111.10499"
        y="22.94566"
-       style="font-size:3.10444474px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.35277781"
+       style="font-size:3.10444px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.352778"
        id="text268">regulatory elements</text>
     <text
        x="113.22165"
        y="41.283051"
-       style="font-size:3.10444474px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.35277781"
+       style="font-size:3.10444px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.352778"
        id="text286">shrunken mean of residuals</text>
     <text
        x="113.22165"
        y="37.324883"
-       style="font-size:3.10444474px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.35277781"
+       style="font-size:3.10444px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.352778"
        id="text288">average methylation</text>
     <g
        style="fill:none;fill-opacity:1;stroke:#228b22"
@@ -9668,56 +9320,421 @@
   <text
      y="15.264005"
      x="22.316154"
-     style="font-size:16.99999992px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;display:inline;stroke-width:1.12588346;-inkscape-font-specification:'Liberation Sans, Normal';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-align:center;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;white-space:pre;display:inline;stroke-width:1.12588"
      id="text165-2-0"
      inkscape:export-xdpi="300"
-     inkscape:export-ydpi="300">
-    <tspan
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.99999992px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr;text-anchor:middle;stroke-width:1.12588346;"
-       id="tspan35940-7">A</tspan>
-  </text>
+     inkscape:export-ydpi="300"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:1.12588"
+       id="tspan35940-7">A</tspan></text>
   <text
      y="15.264005"
      x="274.23953"
-     style="font-size:16.99999992px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;display:inline;stroke-width:1.12588346;-inkscape-font-specification:'Liberation Sans, Normal';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-align:center;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;white-space:pre;display:inline;stroke-width:1.12588"
      id="text165-2-2-9"
      inkscape:export-xdpi="300"
-     inkscape:export-ydpi="300">
-    <tspan
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.99999992px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr;text-anchor:middle;stroke-width:1.12588346;"
-       id="tspan35940-6-4">B</tspan>
-  </text>
+     inkscape:export-ydpi="300"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:1.12588"
+       id="tspan35940-6-4">B</tspan></text>
   <text
      y="15.264004"
      x="526.3161"
-     style="font-size:16.99999992px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;display:inline;stroke-width:1.12588346;-inkscape-font-specification:'Liberation Sans, Normal';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-align:center;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;white-space:pre;display:inline;stroke-width:1.12588"
      id="text165-2-0-2"
      inkscape:export-xdpi="300"
-     inkscape:export-ydpi="300">
-    <tspan
+     inkscape:export-ydpi="300"><tspan
        sodipodi:role="line"
-       id="tspan4209">C</tspan>
-  </text>
+       id="tspan4209">C</tspan></text>
   <text
      y="15.264004"
      x="778.2395"
-     style="font-size:16.99999992px;font-family:'Liberation Sans';text-anchor:middle;white-space:pre;display:inline;stroke-width:1.12588346;-inkscape-font-specification:'Liberation Sans, Normal';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-align:center;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;white-space:pre;display:inline;stroke-width:1.12588"
      id="text165-2-2-9-4"
      inkscape:export-xdpi="300"
-     inkscape:export-ydpi="300">
-    <tspan
+     inkscape:export-ydpi="300"><tspan
        sodipodi:role="line"
-       id="tspan4211">D</tspan>
-  </text>
+       id="tspan4211">D</tspan></text>
   <text
      y="46.996437"
      x="933.93585"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.99999992px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr;text-anchor:middle;white-space:pre;display:inline;stroke-width:1.12588346;"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;white-space:pre;display:inline;stroke-width:1.12588"
      id="text165-2-2-9-4-6"
      inkscape:export-xdpi="300"
-     inkscape:export-ydpi="300">
-    <tspan
+     inkscape:export-ydpi="300"><tspan
        sodipodi:role="line"
-       id="tspan4231">E</tspan>
-  </text>
+       id="tspan4231">E</tspan></text>
+  <g
+     clip-path="url(#cpNTQ2LjA2fDczNy42OXwxNzkuNjF8Mjg2LjA2-5)"
+     id="g2140"
+     transform="translate(-8.4042292,-15.14017)">
+    <rect
+       x="546.06"
+       y="179.61"
+       width="191.63"
+       height="106.45"
+       style="fill:#ffffff;stroke:none;stroke-width:1.07"
+       id="rect2006" />
+    <polyline
+       points="546.06,266.36 737.69,266.36 "
+       style="stroke:#ebebeb;stroke-width:1.07;stroke-linecap:butt"
+       id="polyline2008" />
+    <polyline
+       points="546.06,236.62 737.69,236.62 "
+       style="stroke:#ebebeb;stroke-width:1.07;stroke-linecap:butt"
+       id="polyline2010" />
+    <polyline
+       points="546.06,206.88 737.69,206.88 "
+       style="stroke:#ebebeb;stroke-width:1.07;stroke-linecap:butt"
+       id="polyline2012" />
+    <polyline
+       points="554.77,286.06 554.77,179.61 "
+       style="stroke:#ebebeb;stroke-width:1.07;stroke-linecap:butt"
+       id="polyline2014" />
+    <polyline
+       points="576.64,286.06 576.64,179.61 "
+       style="stroke:#ebebeb;stroke-width:1.07;stroke-linecap:butt"
+       id="polyline2016" />
+    <polyline
+       points="613.08,286.06 613.08,179.61 "
+       style="stroke:#ebebeb;stroke-width:1.07;stroke-linecap:butt"
+       id="polyline2018" />
+    <polyline
+       points="649.53,286.06 649.53,179.61 "
+       style="stroke:#ebebeb;stroke-width:1.07;stroke-linecap:butt"
+       id="polyline2020" />
+    <polyline
+       points="685.98,286.06 685.98,179.61 "
+       style="stroke:#ebebeb;stroke-width:1.07;stroke-linecap:butt"
+       id="polyline2022" />
+    <polyline
+       points="728.98,286.06 728.98,179.61 "
+       style="stroke:#ebebeb;stroke-width:1.07;stroke-linecap:butt"
+       id="polyline2024" />
+    <polyline
+       points="554.77,240.02 576.64,210.99 613.08,216.87 649.53,217.26 685.98,211.98 728.98,213.17 "
+       style="stroke:#1665ab;stroke-width:1.07;stroke-linecap:butt"
+       id="polyline2026" />
+    <polyline
+       points="554.77,237.47 576.64,203.85 613.08,208.11 649.53,213.16 685.98,208.62 728.98,211.20 "
+       style="stroke:#1665ab;stroke-width:1.07;stroke-linecap:butt;stroke-dasharray:2.85, 2.85"
+       id="polyline2028" />
+    <polyline
+       points="554.77,253.61 576.64,237.92 613.08,224.01 649.53,211.99 685.98,206.67 728.98,207.22 "
+       style="stroke:#ffc107;stroke-width:1.07;stroke-linecap:butt"
+       id="polyline2030" />
+    <polyline
+       points="554.77,258.29 576.64,245.38 613.08,227.34 649.53,223.40 685.98,214.49 728.98,213.66 "
+       style="stroke:#ffc107;stroke-width:1.07;stroke-linecap:butt;stroke-dasharray:2.85, 2.85"
+       id="polyline2032" />
+    <polyline
+       points="554.77,267.63 576.64,231.10 613.08,218.89 649.53,217.08 685.98,207.93 728.98,209.45 "
+       style="stroke:#228b22;stroke-width:1.07;stroke-linecap:butt"
+       id="polyline2034" />
+    <polyline
+       points="554.77,281.23 576.64,248.51 613.08,229.40 649.53,226.02 685.98,218.12 728.98,218.63 "
+       style="stroke:#228b22;stroke-width:1.07;stroke-linecap:butt;stroke-dasharray:2.85, 2.85"
+       id="polyline2036" />
+    <polyline
+       points="554.77,238.74 576.64,201.47 613.08,215.37 649.53,214.35 685.98,207.74 728.98,208.65 "
+       style="stroke:#8b0000;stroke-width:1.07;stroke-linecap:butt"
+       id="polyline2038" />
+    <polyline
+       points="554.77,231.52 576.64,196.93 613.08,211.00 649.53,212.94 685.98,205.90 728.98,206.98 "
+       style="stroke:#8b0000;stroke-width:1.07;stroke-linecap:butt;stroke-dasharray:2.85, 2.85"
+       id="polyline2040" />
+    <circle
+       cx="554.77002"
+       cy="258.29001"
+       r="1.95"
+       style="stroke:#ffc107;stroke-width:0.71"
+       id="circle2042" />
+    <circle
+       cx="554.77002"
+       cy="281.23001"
+       r="1.95"
+       style="stroke:#228b22;stroke-width:0.71"
+       id="circle2044" />
+    <circle
+       cx="554.77002"
+       cy="231.52"
+       r="1.95"
+       style="stroke:#8b0000;stroke-width:0.71"
+       id="circle2046" />
+    <circle
+       cx="576.64001"
+       cy="245.38"
+       r="1.95"
+       style="stroke:#ffc107;stroke-width:0.71"
+       id="circle2048" />
+    <circle
+       cx="576.64001"
+       cy="248.50999"
+       r="1.95"
+       style="stroke:#228b22;stroke-width:0.71"
+       id="circle2050" />
+    <circle
+       cx="576.64001"
+       cy="196.92999"
+       r="1.95"
+       style="stroke:#8b0000;stroke-width:0.71"
+       id="circle2052" />
+    <circle
+       cx="613.08002"
+       cy="227.34"
+       r="1.95"
+       style="stroke:#ffc107;stroke-width:0.71"
+       id="circle2054" />
+    <circle
+       cx="613.08002"
+       cy="229.39999"
+       r="1.95"
+       style="stroke:#228b22;stroke-width:0.71"
+       id="circle2056" />
+    <circle
+       cx="613.08002"
+       cy="211"
+       r="1.95"
+       style="stroke:#8b0000;stroke-width:0.71"
+       id="circle2058" />
+    <circle
+       cx="649.53003"
+       cy="223.39999"
+       r="1.95"
+       style="stroke:#ffc107;stroke-width:0.71"
+       id="circle2060" />
+    <circle
+       cx="649.53003"
+       cy="226.02"
+       r="1.95"
+       style="stroke:#228b22;stroke-width:0.71"
+       id="circle2062" />
+    <circle
+       cx="649.53003"
+       cy="212.94"
+       r="1.95"
+       style="stroke:#8b0000;stroke-width:0.71"
+       id="circle2064" />
+    <circle
+       cx="685.97998"
+       cy="214.49001"
+       r="1.95"
+       style="stroke:#ffc107;stroke-width:0.71"
+       id="circle2066" />
+    <circle
+       cx="685.97998"
+       cy="218.12"
+       r="1.95"
+       style="stroke:#228b22;stroke-width:0.71"
+       id="circle2068" />
+    <circle
+       cx="685.97998"
+       cy="205.89999"
+       r="1.95"
+       style="stroke:#8b0000;stroke-width:0.71"
+       id="circle2070" />
+    <circle
+       cx="728.97998"
+       cy="213.66"
+       r="1.95"
+       style="stroke:#ffc107;stroke-width:0.71"
+       id="circle2072" />
+    <circle
+       cx="728.97998"
+       cy="218.63"
+       r="1.95"
+       style="stroke:#228b22;stroke-width:0.71"
+       id="circle2074" />
+    <circle
+       cx="728.97998"
+       cy="206.98"
+       r="1.95"
+       style="stroke:#8b0000;stroke-width:0.71"
+       id="circle2076" />
+    <circle
+       cx="554.77002"
+       cy="253.61"
+       r="1.95"
+       style="fill:#ffc107;stroke:#ffc107;stroke-width:0.71"
+       id="circle2078" />
+    <circle
+       cx="554.77002"
+       cy="267.63"
+       r="1.95"
+       style="fill:#228b22;stroke:#228b22;stroke-width:0.71"
+       id="circle2080" />
+    <circle
+       cx="554.77002"
+       cy="238.74001"
+       r="1.95"
+       style="fill:#8b0000;stroke:#8b0000;stroke-width:0.71"
+       id="circle2082" />
+    <circle
+       cx="576.64001"
+       cy="237.92"
+       r="1.95"
+       style="fill:#ffc107;stroke:#ffc107;stroke-width:0.71"
+       id="circle2084" />
+    <circle
+       cx="576.64001"
+       cy="231.10001"
+       r="1.95"
+       style="fill:#228b22;stroke:#228b22;stroke-width:0.71"
+       id="circle2086" />
+    <circle
+       cx="576.64001"
+       cy="201.47"
+       r="1.95"
+       style="fill:#8b0000;stroke:#8b0000;stroke-width:0.71"
+       id="circle2088" />
+    <circle
+       cx="613.08002"
+       cy="224.00999"
+       r="1.95"
+       style="fill:#ffc107;stroke:#ffc107;stroke-width:0.71"
+       id="circle2090" />
+    <circle
+       cx="613.08002"
+       cy="218.89"
+       r="1.95"
+       style="fill:#228b22;stroke:#228b22;stroke-width:0.71"
+       id="circle2092" />
+    <circle
+       cx="613.08002"
+       cy="215.37"
+       r="1.95"
+       style="fill:#8b0000;stroke:#8b0000;stroke-width:0.71"
+       id="circle2094" />
+    <circle
+       cx="649.53003"
+       cy="211.99001"
+       r="1.95"
+       style="fill:#ffc107;stroke:#ffc107;stroke-width:0.71"
+       id="circle2096" />
+    <circle
+       cx="649.53003"
+       cy="217.08"
+       r="1.95"
+       style="fill:#228b22;stroke:#228b22;stroke-width:0.71"
+       id="circle2098" />
+    <circle
+       cx="649.53003"
+       cy="214.35001"
+       r="1.95"
+       style="fill:#8b0000;stroke:#8b0000;stroke-width:0.71"
+       id="circle2100" />
+    <circle
+       cx="685.97998"
+       cy="206.67"
+       r="1.95"
+       style="fill:#ffc107;stroke:#ffc107;stroke-width:0.71"
+       id="circle2102" />
+    <circle
+       cx="685.97998"
+       cy="207.92999"
+       r="1.95"
+       style="fill:#228b22;stroke:#228b22;stroke-width:0.71"
+       id="circle2104" />
+    <circle
+       cx="685.97998"
+       cy="207.74001"
+       r="1.95"
+       style="fill:#8b0000;stroke:#8b0000;stroke-width:0.71"
+       id="circle2106" />
+    <circle
+       cx="728.97998"
+       cy="207.22"
+       r="1.95"
+       style="fill:#ffc107;stroke:#ffc107;stroke-width:0.71"
+       id="circle2108" />
+    <circle
+       cx="728.97998"
+       cy="209.45"
+       r="1.95"
+       style="fill:#228b22;stroke:#228b22;stroke-width:0.71"
+       id="circle2110" />
+    <circle
+       cx="728.97998"
+       cy="208.64999"
+       r="1.95"
+       style="fill:#8b0000;stroke:#8b0000;stroke-width:0.71"
+       id="circle2112" />
+    <circle
+       cx="554.77002"
+       cy="237.47"
+       r="1.95"
+       style="stroke:#1665ab;stroke-width:0.71"
+       id="circle2114" />
+    <circle
+       cx="576.64001"
+       cy="203.85001"
+       r="1.95"
+       style="stroke:#1665ab;stroke-width:0.71"
+       id="circle2116" />
+    <circle
+       cx="613.08002"
+       cy="208.11"
+       r="1.95"
+       style="stroke:#1665ab;stroke-width:0.71"
+       id="circle2118" />
+    <circle
+       cx="649.53003"
+       cy="213.16"
+       r="1.95"
+       style="stroke:#1665ab;stroke-width:0.71"
+       id="circle2120" />
+    <circle
+       cx="685.97998"
+       cy="208.62"
+       r="1.95"
+       style="stroke:#1665ab;stroke-width:0.71"
+       id="circle2122" />
+    <circle
+       cx="728.97998"
+       cy="211.2"
+       r="1.95"
+       style="stroke:#1665ab;stroke-width:0.71"
+       id="circle2124" />
+    <circle
+       cx="554.77002"
+       cy="240.02"
+       r="1.95"
+       style="fill:#1665ab;stroke:#1665ab;stroke-width:0.71"
+       id="circle2126" />
+    <circle
+       cx="576.64001"
+       cy="210.99001"
+       r="1.95"
+       style="fill:#1665ab;stroke:#1665ab;stroke-width:0.71"
+       id="circle2128" />
+    <circle
+       cx="613.08002"
+       cy="216.87"
+       r="1.95"
+       style="fill:#1665ab;stroke:#1665ab;stroke-width:0.71"
+       id="circle2130" />
+    <circle
+       cx="649.53003"
+       cy="217.25999"
+       r="1.95"
+       style="fill:#1665ab;stroke:#1665ab;stroke-width:0.71"
+       id="circle2132" />
+    <circle
+       cx="685.97998"
+       cy="211.98"
+       r="1.95"
+       style="fill:#1665ab;stroke:#1665ab;stroke-width:0.71"
+       id="circle2134" />
+    <circle
+       cx="728.97998"
+       cy="213.17"
+       r="1.95"
+       style="fill:#1665ab;stroke:#1665ab;stroke-width:0.71"
+       id="circle2136" />
+    <rect
+       x="546.06"
+       y="179.61"
+       width="191.63"
+       height="106.45"
+       style="stroke:#333333;stroke-width:1.07"
+       id="rect2138" />
+  </g>
 </svg>
