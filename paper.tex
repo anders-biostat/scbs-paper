@@ -60,7 +60,7 @@ Simon Anders\textsuperscript{1,*}\\[1ex]
 \textsuperscript{2} Division of Molecular Neurobiology, German Cancer Research Center (DKFZ), Heidelberg, Germany}
 \vspace{1.5ex}
 
-December 2023, version 3
+version 3 /\!/ January 2024
 \vspace{4.5ex}
 
 \begin{minipage}{0.7\textwidth}
@@ -224,7 +224,7 @@ As we demonstrate below, a PCA performed on such a matrix provided a distance me
 
 \subsection{Application and benchmarks}
 
-To demonstrate the value of our proposed improvements, we benchmarked various combinations of analysis methods on \new{five diverse single-cell methylome data sets.}
+To demonstrate the value of our proposed improvements, we benchmarked various combinations of analysis methods on \new{five diverse single-cell methylome data sets, starting with a data set from our own research}.
 
 %\phantomsection
 \subsubsection{Correlating VMR methylation with gene expression}
@@ -246,8 +246,8 @@ We consider these cell labels as ground truth and tested whether we are able to 
 \new{
 To do this, we subjected the methylomes to various combinations of analysis methods including our own proposed methods and others that are commonly used.
 Specifically, we selected four different sets of genomic intervals at which CpG methylation is to be quantified:
-either VMRs detected with our approach, 100~kb genomic tiles, promoter regions (TSS\textpm2000~bp), or candidate cis-regulatory elements \citep[ENCODE cCREs,][]{encode2020expanded}.
-To quantify methylation at these features, we either averaged in these intervals, obtaining methylation percentages, or we calculated the shrunken mean of residuals.
+either VMRs detected with our approach, 100~kb genomic tiles, promoter regions (i.e., transcription start site (TSS)~\textpm~2000~bp), or candidate cis-regulatory elements \citep[ENCODE cCREs,][]{encode2020expanded}.
+To quantify methylation at these features, we either simply averaged in these intervals, obtaining methylation percentages, or we calculated the shrunken mean of residuals, as described above.
 Finally, the resulting methylation matrices were subjected to iterative PCA (see Methods) and subsequent UMAP for visualization.
 }
 
@@ -255,26 +255,25 @@ Visual inspection of the resulting UMAPs revealed that our proposed combination 
 While all cells form a continuous point cloud when using default methods, our improvements led to a clear separation of oligodendrocytes, OPCs and endothelial cells.
 Furthermore, even cellular sub-states of cells in the continuous neural stem cell lineage were partially separated.
 
-To quantify this performance gain in a more rigorous manner, we used a score that quantifies whether cells were placed, in 15-dimensional PC space, in a neighborhood comprising cells of the same cell type ("neighbor score", see Fig.~\ref{fig:score}E, and Methods for details).
-We then ask how this score depends on the number of available cells.
+To quantify this performance gain in a more rigorous manner, we used a score that quantifies whether cells were placed, in 15-dimensional PC space, in a neighborhood comprising cells of the same cell type ("neighbor score", see Fig.~\ref{fig:score}E, and Methods for details). \new{The neighborhood relation in PCA space is relevant as it is used in many down-stream analyses, e.g., for clustering.}
+We ask how the neighbor score depends on the number of available cells.
 This is relevant as scBS protocols are costly and labor-intensive, and only few laboratories are currently able to obtain thousands of single cell methylomes.
 To simulate smaller data sets, we sub-sampled the 1566-cell data set into smaller data sets, analyzed them again with all combinations of analysis methods, and calculated the mean neighbor score for each (Figure \ref{fig:score}D).
 \new{
 The results confirmed that quantifying methylation at VMRs leads to a cleaner separation of cell states than using promoter regions or 100~kb tiles.
-Using the shrunken mean of residuals as a measure of DNA methylation furthermore improved results.
-This effect was most noticeable in promoters and genomic tiles, presumably because an individual promoter region or tile might span genomic regions with varying levels of DNA methylation as depicted in Fig.~\ref{fig:smoothres}B, which our method accounts for.
+Using the shrunken mean of residuals as a measure of DNA methylation improved results further.
+This effect was most noticeable when using promoters or genomic tiles as intervals, presumably because an individual promoter region or tile might span genomic regions with varying levels of DNA methylation as depicted in Fig.~\ref{fig:smoothres}B, which our method accounts for.
 Although cell cluster separation generally becomes more difficult in those, performance gains were observed also in smaller data sets.
 }
 
+
+
 \new{
-Overall, VMR quantification yielded results similar to those obtained when quantifying ENCODE regulatory regions.
-This demonstrates that our VMR detection approach identifies genomic regions in scBS data that are as informative as state-of-the-art epigenomic annotations.
+Overall, VMR quantification yielded results similar to those obtained when quantifying ENCODE regulatory regions, even though the number of detected VMRs (63\,421) is considerably smaller than the number of ENCODE cCREs (339\,815). This demonstrates that our de-novo VMR detection approach identifies genomic regions in scBS data that are as informative as state-of-the-art epigenomic annotations, as well as its ability to find a parsimonous set of relevant elements. We not that the overlap between the VMRs and the cCREs is quite limited \todo{Give a number} indicating that VMR detection yields information that is complementary to other epigenetic marks.
 An added benefit of VMR detection is that this approach is available even in the absence of such annotations, for instance when studying species other than human or mouse.
-Furthermore, using VMRs over regulatory regions resulted in decreased RAM requirements as well as a shorter runtime, even when accounting for the additional step of VMR detection (Fig.~\ref{fig:score}F).
-This is likely due to the large number of annotated regulatory features (339\,815 in mouse, 1\,063\,878 in human) as opposed to the 63\,421 detected VMRs.
-Filtering regulatory regions by sequencing coverage reduced resource requirements, but at the cost of a reduced ability to distinguish cell types (Fig.~\ref{fig:resource_usage}).
-\todo{simon suggested to stress here that our VMRs are more information-rich than encode regions, because you need fewer VMRs for the same results. We could also mention that encode regions perform poorly in combination with MOFA+ for some reason}
+Furthermore, using VMRs over regulatory regions resulted in decreased RAM requirements as well as a shorter runtime, even when accounting for the additional step of VMR detection (Fig.~\ref{fig:score}F). \todo{maybe move panel F to the Supplement}.
 }
+%Filtering regulatory regions by sequencing coverage reduced resource requirements, but at the cost of a reduced ability to distinguish cell types (Fig.~\ref{fig:resource_usage}).
 
 \new{
 We repeated this benchmark on an additional three published single-cell methylome data sets (Fig.~\ref{fig:score_luo}).
@@ -285,8 +284,8 @@ We furthermore included three additional approaches to perform dimensionality re
 
 \new{
 These extensive benchmarks confirmed that our proposed combination of methods, i.e.\ using the shrunken means of residuals of VMRs for dimensionality reduction, is able to distinguish diverse cellular properties such as cell type, \todo{colorectal cancer sampling region(?)}, embryonic stage, and germ layer (Fig.~\ref{fig:resource_usage}).
-Our benchmarks furthermore reveal that groups of cells are more readily separated in large data sets.
-As the neighbor score started to plateau at approximately 1000 cells, we propose that this represents a reasonable target cell number for future scBS studies.
+Our benchmarks also quantify how groups of cells become more readily separated in larger data sets.
+As the neighbor score started to plateau at approximately 1000 cells, we propose that this represents a reasonable target cell number for future scBS studies. \todo{We may want to omit these last two sentences, as they might invite too much debate.}
 }
 
 
@@ -299,6 +298,9 @@ For the \new{CpG-methylation} data of \citet{luo2017single}, results are nearly 
 In the more challenging data set of \citet{kremer_scnmt}, cell types were less cleanly separated when very large bandwidths, very strict variance thresholds, \new{or a very large step size was} selected (Fig.~\ref{fig:sweep}A,C).
 However, very small bandwidths or very lenient thresholds resulted in a much higher number of VMRs and thus long computing times.
 Overall, our default parameter combination provided good results and fast compute times in both data sets.
+
+
+\subsubsection{Further applications}
 
 \new{
 Lastly, we asked whether our methods are also suitable for the analysis of DNA methylation outside the default CpG context.
@@ -734,6 +736,7 @@ We thank Alexey Uvarovskii for code refactoring and helpful suggestions on the s
 \onecolumn 
 \newpage
 \section{Supplementary Figures}
+\vspace{1.5cm}
 
 \setcounter{figure}{0}
 \renewcommand{\thefigure}{S\arabic{figure}}
@@ -749,7 +752,7 @@ We thank Alexey Uvarovskii for code refactoring and helpful suggestions on the s
 	Each analysis was performed for the full data sets and sub-samples of each.
 	Four sets of genomic intervals (VMRs, ENCODE regulatory elements, 100~kb tiles or promoters) were quantified and separately subjected to four dimensionality reduction techniques (see Methods for details):
 	iterative PCA as proposed by us, mean-imputed PCA on intervals with high sequencing coverage \citep{luo2017single}, mean-imputed PCA on all intervals, and MOFA+ \citep{argelaguet2020mofa} on all intervals.
-	For each combination of methods, we quantified the ability to separate ground-truth cell labels reported by the authors in 15-dimensional PCA space (neighbor score).
+	For each combination of methods, we quantified the ability to use distance in 15-dimensional PCA space to separate ground-truth cell labels reported by the authors (neighbor score).
 	\textbf{(A)} Separation of neural cell types/states annotated based on scRNA-seq of the same cells \citep{kremer_scnmt}.
 	\textbf{(B)} Separation of neuron sub-types, annotated by averaging CH-methylation (mCH) in 100~kb genomic tiles \citep{luo2017single}.
 	\textbf{(C)} Separation of human colorectal cancer sampling regions (normal adjacent tissue, primary tumor, lymph node metastasis, liver metastasis before and after treatment, omental metastasis) \citep{bian2018single}.
@@ -758,7 +761,10 @@ We thank Alexey Uvarovskii for code refactoring and helpful suggestions on the s
 	Germ layer and lineage (\textbf{E}, only E7.5-cells) were annotated by \citet{argelaguet2019gastru} based on scRNA-seq of the same cells.
 	}}
 	\label{fig:score_luo}
+
 \end{minipage}
+\vfill
+\newpage
 
 \noindent%
 \begin{minipage}{\linewidth}
