@@ -2,23 +2,24 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="210.30658mm"
    height="121.30581mm"
    viewBox="0 0 210.30658 121.30581"
    version="1.1"
    id="svg8"
    sodipodi:docname="Fig_benchmark.svg"
-   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    inkscape:export-filename="/home/lukas/code/scbs-paper/figures/Fig_benchmark.png"
    inkscape:export-xdpi="250"
-   inkscape:export-ydpi="250">
+   inkscape:export-ydpi="250"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <defs
      id="defs2">
     <marker
@@ -727,6 +728,42 @@
          d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
          transform="scale(-0.6)" />
     </marker>
+    <clipPath
+       id="cpNzIuMjV8MjA0LjI4fDUuNDh8NTQuMTU=">
+      <rect
+         x="72.25"
+         y="5.48"
+         width="132.03"
+         height="48.669998"
+         id="rect17-7" />
+    </clipPath>
+    <clipPath
+       id="cpNzIuMjV8MjA0LjI4fDU5LjYzfDE1Mi41NQ==">
+      <rect
+         x="72.25"
+         y="59.630001"
+         width="132.03"
+         height="92.919998"
+         id="rect56" />
+    </clipPath>
+    <clipPath
+       id="cpMjA0LjI4fDIyMS4yOXw1OS42M3wxNTIuNTU=">
+      <rect
+         x="204.28"
+         y="59.630001"
+         width="17.01"
+         height="92.919998"
+         id="rect122" />
+    </clipPath>
+    <clipPath
+       id="cpMC4wMHwyMjYuNzd8MC4wMHwxODQuMjU=">
+      <rect
+         x="0"
+         y="0"
+         width="226.77"
+         height="184.25"
+         id="rect8-2" />
+    </clipPath>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -736,20 +773,21 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="433.18489"
-     inkscape:cy="208.1463"
+     inkscape:cx="457.85164"
+     inkscape:cy="249.25514"
      inkscape:document-units="mm"
      inkscape:current-layer="layer2"
      showgrid="false"
      inkscape:window-width="2560"
      inkscape:window-height="1376"
      inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0" />
+     fit-margin-bottom="0"
+     inkscape:pagecheckerboard="0" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -758,7 +796,6 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1152,13 +1189,11 @@
              x="128.5274"
              y="42.246368"
              style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.1044445px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.35277778"
-             id="text181">
-            <tspan
+             id="text181"><tspan
                sodipodi:role="line"
                id="tspan9878"
                x="128.5274"
-               y="42.246368">% meth.</tspan>
-          </text>
+               y="42.246368">% meth.</tspan></text>
           <text
              x="94.152657"
              y="33.867897"
@@ -10828,13 +10863,11 @@
          id="text163-0-7-6"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88055563px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.35277778"
          y="66.286888"
-         x="37.828438">
-        <tspan
+         x="37.828438"><tspan
            y="66.286888"
            x="37.828438"
            id="tspan36089"
-           sodipodi:role="line">gene expression</tspan>
-      </text>
+           sodipodi:role="line">gene expression</tspan></text>
     </g>
     <g
        id="g11469"
@@ -21886,35 +21919,29 @@
          id="text163-0-7-4-7"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88055563px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.35277778"
          y="71.246078"
-         x="42.634285">
-        <tspan
+         x="42.634285"><tspan
            y="71.246078"
            x="42.634285"
            id="tspan28359"
-           sodipodi:role="line">neighbor score (k=5)</tspan>
-      </text>
+           sodipodi:role="line">neighbor score (k=5)</tspan></text>
       <text
          id="text163-0-7-4-7-8"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88055563px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.35277778"
          y="82.938728"
-         x="77.653297">
-        <tspan
+         x="77.653297"><tspan
            y="82.938728"
            x="77.653297"
            id="tspan33130"
-           sodipodi:role="line">5/5 = 1.0</tspan>
-      </text>
+           sodipodi:role="line">5/5 = 1.0</tspan></text>
       <text
          id="text163-0-7-4-7-8-1"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88055563px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.35277778"
          y="112.19983"
-         x="77.604988">
-        <tspan
+         x="77.604988"><tspan
            y="112.19983"
            x="77.604988"
            id="tspan28399"
-           sodipodi:role="line">1/5 = 0.2</tspan>
-      </text>
+           sodipodi:role="line">1/5 = 0.2</tspan></text>
     </g>
     <g
        id="g14624"
@@ -40782,26 +40809,22 @@
            x="110.78497"
            y="-10.442271"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88055563px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.35277778"
-           id="text163-0">
-          <tspan
+           id="text163-0"><tspan
              y="-10.442271"
              x="110.78497"
              style="line-height:0%"
              id="tspan8199"
-             sodipodi:role="line">VMRs,</tspan>
-        </text>
+             sodipodi:role="line">VMRs,</tspan></text>
         <text
            id="text163-0-3"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88055563px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.35277778"
            y="-7.267261"
-           x="112.32698">
-          <tspan
+           x="112.32698"><tspan
              sodipodi:role="line"
              id="tspan8199-7"
              style="line-height:0%;stroke-width:0.35277778"
              x="112.32698"
-             y="-7.267261">shrunken mean of residuals</tspan>
-        </text>
+             y="-7.267261">shrunken mean of residuals</tspan></text>
       </g>
       <g
          transform="translate(66.459448,15.611797)"
@@ -40810,24 +40833,20 @@
            x="110.78497"
            y="-10.820247"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88055563px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.35277778"
-           id="text163-0-2">
-          <tspan
+           id="text163-0-2"><tspan
              y="-10.820247"
              x="110.78497"
              id="tspan9853"
-             sodipodi:role="line">100 kb tiles,</tspan>
-        </text>
+             sodipodi:role="line">100 kb tiles,</tspan></text>
         <text
            id="text163-0-3-5"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88055563px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.35277778"
            y="-7.267261"
-           x="110.73949">
-          <tspan
+           x="110.73949"><tspan
              y="-7.267261"
              x="110.73949"
              id="tspan9857"
-             sodipodi:role="line">methylation %</tspan>
-        </text>
+             sodipodi:role="line">methylation %</tspan></text>
       </g>
     </g>
     <g
@@ -40837,26 +40856,22 @@
          id="text163-0-9"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88055563px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.35277778"
          y="18.698811"
-         x="379.85352">
-        <tspan
+         x="379.85352"><tspan
            sodipodi:role="line"
            id="tspan8199-4"
            style="line-height:0%;stroke-width:0.35277778"
            x="379.85352"
-           y="18.698811">VMRs,</tspan>
-      </text>
+           y="18.698811">VMRs,</tspan></text>
       <text
          x="381.39551"
          y="21.873821"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88055563px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.35277778"
-         id="text163-0-3-59">
-        <tspan
+         id="text163-0-3-59"><tspan
            y="21.873821"
            x="381.39551"
            style="line-height:0%;stroke-width:0.35277778"
            id="tspan8199-7-3"
-           sodipodi:role="line">shrunken mean of residuals</tspan>
-      </text>
+           sodipodi:role="line">shrunken mean of residuals</tspan></text>
     </g>
     <g
        id="g41294"
@@ -40865,25 +40880,21 @@
          id="text163-0-2-4"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88055563px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.35277778"
          y="11.944445"
-         x="288.85275">
-        <tspan
+         x="288.85275"><tspan
            sodipodi:role="line"
            id="tspan9853-7"
            x="288.85275"
            y="11.944445"
-           style="stroke-width:0.35277778">100 kb tiles,</tspan>
-      </text>
+           style="stroke-width:0.35277778">100 kb tiles,</tspan></text>
       <text
          x="288.80728"
          y="15.497431"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88055563px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.35277778"
-         id="text163-0-3-5-4">
-        <tspan
+         id="text163-0-3-5-4"><tspan
            id="tspan41288"
            sodipodi:role="line"
            x="288.80728"
-           y="15.497431">average methylation</tspan>
-      </text>
+           y="15.497431">average methylation</tspan></text>
     </g>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.27298945px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -51873,38 +51884,32 @@
        x="115.49718"
        y="93.824059"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.96818566px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.26983505"
-       id="text163-0-7-4-7-9">
-      <tspan
+       id="text163-0-7-4-7-9"><tspan
          sodipodi:role="line"
          id="tspan28359-7"
          x="115.49718"
          y="93.824059"
-         style="stroke-width:0.26983505">neighbor score (k=5)</tspan>
-    </text>
+         style="stroke-width:0.26983505">neighbor score (k=5)</tspan></text>
     <text
        x="141.44252"
        y="103.36823"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.6504271px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.24094792"
-       id="text163-0-7-4-7-8-5">
-      <tspan
+       id="text163-0-7-4-7-8-5"><tspan
          sodipodi:role="line"
          id="tspan33130-6"
          x="141.44252"
          y="103.36823"
-         style="stroke-width:0.24094792">5/5 = 1.0</tspan>
-    </text>
+         style="stroke-width:0.24094792">5/5 = 1.0</tspan></text>
     <text
        x="141.40953"
        y="111.57022"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.6504271px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.24094792"
-       id="text163-0-7-4-7-8-1-0">
-      <tspan
+       id="text163-0-7-4-7-8-1-0"><tspan
          sodipodi:role="line"
          id="tspan28399-5"
          x="141.40953"
          y="111.57022"
-         style="stroke-width:0.24094792">1/5 = 0.2</tspan>
-    </text>
+         style="stroke-width:0.24094792">1/5 = 0.2</tspan></text>
     <circle
        id="circle1535-6-2-2-9"
        style="fill:#1f77b4;stroke:none;stroke-width:0.60677141"
@@ -51932,55 +51937,45 @@
        style="font-size:3.88055539px;font-family:'Liberation Sans';text-anchor:middle;stroke-width:0.35277778"
        id="text165-2"
        inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300">
-      <tspan
+       inkscape:export-ydpi="300"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle"
-         id="tspan35940">A</tspan>
-    </text>
+         id="tspan35940">A</tspan></text>
     <text
        y="-119.80745"
        x="94.595512"
        style="font-size:3.88055539px;font-family:'Liberation Sans';text-anchor:middle;stroke-width:0.35277778"
        id="text165-2-2"
        inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300">
-      <tspan
+       inkscape:export-ydpi="300"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.35277778"
-         id="tspan35940-6">B</tspan>
-    </text>
+         id="tspan35940-6">B</tspan></text>
     <text
        y="-60.744884"
        x="104.92503"
        style="font-size:3.88055539px;font-family:'Liberation Sans';text-anchor:middle;stroke-width:0.35277778"
        id="text165-2-4"
        inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300">
-      <tspan
+       inkscape:export-ydpi="300"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.35277778"
-         id="tspan35940-5">E</tspan>
-    </text>
+         id="tspan35940-5">E</tspan></text>
     <text
        y="-119.74957"
        x="152.20564"
        style="font-size:3.88055539px;font-family:'Liberation Sans';text-anchor:middle;stroke-width:0.35277778"
        id="text165-2-4-3"
        inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300">
-      <tspan
+       inkscape:export-ydpi="300"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.35277778"
-         id="tspan35940-5-2">C</tspan>
-    </text>
+         id="tspan35940-5-2">C</tspan></text>
     <text
        y="-60.744884"
        x="13.925672"
        style="font-size:3.88055539px;font-family:'Liberation Sans';text-anchor:middle;display:inline;stroke-width:0.35277778"
        id="text165-2-3"
        inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300">
-      <tspan
+       inkscape:export-ydpi="300"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.35277778"
-         id="tspan35940-67">D</tspan>
-    </text>
+         id="tspan35940-67">D</tspan></text>
     <g
        clip-path="url(#cpMzcuNDR8MjI0Ljc0fDUuNDh8MTU3LjIy)"
        id="g178"
@@ -52580,373 +52575,6 @@
        clip-path="url(#cpMC4wMHwyMjYuNzd8MC4wMHwyMjYuNzc=-1)"
        id="g6967"
        transform="matrix(0.3527778,0,0,0.3527778,134.34047,81.197093)" />
-    <g
-       id="g7374"
-       transform="matrix(0.88606873,0,0,0.88606873,29.047092,29.518355)">
-      <g
-         transform="translate(-3.2072343,-54.009932)"
-         id="g7304">
-        <g
-           clip-path="url(#cpMTE4LjA5fDIxNS44MXwxMC45Nnw0NS43MQ==-4)"
-           id="g6866"
-           transform="matrix(0.3527778,0,0,0.3527778,134.34047,81.197093)">
-          <rect
-             x="118.09"
-             y="10.96"
-             width="97.720001"
-             height="34.75"
-             style="fill:#ffffff;stroke:none;stroke-width:1.07000005"
-             id="rect6856" />
-          <rect
-             x="119.01"
-             y="34.310001"
-             width="7.4200001"
-             height="9.7700005"
-             style="fill:#ffc107;stroke:none;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:miter"
-             id="rect6858" />
-          <rect
-             x="119.01"
-             y="23.450001"
-             width="92.190002"
-             height="9.7700005"
-             style="fill:#8b0000;stroke:none;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:miter"
-             id="rect6860" />
-          <rect
-             x="119.01"
-             y="12.59"
-             width="17.209999"
-             height="9.7700005"
-             style="fill:#1665ab;stroke:none;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:miter"
-             id="rect6862" />
-          <rect
-             x="118.09"
-             y="10.96"
-             width="97.720001"
-             height="34.75"
-             style="fill:none;stroke:#333333;stroke-width:1.07000005"
-             id="rect6864" />
-        </g>
-        <text
-           id="text6868"
-           style="font-size:3.10444474px;font-family:'Liberation Sans';text-anchor:end;fill:#4d4d4d;stroke-width:0.35277781"
-           y="96.154869"
-           x="174.2608">100 kb tiles</text>
-        <text
-           id="text6870"
-           style="font-size:3.10444474px;font-family:'Liberation Sans';text-anchor:end;fill:#4d4d4d;stroke-width:0.35277781"
-           y="92.323708"
-           x="174.2608">regulatory elements</text>
-        <text
-           id="text6872"
-           style="font-size:3.10444474px;font-family:'Liberation Sans';text-anchor:end;fill:#4d4d4d;stroke-width:0.35277781"
-           y="88.492538"
-           x="174.2608">VMRs</text>
-        <polyline
-           id="polyline6874"
-           style="stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt"
-           points="115.35,39.20 118.09,39.20 "
-           transform="matrix(0.3527778,0,0,0.3527778,134.34047,81.197093)" />
-        <polyline
-           id="polyline6876"
-           style="stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt"
-           points="115.35,28.34 118.09,28.34 "
-           transform="matrix(0.3527778,0,0,0.3527778,134.34047,81.197093)" />
-        <polyline
-           id="polyline6878"
-           style="stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt"
-           points="115.35,17.48 118.09,17.48 "
-           transform="matrix(0.3527778,0,0,0.3527778,134.34047,81.197093)" />
-        <polyline
-           id="polyline6880"
-           style="stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt"
-           points="119.01,48.45 119.01,45.71 "
-           transform="matrix(0.3527778,0,0,0.3527778,134.34047,81.197093)" />
-        <polyline
-           id="polyline6882"
-           style="stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt"
-           points="146.14,48.45 146.14,45.71 "
-           transform="matrix(0.3527778,0,0,0.3527778,134.34047,81.197093)" />
-        <polyline
-           id="polyline6884"
-           style="stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt"
-           points="173.27,48.45 173.27,45.71 "
-           transform="matrix(0.3527778,0,0,0.3527778,134.34047,81.197093)" />
-        <polyline
-           id="polyline6886"
-           style="stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt"
-           points="200.40,48.45 200.40,45.71 "
-           transform="matrix(0.3527778,0,0,0.3527778,134.34047,81.197093)" />
-        <text
-           id="text6888"
-           style="font-size:3.10444474px;font-family:'Liberation Sans';text-anchor:middle;fill:#4d4d4d;stroke-width:0.35277781"
-           y="101.32659"
-           x="176.32455">0</text>
-        <text
-           id="text6890"
-           style="font-size:3.10444474px;font-family:'Liberation Sans';text-anchor:middle;fill:#4d4d4d;stroke-width:0.35277781"
-           y="101.32659"
-           x="185.89542">100k</text>
-        <text
-           id="text6892"
-           style="font-size:3.10444474px;font-family:'Liberation Sans';text-anchor:middle;fill:#4d4d4d;stroke-width:0.35277781"
-           y="101.32659"
-           x="195.46628">200k</text>
-        <text
-           id="text6894"
-           style="font-size:3.10444474px;font-family:'Liberation Sans';text-anchor:middle;fill:#4d4d4d;stroke-width:0.35277781"
-           y="101.32659"
-           x="205.03714">300k</text>
-        <text
-           id="text6896"
-           style="font-size:3.46602249px;font-family:'Liberation Sans';text-anchor:middle;stroke-width:0.31509295"
-           y="105.46769"
-           x="190.68353">number of genomic features</text>
-      </g>
-      <g
-         transform="translate(-3.2072343,-56.1266)"
-         id="g7256">
-        <g
-           clip-path="url(#cpMTE4LjA5fDIxNS44MXw4Mi45MHwxMTcuNjU=-7)"
-           id="g6928"
-           transform="matrix(0.3527778,0,0,0.3527778,134.34047,81.197093)">
-          <rect
-             x="118.09"
-             y="82.900002"
-             width="97.720001"
-             height="34.75"
-             style="fill:#ffffff;stroke:none;stroke-width:1.07000005"
-             id="rect6916" />
-          <rect
-             x="119.01"
-             y="106.25"
-             width="6.0999999"
-             height="9.7700005"
-             style="fill:#ffc107;stroke:none;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:miter"
-             id="rect6918" />
-          <rect
-             x="123.51"
-             y="84.529999"
-             width="5.7800002"
-             height="9.7700005"
-             style="fill:#1665ab;stroke:none;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:miter"
-             id="rect6920" />
-          <rect
-             x="119.01"
-             y="95.389999"
-             width="92.190002"
-             height="9.7700005"
-             style="fill:#8b0000;stroke:none;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:miter"
-             id="rect6922" />
-          <rect
-             x="119.01"
-             y="84.529999"
-             width="4.5"
-             height="9.7700005"
-             style="fill:#1665ab;fill-opacity:0.5;stroke:none;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:miter"
-             id="rect6924" />
-          <rect
-             x="118.09"
-             y="82.900002"
-             width="97.720001"
-             height="34.75"
-             style="fill:none;stroke:#333333;stroke-width:1.07000005"
-             id="rect6926" />
-        </g>
-        <g
-           clip-path="url(#cpMC4wMHwyMjYuNzd8MC4wMHwyMjYuNzc=-1)"
-           id="g6956"
-           transform="matrix(0.3527778,0,0,0.3527778,134.34047,81.197093)">
-          <text
-             x="113.16"
-             y="114.34"
-             style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;fill:#4d4d4d"
-             id="text6930">100 kb tiles</text>
-          <text
-             x="113.16"
-             y="103.48"
-             style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;fill:#4d4d4d"
-             id="text6932">regulatory elements</text>
-          <text
-             x="113.16"
-             y="92.620003"
-             style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:end;fill:#4d4d4d"
-             id="text6934">VMRs</text>
-          <polyline
-             points="115.35,111.13 118.09,111.13 "
-             style="stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt"
-             id="polyline6936" />
-          <polyline
-             points="115.35,100.27 118.09,100.27 "
-             style="stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt"
-             id="polyline6938" />
-          <polyline
-             points="115.35,89.41 118.09,89.41 "
-             style="stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt"
-             id="polyline6940" />
-          <polyline
-             points="119.01,120.39 119.01,117.65 "
-             style="stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt"
-             id="polyline6942" />
-          <polyline
-             points="165.17,120.39 165.17,117.65 "
-             style="stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt"
-             id="polyline6944" />
-          <polyline
-             points="211.32,120.39 211.32,117.65 "
-             style="stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt"
-             id="polyline6946" />
-          <text
-             x="119.01"
-             y="129"
-             style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;fill:#4d4d4d"
-             id="text6948">00:00</text>
-          <text
-             x="165.17"
-             y="129"
-             style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;fill:#4d4d4d"
-             id="text6950">01:00</text>
-          <text
-             x="211.32001"
-             y="129"
-             style="font-size:8.80000019px;font-family:'Liberation Sans';text-anchor:middle;fill:#4d4d4d"
-             id="text6952">02:00</text>
-          <text
-             x="165.45628"
-             y="139.136"
-             style="font-size:9.82494545px;font-family:'Liberation Sans';text-anchor:middle;stroke-width:0.89317685"
-             id="text6954">runtime [hours:minutes]</text>
-        </g>
-      </g>
-      <g
-         transform="translate(-3.2072343,-58.243268)"
-         id="g7281">
-        <g
-           clip-path="url(#cpMTE4LjA5fDIxNS44MXwxNTQuODN8MTg5LjU5-8)"
-           id="g6984"
-           transform="matrix(0.3527778,0,0,0.3527778,134.34047,81.197093)">
-          <rect
-             x="118.09"
-             y="154.83"
-             width="97.720001"
-             height="34.75"
-             style="fill:#ffffff;stroke:none;stroke-width:1.07000005"
-             id="rect6974" />
-          <rect
-             x="119.01"
-             y="178.17999"
-             width="7.0700002"
-             height="9.7700005"
-             style="fill:#ffc107;stroke:none;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:miter"
-             id="rect6976" />
-          <rect
-             x="119.01"
-             y="156.46001"
-             width="21.870001"
-             height="9.7700005"
-             style="fill:#1665ab;stroke:none;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:miter"
-             id="rect6978" />
-          <rect
-             x="119.01"
-             y="167.32001"
-             width="92.190002"
-             height="9.7700005"
-             style="fill:#8b0000;stroke:none;stroke-width:1.07000005;stroke-linecap:butt;stroke-linejoin:miter"
-             id="rect6980" />
-          <rect
-             x="118.09"
-             y="154.83"
-             width="97.720001"
-             height="34.75"
-             style="fill:none;stroke:#333333;stroke-width:1.07000005"
-             id="rect6982" />
-        </g>
-        <text
-           id="text6986"
-           style="font-size:3.10444474px;font-family:'Liberation Sans';text-anchor:end;fill:#4d4d4d;stroke-width:0.35277781"
-           y="146.91254"
-           x="174.2608">100 kb tiles</text>
-        <text
-           id="text6988"
-           style="font-size:3.10444474px;font-family:'Liberation Sans';text-anchor:end;fill:#4d4d4d;stroke-width:0.35277781"
-           y="143.08138"
-           x="174.2608">regulatory elements</text>
-        <text
-           id="text6990"
-           style="font-size:3.10444474px;font-family:'Liberation Sans';text-anchor:end;fill:#4d4d4d;stroke-width:0.35277781"
-           y="139.25021"
-           x="174.2608">VMRs</text>
-        <polyline
-           id="polyline6992"
-           style="stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt"
-           points="115.35,183.07 118.09,183.07 "
-           transform="matrix(0.3527778,0,0,0.3527778,134.34047,81.197093)" />
-        <polyline
-           id="polyline6994"
-           style="stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt"
-           points="115.35,172.21 118.09,172.21 "
-           transform="matrix(0.3527778,0,0,0.3527778,134.34047,81.197093)" />
-        <polyline
-           id="polyline6996"
-           style="stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt"
-           points="115.35,161.35 118.09,161.35 "
-           transform="matrix(0.3527778,0,0,0.3527778,134.34047,81.197093)" />
-        <polyline
-           id="polyline6998"
-           style="stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt"
-           points="119.01,192.33 119.01,189.59 "
-           transform="matrix(0.3527778,0,0,0.3527778,134.34047,81.197093)" />
-        <polyline
-           id="polyline7000"
-           style="stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt"
-           points="139.11,192.33 139.11,189.59 "
-           transform="matrix(0.3527778,0,0,0.3527778,134.34047,81.197093)" />
-        <polyline
-           id="polyline7002"
-           style="stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt"
-           points="159.20,192.33 159.20,189.59 "
-           transform="matrix(0.3527778,0,0,0.3527778,134.34047,81.197093)" />
-        <polyline
-           id="polyline7004"
-           style="stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt"
-           points="179.29,192.33 179.29,189.59 "
-           transform="matrix(0.3527778,0,0,0.3527778,134.34047,81.197093)" />
-        <polyline
-           id="polyline7006"
-           style="stroke:#333333;stroke-width:1.07000005;stroke-linecap:butt"
-           points="199.38,192.33 199.38,189.59 "
-           transform="matrix(0.3527778,0,0,0.3527778,134.34047,81.197093)" />
-        <text
-           id="text7008"
-           style="font-size:3.10444474px;font-family:'Liberation Sans';text-anchor:middle;fill:#4d4d4d;stroke-width:0.35277781"
-           y="152.08073"
-           x="176.32455">0</text>
-        <text
-           id="text7010"
-           style="font-size:3.10444474px;font-family:'Liberation Sans';text-anchor:middle;fill:#4d4d4d;stroke-width:0.35277781"
-           y="152.08073"
-           x="183.41539">10</text>
-        <text
-           id="text7012"
-           style="font-size:3.10444474px;font-family:'Liberation Sans';text-anchor:middle;fill:#4d4d4d;stroke-width:0.35277781"
-           y="152.08073"
-           x="190.5027">20</text>
-        <text
-           id="text7014"
-           style="font-size:3.10444474px;font-family:'Liberation Sans';text-anchor:middle;fill:#4d4d4d;stroke-width:0.35277781"
-           y="152.08073"
-           x="197.59">30</text>
-        <text
-           id="text7016"
-           style="font-size:3.10444474px;font-family:'Liberation Sans';text-anchor:middle;fill:#4d4d4d;stroke-width:0.35277781"
-           y="152.08073"
-           x="204.67731">40</text>
-        <text
-           id="text7018"
-           style="font-size:3.46602249px;font-family:'Liberation Sans';text-anchor:middle;stroke-width:0.31509295"
-           y="155.5181"
-           x="193.02971">max. RAM usage [GB]</text>
-      </g>
-    </g>
     <g
        clip-path="url(#cpMC4wMHw1NjYuOTN8MC4wMHwyODMuNDY=-9)"
        id="g17181"
@@ -71932,14 +71560,14 @@
          style="font-size:3.10444474px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.35277781"
          id="text268">regulatory elements</text>
       <text
-         x="113.22165"
+         x="112.16331"
          y="41.283051"
-         style="font-size:3.10444474px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.35277781"
+         style="font-size:3.10444px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.352778"
          id="text286">shrunken mean of residuals</text>
       <text
-         x="113.22165"
+         x="112.16331"
          y="37.324883"
-         style="font-size:3.10444474px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.35277781"
+         style="font-size:3.10444px;font-family:'Liberation Sans';white-space:pre;stroke-width:0.352778"
          id="text288">average methylation</text>
       <g
          style="fill:none;fill-opacity:1;stroke:#228b22"
@@ -72020,8 +71648,8 @@
          inkscape:connector-curvature="0"
          sodipodi:nodetypes="cc" />
       <path
-         style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.24807473;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 99.223512,40.131319 H 112.11594"
+         style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.248075;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 99.223512,40.131319 H 111.05761"
          id="path36611-1-1-7"
          inkscape:connector-curvature="0"
          sodipodi:nodetypes="cc" />
@@ -72032,8 +71660,8 @@
          inkscape:connector-curvature="0"
          sodipodi:nodetypes="cc" />
       <path
-         style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.24807473;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m 106.65547,36.616138 h 5.46047"
+         style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.248075;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 106.65547,36.616138 h 4.40214"
          id="path36611-1-1-7-5"
          inkscape:connector-curvature="0"
          sodipodi:nodetypes="cc" />
@@ -81584,18 +81212,15 @@
          id="text163-0-7-6-3"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88055563px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.35277778"
          y="66.286888"
-         x="37.828438">
-        <tspan
+         x="37.828438"><tspan
            sodipodi:role="line"
            id="tspan55135"
            x="37.828438"
-           y="66.286888">gene expression</tspan>
-        <tspan
+           y="66.286888">gene expression</tspan><tspan
            sodipodi:role="line"
            id="tspan55137"
            x="37.828438"
-           y="71.137581">(ground truth)</tspan>
-      </text>
+           y="71.137581">(ground truth)</tspan></text>
     </g>
     <text
        y="4.4946837"
@@ -81603,11 +81228,9 @@
        style="font-size:3.88055539px;font-family:'Liberation Sans';text-anchor:middle;display:inline;stroke-width:0.35277778"
        id="text165-2-0"
        inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300">
-      <tspan
+       inkscape:export-ydpi="300"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.35277778"
-         id="tspan35940-7">A</tspan>
-    </text>
+         id="tspan35940-7">A</tspan></text>
     <text
        x="30.03339"
        y="51.325939"
@@ -81637,54 +81260,417 @@
        style="font-size:3.88055539px;font-family:'Liberation Sans';text-anchor:middle;display:inline;stroke-width:0.35277778"
        id="text165-2-2-9"
        inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300">
-      <tspan
+       inkscape:export-ydpi="300"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.35277778"
-         id="tspan35940-6-4">B</tspan>
-    </text>
+         id="tspan35940-6-4">B</tspan></text>
     <text
        y="94.241997"
        x="98.051735"
        style="font-size:3.88055539px;font-family:'Liberation Sans';text-anchor:middle;display:inline;stroke-width:0.35277778"
        id="text165-2-4-4"
        inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300">
-      <tspan
+       inkscape:export-ydpi="300"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.35277778"
-         id="tspan35940-5-6">E</tspan>
-    </text>
+         id="tspan35940-5-6">E</tspan></text>
     <text
        y="4.5525613"
        x="161.86852"
        style="font-size:3.88055539px;font-family:'Liberation Sans';text-anchor:middle;display:inline;stroke-width:0.35277778"
        id="text165-2-4-3-8"
        inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300">
-      <tspan
+       inkscape:export-ydpi="300"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.35277778"
-         id="tspan35940-5-2-5">C</tspan>
-    </text>
+         id="tspan35940-5-2-5">C</tspan></text>
     <text
        y="59.751659"
        x="14.800879"
        style="font-size:3.88055539px;font-family:'Liberation Sans';text-anchor:middle;display:inline;stroke-width:0.35277778"
        id="text165-2-3-9"
        inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300">
-      <tspan
+       inkscape:export-ydpi="300"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.35277778"
-         id="tspan35940-67-8">D</tspan>
-    </text>
+         id="tspan35940-67-8">D</tspan></text>
     <text
        y="59.751659"
        x="156.61757"
        style="font-size:3.88055539px;font-family:'Liberation Sans';text-anchor:middle;display:inline;stroke-width:0.35277778"
        id="text165-2-3-9-2"
        inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300">
-      <tspan
+       inkscape:export-ydpi="300"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.35277778"
-         id="tspan35940-67-8-3">F</tspan>
-    </text>
+         id="tspan35940-67-8-3">F</tspan></text>
+    <g
+       id="g14205"
+       transform="matrix(1.1142432,0,0,1.1142432,-25.187794,-11.517742)">
+      <image
+         width="39.636894"
+         height="27.89563"
+         x="176.20642"
+         y="78.948593"
+         preserveAspectRatio="none"
+         xlink:href="data:image/png;base64,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"
+         id="image63" />
+      <image
+         width="39.636898"
+         height="14.611282"
+         x="176.20642"
+         y="62.692154"
+         preserveAspectRatio="none"
+         xlink:href="data:image/png;base64,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"
+         id="image34" />
+      <g
+         clip-path="url(#cpNzIuMjV8MjA0LjI4fDUuNDh8NTQuMTU=)"
+         id="g52"
+         transform="matrix(0.30021127,0,0,0.30021127,154.51614,61.046998)">
+        <polyline
+           points="72.25,54.15 72.25,5.48 "
+           style="stroke:#ebebeb;stroke-width:1.07;stroke-linecap:butt"
+           id="polyline24-4" />
+        <polyline
+           points="102.50,54.15 102.50,5.48 "
+           style="stroke:#ebebeb;stroke-width:1.07;stroke-linecap:butt"
+           id="polyline26-5" />
+        <polyline
+           points="132.76,54.15 132.76,5.48 "
+           style="stroke:#ebebeb;stroke-width:1.07;stroke-linecap:butt"
+           id="polyline28-2" />
+        <polyline
+           points="163.02,54.15 163.02,5.48 "
+           style="stroke:#ebebeb;stroke-width:1.07;stroke-linecap:butt"
+           id="polyline30-0" />
+        <polyline
+           points="193.27,54.15 193.27,5.48 "
+           style="stroke:#ebebeb;stroke-width:1.07;stroke-linecap:butt"
+           id="polyline32-2" />
+        <polyline
+           points="79.21,44.19 79.21,37.56 "
+           style="stroke-width:0.64;stroke-linecap:butt"
+           id="polyline34-9" />
+        <polyline
+           points="79.21,40.88 78.26,40.88 "
+           style="stroke-width:0.64;stroke-linecap:butt"
+           id="polyline36-0" />
+        <polyline
+           points="78.26,44.19 78.26,37.56 "
+           style="stroke-width:0.64;stroke-linecap:butt"
+           id="polyline38-9" />
+        <polyline
+           points="201.06,22.07 201.06,15.43 "
+           style="stroke-width:0.64;stroke-linecap:butt"
+           id="polyline40-9" />
+        <polyline
+           points="201.06,18.75 197.53,18.75 "
+           style="stroke-width:0.64;stroke-linecap:butt"
+           id="polyline42-4" />
+        <polyline
+           points="197.53,22.07 197.53,15.43 "
+           style="stroke-width:0.64;stroke-linecap:butt"
+           id="polyline44-5" />
+        <circle
+           cx="74.900002"
+           cy="40.880001"
+           r="1.42"
+           style="fill:#1f77b4;fill-opacity:1;stroke:#1f77b4;stroke-width:0.71"
+           id="circle46" />
+        <circle
+           cx="191.05"
+           cy="18.75"
+           r="1.42"
+           style="fill:#1f77b4;fill-opacity:1;stroke:#1f77b4;stroke-width:0.71"
+           id="circle48" />
+        <rect
+           x="72.25"
+           y="5.48"
+           width="132.03"
+           height="48.669998"
+           style="fill:none;stroke:#000000;stroke-width:1.07;stroke-opacity:1"
+           id="rect50" />
+      </g>
+      <g
+         clip-path="url(#cpNzIuMjV8MjA0LjI4fDU5LjYzfDE1Mi41NQ==)"
+         id="g107"
+         transform="matrix(0.30021127,0,0,0.30021127,154.51614,61.046998)">
+        <polyline
+           points="72.25,152.55 72.25,59.63 "
+           style="stroke:#ebebeb;stroke-width:1.07;stroke-linecap:butt"
+           id="polyline63" />
+        <polyline
+           points="102.50,152.55 102.50,59.63 "
+           style="stroke:#ebebeb;stroke-width:1.07;stroke-linecap:butt"
+           id="polyline65" />
+        <polyline
+           points="132.76,152.55 132.76,59.63 "
+           style="stroke:#ebebeb;stroke-width:1.07;stroke-linecap:butt"
+           id="polyline67" />
+        <polyline
+           points="163.02,152.55 163.02,59.63 "
+           style="stroke:#ebebeb;stroke-width:1.07;stroke-linecap:butt"
+           id="polyline69" />
+        <polyline
+           points="193.27,152.55 193.27,59.63 "
+           style="stroke:#ebebeb;stroke-width:1.07;stroke-linecap:butt"
+           id="polyline71" />
+        <polyline
+           points="136.34,142.59 136.34,135.95 "
+           style="stroke-width:0.64;stroke-linecap:butt"
+           id="polyline73" />
+        <polyline
+           points="136.34,139.27 134.58,139.27 "
+           style="stroke-width:0.64;stroke-linecap:butt"
+           id="polyline75" />
+        <polyline
+           points="134.58,142.59 134.58,135.95 "
+           style="stroke-width:0.64;stroke-linecap:butt"
+           id="polyline77" />
+        <polyline
+           points="117.42,120.47 117.42,113.83 "
+           style="stroke-width:0.64;stroke-linecap:butt"
+           id="polyline79" />
+        <polyline
+           points="117.42,117.15 115.50,117.15 "
+           style="stroke-width:0.64;stroke-linecap:butt"
+           id="polyline81" />
+        <polyline
+           points="115.50,120.47 115.50,113.83 "
+           style="stroke-width:0.64;stroke-linecap:butt"
+           id="polyline83" />
+        <polyline
+           points="84.45,98.35 84.45,91.71 "
+           style="stroke-width:0.64;stroke-linecap:butt"
+           id="polyline85" />
+        <polyline
+           points="84.45,95.03 83.30,95.03 "
+           style="stroke-width:0.64;stroke-linecap:butt"
+           id="polyline87" />
+        <polyline
+           points="83.30,98.35 83.30,91.71 "
+           style="stroke-width:0.64;stroke-linecap:butt"
+           id="polyline89" />
+        <polyline
+           points="79.65,76.22 79.65,69.59 "
+           style="stroke-width:0.64;stroke-linecap:butt"
+           id="polyline91" />
+        <polyline
+           points="79.65,72.90 78.74,72.90 "
+           style="stroke-width:0.64;stroke-linecap:butt"
+           id="polyline93" />
+        <polyline
+           points="78.74,76.22 78.74,69.59 "
+           style="stroke-width:0.64;stroke-linecap:butt"
+           id="polyline95" />
+        <circle
+           cx="125.13"
+           cy="117.15"
+           r="1.42"
+           style="fill:#1f77b4;fill-opacity:1;stroke:#1f77b4;stroke-width:0.71"
+           id="circle97-1" />
+        <circle
+           cx="85.779999"
+           cy="95.029999"
+           r="1.42"
+           style="fill:#1f77b4;fill-opacity:1;stroke:#1f77b4;stroke-width:0.71"
+           id="circle99-0" />
+        <circle
+           cx="75.760002"
+           cy="72.900002"
+           r="1.42"
+           style="fill:#1f77b4;fill-opacity:1;stroke:#1f77b4;stroke-width:0.71"
+           id="circle101-3" />
+        <circle
+           cx="145.28999"
+           cy="139.27"
+           r="1.42"
+           style="fill:#1f77b4;fill-opacity:1;stroke:#1f77b4;stroke-width:0.71"
+           id="circle103-7" />
+        <rect
+           x="72.25"
+           y="59.630001"
+           width="132.03"
+           height="92.919998"
+           style="fill:none;stroke:#000000;stroke-width:1.07;stroke-opacity:1"
+           id="rect105" />
+      </g>
+      <g
+         clip-path="url(#cpMjA0LjI4fDIyMS4yOXw1OS42M3wxNTIuNTU=)"
+         id="g131"
+         transform="matrix(0.30021127,0,0,0.30021127,150.28816,61.046998)">
+        <text
+           transform="rotate(90)"
+           text-anchor="middle"
+           style="font-size:8.8px;font-family:'Liberation Sans';fill:#1a1a1a"
+           id="text129"
+           x="106.09"
+           y="-209.58">ENCODE cCREs</text>
+      </g>
+      <polyline
+         points="72.25,155.29 72.25,152.55 "
+         style="stroke:#333333;stroke-width:1.07;stroke-linecap:butt"
+         id="polyline133-8"
+         transform="matrix(0.30021127,0,0,0.30021127,154.51614,61.046998)" />
+      <polyline
+         points="102.50,155.29 102.50,152.55 "
+         style="stroke:#333333;stroke-width:1.07;stroke-linecap:butt"
+         id="polyline135-8"
+         transform="matrix(0.30021127,0,0,0.30021127,154.51614,61.046998)" />
+      <polyline
+         points="132.76,155.29 132.76,152.55 "
+         style="stroke:#333333;stroke-width:1.07;stroke-linecap:butt"
+         id="polyline137-6"
+         transform="matrix(0.30021127,0,0,0.30021127,154.51614,61.046998)" />
+      <polyline
+         points="163.02,155.29 163.02,152.55 "
+         style="stroke:#333333;stroke-width:1.07;stroke-linecap:butt"
+         id="polyline139-0"
+         transform="matrix(0.30021127,0,0,0.30021127,154.51614,61.046998)" />
+      <polyline
+         points="193.27,155.29 193.27,152.55 "
+         style="stroke:#333333;stroke-width:1.07;stroke-linecap:butt"
+         id="polyline141-4"
+         transform="matrix(0.30021127,0,0,0.30021127,154.51614,61.046998)" />
+      <text
+         x="176.20642"
+         y="110.24862"
+         text-anchor="middle"
+         style="font-size:2.64186px;font-family:'Liberation Sans';fill:#4d4d4d;stroke-width:0.300211"
+         id="text143">0%</text>
+      <text
+         x="185.28781"
+         y="110.24862"
+         text-anchor="middle"
+         style="font-size:2.64186px;font-family:'Liberation Sans';fill:#4d4d4d;stroke-width:0.300211"
+         id="text145">10%</text>
+      <text
+         x="194.37221"
+         y="110.24862"
+         text-anchor="middle"
+         style="font-size:2.64186px;font-family:'Liberation Sans';fill:#4d4d4d;stroke-width:0.300211"
+         id="text147">20%</text>
+      <text
+         x="203.4566"
+         y="110.24862"
+         text-anchor="middle"
+         style="font-size:2.64186px;font-family:'Liberation Sans';fill:#4d4d4d;stroke-width:0.300211"
+         id="text149-6">30%</text>
+      <text
+         x="212.53799"
+         y="110.24862"
+         text-anchor="middle"
+         style="font-size:2.64186px;font-family:'Liberation Sans';fill:#4d4d4d;stroke-width:0.300211"
+         id="text151-7">40%</text>
+      <text
+         x="174.72638"
+         y="74.280312"
+         text-anchor="end"
+         style="font-size:2.64186px;font-family:'Liberation Sans';fill:#000000;stroke-width:0.300211"
+         id="text153-6">CpG islands</text>
+      <text
+         x="174.72638"
+         y="67.639641"
+         text-anchor="end"
+         style="font-size:2.64186px;font-family:'Liberation Sans';fill:#000000;stroke-width:0.300211"
+         id="text155-0">gene bodies</text>
+      <polyline
+         points="69.51,40.88 72.25,40.88 "
+         style="stroke:#333333;stroke-width:1.07;stroke-linecap:butt"
+         id="polyline157"
+         transform="matrix(0.30021127,0,0,0.30021127,154.51614,61.046998)" />
+      <polyline
+         points="69.51,18.75 72.25,18.75 "
+         style="stroke:#333333;stroke-width:1.07;stroke-linecap:butt"
+         id="polyline159"
+         transform="matrix(0.30021127,0,0,0.30021127,154.51614,61.046998)" />
+      <text
+         x="174.72638"
+         y="103.8211"
+         text-anchor="end"
+         style="font-size:2.64186px;font-family:'Liberation Sans';fill:#000000;stroke-width:0.300211"
+         id="text161-9">all cCREs</text>
+      <text
+         x="174.72638"
+         y="96.014282"
+         text-anchor="end"
+         style="font-size:2.64186px;font-family:'Liberation Sans';fill:#000000;stroke-width:0.300211"
+         id="text163-7">distal</text>
+      <text
+         x="174.72638"
+         y="98.346565"
+         text-anchor="end"
+         style="font-size:2.64186px;font-family:'Liberation Sans';fill:#000000;stroke-width:0.300211"
+         id="text165-5">enhancer-like</text>
+      <text
+         x="174.72638"
+         y="89.370613"
+         text-anchor="end"
+         style="font-size:2.64186px;font-family:'Liberation Sans';fill:#000000;stroke-width:0.300211"
+         id="text167">proximal</text>
+      <text
+         x="174.72638"
+         y="91.705894"
+         text-anchor="end"
+         style="font-size:2.64186px;font-family:'Liberation Sans';fill:#000000;stroke-width:0.300211"
+         id="text169-9">enhancer-like</text>
+      <text
+         x="174.72638"
+         y="83.89608"
+         text-anchor="end"
+         style="font-size:2.64186px;font-family:'Liberation Sans';fill:#000000;stroke-width:0.300211"
+         id="text171">promoter-like</text>
+      <text
+         x="209.11028"
+         y="71.016609"
+         text-anchor="end"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.3405px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:end;display:inline;fill:#000000;stroke-width:0.265966"
+         id="text171-9"><tspan
+           sodipodi:role="line"
+           id="tspan89603"
+           x="209.11028"
+           y="71.016609"
+           style="stroke-width:0.265966">observed</tspan></text>
+      <text
+         x="210.84805"
+         y="74.074928"
+         text-anchor="end"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.3405px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:end;display:inline;fill:#000000;stroke-width:0.265966"
+         id="text171-9-4"><tspan
+           sodipodi:role="line"
+           id="tspan132561"
+           x="210.84805"
+           y="74.074928"
+           style="stroke-width:0.265966">expected by chance</tspan></text>
+      <polyline
+         points="69.51,139.27 72.25,139.27 "
+         style="stroke:#333333;stroke-width:1.07;stroke-linecap:butt"
+         id="polyline173"
+         transform="matrix(0.30021127,0,0,0.30021127,154.51614,61.046998)" />
+      <polyline
+         points="69.51,117.15 72.25,117.15 "
+         style="stroke:#333333;stroke-width:1.07;stroke-linecap:butt"
+         id="polyline175"
+         transform="matrix(0.30021127,0,0,0.30021127,154.51614,61.046998)" />
+      <polyline
+         points="69.51,95.03 72.25,95.03 "
+         style="stroke:#333333;stroke-width:1.07;stroke-linecap:butt"
+         id="polyline177"
+         transform="matrix(0.30021127,0,0,0.30021127,154.51614,61.046998)" />
+      <polyline
+         points="69.51,72.90 72.25,72.90 "
+         style="stroke:#333333;stroke-width:1.07;stroke-linecap:butt"
+         id="polyline179"
+         transform="matrix(0.30021127,0,0,0.30021127,154.51614,61.046998)" />
+      <text
+         x="180.1671"
+         y="114.02828"
+         style="font-size:3.30232px;font-family:'Liberation Sans';stroke-width:0.300211"
+         id="text181-7">% intersecting a VMR</text>
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 211.8018,66.771339 -2.25039,3.293367"
+         id="path91866" />
+      <path
+         style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 214.3791,67.63605 -3.32691,4.975808"
+         id="path91866-2"
+         sodipodi:nodetypes="cc" />
+    </g>
   </g>
 </svg>
