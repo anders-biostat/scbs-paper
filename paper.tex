@@ -277,13 +277,13 @@ Furthermore, using VMRs over regulatory regions resulted in decreased RAM requir
 
 \new{
 We repeated this benchmark on an additional three published single-cell methylome data sets (Fig.~\ref{fig:score_luo}).
-These include neuronal sub-types of the murine cortex \citep[][using cell type labels derived from CH-methylation in genomic tiles, instead of CpG-methylation, as ground truth]{luo2017single}, cells isolated from mouse embryos during the onset of gastrulation \citep[][using RNA-derived cell clusters, or alternatively embryonic stage as ground truth]{argelaguet2019gastru} and human colorectal cancer cells \citep[][using \todo{tumor region(?)} as ground truth]{bian2018single}.
+These include neuronal sub-types of the murine cortex \citep[][using cell type labels derived from CH-methylation in genomic tiles, instead of CpG-methylation, as ground truth]{luo2017single}, cells isolated from mouse embryos during the onset of gastrulation \citep[][using RNA-derived cell clusters, or alternatively embryonic stage as ground truth]{argelaguet2019gastru} and human colorectal cancer cells \citep[][using sampling region as ground truth]{bian2018single}.
 Again, we subjected each data set to all possible combinations of genomic feature selection and methylation quantification.
 We furthermore included three additional approaches to perform dimensionality reduction in our benchmarks, including PCA with two different pre-processing strategies, as well as MOFA+, a dimensionality reduction technique designed for multi-modal single-cell data that can also process methylation data \citep{argelaguet2020mofa}.
 }
 
 \new{
-These extensive benchmarks confirmed that our proposed combination of methods, i.e.\ using the shrunken means of residuals of VMRs for dimensionality reduction, is able to distinguish diverse cellular properties such as cell type, \todo{colorectal cancer sampling region(?)}, embryonic stage, and germ layer (Fig.~\ref{fig:resource_usage}).
+These extensive benchmarks confirmed that our proposed combination of methods, i.e.\ using the shrunken means of residuals of VMRs for dimensionality reduction, is able to distinguish diverse cellular properties such as cell type, colorectal cancer stage (normal tissue, primary tumour, metastasis), embryonic stage, and germ layer (Fig.~\ref{fig:resource_usage}).
 Our benchmarks also quantify how groups of cells become more readily separated in larger data sets.
 As the neighbor score started to plateau at approximately 1000 cells, we propose that this represents a reasonable target cell number for future scBS studies. \todo{We may want to omit these last two sentences, as they might invite too much debate.}
 }
@@ -475,32 +475,27 @@ The source code is hosted at \href{https://github.com/LKremer/scbs}{https://gith
 \section{Discussion and Conclusion}
 
 Here, we have proposed an improved strategy to preprocess single-cell bisulfite sequencing data.
-Based on the observation that incomplete read coverage of a genomic interval can lead to inaccurate methylation estimates, we suggest a scoring scheme that is aware of a read's local context rather than just treating all reads in an interval alike.
+Based on the observation that incomplete read coverage of a genomic interval can lead to inaccurate methylation estimates, we suggest a scoring scheme that is aware of a read's local context rather than just treating all reads in an interval alike. 
+\new{In this way our approach offers an alternative to existing tools that impute missing CpG infomation, such as Melissa \citep{kapourani2019melissa}, DeepCpG \citep{angermueller2017deepcpg} or Epiclomal \citep{pe2020epiclomal}. The propper discussion about benefits and drawbacks of data imputation is worth its own paper, but we believe it important to provide the research community with multiple viable options of how to treat their data.}
 
 Furthermore, we show a way to pinpoint minimal regions of high variability across cells, which we call variably methylated regions (VMRs).
+\new{Unlike other tools for scBS data analysis \citep{kapourani2019melissa, kapourani2021scmet}, which rely on the user to manually specify which genomic intervals should be quantified, \texttt{scbs} implements an approach to discover these intervals in the data itself. This not only reduces noise and allows to concentrate only on the features that are important for the given dataset, but also provides useful input for genomics-style analyses.
+Depending on the research question at hand, individual VMRs may be related to nearby genomic features such as gene bodies or known regulatory elements, tested for methylation differences between groups of cells, or subjected to gene ontology and motif enrichment.}
+
+\new{To furthermore aid interpretation of scBS data, we developed and implemented the first algorithm for detecting dataset-specific DMRs for scBS data.}
+FDR estimation via permutation allows us to report statistical significance of each DMR.
+\new{In a similar manner as VMRs, pinpointing the regions that differ between groups of cells and hence have a putative regulatory role aids bilogical interpretability.}
+\new{For instance,} applying our approach to NSCs and oligodendrocytes demonstrated that the obtained DMRs locate near meaningful loci associated with cell-type specific functions.
+
+
+We also presented and published an open source software tool, called \texttt{scbs}, that provides an easy-to-use implementation of the described algorithms.
+\new{It can start directly from the output of methylation callers such as Bismark \citep{bismark}, Biscuit \citep{biscuit} and methylpy \citep{methylpy} and produce a cell\texttimes region matrix. We suggest iterative PCA as an approach to map the count matrix to a reduced-dimensional space overcoming the abundance of missing values. However, one can also use to the same end established tools based on matrix factorisation such as MOFA+, \citep[][included in our benchmarking]{argelaguet2020mofa} or LIGER \citep{welch2019single}. Once a low dimentional emberdding is obtained, one can switch to well established tools from scRNA-seq analysis, including visualization tools such as t-SNE and UMAP, Leiden/Louvain clustering, pseudotime trajectory analyses, etc.
+By offering these functions, \texttt{scbs} bridges a gap in the chain of existing tools that so far hindered practitioners in their data analysis. Our implementation can handle datasets of various sizes up to hundred thousand cells (see Supplementary Figure \ref{fig:umaps}B.}
+
 By re-analyzing two published data sets, we could show that these improvements to data preprocessing help to increase signal and decrease noise, resulting in a more informative intermediate-dimensional representation of the data.
 As examples of practical benefits, we demonstrate that our preprocessing allows for better distinction of cell sub-types, especially for challenging data sets comprising cellular sub-states and lineage transitions or for data sets with small cell number.
 
-To furthermore aid interpretation of scBS data, we developed and implemented the first single-cell DMR detection algorithm.
-FDR estimation via permutation allows us to report statistical significance of each DMR.
-Applying our approach to NSCs and oligodendrocytes demonstrated that the obtained DMRs locate near meaningful loci associated with cell-type specific functions.
-Thus, our method aids biological interpretability by pinpointing the regions that differ between groups of cells and hence have a putative regulatory role.
-
-We also presented and published an open source software tool, called \texttt{scbs}, that provides an easy-to-use implementation of the described algorithms.
-\todo{Rewrite this part to discuss other tools: The package also offers functionality for all other steps of data preprocessing that are needed to get from the output of methylation callers such as Bismark and methylpy to a cell\texttimes region matrix that is suitable as input for standard analysis tools that work in a reduced-dimensionality setting.
-This allows the user to use well established tools from scRNA-seq analysis, including visualization tools such as t-SNE and UMAP, Leiden/Louvain clustering, pseudotime trajectory analyses, etc.
-By offering these functions, \texttt{scbs} bridges a gap in the chain of existing tools that so far hindered practitioners in their data analysis.}
-\new{
-Our benchmarks demonstrate that selecting informative genomic features is a crucial aspect of scBS data analysis.
-Unlike other tools for scBS data analysis \citep{}, which rely on the user to manually specify which genomic intervals should be quantified, \texttt{scbs} implements an approach to discover these intervals in the data itself.
-Furthermore, \todo{other tools don't offer DMR detection and our residuals}.
-\todo{scbs is compatible with other tools that are up- or downstream of its capabilities, as we've shown here for MOFA+.}
-}
-In addition, by pinpointing exact regions of interest, the VMR and DMR functionalities provide useful input for genomics-style analyses.
-Depending on the research question at hand, individual DMRs may be related to nearby genomic features such as gene bodies or known regulatory elements, tested for methylation differences between groups of cells, or subjected to gene ontology and motif enrichment.
-
 In conclusion, we have presented powerful improvements to scBS data preprocessing and a software tool that implements these.
-
 
 \vspace{1.4ex}
 \noindent\hfil\rule{.6\columnwidth}{.2pt}\hfil
