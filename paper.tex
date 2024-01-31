@@ -269,10 +269,9 @@ Although cell cluster separation generally becomes more difficult in those, perf
 
 
 \new{
-Overall, VMR quantification yielded results similar to those obtained when quantifying ENCODE regulatory regions, even though the number of detected VMRs (63\,421) is considerably smaller than the number of ENCODE cCREs (339\,815). This demonstrates that our de-novo VMR detection approach identifies genomic regions in scBS data that are as informative as state-of-the-art epigenomic annotations, as well as its ability to find a parsimonous set of relevant elements. We not that the overlap between the VMRs and the cCREs is quite limited \todo{Give a number} indicating that VMR detection yields information that is complementary to other epigenetic marks.
+Overall, VMR quantification yielded results similar to those obtained when quantifying ENCODE regulatory regions, even though the number of detected VMRs (63\,421) is considerably smaller than the number of ENCODE cCREs (339\,815). This demonstrates that our \textit{de novo} VMR detection approach identifies genomic regions in scBS data that are as informative as state-of-the-art epigenomic annotations, as well as its ability to find a parsimonous set of relevant elements. We detected only limited overlap between VMRs and cCREs (Fig.~\ref{fig:score}F), indicating that VMR detection yields information that is complementary to other epigenetic marks.
 An added benefit of VMR detection is that this approach is available even in the absence of such annotations, for instance when studying species other than human or mouse.
-Furthermore, using VMRs over regulatory regions resulted in decreased RAM requirements as well as a shorter runtime, even when accounting for the additional step of VMR detection (Fig.~\ref{fig:score}F). \todo{maybe move panel F to the Supplement}.
-}
+Furthermore, using VMRs over regulatory regions resulted in decreased RAM requirements as well as a shorter runtime, even when accounting for the additional step of VMR detection.
 %Filtering regulatory regions by sequencing coverage reduced resource requirements, but at the cost of a reduced ability to distinguish cell types (Fig.~\ref{fig:resource_usage}).
 
 \new{
