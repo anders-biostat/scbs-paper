@@ -495,9 +495,9 @@ We suggest iterative PCA as an approach to map the count matrix to a reduced-dim
 However, one can also use to the same end established tools based on matrix factorisation such as MOFA+, \citep[][included in our benchmarking]{argelaguet2020mofa} or LIGER \citep{welch2019single}.
 Once a low dimensional embedding is obtained, one can switch to well established tools from scRNA-seq analysis, including visualization tools such as t-SNE and UMAP, Leiden/Louvain clustering, pseudotime trajectory analyses, etc.
 By offering these functions, \texttt{scbs} bridges a gap in the chain of existing tools that so far hindered practitioners in their data analysis.
-Our implementation can handle datasets of various sizes up to a hundred thousand cells (see Supplementary Figure \ref{fig:umaps}B.}
+Our implementation can handle datasets of various sizes up to a hundred thousand cells (see Supplementary Figure \ref{fig:umaps}B).}
 
-By re-analyzing two published data sets, we could show that these improvements to data preprocessing help to increase signal and decrease noise, resulting in a more informative intermediate-dimensional representation of the data.
+By re-analyzing two published data sets, we showed that these improvements to data preprocessing help to increase signal and decrease noise, resulting in a more informative intermediate-dimensional representation of the data.
 As examples of practical benefits, we demonstrate that our preprocessing allows for better distinction of cell sub-types, especially for challenging data sets comprising cellular sub-states and lineage transitions or for data sets with small cell number.
 
 In conclusion, we have presented powerful improvements to scBS data preprocessing and a software tool that implements these.
