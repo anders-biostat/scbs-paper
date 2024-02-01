@@ -805,7 +805,7 @@ We thank Alexey Uvarovskii for code refactoring and helpful suggestions on the s
 	bottom: shrunken mean of residuals to quantify CpG methylation in CpG-VMRs.
 	\textbf{(B)} UMAP obtained when analysing 100\,350 neural single-cell methylomes \citep{liu2021dna} with the default \texttt{scbs} workflow.
 	The depicted cell labels were reported by \citet{liu2021dna}.
-	\new{Analysing this large data set takes approximately a week on a computer with 256 GB RAM and and 48 CPUs, with almost all of this time (152 hours) spent by the \texttt{prepare} step, which should be run only once for a dataset. One can speed up the process considerably by processing each chromosome separately (each takes between 6 and 12 hours depending on its size).}
+	\new{Analysing this large data set takes approximately a week on a computer with 256 GB RAM and 48 CPUs, with almost all of this time (152 hours) spent by the \texttt{prepare} step, which needs to be run only once per data set. The speed of this step can be increased considerably by processing chromosomes in parallel (each takes 6 to 12 hours depending on its size).}
 	}}
 	\label{fig:umaps}
 \end{minipage}
