@@ -476,7 +476,8 @@ The source code is hosted at \href{https://github.com/LKremer/scbs}{https://gith
 
 Here, we have proposed an improved strategy to preprocess single-cell bisulfite sequencing data.
 Based on the observation that incomplete read coverage of a genomic interval can lead to inaccurate methylation estimates, we suggest a scoring scheme that is aware of a read's local context rather than just treating all reads in an interval alike. 
-\new{In this way our approach offers an alternative to existing tools that impute missing CpG infomation, such as Melissa \citep{kapourani2019melissa}, DeepCpG \citep{angermueller2017deepcpg} or Epiclomal \citep{pe2020epiclomal}. The propper discussion about benefits and drawbacks of data imputation is worth its own paper, but we believe it important to provide the research community with multiple viable options of how to treat their data.}
+\new{In this way our approach offers an alternative to existing tools that impute missing CpG infomation, such as Melissa \citep{kapourani2019melissa}, DeepCpG \citep{angermueller2017deepcpg} or Epiclomal \citep{pe2020epiclomal}.
+The proper discussion about benefits and drawbacks of data imputation is worth its own paper, but we believe it important to provide the research community with multiple viable options of how to treat their data.}
 
 Furthermore, we show a way to pinpoint minimal regions of high variability across cells, which we call variably methylated regions (VMRs).
 \new{Unlike other tools for scBS data analysis \citep{kapourani2019melissa, kapourani2021scmet}, which rely on the user to manually specify which genomic intervals should be quantified, \texttt{scbs} implements an approach to discover these intervals in the data itself. This not only reduces noise and allows to concentrate only on the features that are important for the given dataset, but also provides useful input for genomics-style analyses.
@@ -484,13 +485,17 @@ Depending on the research question at hand, individual VMRs may be related to ne
 
 \new{To furthermore aid interpretation of scBS data, we developed and implemented the first algorithm for detecting dataset-specific DMRs for scBS data.}
 FDR estimation via permutation allows us to report statistical significance of each DMR.
-\new{In a similar manner as VMRs, pinpointing the regions that differ between groups of cells and hence have a putative regulatory role aids bilogical interpretability.}
+\new{In a similar manner as VMRs, pinpointing the regions that differ between groups of cells and hence have a putative regulatory role aids biological interpretability.}
 \new{For instance,} applying our approach to NSCs and oligodendrocytes demonstrated that the obtained DMRs locate near meaningful loci associated with cell-type specific functions.
 
 
 We also presented and published an open source software tool, called \texttt{scbs}, that provides an easy-to-use implementation of the described algorithms.
-\new{It can start directly from the output of methylation callers such as Bismark \citep{bismark}, Biscuit \citep{biscuit} and methylpy \citep{methylpy} and produce a cell\texttimes region matrix. We suggest iterative PCA as an approach to map the count matrix to a reduced-dimensional space overcoming the abundance of missing values. However, one can also use to the same end established tools based on matrix factorisation such as MOFA+, \citep[][included in our benchmarking]{argelaguet2020mofa} or LIGER \citep{welch2019single}. Once a low dimentional emberdding is obtained, one can switch to well established tools from scRNA-seq analysis, including visualization tools such as t-SNE and UMAP, Leiden/Louvain clustering, pseudotime trajectory analyses, etc.
-By offering these functions, \texttt{scbs} bridges a gap in the chain of existing tools that so far hindered practitioners in their data analysis. Our implementation can handle datasets of various sizes up to hundred thousand cells (see Supplementary Figure \ref{fig:umaps}B.}
+\new{It can start directly from the output of methylation callers such as Bismark \citep{bismark}, Biscuit \citep{biscuit} and methylpy \citep{methylpy} and produce a cell\texttimes region matrix.
+We suggest iterative PCA as an approach to map the count matrix to a reduced-dimensional space overcoming the abundance of missing values.
+However, one can also use to the same end established tools based on matrix factorisation such as MOFA+, \citep[][included in our benchmarking]{argelaguet2020mofa} or LIGER \citep{welch2019single}.
+Once a low dimensional embedding is obtained, one can switch to well established tools from scRNA-seq analysis, including visualization tools such as t-SNE and UMAP, Leiden/Louvain clustering, pseudotime trajectory analyses, etc.
+By offering these functions, \texttt{scbs} bridges a gap in the chain of existing tools that so far hindered practitioners in their data analysis.
+Our implementation can handle datasets of various sizes up to a hundred thousand cells (see Supplementary Figure \ref{fig:umaps}B.}
 
 By re-analyzing two published data sets, we could show that these improvements to data preprocessing help to increase signal and decrease noise, resulting in a more informative intermediate-dimensional representation of the data.
 As examples of practical benefits, we demonstrate that our preprocessing allows for better distinction of cell sub-types, especially for challenging data sets comprising cellular sub-states and lineage transitions or for data sets with small cell number.
@@ -664,9 +669,9 @@ Our iterative imputation strategy is now simply the following: we first replace 
 Then, we use the PCA predictions for the missing values, i.e., the $a_{ij}=\sum_r x_{ir} r_{jr}$, as refined stand-ins for the missing values in $A$ and run PCA once more.
 This can now be iterated until convergence.
 
+\new{Throughout this paper we refer to this approach as iterative PCA.}
 We note that similar approaches have also been used elsewhere \citep{josse2012}.
 
-\new{Throughout this paper we refer to this approach as iterative PCA.}
 
 \subsection{Analysis of scBS datasets for benchmarks}
 To analyze scBS data from \citet{kremer_scnmt}, single-cell CpG methylation reports from all conditions were first stored with \texttt{scbs prepare} and then smoothed with \texttt{scbs smooth} using the default bandwidth of 1000~bp.
