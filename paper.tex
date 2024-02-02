@@ -266,13 +266,12 @@ This effect was most noticeable when using promoters or genomic tiles as interva
 Although cell cluster separation generally becomes more difficult in those, performance gains were observed also in smaller data sets.
 }
 
-
-
 \new{
-Overall, VMR quantification yielded results similar to those obtained when quantifying ENCODE regulatory regions, even though the number of detected VMRs (63\,421) is considerably smaller than the number of ENCODE cCREs (339\,815). This demonstrates that our \textit{de novo} VMR detection approach identifies genomic regions in scBS data that are as informative as state-of-the-art epigenomic annotations, as well as its ability to find a parsimonous set of relevant elements. We detected only limited overlap between VMRs and cCREs (Fig.~\ref{fig:score}F), indicating that VMR detection yields information that is complementary to other epigenetic marks.
+Overall, VMR quantification yielded results similar to those obtained when quantifying ENCODE regulatory regions, even though the number of detected VMRs (63\,421) is considerably smaller than the number of ENCODE cCREs (339\,815).
+Repeating our analysis on the 63\,421 cCREs with the highest quality came at the cost of a reduced ability to distinguish cell types, suggesting that the average VMR is more informative for this task (Fig.~\ref{fig:resource_usage}A,B).
+This demonstrates that our \textit{de novo} VMR detection approach identifies genomic regions in scBS data that are as informative as state-of-the-art epigenomic annotations, as well as its ability to find a parsimonous set of relevant elements. We detected only limited overlap between VMRs and cCREs (Fig.~\ref{fig:score}F), indicating that VMR detection yields information that is complementary to other epigenetic marks.
 An added benefit of VMR detection is that this approach is available even in the absence of such annotations, for instance when studying species other than human or mouse.
-Furthermore, using VMRs over regulatory regions resulted in decreased RAM requirements as well as a shorter runtime, even when accounting for the additional step of VMR detection.
-%Filtering regulatory regions by sequencing coverage reduced resource requirements, but at the cost of a reduced ability to distinguish cell types (Fig.~\ref{fig:resource_usage}).
+Furthermore, using VMRs over regulatory regions resulted in decreased RAM requirements as well as a shorter runtime, even when accounting for the additional step of VMR detection (Fig.~\ref{fig:resource_usage}C,D).
 }
 
 \new{
@@ -283,7 +282,7 @@ We furthermore included three additional approaches to perform dimensionality re
 }
 
 \new{
-These extensive benchmarks confirmed that our proposed combination of methods, i.e.\ using the shrunken means of residuals of VMRs for dimensionality reduction, is able to distinguish diverse cellular properties such as cell type, colorectal cancer stage (normal tissue, primary tumour, metastasis), embryonic stage, and germ layer (Fig.~\ref{fig:resource_usage}).
+These extensive benchmarks confirmed that our proposed combination of methods, i.e.\ using the shrunken means of residuals of VMRs for dimensionality reduction, is able to distinguish diverse cellular properties such as cell type, colorectal cancer stage (normal tissue, primary tumour, metastasis), embryonic stage, and germ layer.
 }
 
 
