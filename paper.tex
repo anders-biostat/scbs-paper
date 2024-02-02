@@ -335,7 +335,7 @@ As single-cell methylome data sets are expected to rapidly grow in size in the c
 		The full 1566-cell data set was sub-sampled to simulate smaller data sets (x axis).
 		A higher neighbor score implies better separation of cell types inferred from single-cell transcriptomes of the same cells (A).
 		\new{
-		\textbf{(F)} Proportion of VMRs (blue dot) that have at least 1~bp overlap with other genomic features.
+		\textbf{(F)} Proportion of VMRs (blue dots) that have at least 1~bp overlap with other genomic features.
 		The black range illustrates the minimum and maximum overlap observed for 100 permutations of randomly shuffled VMRs.
 		}
 	}
@@ -343,7 +343,7 @@ As single-cell methylome data sets are expected to rapidly grow in size in the c
 \end{figure*}
 
 
-\section{Finding differentially methylated regions}
+\section{Finding differentially methylated regions (DMRs)}
 
 A common task in the analysis of bulk bisulfite-sequencing data is the detection of differentially methylated regions (DMRs) between conditions, tissues, or cell types \citep{Hebestreit2013, dmrseq}.
 As DNA methylation affects gene expression, DMRs can provide insights into the unique epigenetic and gene regulatory characteristics of cell types.
@@ -354,7 +354,7 @@ To enable DMR detection in scBS data, we thus developed an approach that detects
 	\begin{center}
 		\includegraphics[width=.75\textwidth]{figures/Fig_DMRdetection.png}
 	\end{center}
-	\caption{\small \textbf{Identification of differentially methylated regions.}\\
+	\caption{\small \textbf{Identification of differentially methylated regions (DMRs).}\\
 		The chromosome is divided into windows overlapping by a small and fixed size.
 		For each window, the cell’s methylation values are calculated as described and as depicted in Fig.~\ref{fig:smoothres}B.
 		Then the t statistic of these values is obtained as a measure of methylation difference between two groups of cells (each point represents one of the windows).
@@ -762,7 +762,7 @@ We thank Alexey Uvarovskii for code refactoring and helpful suggestions on the s
 	\textbf{(C)} Separation of human colorectal cancer sampling regions (primary tumor, normal adjacent tissue, lymph node metastasis, liver metastasis before and after treatment, omental metastasis) \citep{bian2018single}.
 	\textbf{(D-E)} Separation of three properties of mouse embryo cells:
 	The developmental stage (E4.5, E5.5, E6.5, E7.5), the germ layer or extra-embryonic tissue of origin, or the cell lineage.
-	Germ layer and lineage (\textbf{E}, only E7.5-cells) were annotated by \citet{argelaguet2019gastru} based on scRNA-seq of the same cells.
+	Germ layer and lineage (E, only E7.5-cells) were annotated by \citet{argelaguet2019gastru} based on scRNA-seq of the same cells.
 	}}
 	\label{fig:score_luo}
 
@@ -789,8 +789,8 @@ We thank Alexey Uvarovskii for code refactoring and helpful suggestions on the s
 	\begin{center}
 		\includegraphics[width=.85\textwidth]{figures/SFig_benchmark_resources.png}
 	\end{center}
-	\captionof{figure}{\small \new{\textbf{VMRs are as informative as regulatory regions, but more resource-efficient.}\\
-	\textbf{(A-B)} Mean neighbor score obtained when quantifying CpG methylation at VMRs, all ENCODE regulatory regions, or a subset of regulatory regions for the data sets of \citep{kremer_scnmt} and \citet{luo2017single}.
+	\captionof{figure}{\small \new{\textbf{VMRs are more informative than an equal number of regulatory regions with high sequencing coverage.}\\
+	\textbf{(A-B)} Mean neighbor score obtained when quantifying CpG methylation at VMRs, all ENCODE regulatory regions, or a subset of regulatory regions for the data sets of \citet{kremer_scnmt} and \citet{luo2017single}.
 	The subset of high-quality (HQ) regulatory regions was selected in such a way that it matches the number of VMRs and contains those regulatory regions with the highest coverage.
 	\textbf{(C-D)} Runtime (top) and RAM usage (bottom) of the two dimensionality reduction techniques shown in A and B.
 	}}
@@ -809,7 +809,7 @@ We thank Alexey Uvarovskii for code refactoring and helpful suggestions on the s
 	bottom: shrunken mean of residuals to quantify CpG methylation in CpG-VMRs.
 	\textbf{(B)} UMAP obtained when analysing 100\,350 neural single-cell methylomes \citep{liu2021dna} with the default \texttt{scbs} workflow.
 	The depicted cell labels were reported by \citet{liu2021dna}.
-	\new{Analysing this large data set takes approximately a week on a computer with 256 GB RAM and 48 CPUs, with almost all of this time (152 hours) spent by the \texttt{prepare} step, which needs to be run only once per data set. The speed of this step can be increased considerably by processing chromosomes in parallel (each takes 6 to 12 hours depending on its size).}
+	\new{Analysing this large data set takes approximately a week on a computer with 256 GB RAM and 48 CPUs, with almost all of this time (152 hours) spent by the \texttt{prepare} step, which is run only once per data set. The speed of this step can be increased considerably by processing chromosomes in parallel, which reduced the total runtime to approximately two days in our case.}
 	}}
 	\label{fig:umaps}
 \end{minipage}
