@@ -72,7 +72,7 @@ Typically, this is achieved by dividing the genome into large tiles and averagin
 
 Here, we demonstrate that this coarse-graining approach can lead to signal dilution.
 As an alternative, we propose improved strategies to identify more informative regions for methylation quantification, and a more accurate quantitation method than simple averaging.
-Our approach enables better discrimination of cell types and reduces the need for large numbers of cells.
+Our approach enables better discrimination of cell types \new{and other features of interest} and reduces the need for large numbers of cells.
 We also present an approach to detect differentially methylated regions (DMRs) between groups of cells, and demonstrate its ability to identify biologically meaningful regions that are associated with genes involved in the core functions of specific cell types.
 
 To facilitate the analysis of scBS data, we have developed a software tool called ``\texttt{scbs}'' that implements these methods and provides additional functionality.
@@ -95,7 +95,7 @@ After sequencing, these conversions allow for the determination of the methylati
 Bisulfite sequencing can also be performed at single-cell resolution \citep{Smallwood_2014} and even in parallel with scRNA-seq \citep{scMTseq,Clark2018}.
 
 In the present paper, we discuss strategies to analyze single-cell bisulfite-sequencing (scBS) data.
-We suggest improvements to current approaches, and demonstrate their value in benchmarks, using two real-world datasets.
+We suggest improvements to current approaches, and demonstrate their value in benchmarks, using \new{four} real-world datasets.
 Furthermore, we discuss how to perform comparative analyses.
 Finally, we present ``\texttt{scbs}'', a comprehensive software toolkit to perform scBS data analysis, using the described methods.
 \blfootnote{\hspace{-.5cm}\raggedright\textsuperscript{*} e-mail:  \texttt{l.kremer@dkfz-heidelberg.de} and\\ \hspace{1cm}\texttt{simon.anders@bioquant.uni-heidelberg.de}}
@@ -121,10 +121,10 @@ Finally, we present ``\texttt{scbs}'', a comprehensive software toolkit to perfo
 The standard approach to analyze scBS data is based on methodology developed for the analysis of scRNA-seq data.
 Therefore, we start by briefly reviewing how sc\emph{RNA}-seq data is commonly analyzed, before we discuss scBS data analysis.
 
-The starting point in most scRNA-seq analyses is a matrix of UMI counts (i.e.\ of counts of distinct RNA molecules), one row for each cell and one column for each gene.
+The starting point in most scRNA-seq analyses is a matrix of UMI counts (i.e.\ counts of distinct RNA molecules), one row for each cell and one column for each gene.
 A first goal is usually to assign cell types or states to cells.
 To this end, one needs to establish which cells are similar to each other, i.e., quantify the distance (i.e., dissimilarity) between any two given cells' transcriptional profile.
-A standard approach, used with minor variation in virtually all recent research and automated by popular software such as Seurat \citep{Hao_2021} or ScanPy \citep{Wolf_2018}, is as follows:
+A standard approach, used with minor variation in virtually all recent research and automated by popular software such as Seurat \citep{Hao_2021} or Scanpy \citep{Wolf_2018}, is as follows:
 One first accounts for cell-to-cell variation in sequencing depth by dividing each UMI count by the respective cell's total UMI count, then transforms to a homoskedastic scale by taking the logarithm.
 In order to avoid matrix elements with zero count to be transformed to minus infinity, one typically adds a very small ``pseudocount'' (often $10^{-4}$) to the normalized fractions before taking the logarithm.
 Now, one could use Euclidean distances of these vectors of logarithmized fractions as dissimilarity score.
@@ -182,7 +182,7 @@ The kernel bandwidth (i.e., the size of the neighborhood to average over) is a t
 
 A minor remaining issue is how to deal with the case that a cell has no reads at all within a given interval.
 Here, it is justified to simply put zero into the matrix element, because a shrunken residual average of zero indicates that there is no evidence of the cell deviating from the mean.
-We slightly refine this by using an iterative imputation within the PCA (see Methods for details).
+We slightly refine this by using an iterative imputation within the PCA (\new{"iterative PCA"}, see Methods for details).
 
 Taken together, this shrunken mean of residuals quantitation reduces variance in comparison to simple averaging of raw methylation calls.
 We will show further below how this improves results.
@@ -235,7 +235,7 @@ To assess whether our VMR detection method captures genomic intervals that are b
 
 We first note that gene expression is more strongly correlated with the methylation of nearby VMRs than with the methylation of their promoters (Fig.~\ref{fig:correlation}A), indicating that VMR methylation is often a better predictor of gene expression than promoter methylation.
 Indeed, a gene-wise comparison revealed many genes whose expression is correlated with the nearest VMR, but not with promoter methylation.
-One such example gene, \textit{Htra1}, is depicted in Fig.~\ref{fig:correlation}C.
+One such example gene, \textit{Htra1}, is depicted in Fig.~\ref{fig:correlation}B.
 While the promoter of this gene is lowly methylated regardless of gene expression, a VMR located downstream of the promoter is lowly methylated in cells with high \textit{Htra1} expression.
 
 \subsubsection{Improved identification of cell types}
@@ -247,7 +247,7 @@ We consider these cell labels as ground truth and tested whether we are able to 
 To do this, we subjected the methylomes to various combinations of analysis methods including our own proposed methods and others that are commonly used.
 Specifically, we selected four different sets of genomic intervals at which CpG methylation is to be quantified:
 either VMRs detected with our approach, 100~kb genomic tiles, promoter regions (i.e., transcription start site (TSS)~\textpm~2000~bp), or candidate cis-regulatory elements \citep[ENCODE cCREs,][]{encode2020expanded}.
-To quantify methylation at these features, we either simply averaged in these intervals, obtaining methylation percentages, or we calculated the shrunken mean of residuals, as described above.
+To quantify methylation at these features, we either simply averaged in these intervals, obtaining methylation percentages, or we calculated the shrunken mean of residuals, as described earlier.
 Finally, the resulting methylation matrices were subjected to iterative PCA (see Methods) and subsequent UMAP for visualization.
 }
 
@@ -255,14 +255,14 @@ Visual inspection of the resulting UMAPs revealed that our proposed combination 
 While all cells form a continuous point cloud when using default methods, our improvements led to a clear separation of oligodendrocytes, OPCs and endothelial cells.
 Furthermore, even cellular sub-states of cells in the continuous neural stem cell lineage were partially separated.
 
-To quantify this performance gain in a more rigorous manner, we used a score that quantifies whether cells were placed, in 15-dimensional PC space, in a neighborhood comprising cells of the same cell type ("neighbor score", see Fig.~\ref{fig:score}E, and Methods for details). \new{The neighborhood relation in PCA space is relevant as it is used in many down-stream analyses, e.g., for clustering.}
+To quantify this performance gain in a more rigorous manner, we used a score that quantifies whether cells were placed, in 15-dimensional PC space, in a neighborhood comprising cells of the same cell type ("neighbor score", see Fig.~\ref{fig:score}E, and Methods for details). \new{The neighborhood relation in PCA space is relevant as it is used in many downstream analyses, e.g., for clustering.}
 We ask how the neighbor score depends on the number of available cells.
 This is relevant as scBS protocols are costly and labor-intensive, and only few laboratories are currently able to obtain thousands of single cell methylomes.
 To simulate smaller data sets, we sub-sampled the 1566-cell data set into smaller data sets, analyzed them again with all combinations of analysis methods, and calculated the mean neighbor score for each (Fig.~\ref{fig:score}D).
 \new{
 The results confirmed that quantifying methylation at VMRs leads to a cleaner separation of cell states than using promoter regions or 100~kb tiles.
 Using the shrunken mean of residuals as a measure of DNA methylation improved results further.
-This effect was most noticeable when using promoters or genomic tiles as intervals, presumably because an individual promoter region or tile might span genomic regions with varying levels of DNA methylation as depicted in Fig.~\ref{fig:smoothres}B, which our method accounts for.
+This effect was most noticeable when quantifying promoters or genomic tiles, presumably because an individual promoter region or tile might span genomic regions with varying levels of DNA methylation as depicted in Fig.~\ref{fig:smoothres}B, which our method accounts for.
 Although cell cluster separation generally becomes more difficult in those, performance gains were observed also in smaller data sets.
 }
 
@@ -276,7 +276,7 @@ Furthermore, using VMRs over regulatory regions resulted in decreased RAM requir
 
 \new{
 We repeated this benchmark on an additional three published single-cell methylome data sets (Fig.~\ref{fig:score_luo}).
-These include neuronal sub-types of the murine cortex \citep[][using cell type labels derived from CH-methylation in genomic tiles, instead of CpG-methylation, as ground truth]{luo2017single}, cells isolated from mouse embryos during the onset of gastrulation \citep[][using RNA-derived cell clusters, or alternatively embryonic stage as ground truth]{argelaguet2019gastru} and human colorectal cancer cells \citep[][using sampling region as ground truth]{bian2018single}.
+These include neuronal sub-types of the murine cortex \citep[][using cell type labels derived from CH-methylation in genomic tiles instead of CpG-methylation as ground truth]{luo2017single}, cells isolated from mouse embryos during the onset of gastrulation \citep[][using RNA-derived cell clusters or alternatively embryonic stage as ground truth]{argelaguet2019gastru} and human colorectal cancer cells \citep[][using sampling region as ground truth]{bian2018single}.
 Again, we subjected each data set to all possible combinations of genomic feature selection and methylation quantification.
 We furthermore included three additional approaches to perform dimensionality reduction in our benchmarks, including PCA with two different pre-processing strategies, as well as MOFA+, a dimensionality reduction technique designed for multi-modal single-cell data that can also process methylation data \citep{argelaguet2020mofa}.
 }
@@ -398,7 +398,7 @@ We used the single-cell multi-omics data set \citep{kremer_scnmt} to evaluate ou
 We first selected two cell populations from the healthy murine ventricular-subventricular zone: neural stem cells (NSCs, 130 cells) and oligodendrocytes (58 cells).
 Then we used the method just described to identify DMRs between these two cell types (Fig.~\ref{fig:dmr}A).
 Repeating this after permuting the cell-type labels, in order to obtain a null distribution of the t statistics, yielded DMRs with much weaker methylation differences.
-Consequently, we could assign to many of the DMRs detected in the unpermuted data a low adjusted p-values (colors in Fig.~\ref{fig:dmr}A).
+Consequently, we could assign to many of the DMRs detected in the unpermuted data a low adjusted p-value (colors in Fig.~\ref{fig:dmr}A).
 
 Gene ontology (GO) enrichment with GREAT \citep{mclean2010great} revealed that DMRs lowly methylated in oligodendrocytes are located near genes involved in myelination, the main function of oligodendrocytes.
 Similarly, DMRs specifically demethylated in NSCs occur near genes involved in stem cell population maintenance.
@@ -457,6 +457,40 @@ This command produces a BED file listing the genome coordinates, adjusted p-valu
 These DMRs may then be associated with nearby genes, or used for GO enrichment with tools such as GREAT \citep{mclean2010great} to enable functional interpretation.
 
 
+\section{Discussion and Conclusion}
+
+Here, we have proposed an improved strategy to preprocess single-cell bisulfite sequencing data.
+Based on the observation that incomplete read coverage of a genomic interval can lead to inaccurate methylation estimates, we suggest a scoring scheme that is aware of a read's local context rather than just treating all reads in an interval alike. 
+\new{In this way our approach offers an alternative to existing tools that impute missing CpG infomation, such as Melissa \citep{kapourani2019melissa}, DeepCpG \citep{angermueller2017deepcpg} or Epiclomal \citep{pe2020epiclomal}.}
+
+Furthermore, we show a way to pinpoint minimal regions of high variability across cells, which we call variably methylated regions (VMRs).
+\new{Unlike other tools for scBS data analysis \citep{kapourani2019melissa, kapourani2021scmet}, which rely on the user to manually specify which genomic intervals should be quantified, \texttt{scbs} implements an approach to discover these intervals in the data itself. This not only reduces noise and allows to focus only on the features that are important for the given dataset, but also provides useful input for genomics-style analyses.
+Depending on the research question at hand, individual VMRs may be related to nearby genomic features such as gene bodies or known regulatory elements, or subjected to gene ontology and motif enrichment.}
+
+\new{To furthermore aid interpretation of scBS data, we developed and implemented the first algorithm for genome-wide detection of DMRs in single-cell methylomes.}
+FDR estimation via permutation allows us to report statistical significance of each DMR.
+\new{In a similar manner as VMRs, pinpointing the regions that differ between groups of cells and hence have a putative regulatory role aids biological interpretability.}
+\new{For instance,} applying our approach to NSCs and oligodendrocytes demonstrated that the obtained DMRs locate near meaningful loci associated with cell-type specific functions.
+
+
+We also presented and published an open source software tool, called \texttt{scbs}, that provides an easy-to-use implementation of the described algorithms.
+\new{It can start directly from the output of methylation callers such as Bismark \citep{bismark}, Biscuit \citep{biscuit} and methylpy \citep{methylpy} and produce a cell\texttimes region matrix.
+We suggest iterative PCA as an approach to map the count matrix to a reduced-dimensional space overcoming the abundance of missing values.
+However, one can also use to the same end established tools based on matrix factorisation such as MOFA+, \citep[][included in our benchmarks]{argelaguet2020mofa} or LIGER \citep{welch2019single}.
+Once a low dimensional embedding is obtained, one can switch to well established tools from scRNA-seq analysis, including visualization tools such as t-SNE and UMAP, Leiden/Louvain clustering, pseudotime trajectory analyses, etc.
+By offering these functions, \texttt{scbs} bridges a gap in the chain of existing tools that so far hindered practitioners in their data analysis.
+Our implementation can handle datasets of various sizes up to a hundred thousand cells (see Supplementary Fig.~\ref{fig:umaps}B).}
+
+By re-analyzing \new{four} published data sets, we showed that these improvements to data preprocessing help to increase signal and decrease noise, resulting in a more informative intermediate-dimensional representation of the data.
+As examples of practical benefits, we demonstrate that our preprocessing allows for better distinction of cell sub-types, especially for challenging data sets comprising cellular sub-states and lineage transitions or for data sets with small cell number.
+
+In conclusion, we have presented powerful improvements to scBS data preprocessing and a software tool that implements these.
+
+\vspace{1.4ex}
+\noindent\hfil\rule{.6\columnwidth}{.2pt}\hfil
+
+
+
 \subsection{Data Availability}
 
 Single-cell multi-omic data of cells of the murine forebrain \citep{kremer_scnmt} is available at the NCBI Gene Expression Omnibus (GEO) under the accession \texttt{GSE210806}.
@@ -467,40 +501,6 @@ Single-cell multi-omic data of cells of the murine forebrain \citep{kremer_scnmt
 \texttt{scbs} is free and open source.
 The package is available on the Python Package Index (PyPI) and can be installed with the Python package installer \texttt{pip}.
 The source code is hosted at \href{https://github.com/LKremer/scbs}{https://github.com/LKremer/scbs}, where we also provide detailed documentation including a tutorial that demonstrates a complete \texttt{scbs} analysis on an example data set.
-
-
-\section{Discussion and Conclusion}
-
-Here, we have proposed an improved strategy to preprocess single-cell bisulfite sequencing data.
-Based on the observation that incomplete read coverage of a genomic interval can lead to inaccurate methylation estimates, we suggest a scoring scheme that is aware of a read's local context rather than just treating all reads in an interval alike. 
-\new{In this way our approach offers an alternative to existing tools that impute missing CpG infomation, such as Melissa \citep{kapourani2019melissa}, DeepCpG \citep{angermueller2017deepcpg} or Epiclomal \citep{pe2020epiclomal}.
-The proper discussion about benefits and drawbacks of data imputation is worth its own paper, but we believe it important to provide the research community with multiple viable options of how to treat their data.}
-
-Furthermore, we show a way to pinpoint minimal regions of high variability across cells, which we call variably methylated regions (VMRs).
-\new{Unlike other tools for scBS data analysis \citep{kapourani2019melissa, kapourani2021scmet}, which rely on the user to manually specify which genomic intervals should be quantified, \texttt{scbs} implements an approach to discover these intervals in the data itself. This not only reduces noise and allows to concentrate only on the features that are important for the given dataset, but also provides useful input for genomics-style analyses.
-Depending on the research question at hand, individual VMRs may be related to nearby genomic features such as gene bodies or known regulatory elements, tested for methylation differences between groups of cells, or subjected to gene ontology and motif enrichment.}
-
-\new{To furthermore aid interpretation of scBS data, we developed and implemented the first algorithm for detecting dataset-specific DMRs for scBS data.}
-FDR estimation via permutation allows us to report statistical significance of each DMR.
-\new{In a similar manner as VMRs, pinpointing the regions that differ between groups of cells and hence have a putative regulatory role aids biological interpretability.}
-\new{For instance,} applying our approach to NSCs and oligodendrocytes demonstrated that the obtained DMRs locate near meaningful loci associated with cell-type specific functions.
-
-
-We also presented and published an open source software tool, called \texttt{scbs}, that provides an easy-to-use implementation of the described algorithms.
-\new{It can start directly from the output of methylation callers such as Bismark \citep{bismark}, Biscuit \citep{biscuit} and methylpy \citep{methylpy} and produce a cell\texttimes region matrix.
-We suggest iterative PCA as an approach to map the count matrix to a reduced-dimensional space overcoming the abundance of missing values.
-However, one can also use to the same end established tools based on matrix factorisation such as MOFA+, \citep[][included in our benchmarking]{argelaguet2020mofa} or LIGER \citep{welch2019single}.
-Once a low dimensional embedding is obtained, one can switch to well established tools from scRNA-seq analysis, including visualization tools such as t-SNE and UMAP, Leiden/Louvain clustering, pseudotime trajectory analyses, etc.
-By offering these functions, \texttt{scbs} bridges a gap in the chain of existing tools that so far hindered practitioners in their data analysis.
-Our implementation can handle datasets of various sizes up to a hundred thousand cells (see Supplementary Fig.~\ref{fig:umaps}B).}
-
-By re-analyzing two published data sets, we showed that these improvements to data preprocessing help to increase signal and decrease noise, resulting in a more informative intermediate-dimensional representation of the data.
-As examples of practical benefits, we demonstrate that our preprocessing allows for better distinction of cell sub-types, especially for challenging data sets comprising cellular sub-states and lineage transitions or for data sets with small cell number.
-
-In conclusion, we have presented powerful improvements to scBS data preprocessing and a software tool that implements these.
-
-\vspace{1.4ex}
-\noindent\hfil\rule{.6\columnwidth}{.2pt}\hfil
 
 
 %\phantomsection
@@ -650,11 +650,11 @@ If we calculate the top $R$ principal components, we thus obtain for each cell $
 For any two cells $j$, $j'$, we use the Euclidean distance $\|\mathbf{x}^\text{P}_j - \mathbf{x}^\text{P}_{j'}\|$ as the measure of dissimilarity of the two cells.
 Thus, the matrix of PC scores can be used as input to dimension reduction methods like t-SNE or UMAP, and to clustering methods like the Louvain or Leiden algorithm, which require such a matrix as input to the approximate nearest neighbor (ANN) finding algorithm that is their first step.
 
-\subsection{PCA with imputation}
+\subsection{PCA with iterative imputation}
 
 Whenever a region is not covered by any read in a cell, the corresponding data entry in the input data matrix for PCA will be missing.
 The standard approach to calculate PCA, commonly done using the IRLBA algorithm \citep{Baglama2005}, is not suited to deal with missing data.
-We circumvent this issue by simply using the PCA itself to impute the missing value.
+We circumvent this issue by simply using the PCA itself to impute the missing value \new{in an approach that we call "iterative PCA").}
 
 Let us write $A$ for the matrix to which the PCA is to be applied, with the features (here: regions) represented by the matrix rows.
 The matrix has already been centered, i.e., $\sum_i a_{ij}=0$.
@@ -666,7 +666,6 @@ Our iterative imputation strategy is now simply the following: we first replace 
 Then, we use the PCA predictions for the missing values, i.e., the $a_{ij}=\sum_r x_{ir} r_{jr}$, as refined stand-ins for the missing values in $A$ and run PCA once more.
 This can now be iterated until convergence.
 
-\new{Throughout this paper we refer to this approach as iterative PCA.}
 We note that similar approaches have also been used elsewhere \citep{josse2012}.
 
 
@@ -680,10 +679,16 @@ adjacent tiles of 100~kb width;
 promoter regions as defined by the \textpm2~kb domain around the TSS of coding genes;
 and candidate cis-regulatory regions annotated by the ENCODE consortium \citep{encode2020expanded}.
 Methylation was quantified either by averaging binary methylation values, or by calculating the shrunken mean of the residuals as described earlier.
-For dimensionality reduction we used four different approaches. Three of them involved imputing missing values and applying PCA. Imputation with iterative PCA is described in the section above. We also imputed missing values with mean methylation levels for the given gene (or zeros for shrunken residuals). The same process was also combined with the selection of only high-quality features as is described in \citet{luo2017single}:}
+}
+
+\new{ 
+We used four different approaches for dimensionality reduction. Three of them involve imputation of missing values followed by PCA:
+The first approach, iterative PCA, was described earlier.
+Second, "PCA on high-quality features" imputes missing values with the mean methylation level of a the given interval, while only retaining high-quality features selected as in \citet{luo2017single}:}
 We selected tiles spanning $\ge20$ CpG sites and with sequencing coverage in at least 70\% of cells.
-We then imputed missing values by imputing the mean for each tile, centered the values, and performed PCA.
+We then imputed missing values with the mean of each tile, centered the values, and performed PCA.
 \new{
+The third approach, "mean-imputed PCA" is identical to approach two, but without the quality-filtering step.
 Lastly, we used MOFA+ with default parameters instead of PCA, which does not require imputation of missing values. 
 In all four cases we reduced the dimensionality of the input data to 15 PCs or MOFA factors. In some cases MOFA+ returned a smaller number of factors, since some of the requested 15 had zero variance.
 For visualization, these 15 PCs or factors were subjected to UMAP with parameters min\_dist $=0.2$, init $=$ ``spca''.
@@ -691,11 +696,11 @@ To flexibly adapt to data sets of different sizes, we set n\_neighbors  $=\frac{
 }
 The same analysis was repeated for \new{three additional scBS data sets \citep{luo2017single, bian2018single, argelaguet2019gastru}}, and for smaller data sets generated by randomly sub-sampling cells separately from \new{these} data sets.
 
-\new{VMRs that intersect protein-coding gene bodies, CpG islands or cCREs were quantified by subtracting VMRs with at least one bp of overlap using \texttt{bedtools} \texttt{subtract} \texttt{-A} \citep{quinlan2010bedtools}.
+\new{VMRs that intersect protein-coding gene bodies, CpG islands (from the UCSC genome browser) or cCREs were quantified by subtracting VMRs with at least one bp of overlap using \texttt{bedtools} \texttt{subtract} \texttt{-A} \citep{quinlan2010bedtools} and counting the remaining VMRs.
 }
 
 To test our DMR detection approach, we selected oligodendrocytes and NSCs from healthy wild type mice of \citet{kremer_scnmt} and ran \texttt{scbs diff} with default parameters.
-For GO enrichment analysis, DMRs with $p^\text{adj}<0.01$ were uploaded to GREAT \citep{mclean2010great} with the association rule "basal plus extension, 0~bp upstream, 20~kb downstream, 1~Mbp max extension, curated regulatory domains included".
+For GO enrichment analysis, DMRs with adjusted $p<0.01$ were uploaded to GREAT \citep{mclean2010great} with the association rule "basal plus extension, 0~bp upstream, 20~kb downstream, 1~Mbp max extension, curated regulatory domains included".
 
 \subsection{Mean neighbor score} \label{methods:score}
 To assess performance of our methods, we employed a score that quantifies how well cell types (or cell states) are separated in 15-dimensional PCA space.
