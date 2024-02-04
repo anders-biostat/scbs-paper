@@ -268,10 +268,10 @@ Although cell cluster separation generally becomes more difficult in those, perf
 
 \new{
 Overall, VMR quantification yielded results similar to those obtained when quantifying ENCODE regulatory regions, even though the number of detected VMRs (63\,421) is considerably smaller than the number of ENCODE cCREs (339\,815).
-Repeating our analysis on the 63\,421 cCREs with the highest quality came at the cost of a reduced ability to distinguish cell types, suggesting that the average VMR is more informative for this task (Fig.~\ref{fig:resource_usage}A,B).
-This demonstrates that our \textit{de novo} VMR detection approach identifies genomic regions in scBS data that are as informative as state-of-the-art epigenomic annotations, as well as its ability to find a parsimonous set of relevant elements. We detected only limited overlap between VMRs and cCREs (Fig.~\ref{fig:score}F), indicating that VMR detection yields information that is complementary to other epigenetic marks.
-An added benefit of VMR detection is that this approach is available even in the absence of such annotations, for instance when studying species other than human or mouse.
-Furthermore, using VMRs over regulatory regions resulted in decreased RAM requirements as well as a shorter runtime, even when accounting for the additional step of VMR detection (Fig.~\ref{fig:resource_usage}C,D).
+When we repeated our analysis using only the 63\,421 cCREs with the highest coverage the ability to distinguish cell types was diminished, suggesting that the average VMR is more informative for this task then the average cCRE (Fig.~\ref{fig:resource_usage}A,B).
+This demonstrates our \textit{de novo} VMR detection approach's ability to identify in scBS data a parsimonous set of relevant elements. The overlap between VMRs and cCREs is limited (Fig.~\ref{fig:score}F), indicating that VMR detection yields information that is complementary to other epigenetic marks.
+An further benefit of VMR detection is that this approach is available even in the absence of such annotations, for instance when studying species other than human or mouse.
+Lastly, using VMRs over regulatory regions resulted in decreased RAM requirements as well as a shorter runtime, even when accounting for the additional step of VMR detection (Fig.~\ref{fig:resource_usage}C,D).
 }
 
 \new{
@@ -303,7 +303,7 @@ Overall, our default parameter combination provided good results and fast comput
 Lastly, we asked whether our methods are also suitable for the analysis of DNA methylation outside the default CpG context.
 To this end, we revisited the \citet{luo2017single} data set, but this time only considered CH-methylation (mCH).
 VMR detection with default options produced results that were qualitatively similar to those reported in \citet{luo2017single}, suggesting that our methods are also suitable for this data type (Fig.~\ref{fig:umaps}A).
-As single-cell methylome data sets are expected to rapidly grow in size in the coming years, we furthermore performed a stress test on a large data set comprising 100\,350 cells \citep{liu2021dna} (Fig.~\ref{fig:umaps}B).
+Finally, as single-cell methylome data sets are expected to rapidly grow in size in the coming years, we furthermore performed a stress test on a large data set comprising 100\,350 cells \citep{liu2021dna} (Fig.~\ref{fig:umaps}B).
 }
 
 
@@ -336,7 +336,7 @@ As single-cell methylome data sets are expected to rapidly grow in size in the c
 		A higher neighbor score implies better separation of cell types inferred from single-cell transcriptomes of the same cells (A).
 		\new{
 		\textbf{(F)} Proportion of VMRs (blue dots) that have at least 1~bp overlap with other genomic features.
-		The black range illustrates the minimum and maximum overlap observed for 100 permutations of randomly shuffled VMRs.
+		The black range illustrates the minimum and maximum overlap observed for 100 reshufflings of the VMRs to randomly chosen positions.
 		}
 	}
 	\label{fig:score}
@@ -461,13 +461,13 @@ These DMRs may then be associated with nearby genes, or used for GO enrichment w
 
 Here, we have proposed an improved strategy to preprocess single-cell bisulfite sequencing data.
 Based on the observation that incomplete read coverage of a genomic interval can lead to inaccurate methylation estimates, we suggest a scoring scheme that is aware of a read's local context rather than just treating all reads in an interval alike. 
-\new{In this way our approach offers an alternative to existing tools that impute missing CpG infomation, such as Melissa \citep{kapourani2019melissa}, DeepCpG \citep{angermueller2017deepcpg} or Epiclomal \citep{pe2020epiclomal}.}
+%\new{In this way our approach offers an alternative to existing tools that impute missing CpG infomation, such as Melissa \citep{kapourani2019melissa}, DeepCpG \citep{angermueller2017deepcpg} or Epiclomal \citep{pe2020epiclomal}.}
 
 Furthermore, we show a way to pinpoint minimal regions of high variability across cells, which we call variably methylated regions (VMRs).
-\new{Unlike other tools for scBS data analysis \citep{kapourani2019melissa, kapourani2021scmet}, which rely on the user to manually specify which genomic intervals should be quantified, \texttt{scbs} implements an approach to discover these intervals in the data itself. This not only reduces noise and allows to focus only on the features that are important for the given dataset, but also provides useful input for genomics-style analyses.
+\new{Unlike other tools for scBS data analysis \citep{kapourani2019melissa, kapourani2021scmet, danese2021episcanpy}, which rely on the user to manually specify which genomic intervals should be quantified, \texttt{scbs} implements an approach to discover these intervals in the data itself. This not only reduces noise and allows to focus only on the features that are important for the given dataset, but also provides useful input for genomics-style analyses.
 Depending on the research question at hand, individual VMRs may be related to nearby genomic features such as gene bodies or known regulatory elements, or subjected to gene ontology and motif enrichment.}
 
-\new{To furthermore aid interpretation of scBS data, we developed and implemented the first algorithm for genome-wide detection of DMRs in single-cell methylomes.}
+\new{To furthermore aid interpretation of scBS data, we developed and implemented an algorithm for genome-wide detection of DMRs in single-cell methylomes.}
 FDR estimation via permutation allows us to report statistical significance of each DMR.
 \new{In a similar manner as VMRs, pinpointing the regions that differ between groups of cells and hence have a putative regulatory role aids biological interpretability.}
 \new{For instance,} applying our approach to NSCs and oligodendrocytes demonstrated that the obtained DMRs locate near meaningful loci associated with cell-type specific functions.
@@ -476,7 +476,7 @@ FDR estimation via permutation allows us to report statistical significance of e
 We also presented and published an open source software tool, called \texttt{scbs}, that provides an easy-to-use implementation of the described algorithms.
 \new{It can start directly from the output of methylation callers such as Bismark \citep{bismark}, Biscuit \citep{biscuit} and methylpy \citep{methylpy} and produce a cell\texttimes region matrix.
 We suggest iterative PCA as an approach to map the count matrix to a reduced-dimensional space overcoming the abundance of missing values.
-However, one can also use to the same end established tools based on matrix factorisation such as MOFA+, \citep[][included in our benchmarks]{argelaguet2020mofa} or LIGER \citep{welch2019single}.
+Alternatively, one may use for this purpose established tools based on matrix factorisation such as MOFA+, \citep[][included in our benchmarks]{argelaguet2020mofa} or LIGER \citep{welch2019single}.
 Once a low dimensional embedding is obtained, one can switch to well established tools from scRNA-seq analysis, including visualization tools such as t-SNE and UMAP, Leiden/Louvain clustering, pseudotime trajectory analyses, etc.
 By offering these functions, \texttt{scbs} bridges a gap in the chain of existing tools that so far hindered practitioners in their data analysis.
 Our implementation can handle datasets of various sizes up to a hundred thousand cells (see Fig.~\ref{fig:umaps}B).}
