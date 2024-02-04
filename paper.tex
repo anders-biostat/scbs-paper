@@ -60,7 +60,7 @@ Simon Anders\textsuperscript{1,*}\\[1ex]
 \textsuperscript{2} Division of Molecular Neurobiology, German Cancer Research Center (DKFZ), Heidelberg, Germany}
 \vspace{1.5ex}
 
-version 3 /\!/ January 2024
+version 2 /\!/ January 2024
 \vspace{4.5ex}
 
 \begin{minipage}{0.7\textwidth}
@@ -477,7 +477,7 @@ We also presented and published an open source software tool, called \texttt{scb
 \new{It can start directly from the output of methylation callers such as Bismark \citep{bismark}, Biscuit \citep{biscuit} and methylpy \citep{methylpy} and produce a cell\texttimes region matrix.
 We suggest iterative PCA as an approach to map the count matrix to a reduced-dimensional space overcoming the abundance of missing values.
 Alternatively, one may use for this purpose established tools based on matrix factorisation such as MOFA+, \citep[][included in our benchmarks]{argelaguet2020mofa} or LIGER \citep{welch2019single}.
-Once a low dimensional embedding is obtained, one can switch to well established tools from scRNA-seq analysis, including visualization tools such as t-SNE and UMAP, Leiden/Louvain clustering, pseudotime trajectory analyses, etc.
+Once a low dimensional embedding is obtained, one can switch to well established methods from scRNA-seq analysis, including visualization tools such as t-SNE and UMAP, Leiden/Louvain clustering, pseudotime trajectory analyses, etc., e.g., by using either overall toolkits like Seurat \citep{seurat5}, ScanPy/EpiScanPy \citep{Wolf_2018,danese2021episcanpy} or any of the many available tools for specific tasks.
 By offering these functions, \texttt{scbs} bridges a gap in the chain of existing tools that so far hindered practitioners in their data analysis.
 Our implementation can handle datasets of various sizes up to a hundred thousand cells (see Fig.~\ref{fig:umaps}B).}
 
