@@ -264,13 +264,13 @@ Although cell cluster separation generally becomes more difficult in those, perf
 
 
 Overall, VMR quantification yielded results similar to those obtained when quantifying ENCODE regulatory regions, even though the number of detected VMRs (63\,421) is considerably smaller than the number of ENCODE cCREs (339\,815).
-When we repeated our analysis using only the 63\,421 cCREs with the highest coverage the ability to distinguish cell types was diminished, suggesting that the average VMR is more informative for this task then the average cCRE (Fig.~\ref{fig:resource_usage}A,B).
+When we repeated our analysis using only the 63\,421 cCREs with the highest coverage the ability to distinguish cell types was diminished, suggesting that the average VMR is more informative for this task then the average cCRE (Extended Data Fig.~\ref{fig:resource_usage}A,B).
 This demonstrates our \textit{de novo} VMR detection approach's ability to identify in scBS data a parsimonous set of relevant elements. The overlap between VMRs and cCREs is limited (Fig.~\ref{fig:score}F), indicating that VMR detection yields information that is complementary to other epigenetic marks.
 An further benefit of VMR detection is that this approach is available even in the absence of such annotations, for instance when studying species other than human or mouse.
-Lastly, using VMRs over regulatory regions resulted in decreased RAM requirements as well as a shorter runtime, even when accounting for the additional step of VMR detection (Fig.~\ref{fig:resource_usage}C,D).
+Lastly, using VMRs over regulatory regions resulted in decreased RAM requirements as well as a shorter runtime, even when accounting for the additional step of VMR detection (Extended Data Fig.~\ref{fig:resource_usage}C,D).
 
 
-We repeated this benchmark on an additional three published single-cell methylome data sets (Fig.~\ref{fig:score_luo}).
+We repeated this benchmark on an additional three published single-cell methylome data sets (Extended Data Fig.~\ref{fig:score_luo}).
 These include neuronal sub-types of the murine cortex \citep[][using cell type labels derived from CH-methylation in genomic tiles instead of CpG-methylation as ground truth]{luo2017single}, cells isolated from mouse embryos during the onset of gastrulation \citep[][using RNA-derived cell clusters or alternatively embryonic stage as ground truth]{argelaguet2019gastru} and human colorectal cancer cells \citep[][using sampling region as ground truth]{bian2018single}.
 Again, we subjected each data set to all possible combinations of genomic feature selection and methylation quantification.
 We furthermore included three additional approaches to perform dimensionality reduction in our benchmarks, including PCA with two different pre-processing strategies, as well as MOFA+, a dimensionality reduction technique designed for multi-modal single-cell data that can also process methylation data \citep{argelaguet2020mofa}.
@@ -282,11 +282,11 @@ These extensive benchmarks confirmed that our proposed combination of methods, i
 
 \subsubsection{Robustness to parameter changes}
 
-Next, we assessed whether our proposed workflow requires fine-tuning of parameters (Fig.~\ref{fig:sweep}).
+Next, we assessed whether our proposed workflow requires fine-tuning of parameters (Extended Data Fig.~\ref{fig:sweep}).
 To this end, we re-analyzed two data sets, as well as sub-samples of the data with different VMR detection parameters namely the width of the sliding window in bp, (set with option \texttt{--bandwidth} in our \textit{MethSCAn} software, default 2000), the variance threshold above which windows are merged to VMRs (\texttt{--var-threshold}, default 0.02) and the step size of the sliding window (\texttt{--stepsize}, default 100bp).
 This parameter sweep showed that our workflow gives good results over a wide range of parameter values.
-For the CpG-methylation data of \citet{luo2017single}, results are nearly independent of the parameters (Fig.~\ref{fig:sweep}B).
-In the more challenging data set of \citet{kremer_scnmt}, cell types were less cleanly separated when very large bandwidths, very strict variance thresholds, or a very large step size was selected (Fig.~\ref{fig:sweep}A,C).
+For the CpG-methylation data of \citet{luo2017single}, results are nearly independent of the parameters (Extended Data Fig.~\ref{fig:sweep}B).
+In the more challenging data set of \citet{kremer_scnmt}, cell types were less cleanly separated when very large bandwidths, very strict variance thresholds, or a very large step size was selected (Extended Data Fig.~\ref{fig:sweep}A,C).
 However, very small bandwidths or very lenient thresholds resulted in a much higher number of VMRs and thus long computing times.
 Overall, our default parameter combination provided good results and fast compute times in both data sets.
 
@@ -295,8 +295,8 @@ Overall, our default parameter combination provided good results and fast comput
 
 Lastly, we asked whether our methods are also suitable for the analysis of DNA methylation outside the default CpG context.
 To this end, we revisited the \citet{luo2017single} data set, but this time only considered CH-methylation (mCH).
-VMR detection with default options produced results that were qualitatively similar to those reported in \citet{luo2017single}, suggesting that our methods are also suitable for this data type (Fig.~\ref{fig:umaps}A).
-Finally, as single-cell methylome data sets are expected to rapidly grow in size in the coming years, we furthermore performed a stress test on a large data set comprising 100\,350 cells \citep{liu2021dna} (Fig.~\ref{fig:umaps}B).
+VMR detection with default options produced results that were qualitatively similar to those reported in \citet{luo2017single}, suggesting that our methods are also suitable for this data type (Extended Data Fig.~\ref{fig:umaps}A).
+Finally, as single-cell methylome data sets are expected to rapidly grow in size in the coming years, we furthermore performed a stress test on a large data set comprising 100\,350 cells \citep{liu2021dna} (Extended Data Fig.~\ref{fig:umaps}B).
 
 
 
@@ -465,7 +465,7 @@ We suggest iterative PCA as an approach to map the count matrix to a reduced-dim
 Alternatively, one may use for this purpose established tools based on matrix factorisation such as MOFA+, \citep[][included in our benchmarks]{argelaguet2020mofa} or LIGER \citep{welch2019single}.
 Once a low dimensional embedding is obtained, one can switch to well established methods from scRNA-seq analysis, including visualization tools such as t-SNE and UMAP, Leiden/Louvain clustering, pseudotime trajectory analyses, etc., e.g., by using either overall toolkits like Seurat \citep{seurat5}, ScanPy/EpiScanPy \citep{Wolf_2018,danese2021episcanpy} or any of the many available tools for specific tasks.
 By offering these functions, \textit{MethSCAn} bridges a gap in the chain of existing tools that so far hindered practitioners in their data analysis.
-Our implementation can handle datasets of various sizes up to a hundred thousand cells (see Fig.~\ref{fig:umaps}B).
+Our implementation can handle datasets of various sizes up to a hundred thousand cells (see Extended Data Fig.~\ref{fig:umaps}B).
 
 By re-analyzing four published data sets, we showed that these improvements to data preprocessing help to increase signal and decrease noise, resulting in a more informative intermediate-dimensional representation of the data.
 As examples of practical benefits, we demonstrate that our preprocessing allows for better distinction of cell sub-types, especially for challenging data sets comprising cellular sub-states and lineage transitions or for data sets with small cell number.
@@ -727,11 +727,12 @@ We thank Alexey Uvarovskii for code refactoring and helpful suggestions on the s
 
 \onecolumn 
 \newpage
-\section{Supplementary Figures}
+\section{Extended Data Figures}
 \vspace{1.5cm}
 
 \setcounter{figure}{0}
-\renewcommand{\thefigure}{S\arabic{figure}}
+%\renewcommand{\thefigure}{ \arabic{figure}}
+\renewcommand{\figurename}{Extended Data Figure} 
 
 \noindent%
 \begin{minipage}{\linewidth}
