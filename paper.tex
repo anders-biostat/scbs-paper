@@ -186,7 +186,7 @@ As we demonstrate below, a PCA performed on such a matrix provided a distance me
 
 To demonstrate the value of our proposed improvements, we benchmarked various combinations of analysis methods on five diverse single-cell methylome data sets, starting with a data set from our own research.
 
-\subsubsection{Correlating VMR methylation with gene expression}
+\subsubsection*{Correlating VMR methylation with gene expression}
 
 Our data set \citep{kremer_scnmt} comprises the single-cell methylomes of 1566 cells isolated from mouse forebrains, as well as matched single-cell transcriptomes of the same cells.
 Among these cells are distinct cell types such as oligodendrocytes, oligodendrocyte precursor cells (OPCs) and endothelial cells, as well as cellular sub-states that are part of the continuous neural stem cell differentiation trajectory.
@@ -197,7 +197,7 @@ Indeed, a gene-wise comparison revealed many genes whose expression is correlate
 One such example gene, \textit{Htra1}, is depicted in Fig.~\ref{fig:correlation}B.
 While the promoter of this gene is lowly methylated regardless of gene expression, a VMR located downstream of the promoter is lowly methylated in cells with high \textit{Htra1} expression.
 
-\subsubsection{Improved identification of cell types}
+\subsubsection*{Improved identification of cell types}
 
 We next tested whether our methods improve the ability to distinguish cell types and cell states (Fig.~\ref{fig:score}).
 To this end, we obtained cell type/state labels based on the single-cell transcriptomes from \citet{kremer_scnmt} (Fig.~\ref{fig:score}A).
@@ -241,7 +241,7 @@ These extensive benchmarks confirmed that our proposed combination of methods, i
 
 
 
-\subsubsection{Robustness to parameter changes}
+\subsubsection*{Robustness to parameter changes}
 
 Next, we assessed whether our proposed workflow requires fine-tuning of parameters (Extended Data Fig.~\ref{fig:sweep}).
 To this end, we re-analyzed two data sets, as well as sub-samples of the data with different VMR detection parameters namely the width of the sliding window in bp, (set with option \texttt{--bandwidth} in our \textit{MethSCAn} software, default 2000), the variance threshold above which windows are merged to VMRs (\texttt{--var-threshold}, default 0.02) and the step size of the sliding window (\texttt{--stepsize}, default 100bp).
@@ -252,7 +252,7 @@ However, very small bandwidths or very lenient thresholds resulted in a much hig
 Overall, our default parameter combination provided good results and fast compute times in both data sets.
 
 
-\subsubsection{Further applications}
+\subsubsection*{Further applications}
 
 Lastly, we asked whether our methods are also suitable for the analysis of DNA methylation outside the default CpG context.
 To this end, we revisited the \citet{luo2017single} data set, but this time only considered CH-methylation (mCH).
