@@ -1,13 +1,12 @@
-\documentclass[twocolumn,10pt]{article}
+\documentclass[10pt]{article}
 
 \usepackage[a4paper,hmargin=1.5cm,vmargin=2cm]{geometry}
-\setlength{\columnsep}{0.7cm}
+%\setlength{\columnsep}{0.7cm}
 %\usepackage{microtype} % nice typesetting  % doesn't work for me :-( -S
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{balance}
-\usepackage{palatino}
 \usepackage[varqu]{inconsolata}
 
 \usepackage[utf8]{inputenc}
@@ -40,13 +39,9 @@
     \endgroup
 }
 
-\newcommand{\todo}[1]{[\textcolor{orange}{#1}]}
-\newcommand{\new}[1]{#1} %\textcolor{blue}{#1}}
-
 \begin{document}
 
-\twocolumn[{%
-\centering\phantomsection\addcontentsline{toc}{section}{Title}
+{\centering\phantomsection\addcontentsline{toc}{section}{Title}
 \textbf{\Large Analyzing single-cell bisulfite sequencing data with \textit{MethSCAn}}\\[1.5ex]
 
 Lukas P.~M. Kremer\textsuperscript{1,2,*},
@@ -58,15 +53,12 @@ Ana Martin-Villalba\textsuperscript{2,*},
 Simon Anders\textsuperscript{1,*}\\[1ex]
 {\footnotesize \textsuperscript{1} BioQuant Centre, University of Heidelberg, Heidelberg, Germany\\[-.5ex] 
 \textsuperscript{2} Division of Molecular Neurobiology, German Cancer Research Center (DKFZ), Heidelberg, Germany}
-\vspace{1.5ex}
-
-version 2 /\!/ January 2024
+}
 \vspace{4.5ex}
 
-\begin{minipage}{0.7\textwidth}
-\small \setlength{\parindent}{1em}
-\phantomsection\addcontentsline{toc}{subsection}{Abstract}
-\noindent \textit{Abstract} -- Single-cell bisulfite sequencing (scBS) is a technique that enables the assessment of DNA methylation at single-base pair and single-cell resolution.
+\section*{Abstract}
+
+\noindent Single-cell bisulfite sequencing (scBS) is a technique that enables the assessment of DNA methylation at single-base pair and single-cell resolution.
 The analysis of large datasets obtained from scBS requires preprocessing to reduce data size, improve signal-to-noise ratio, and provide interpretability.
 Typically, this is achieved by dividing the genome into large tiles and averaging the methylation signals within each tile.
 
@@ -76,12 +68,8 @@ Our approach enables better discrimination of cell types and other features of i
 We also present an approach to detect differentially methylated regions (DMRs) between groups of cells, and demonstrate its ability to identify biologically meaningful regions that are associated with genes involved in the core functions of specific cell types.
 
 To facilitate the analysis of scBS data, we have developed a software tool called \textit{MethSCAn} that implements these methods and provides additional functionality.
-\end{minipage}
-\vspace{6.5ex}
-}]
-\setcounter{secnumdepth}{0} 
 
-\section{Introduction}
+\section*{Introduction}
 
 Sequencing-based assays with single-cell resolution have offered new means to understand the differences between the cells making up a sample.
 Single-cell RNA sequencing (scRNA-seq) techniques have matured at great pace in recent years, with well developed analysis methodology, and methods to study epigenetics at single-cell resolution are rapidly catching up.
@@ -98,9 +86,7 @@ Furthermore, we discuss how to perform comparative analyses.
 Finally, we present \textit{MethSCAn}, a comprehensive software toolkit to perform scBS data analysis, using the described methods.
 \blfootnote{\hspace{-.5cm}\raggedright\textsuperscript{*} e-mails:  \texttt{l.kremer@dkfz-heidelberg.de}, \hspace{1cm}\texttt{a.martin-villalba@dkfz-heidelberg.de}, \hspace{1cm}\texttt{simon.anders@bioquant.uni-heidelberg.de}}
 
-
-%\phantomsection  % idk why we need this to silence hyperref's warning
-\subsection{Standard approach}
+\subsection*{Standard approach}
 
 \begin{figure*}[t]
     \begin{center}
@@ -150,9 +136,9 @@ Then, we will demonstrate the value of our methods using benchmarks and applicat
 Finally, we describe and demonstrate an approach to detect differentially methylated regions (DMRs) in scBS data.
 We also describe our software toolkit, \textit{MethSCAn}, that facilitates all these analyses.
 
-\section{Improved preprocessing of scBS data}
+\section*{Results}
 
-\subsection{Read-position aware quantitation} \label{residuals}
+\subsection*{Read-position aware quantitation} \label{residuals}
 
 We first discuss the task of quantifying the level of methylation in a given, fixed, genomic interval.
 Typically, read coverage per cell is sparse in scBS data.
@@ -185,7 +171,7 @@ We slightly refine this by using an iterative imputation within the PCA ("iterat
 Taken together, this shrunken mean of residuals quantitation reduces variance in comparison to simple averaging of raw methylation calls.
 We will show further below how this improves results.
 
-\subsection{Finding variably methylated regions}
+\subsection*{Finding variably methylated regions}
 
 \begin{figure}
     \begin{center}
@@ -220,11 +206,10 @@ As we demonstrate below, a PCA performed on such a matrix provided a distance me
 
 
 
-\subsection{Application and benchmarks}
+\subsection*{Application and benchmarks}
 
 To demonstrate the value of our proposed improvements, we benchmarked various combinations of analysis methods on five diverse single-cell methylome data sets, starting with a data set from our own research.
 
-%\phantomsection
 \subsubsection{Correlating VMR methylation with gene expression}
 
 Our data set \citep{kremer_scnmt} comprises the single-cell methylomes of 1566 cells isolated from mouse forebrains, as well as matched single-cell transcriptomes of the same cells.
@@ -332,7 +317,7 @@ Finally, as single-cell methylome data sets are expected to rapidly grow in size
 \end{figure*}
 
 
-\section{Finding differentially methylated regions (DMRs)}
+\section*{Finding differentially methylated regions (DMRs)}
 
 A common task in the analysis of bulk bisulfite-sequencing data is the detection of differentially methylated regions (DMRs) between conditions, tissues, or cell types \citep{Hebestreit2013, dmrseq}.
 As DNA methylation affects gene expression, DMRs can provide insights into the unique epigenetic and gene regulatory characteristics of cell types.
@@ -378,8 +363,8 @@ While the primary purpose of VMRs is to provide better input for PCA and distanc
 	\label{fig:dmr}
 \end{figure*}
 
-%\phantomsection
-\subsection{Detecting DMRs between oligodendrocytes and neural stem cells}
+
+\subsection*{Detecting DMRs between oligodendrocytes and neural stem cells}
 
 
 We used the single-cell multi-omics data set \citep{kremer_scnmt} to evaluate our DMR detection approach.
@@ -396,7 +381,7 @@ Fig.~\ref{fig:dmr}C-D depicts an exemplary DMR, located at the gene body of myel
 Our results suggest that oligodendrocyte-specific gene expression of \textit{Mbp} is supported by low methylation at the detected DMR.
 
 
-\section{The \textit{MethSCAn} software toolkit}
+\section*{The \textit{MethSCAn} software toolkit}
 
 \begin{figure*}[t]
     \begin{center}
@@ -444,7 +429,7 @@ This command produces a BED file listing the genome coordinates, adjusted p-valu
 These DMRs may then be associated with nearby genes, or used for GO enrichment with tools such as GREAT \citep{mclean2010great} to enable functional interpretation.
 
 
-\section{Discussion and Conclusion}
+\section*{Discussion}
 
 Here, we have proposed an improved strategy to preprocess single-cell bisulfite sequencing data.
 Based on the observation that incomplete read coverage of a genomic interval can lead to inaccurate methylation estimates, we suggest a scoring scheme that is aware of a read's local context rather than just treating all reads in an interval alike. 
@@ -477,7 +462,7 @@ In conclusion, we have presented powerful improvements to scBS data preprocessin
 
 
 
-\subsection{Data Availability}
+\subsection*{Data Availability}
 
 All data used to benchmark and showcase the \textit{MethSCAn} software is publicly available under the following NCBI Gene Expression Omnibus accessions:
 Single-cell multi-omics of the murine forebrain \citep{kremer_scnmt}: \texttt{GSE210806};
@@ -487,7 +472,7 @@ mouse gastrulation \citep{argelaguet2019gastru}: \texttt{GSE121708};
 100k brain cells \citep{liu2021dna}: \texttt{GSE132489}.
 
 
-\subsection{Code Availability}
+\subsection*{Code Availability}
 
 \textit{MethSCAn} is free and open source.
 The package is available on the Python Package Index (PyPI) and can be installed with the Python package installer \texttt{pip}.
@@ -495,9 +480,9 @@ The source code is hosted at \href{https://github.com/anders-biostat/MethSCAn}{h
 
 
 %\phantomsection
-\section{Methods}
+\section*{Methods}
 
-\subsection{Raw data}
+\subsection*{Raw data}
 
 Let us write $x_{ij}$ for the methylation status of CpG $i$ in cell $j$.
 The index $i$ runs over all CpG positions present in the genome, the index $j$ over all cells in the assay.
@@ -517,14 +502,14 @@ Moreover, we define $C_i\subset C$ as the set of all those cells $j$ that have r
 Conversely, we define $G_j$ as the set of all the CpG positions $i$ covered by reads from cell $j$ 
 \[ G_j=\{i: x_{ij}\neq\text{NA}\}.\]
 
-\subsection{Data storage}
+\subsection*{Data storage}
 
 The function \texttt{methscan prepare} reads a set of methylation files (e.g. produced by Bismark) and produces a file that stores the matrix $x$ in a space-efficient format, as follows:
 $x$ is represented as a SciPy sparse matrix \citep{SciPy}, encoding the actual values 0, 1, and NA as -1, 1, and 0, respectively.
 Coding NA (the most common value) as 0 leverages SciPy's sparse matrix storage.
 In all that follows here, any mention of $x$ will, however, always mean the encoding as $x_{ij}\in\{0,1,\text{NA}\}$.
 
-\subsection{Smoothing}
+\subsection*{Smoothing}
 
 For each CpG position $i$, we write 
 \[\overline{x}_i=\langle x_{ij} \rangle_{j\in C_i} = \frac{1}{|C_i|}\sum_{j\in C_i} x_{ij}\] 
@@ -545,7 +530,7 @@ Here, $d_{ii'}$ is the distance between CpG positions $i$ and $i'$, measured in 
 \right.
 \]
 
-\subsection{Methylation for an interval}
+\subsection*{Methylation for an interval}
 
 Next, we discuss averaging methylation over a range of CpG sites.
 
@@ -573,7 +558,7 @@ This extra pseudocount has the effect of shrinking the value towards the ``neutr
 In the extreme case of none of the reads from cell $j$ covering $I$, the sum becomes 0 and the denominator 1, i.e.
 $r_{Ij}=0$ in this case.
 
-\subsection{Finding variably methylated regions}
+\subsection*{Finding variably methylated regions}
 
 For any interval $I$, we denote by $v_I$ the variance of its residual averages $r_{Ij}$:
 
@@ -589,7 +574,7 @@ We take the union of all these intervals, split the union into connected compone
 Putting that last step in other words:
 We take all the intervals with variance in the top 2-percentile, fuse intervals that overlap and call the regions thus obtained the VMRs.
 
-\subsection{Finding differentially methylated regions}
+\subsection*{Finding differentially methylated regions}
 
 When searching for DMRs, we compare two groups of cells, whose index sets we denote with $C_\text{A}$ and $C_\text{B}$.
 For a given interval $I$, we calculate the mean each of the mean shrunken residuals $r_{ij}$ (see Eq.~(\ref{avgres})) over the cells $j$ in each of the two groups,
@@ -633,7 +618,7 @@ In words: we calculate which fraction of the null t values is greater than t by 
 The ratio gives us the false discovery rate we should expect if we used the t value as threshold.
 
 
-\subsection{Calculating cell to cell distances}
+\subsection*{Calculating cell to cell distances}
 
 Given a set, $\mathcal{V}=\{I^\text{v}_1,I^\text{v}_2,\dots\}$, of intervals corresponding to VMRs, we get a relative methylation fraction $r_{ij}$ for each VMR $I^\text{v}_i$ and each cell $j$ from Eq.\ (\ref{avgres}).
 The matrix thus obtained can then be centered and used as input for a PCA.
@@ -641,7 +626,7 @@ If we calculate the top $R$ principal components, we thus obtain for each cell $
 For any two cells $j$, $j'$, we use the Euclidean distance $\|\mathbf{x}^\text{P}_j - \mathbf{x}^\text{P}_{j'}\|$ as the measure of dissimilarity of the two cells.
 Thus, the matrix of PC scores can be used as input to dimension reduction methods like t-SNE or UMAP, and to clustering methods like the Louvain or Leiden algorithm, which require such a matrix as input to the approximate nearest neighbor (ANN) finding algorithm that is their first step.
 
-\subsection{PCA with iterative imputation}
+\subsection*{PCA with iterative imputation}
 
 Whenever a region is not covered by any read in a cell, the corresponding data entry in the input data matrix for PCA will be missing.
 The standard approach to calculate PCA, commonly done using the IRLBA algorithm \citep{Baglama2005}, is not suited to deal with missing data.
@@ -660,7 +645,7 @@ This can now be iterated until convergence.
 We note that similar approaches have also been used elsewhere \citep{josse2012}.
 
 
-\subsection{Analysis of scBS datasets for benchmarks}
+\subsection*{Analysis of scBS datasets for benchmarks}
 To analyze scBS data from \citet{kremer_scnmt}, single-cell CpG methylation reports from all conditions were first stored with \texttt{methscan prepare} and then smoothed with \texttt{methscan smooth} using the default bandwidth of 1000~bp.
 This data was then analysed multiple times with different combinations of analysis methods, namely four ways to divide the genome into intervals, two ways to quantify methylation in these intervals, and four approaches for dimensionality reductions.
 The following four sets of genomic intervals were used:
@@ -689,7 +674,7 @@ VMRs that intersect protein-coding gene bodies, CpG islands (from the UCSC genom
 To test our DMR detection approach, we selected oligodendrocytes and NSCs from healthy wild type mice of \citet{kremer_scnmt} and ran \texttt{methscan diff} with default parameters.
 For GO enrichment analysis, DMRs with adjusted $p<0.01$ were uploaded to GREAT 4.0.4 \citep{mclean2010great} with the association rule "basal plus extension, 0~bp upstream, 20~kb downstream, 1~Mbp max extension, curated regulatory domains included".
 
-\subsection{Mean neighbor score} \label{methods:score}
+\subsection*{Mean neighbor score} \label{methods:score}
 To assess performance of our methods, we employed a score that quantifies how well cell types (or cell states) are separated in 15-dimensional PCA space.
 For data from \citet{luo2017single}, we used cell type labels that the authors manually curated based on CH-methylation.
 For the multi-omic data set, we repeated the single-cell transcriptomics analysis described in \citet{kremer_scnmt} with two adjustments:
@@ -699,7 +684,7 @@ For each cell $j$, we count how many of its $k$ nearest neighbors have been assi
 We denote this count $a^k_j$, where we have chosen $k=\frac{\sqrt{n}}{1.5}$, rounded.
 The overall score used to evaluate a given combination of methods is then simply the mean of all cell-wise scores.
 
-\subsection{Correlation of DNA methylation and gene expression}
+\subsection*{Correlation of DNA methylation and gene expression}
 To assess correlation between gene expression and the methylation status of VMRs or promoters, we first detected VMRs with \texttt{methscan scan --bandwidth 1000 --var-threshold 0.05}.
 We then quantified DNA methylation at VMRs and promoters with \texttt{methscan matrix}.
 We defined promoters as $\pm2000$~bp regions centered on a genes transcription start site (TSS).
@@ -715,7 +700,7 @@ MethSCAn was implemented in Python 3.8 using the packages NumPy 1.20.1, SciPy 1.
 
 
 \phantomsection\addcontentsline{toc}{section}{Back Matter}
-\subsection{Acknowledgments}
+\subsection*{Acknowledgments}
 
 SA and LPMK acknowledge funding by the Klaus Tschira Foundation (project 00.022.2019).
 LPMK, MMB, LK, SC, and AMV acknowledge funding from the European Commission via ERC grant 771376, from the DFG via SFB grant 873, and from the DKFZ.
@@ -727,7 +712,7 @@ We thank Alexey Uvarovskii for code refactoring and helpful suggestions on the s
 
 \onecolumn 
 \newpage
-\section{Extended Data Figures}
+\section*{Extended Data Figures}
 \vspace{1.5cm}
 
 \setcounter{figure}{0}
