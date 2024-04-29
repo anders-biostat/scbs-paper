@@ -2,7 +2,6 @@
 
 \usepackage[a4paper,hmargin=1.5cm,vmargin=2cm]{geometry}
 %\setlength{\columnsep}{0.7cm}
-%\usepackage{microtype} % nice typesetting  % doesn't work for me :-( -S
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{caption}
@@ -10,7 +9,7 @@
 \usepackage[varqu]{inconsolata}
 
 \usepackage[utf8]{inputenc}
-\usepackage{natbib}
+\usepackage[numbers]{natbib}
 \bibliographystyle{simon}
 \setlength{\bibsep}{0.3ex plus 0.2ex}
 %\setcitestyle{aysep={}} 
@@ -51,7 +50,8 @@ Leonie Küchenhoff\textsuperscript{1,2},\\
 Santiago Cerrizuela\textsuperscript{2},
 Ana Martin-Villalba\textsuperscript{2,*},
 Simon Anders\textsuperscript{1,*}\\[1ex]
-{\footnotesize \textsuperscript{1} BioQuant Centre, University of Heidelberg, Heidelberg, Germany\\[-.5ex] 
+{\footnotesize
+\textsuperscript{1} BioQuant Centre, University of Heidelberg, Heidelberg, Germany\\[-.5ex] 
 \textsuperscript{2} Division of Molecular Neurobiology, German Cancer Research Center (DKFZ), Heidelberg, Germany}
 }
 \vspace{4.5ex}
@@ -87,20 +87,6 @@ Finally, we present \textit{MethSCAn}, a comprehensive software toolkit to perfo
 \blfootnote{\hspace{-.5cm}\raggedright\textsuperscript{*} e-mails:  \texttt{l.kremer@dkfz-heidelberg.de}, \hspace{1cm}\texttt{a.martin-villalba@dkfz-heidelberg.de}, \hspace{1cm}\texttt{simon.anders@bioquant.uni-heidelberg.de}}
 
 \subsection*{Standard approach}
-
-\begin{figure*}[t]
-    \begin{center}
-        \includegraphics[width=0.7\textwidth]{figures/Fig_residuals_AB.png}\\
-    \end{center}
-    \caption{\small \textbf{Improved quantification of DNA methylation in a given genomic interval.}\\
-    \textbf{(A)} Depicted is a genomic interval (between vertical blue lines) along a chromosome, for which DNA methylation is to be quantified.
-    Two cells cover differing parts of the interval with one read each.
-    If one simply counts for each cell which fraction of the covered CpG sites are methylated, one obtains very different values for the two cells.
-    \textbf{(B)} By averaging each CpG site's methylation over all cells and subsequent smoothing, the thick black ``average methylation curve'' is obtained.
-    To quantify the methylation of cell 1 from (A) relative to this average over all cells, we propose to use the cell's residuals to the smoothed curve (lengths of the vertical red lines) and take their average, counting residuals of methylated CpGs positive and residuals of unmethylated CpGs negative.}
-    \label{fig:smoothres}
-\end{figure*}
-
 
 The standard approach to analyze scBS data is based on methodology developed for the analysis of scRNA-seq data.
 Therefore, we start by briefly reviewing how sc\emph{RNA}-seq data is commonly analyzed, before we discuss scBS data analysis.
@@ -173,16 +159,6 @@ We will show further below how this improves results.
 
 \subsection*{Finding variably methylated regions}
 
-\begin{figure}
-    \begin{center}
-    \includegraphics[width=\columnwidth]{figures/Fig_sliding.png}
-    \end{center}
-    \caption{\small \textbf{Finding variably methylated regions.}\\
-    The chromosomes are divided up into overlapping windows (first five shown at the bottom), and for each window, the cells' methylation values are calculated as described and as depicted in Fig.~\ref{fig:smoothres}B.
-    Then, the variance of these values is calculated (each point represents one of the overlapping windows), a threshold (dashed line) is chosen such that a chosen quantile of windows have a variance exceeding the threshold.
-    Windows with above-threshold variance are merged if they overlap, yielding the ``variably methylated regions'' (VMRs).}
-    \label{fig:vmr}
-\end{figure}
 
 Typically, some regions in a chromosome will have very similar methylation status in all cells, while other regions show variability in methylation across cells.
 For instance, it is known  since long that CpG-rich promoters of housekeeping genes are unmethylated, and that a large proportion of the remaining genome is highly methylated regardless of cell type \citep{bird1986cpg}.
@@ -285,37 +261,6 @@ Finally, as single-cell methylome data sets are expected to rapidly grow in size
 
 
 
-\begin{figure*}
-	\begin{center}
-		\includegraphics[width=\textwidth]{figures/Fig_correlation.png}
-	\end{center}
-	\caption{\small \textbf{Correlation of DNA methylation and gene expression}.\\
-		\textbf{(A)} Distribution of Pearson correlations between gene expression and promoter methylation (black) and gene expression and methylation of the nearest VMR (red): for most promoters, correlation is weak.
-        Promoters are defined as intervals \textpm2~kb around the TSS.
-		\textbf{(B)} Mean methylation near the gene \textit{Htra1}.
-		Cells are assigned to 4 groups based on \textit{Htra1} expression (group 0: cells with no \textit{Htra1} expression, groups 1-3: cells that express \textit{Htra1}, divided into three equally large groups with group 3 having the highest expression).
-		Data from \citet{kremer_scnmt}.}
-	\label{fig:correlation}
-\end{figure*}
-
-\begin{figure*}
-	\begin{center}
-		\includegraphics[width=0.9\textwidth]{figures/Fig_benchmark.png}
-	\end{center}
-	\caption{\small \textbf{Benchmark of our methods on single-cell multi-omic data of cells of the murine forebrain}.\\
-		\textbf{(A)} Cell labels based on clustering of single-cell transcriptomes from \citet{kremer_scnmt}.
-		\textbf{(B, C)} Exemplary UMAPs obtained when analyzing the data set with conventional methods based on genome tiling (B) or our proposed methods (C).
-		\textbf{(D, E)} Mean degree of cell type separation (neighbor score, E, computed in 15-dimensional PC space) obtained when analyzing single-cell methylomes with different combinations of methods.
-		Either VMRs, ENCODE regulatory elements, 100~kb genomic tiles or promoter regions (TSS\textpm2kb) were subjected to iterative PCA and UMAP.
-		CpG methylation in these intervals was either quantified by averaging (dotted lines) or using the shrunken mean of the residuals as proposed in this work (solid lines).
-		The full 1566-cell data set was sub-sampled to simulate smaller data sets (x axis).
-		A higher neighbor score implies better separation of cell types inferred from single-cell transcriptomes of the same cells (A).
-		\textbf{(F)} Proportion of VMRs (blue dots) that have at least 1~bp overlap with other genomic features.
-		The black range illustrates the minimum and maximum overlap observed for 100 reshufflings of the VMRs to randomly chosen positions.
-	}
-	\label{fig:score}
-\end{figure*}
-
 
 \section*{Finding differentially methylated regions (DMRs)}
 
@@ -323,19 +268,6 @@ A common task in the analysis of bulk bisulfite-sequencing data is the detection
 As DNA methylation affects gene expression, DMRs can provide insights into the unique epigenetic and gene regulatory characteristics of cell types.
 However, to date no approach to detect DMRs in scBS data has been reported.
 To enable DMR detection in scBS data, we thus developed an approach that detects DMRs of variable size between two groups of cells, and controls the false discovery rate (Fig.~\ref{fig:dmrscan}):
-
-\begin{figure*}
-	\begin{center}
-		\includegraphics[width=.75\textwidth]{figures/Fig_DMRdetection.png}
-	\end{center}
-	\caption{\small \textbf{Identification of differentially methylated regions (DMRs).}\\
-		The chromosome is divided into windows overlapping by a small and fixed size.
-		For each window, the cell’s methylation values are calculated as described and as depicted in Fig.~\ref{fig:smoothres}B.
-		Then the t statistic of these values is obtained as a measure of methylation difference between two groups of cells (each point represents one of the windows).
-		Upper and lower thresholds (dashed lines) are chosen such that a defined quantile of windows have a t statistic above or below the threshold.
-		Windows exceeding either threshold are merged if they overlap, yielding the differentially methylated regions (DMRs).}
-	\label{fig:dmrscan}
-\end{figure*}
 
 Similar to the previously described approach for VMR identification (Fig.~\ref{fig:vmr}), we divide each chromosome into overlapping windows shifted by a small and fixed size (step size) and quantify the methylation of each cell in each window.
 Next, instead of the variance, we obtain the t statistic as a measure of differential methylation between the two cell groups.
@@ -346,22 +278,6 @@ To assess statistical significance of DMRs, we repeat the same procedure on perm
 The DMR t statistics obtained from permuted data are then used to estimate the false-discovery rate (FDR), yielding an adjusted p-value for each DMR.
 
 While the primary purpose of VMRs is to provide better input for PCA and distance calculations, DMR detection facilitates the discovery of epigenetic differences between conditions or cell types, as we demonstrate next.
-
-\begin{figure*}
-	\begin{center}
-		\includegraphics[width=.7\textwidth]{figures/Fig_DMRs.png}
-	\end{center}
-	\caption{\small \textbf{Detection of differentially methylated regions between oligodendrocytes and neural stem cells.}\\
-		\textbf{(A)} DMRs detected between 58 oligodendrocytes (ODs) and 130 neural stem cells (NSCs) from \citet{kremer_scnmt} (top) and DMRs detected in the same data with randomly permuted cell labels (bottom, used to estimate FDR and determine adjusted p-values).
-		\textbf{(B)} Enrichment of GO terms associated with DMRs lowly methylated in ODs (top) or NSCs (bottom).
-		Depicted are the top 5 GO terms of the "Biological Process" (GO:BP) and "Cellular Component" (GO:CC) GO category, and their binomial test p-value and enrichment, as reported by GREAT \citep{mclean2010great}.
-		\textbf{(C)} Mean methylation of NSCs and ODs at an exemplary DMR.
-		Each point corresponds to a cell, black lines denote the median.
-		\textbf{(D)} Detailed view of the DMR (yellow dashed rectangle) from C in pseudo-bulk samples consisting of NSCs or ODs.
-		Vertical bars represent CpG sites.
-	}
-	\label{fig:dmr}
-\end{figure*}
 
 
 \subsection*{Detecting DMRs between oligodendrocytes and neural stem cells}
@@ -382,22 +298,6 @@ Our results suggest that oligodendrocyte-specific gene expression of \textit{Mbp
 
 
 \section*{The \textit{MethSCAn} software toolkit}
-
-\begin{figure*}[t]
-    \begin{center}
-        \includegraphics[width=.8\textwidth]{figures/Fig_workflow.png}
-    \end{center}
-    \caption{\small \textbf{Overview of the functionalities implemented in the \textit{MethSCAn} package.}\\
-        \texttt{methscan prepare} parses methylation files produced by common bisulfite sequencing mappers and stores their contents in a compressed format optimized for efficient access to genomic intervals.
-        \textit{MethSCAn} also produces cell-wise summary statistics and quality plots (here: average methylation around the transcription start site) that are used to detect low-quality cells.
-        These cells can be discarded with \texttt{methscan filter}.
-        To obtain a methylation matrix, similar to the count matrices used in scRNA-seq, the user must first decide in which genomic intervals methylation should be quantified.
-        The user may either provide genomic regions of \emph{a priori} interest, or they may choose to discover VMRs (variably methylated regions) in the data with \texttt{methscan scan}.
-        The resulting methylation matrix can then be used for downstream analysis such as cell clustering and dimensionality reduction.
-        Identified groups of cells (e.g. clusters) can then be scanned for DMRs with \texttt{methscan diff}.
-    }
-    \label{fig:workflow}
-\end{figure*}
 
 We have implemented the approach just described in a Python package with a command line interface, \textit{MethSCAn} (ANalysis of Single-Cell METHylation data), which also offers a number of other functionalities for the analysis of scBS data (Fig.~\ref{fig:workflow}).
 The starting point of such an analysis are methylation files generated by tools such as Bismark \citep{bismark}, methylpy \citep{methylpy} or BISCUIT \citep{biscuit}.
@@ -461,25 +361,131 @@ In conclusion, we have presented powerful improvements to scBS data preprocessin
 \noindent\hfil\rule{.6\columnwidth}{.2pt}\hfil
 
 
-
-\subsection*{Data Availability}
-
-All data used to benchmark and showcase the \textit{MethSCAn} software is publicly available under the following NCBI Gene Expression Omnibus accessions:
-Single-cell multi-omics of the murine forebrain \citep{kremer_scnmt}: \texttt{GSE210806};
-mouse neurons \citep{luo2017single}: \texttt{GSE97179};
-colorectal cancer \citep{bian2018single}: \texttt{GSE97693};
-mouse gastrulation \citep{argelaguet2019gastru}: \texttt{GSE121708};
-100k brain cells \citep{liu2021dna}: \texttt{GSE132489}.
+\subsection*{Acknowledgments}
+SA and LPMK acknowledge funding by the Klaus Tschira Foundation (project 00.022.2019).
+LPMK, MMB, LK, SC, and AMV acknowledge funding from the European Commission via ERC grant 771376, from the DFG via SFB grant 873, and from the DKFZ.
+We thank Alexey Uvarovskii for code refactoring and helpful suggestions on the source code.
 
 
-\subsection*{Code Availability}
+\subsection*{Author Contributions}
+MMB developed and implemented DMR detection under supervision of LPMK and SA.
+SO, LK and LPMK performed benchmarks.
+LPMK and SA wrote the manuscript.
+% TO DO: complete this
 
-\textit{MethSCAn} is free and open source.
-The package is available on the Python Package Index (PyPI) and can be installed with the Python package installer \texttt{pip}.
-The source code is hosted at \href{https://github.com/anders-biostat/MethSCAn}{https://github.com/anders-biostat/MethSCAn}, where we also provide detailed documentation including a tutorial that demonstrates a complete \textit{MethSCAn} analysis on an example data set.
 
+\subsection*{Competing Interests}
+The authors declare no competing interests.
+
+
+\section*{Main Figures and Captions}
+
+\begin{figure*}[p]
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{figures/Fig_residuals_AB.png}\\
+	\end{center}
+	\caption{\small \textbf{Improved quantification of DNA methylation in a given genomic interval.}\\
+		\textbf{(A)} Depicted is a genomic interval (between vertical blue lines) along a chromosome, for which DNA methylation is to be quantified.
+		Two cells cover differing parts of the interval with one read each.
+		If one simply counts for each cell which fraction of the covered CpG sites are methylated, one obtains very different values for the two cells.
+		\textbf{(B)} By averaging each CpG site's methylation over all cells and subsequent smoothing, the thick black ``average methylation curve'' is obtained.
+		To quantify the methylation of cell 1 from (A) relative to this average over all cells, we propose to use the cell's residuals to the smoothed curve (lengths of the vertical red lines) and take their average, counting residuals of methylated CpGs positive and residuals of unmethylated CpGs negative.}
+	\label{fig:smoothres}
+\end{figure*}
+
+
+\begin{figure}[p]
+	\begin{center}
+		\includegraphics[width=\columnwidth]{figures/Fig_sliding.png}
+	\end{center}
+	\caption{\small \textbf{Finding variably methylated regions.}\\
+		The chromosomes are divided up into overlapping windows (first five shown at the bottom), and for each window, the cells' methylation values are calculated as described and as depicted in Fig.~\ref{fig:smoothres}B.
+		Then, the variance of these values is calculated (each point represents one of the overlapping windows), a threshold (dashed line) is chosen such that a chosen quantile of windows have a variance exceeding the threshold.
+		Windows with above-threshold variance are merged if they overlap, yielding the ``variably methylated regions'' (VMRs).}
+	\label{fig:vmr}
+\end{figure}
+
+
+\begin{figure*}[p]
+	\begin{center}
+		\includegraphics[width=\textwidth]{figures/Fig_correlation.png}
+	\end{center}
+	\caption{\small \textbf{Correlation of DNA methylation and gene expression}.\\
+		\textbf{(A)} Distribution of Pearson correlations between gene expression and promoter methylation (black) and gene expression and methylation of the nearest VMR (red): for most promoters, correlation is weak.
+		Promoters are defined as intervals \textpm2~kb around the TSS.
+		\textbf{(B)} Mean methylation near the gene \textit{Htra1}.
+		Cells are assigned to 4 groups based on \textit{Htra1} expression (group 0: cells with no \textit{Htra1} expression, groups 1-3: cells that express \textit{Htra1}, divided into three equally large groups with group 3 having the highest expression).
+		Data from \citet{kremer_scnmt}.}
+	\label{fig:correlation}
+\end{figure*}
+
+\begin{figure*}[p]
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{figures/Fig_benchmark.png}
+	\end{center}
+	\caption{\small \textbf{Benchmark of our methods on single-cell multi-omic data of cells of the murine forebrain}.\\
+		\textbf{(A)} Cell labels based on clustering of single-cell transcriptomes from \citet{kremer_scnmt}.
+		\textbf{(B, C)} Exemplary UMAPs obtained when analyzing the data set with conventional methods based on genome tiling (B) or our proposed methods (C).
+		\textbf{(D, E)} Mean degree of cell type separation (neighbor score, E, computed in 15-dimensional PC space) obtained when analyzing single-cell methylomes with different combinations of methods.
+		Either VMRs, ENCODE regulatory elements, 100~kb genomic tiles or promoter regions (TSS\textpm2kb) were subjected to iterative PCA and UMAP.
+		CpG methylation in these intervals was either quantified by averaging (dotted lines) or using the shrunken mean of the residuals as proposed in this work (solid lines).
+		The full 1566-cell data set was sub-sampled to simulate smaller data sets (x axis).
+		A higher neighbor score implies better separation of cell types inferred from single-cell transcriptomes of the same cells (A).
+		\textbf{(F)} Proportion of VMRs (blue dots) that have at least 1~bp overlap with other genomic features.
+		The black range illustrates the minimum and maximum overlap observed for 100 reshufflings of the VMRs to randomly chosen positions.
+	}
+	\label{fig:score}
+\end{figure*}
+
+
+\begin{figure*}[p]
+	\begin{center}
+		\includegraphics[width=.75\textwidth]{figures/Fig_DMRdetection.png}
+	\end{center}
+	\caption{\small \textbf{Identification of differentially methylated regions (DMRs).}\\
+		The chromosome is divided into windows overlapping by a small and fixed size.
+		For each window, the cell’s methylation values are calculated as described and as depicted in Fig.~\ref{fig:smoothres}B.
+		Then the t statistic of these values is obtained as a measure of methylation difference between two groups of cells (each point represents one of the windows).
+		Upper and lower thresholds (dashed lines) are chosen such that a defined quantile of windows have a t statistic above or below the threshold.
+		Windows exceeding either threshold are merged if they overlap, yielding the differentially methylated regions (DMRs).}
+	\label{fig:dmrscan}
+\end{figure*}
+
+\begin{figure*}[p]
+	\begin{center}
+		\includegraphics[width=.7\textwidth]{figures/Fig_DMRs.png}
+	\end{center}
+	\caption{\small \textbf{Detection of differentially methylated regions between oligodendrocytes and neural stem cells.}\\
+		\textbf{(A)} DMRs detected between 58 oligodendrocytes (ODs) and 130 neural stem cells (NSCs) from \citet{kremer_scnmt} (top) and DMRs detected in the same data with randomly permuted cell labels (bottom, used to estimate FDR and determine adjusted p-values).
+		\textbf{(B)} Enrichment of GO terms associated with DMRs lowly methylated in ODs (top) or NSCs (bottom).
+		Depicted are the top 5 GO terms of the "Biological Process" (GO:BP) and "Cellular Component" (GO:CC) GO category, and their binomial test p-value and enrichment, as reported by GREAT \citep{mclean2010great}.
+		\textbf{(C)} Mean methylation of NSCs and ODs at an exemplary DMR.
+		Each point corresponds to a cell, black lines denote the median.
+		\textbf{(D)} Detailed view of the DMR (yellow dashed rectangle) from C in pseudo-bulk samples consisting of NSCs or ODs.
+		Vertical bars represent CpG sites.
+	}
+	\label{fig:dmr}
+\end{figure*}
+
+
+\begin{figure*}[p]
+	\begin{center}
+		\includegraphics[width=.8\textwidth]{figures/Fig_workflow.png}
+	\end{center}
+	\caption{\small \textbf{Overview of the functionalities implemented in the \textit{MethSCAn} package.}\\
+		\texttt{methscan prepare} parses methylation files produced by common bisulfite sequencing mappers and stores their contents in a compressed format optimized for efficient access to genomic intervals.
+		\textit{MethSCAn} also produces cell-wise summary statistics and quality plots (here: average methylation around the transcription start site) that are used to detect low-quality cells.
+		These cells can be discarded with \texttt{methscan filter}.
+		To obtain a methylation matrix, similar to the count matrices used in scRNA-seq, the user must first decide in which genomic intervals methylation should be quantified.
+		The user may either provide genomic regions of \emph{a priori} interest, or they may choose to discover VMRs (variably methylated regions) in the data with \texttt{methscan scan}.
+		The resulting methylation matrix can then be used for downstream analysis such as cell clustering and dimensionality reduction.
+		Identified groups of cells (e.g. clusters) can then be scanned for DMRs with \texttt{methscan diff}.
+	}
+	\label{fig:workflow}
+\end{figure*}
 
 %\phantomsection
+\clearpage
 \section*{Methods}
 
 \subsection*{Raw data}
@@ -699,13 +705,23 @@ MethSCAn was implemented in Python 3.8 using the packages NumPy 1.20.1, SciPy 1.
 \noindent\hfil\rule{.6\columnwidth}{.2pt}\hfil
 
 
-\phantomsection\addcontentsline{toc}{section}{Back Matter}
-\subsection*{Acknowledgments}
 
-SA and LPMK acknowledge funding by the Klaus Tschira Foundation (project 00.022.2019).
-LPMK, MMB, LK, SC, and AMV acknowledge funding from the European Commission via ERC grant 771376, from the DFG via SFB grant 873, and from the DKFZ.
-We thank Alexey Uvarovskii for code refactoring and helpful suggestions on the source code.
-\bigskip
+\subsection*{Data Availability}
+
+All data used to benchmark and showcase the \textit{MethSCAn} software is publicly available under the following NCBI Gene Expression Omnibus accessions:
+Single-cell multi-omics of the murine forebrain \citep{kremer_scnmt}: \texttt{GSE210806};
+mouse neurons \citep{luo2017single}: \texttt{GSE97179};
+colorectal cancer \citep{bian2018single}: \texttt{GSE97693};
+mouse gastrulation \citep{argelaguet2019gastru}: \texttt{GSE121708};
+100k brain cells \citep{liu2021dna}: \texttt{GSE132489}.
+
+
+\subsection*{Code Availability}
+
+\textit{MethSCAn} is free and open source.
+The package is available on the Python Package Index (PyPI) and can be installed with the Python package installer \texttt{pip}.
+The source code is hosted at \href{https://github.com/anders-biostat/MethSCAn}{https://github.com/anders-biostat/MethSCAn}, where we also provide detailed documentation including a tutorial that demonstrates a complete \textit{MethSCAn} analysis on an example data set.
+
 
 {\phantomsection\addcontentsline{toc}{subsection}{References}
 \small \balance \bibliography{scbs} \balance}
