@@ -48,7 +48,7 @@ Simon Anders\textsuperscript{1,*}\\[2em]
 }
 \noindent\textsuperscript{1} BioQuant Centre, University of Heidelberg, Heidelberg, Germany\\
 \textsuperscript{2} Division of Molecular Neurobiology, German Cancer Research Center (DKFZ), Heidelberg, Germany\\
-\textsuperscript{*} e-mails:\\
+\textsuperscript{*} corresponding authors. e-mails:\\
 \texttt{l.kremer@dkfz-heidelberg.de}\\
 \texttt{a.martin-villalba@dkfz-heidelberg.de}\\
 \texttt{simon.anders@bioquant.uni-heidelberg.de}
@@ -94,7 +94,7 @@ Therefore, we start by briefly reviewing how sc\emph{RNA}-seq data is commonly a
 The starting point in most scRNA-seq analyses is a matrix of UMI counts (i.e.\ counts of distinct RNA molecules), one row for each cell and one column for each gene.
 A first goal is usually to assign cell types or states to cells.
 To this end, one needs to establish which cells are similar to each other, i.e., quantify the distance (i.e., dissimilarity) between any two given cells' transcriptional profile.
-A standard approach, used with minor variation in virtually all recent research and automated by popular software such as Seurat \citep{Hao_2021} or Scanpy \citep{Wolf_2018}, is as follows:
+A standard approach, used with minor variation in virtually all recent research and automated by popular software such as Seurat \citep{seurat5} or Scanpy \citep{Wolf_2018}, is as follows:
 One first accounts for cell-to-cell variation in sequencing depth by dividing each UMI count by the respective cell's total UMI count, then transforms to a homoskedastic scale by taking the logarithm.
 In order to avoid matrix elements with zero count to be transformed to minus infinity, one typically adds a very small ``pseudocount'' (often $10^{-4}$) to the normalized fractions before taking the logarithm.
 Now, one could use Euclidean distances of these vectors of logarithmized fractions as dissimilarity score.
@@ -462,7 +462,8 @@ The authors declare no competing interests.
 	\label{fig:workflow}
 \end{figure*}
 
-%\phantomsection
+
+
 \clearpage
 \section*{Methods}
 
@@ -664,7 +665,7 @@ For GO enrichment analysis, DMRs with adjusted $p<0.01$ were uploaded to GREAT 4
 To assess performance of our methods, we employed a score that quantifies how well cell types (or cell states) are separated in 15-dimensional PCA space.
 For data from \citet{luo2017single}, we used cell type labels that the authors manually curated based on CH-methylation.
 For the multi-omic data set, we repeated the single-cell transcriptomics analysis described in \citet{kremer_scnmt} with two adjustments:
-We did not filter off-target cells such as endothelial cells, and we annotated cell types using Leiden clustering with the Seurat \citep{seurat} function \texttt{FindClusters(resolution = 0.1)}.
+We did not filter off-target cells such as endothelial cells, and we annotated cell types using Leiden clustering with the Seurat \citep{seurat5} function \texttt{FindClusters(resolution = 0.1)}.
 The score, based on the $\Gamma$-score \citep{Kireeva_2014}, varies between 0 and 1, where higher scores reflect better separation of cell types.
 For each cell $j$, we count how many of its $k$ nearest neighbors have been assigned to the same cell type as cell $j$.
 We denote this count $a^k_j$, where we have chosen $k=\frac{\sqrt{n}}{1.5}$, rounded.
