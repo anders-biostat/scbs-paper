@@ -10,10 +10,8 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[super,sort]{natbib}
-%\bibliographystyle{simon}
 \bibliographystyle{unsrtnat}
 \setlength{\bibsep}{0.3ex plus 0.2ex}
-%\setcitestyle{aysep={}} 
 \usepackage[dvipsnames]{xcolor}
 \usepackage[compact]{titlesec}
 \usepackage[hypertexnames=false]{hyperref}
@@ -360,7 +358,7 @@ The authors declare no competing interests.
 
 \begin{figure*}[p]
 	\begin{center}
-		\includegraphics[width=0.7\textwidth]{figures/Fig_residuals_AB.png}\\
+		\includegraphics[width=0.7\textwidth]{figures/Fig_residuals_AB.pdf}\\
 	\end{center}
 	\caption{\small \textbf{Improved quantification of DNA methylation in a given genomic interval.}\\
 		\textbf{(A)} Depicted is a genomic interval (between vertical blue lines) along a chromosome, for which DNA methylation is to be quantified.
@@ -374,7 +372,7 @@ The authors declare no competing interests.
 
 \begin{figure}[p]
 	\begin{center}
-		\includegraphics[width=.7\columnwidth]{figures/Fig_sliding.png}
+		\includegraphics[width=.7\columnwidth]{figures/Fig_sliding.pdf}
 	\end{center}
 	\caption{\small \textbf{Finding variably methylated regions.}\\
 		The chromosomes are divided up into overlapping windows (first five shown at the bottom), and for each window, the cells' methylation values are calculated as described and as depicted in Fig.~\ref{fig:smoothres}B.
@@ -386,7 +384,7 @@ The authors declare no competing interests.
 
 \begin{figure*}[p]
 	\begin{center}
-		\includegraphics[width=\textwidth]{figures/Fig_correlation.png}
+		\includegraphics[width=\textwidth]{figures/Fig_correlation.pdf}
 	\end{center}
 	\caption{\small \textbf{Correlation of DNA methylation and gene expression}.\\
 		\textbf{(A)} Distribution of Pearson correlations between gene expression and promoter methylation (black) and gene expression and methylation of the nearest VMR (red): for most promoters, correlation is weak.
@@ -399,7 +397,7 @@ The authors declare no competing interests.
 
 \begin{figure*}[p]
 	\begin{center}
-		\includegraphics[width=0.9\textwidth]{figures/Fig_benchmark.png}
+		\includegraphics[width=0.9\textwidth]{figures/Fig_benchmark.pdf}
 	\end{center}
 	\caption{\small \textbf{Benchmark of our methods on single-cell multi-omic data of cells of the murine forebrain}.\\
 		\textbf{(A)} Cell labels based on clustering of single-cell transcriptomes from \citet{kremer_scnmt}.
@@ -418,7 +416,7 @@ The authors declare no competing interests.
 
 \begin{figure*}[p]
 	\begin{center}
-		\includegraphics[width=.8\textwidth]{figures/Fig_DMRs.png}
+		\includegraphics[width=.8\textwidth]{figures/Fig_DMRs.pdf}
 	\end{center}
 	\caption{\small \textbf{Detection of differentially methylated regions (DMRs).}\\
 		\textbf{(A)} To identify DMRs, the chromosome is first divided into windows overlapping by a small and fixed size.
@@ -441,7 +439,7 @@ The authors declare no competing interests.
 
 \begin{figure*}[p]
 	\begin{center}
-		\includegraphics[width=.8\textwidth]{figures/Fig_workflow.png}
+		\includegraphics[width=.8\textwidth]{figures/Fig_workflow.pdf}
 	\end{center}
 	\caption{\small \textbf{Overview of the functionalities implemented in the \textit{MethSCAn} package.}\\
 		Common bisulfite sequencing mappers produce one methylation report file per cell.
@@ -704,22 +702,301 @@ The package is available on the Python Package Index (PyPI) and can be installed
 The source code is hosted at \href{https://github.com/anders-biostat/MethSCAn}{https://github.com/anders-biostat/MethSCAn}, where we also provide detailed documentation including a tutorial that demonstrates a complete \textit{MethSCAn} analysis on an example data set.
 
 
-{\phantomsection\addcontentsline{toc}{subsection}{References}
-\small \balance \bibliography{scbs} \balance}
+\begin{thebibliography}{31}
+	\providecommand{\natexlab}[1]{#1}
+	\providecommand{\url}[1]{\texttt{#1}}
+	\expandafter\ifx\csname urlstyle\endcsname\relax
+	\providecommand{\doi}[1]{doi: #1}\else
+	\providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+	
+	\bibitem[Frommer et~al.(1992)Frommer, McDonald, Millar, Collis, Watt, Grigg,
+	Molloy, and Paul]{Frommer_1992}
+	M.~Frommer, L.~E. McDonald, D.~S. Millar, C.~M. Collis, F.~Watt, G.~W. Grigg,
+	P.~L. Molloy, and C.~L. Paul.
+	\newblock A genomic sequencing protocol that yields a positive display of
+	5-methylcytosine residues in individual {DNA} strands.
+	\newblock \emph{Proceedings of the National Academy of Sciences}, 89\penalty0
+	(5):\penalty0 1827--1831, mar 1992.
+	\newblock \doi{10.1073/pnas.89.5.1827}.
+	\newblock URL \url{https://doi.org/10.1073/pnas.89.5.1827}.
+	
+	\bibitem[Smallwood et~al.(2014)Smallwood, Lee, Angermueller, Krueger, Saadeh,
+	Peat, Andrews, Stegle, Reik, and Kelsey]{Smallwood_2014}
+	S{\'{e}}bastien~A Smallwood, Heather~J Lee, Christof Angermueller, Felix
+	Krueger, Heba Saadeh, Julian Peat, Simon~R Andrews, Oliver Stegle, Wolf Reik,
+	and Gavin Kelsey.
+	\newblock Single-cell genome-wide bisulfite sequencing for assessing epigenetic
+	heterogeneity.
+	\newblock \emph{Nature Methods}, 11\penalty0 (8):\penalty0 817--820, jul 2014.
+	\newblock \doi{10.1038/nmeth.3035}.
+	\newblock URL \url{https://doi.org/10.1038/nmeth.3035}.
+	
+	\bibitem[Hu et~al.(2016)Hu, Huang, An, Du, Hu, Xue, Zhu, Wang, Xue, and
+	Fan]{scMTseq}
+	Youjin Hu, Kevin Huang, Qin An, Guizhen Du, Ganlu Hu, Jinfeng Xue, Xianmin Zhu,
+	Cun-Yu Wang, Zhigang Xue, and Guoping Fan.
+	\newblock Simultaneous profiling of transcriptome and {DNA} methylome from a
+	single cell.
+	\newblock \emph{Genome Biology}, 17\penalty0 (1):\penalty0 1--11, 2016.
+	\newblock \doi{10.1007/978-1-4939-9240-9_21}.
+	
+	\bibitem[Clark et~al.(2018)Clark, Argelaguet, Kapourani, Stubbs, Lee,
+	Alda-Catalinas, Krueger, Sanguinetti, Kelsey, Marioni, Stegle, and
+	Reik]{Clark2018}
+	Stephen~J. Clark, Ricard Argelaguet, Chantriolnt-Andreas Kapourani, Thomas~M.
+	Stubbs, Heather~J. Lee, Celia Alda-Catalinas, Felix Krueger, Guido
+	Sanguinetti, Gavin Kelsey, John~C. Marioni, Oliver Stegle, and Wolf Reik.
+	\newblock {scNMT}-seq enables joint profiling of chromatin accessibility {DNA}
+	methylation and transcription in single cells.
+	\newblock \emph{Nature Communications}, 9\penalty0 (1), February 2018.
+	\newblock \doi{10.1038/s41467-018-03149-4}.
+	\newblock URL \url{https://doi.org/10.1038/s41467-018-03149-4}.
+	
+	\bibitem[Hao et~al.(2023)Hao, Stuart, Kowalski, Choudhary, Hoffman, Hartman,
+	Srivastava, Molla, Madad, Fernandez-Granda, and Satija]{seurat5}
+	Yuhan Hao, Tim Stuart, Madeline~H Kowalski, Saket Choudhary, Paul Hoffman,
+	Austin Hartman, Avi Srivastava, Gesmira Molla, Shaista Madad, Carlos
+	Fernandez-Granda, and Rahul Satija.
+	\newblock Dictionary learning for integrative, multimodal and scalable
+	single-cell analysis.
+	\newblock \emph{Nature Biotechnology}, 2023.
+	\newblock \doi{10.1038/s41587-023-01767-y}.
+	
+	\bibitem[Wolf et~al.(2018)Wolf, Angerer, and Theis]{Wolf_2018}
+	F.~Alexander Wolf, Philipp Angerer, and Fabian~J. Theis.
+	\newblock {SCANPY}: large-scale single-cell gene expression data analysis.
+	\newblock \emph{Genome Biology}, 19:\penalty0 15, 2018.
+	\newblock \doi{10.1186/s13059-017-1382-0}.
+	
+	\bibitem[Luo et~al.(2017)Luo, Keown, Kurihara, Zhou, He, Li, Castanon, Lucero,
+	Nery, Sandoval, et~al.]{luo2017single}
+	Chongyuan Luo, Christopher~L Keown, Laurie Kurihara, Jingtian Zhou, Yupeng He,
+	Junhao Li, Rosa Castanon, Jacinta Lucero, Joseph~R Nery, Justin~P Sandoval,
+	et~al.
+	\newblock Single-cell methylomes identify neuronal subtypes and regulatory
+	elements in mammalian cortex.
+	\newblock \emph{Science}, 357\penalty0 (6351):\penalty0 600--604, 2017.
+	\newblock \doi{10.1126/science.aan3351}.
+	
+	\bibitem[Bird(1986)]{bird1986cpg}
+	Adrian~P Bird.
+	\newblock {CpG-rich} islands and the function of {DNA} methylation.
+	\newblock \emph{Nature}, 321\penalty0 (6067):\penalty0 209--213, 1986.
+	\newblock \doi{10.1038/321209a0}.
+	
+	\bibitem[Argelaguet et~al.(2019)Argelaguet, Clark, Mohammed, Stapel, Krueger,
+	Kapourani, Imaz-Rosshandler, Lohoff, Xiang, Hanna,
+	et~al.]{argelaguet2019gastru}
+	Ricard Argelaguet, Stephen~J Clark, Hisham Mohammed, L~Carine Stapel, Christel
+	Krueger, Chantriolnt-Andreas Kapourani, Ivan Imaz-Rosshandler, Tim Lohoff,
+	Yunlong Xiang, Courtney~W Hanna, et~al.
+	\newblock Multi-omics profiling of mouse gastrulation at single-cell
+	resolution.
+	\newblock \emph{Nature}, 576\penalty0 (7787):\penalty0 487--491, 2019.
+	\newblock \doi{10.1038/s41586-019-1825-8}.
+	
+	\bibitem[Kremer et~al.(2022)Kremer, Cerrizuela, Al~Shukairi, Ellinger, Straub,
+	Dehler, Korkmaz, Weichenhan, Plass, Anders, and
+	Martin-Villalba]{kremer_scnmt}
+	Lukas P.~M. Kremer, Santiago Cerrizuela, Mohammad~E Al~Shukairi, Tobias
+	Ellinger, Jannes Straub, Sascha Dehler, Aylin Korkmaz, Dieter Weichenhan,
+	Christoph Plass, Simon Anders, and Ana Martin-Villalba.
+	\newblock Single-cell triple-omics uncovers {DNA} methylation as key feature of
+	stemness in the healthy and ischemic adult brain.
+	\newblock \emph{bioRxiv preprint}, 2022.
+	\newblock \doi{10.1101/2022.07.13.499860}.
+	
+	\bibitem[Moore et~al.(2020)Moore, Purcaro, Pratt, Epstein, Shoresh, Adrian,
+	Kawli, Davis, Dobin, et~al.]{encode2020expanded}
+	Jill~E Moore, Michael~J Purcaro, Henry~E Pratt, Charles~B Epstein, Noam
+	Shoresh, Jessika Adrian, Trupti Kawli, Carrie~A Davis, Alexander Dobin,
+	et~al.
+	\newblock Expanded encyclopaedias of {DNA} elements in the human and mouse
+	genomes.
+	\newblock \emph{Nature}, 583\penalty0 (7818):\penalty0 699--710, 2020.
+	\newblock \doi{10.1038/s41586-020-2493-4}.
+	
+	\bibitem[Bian et~al.(2018)Bian, Hou, Zhou, Li, Yong, Wang, Wang, Yan, Hu, Guo,
+	et~al.]{bian2018single}
+	Shuhui Bian, Yu~Hou, Xin Zhou, Xianlong Li, Jun Yong, Yicheng Wang, Wendong
+	Wang, Jia Yan, Boqiang Hu, Hongshan Guo, et~al.
+	\newblock Single-cell multiomics sequencing and analyses of human colorectal
+	cancer.
+	\newblock \emph{Science}, 362\penalty0 (6418):\penalty0 1060--1063, 2018.
+	\newblock \doi{10.1126/science.aao3791}.
+	
+	\bibitem[Argelaguet et~al.(2020)Argelaguet, Arnol, Bredikhin, Deloro, Velten,
+	Marioni, and Stegle]{argelaguet2020mofa}
+	Ricard Argelaguet, Damien Arnol, Danila Bredikhin, Yonatan Deloro, Britta
+	Velten, John~C Marioni, and Oliver Stegle.
+	\newblock {MOFA+}: a statistical framework for comprehensive integration of
+	multi-modal single-cell data.
+	\newblock \emph{Genome Biology}, 21\penalty0 (1):\penalty0 1--17, 2020.
+	\newblock \doi{10.1186/s13059-020-02015-1}.
+	
+	\bibitem[Liu et~al.(2021)Liu, Zhou, Tian, Luo, Bartlett, Aldridge, Lucero,
+	Osteen, Nery, Chen, et~al.]{liu2021dna}
+	Hanqing Liu, Jingtian Zhou, Wei Tian, Chongyuan Luo, Anna Bartlett, Andrew
+	Aldridge, Jacinta Lucero, Julia~K Osteen, Joseph~R Nery, Huaming Chen, et~al.
+	\newblock {DNA} methylation atlas of the mouse brain at single-cell resolution.
+	\newblock \emph{Nature}, 598\penalty0 (7879):\penalty0 120--128, 2021.
+	\newblock \doi{10.1038/s41586-020-03182-8}.
+	
+	\bibitem[Hebestreit et~al.(2013)Hebestreit, Dugas, and Klein]{Hebestreit2013}
+	Katja Hebestreit, Martin Dugas, and Hans-Ulrich Klein.
+	\newblock Detection of significantly differentially methylated regions in
+	targeted bisulfite sequencing data.
+	\newblock \emph{Bioinformatics}, 29\penalty0 (13):\penalty0 1647--1653, May
+	2013.
+	\newblock \doi{10.1093/bioinformatics/btt263}.
+	\newblock URL \url{https://doi.org/10.1093/bioinformatics/btt263}.
+	
+	\bibitem[Korthauer et~al.(2018)Korthauer, Chakraborty, Benjamini, and
+	Irizarry]{dmrseq}
+	Keegan Korthauer, Sutirtha Chakraborty, Yuval Benjamini, and Rafael~A Irizarry.
+	\newblock Detection and accurate false discovery rate control of differentially
+	methylated regions from whole genome bisulfite sequencing.
+	\newblock \emph{Biostatistics}, 20\penalty0 (3):\penalty0 367--383, February
+	2018.
+	\newblock \doi{10.1093/biostatistics/kxy007}.
+	\newblock URL \url{https://doi.org/10.1093/biostatistics/kxy007}.
+	
+	\bibitem[McLean et~al.(2010)McLean, Bristor, Hiller, Clarke, Schaar, Lowe,
+	Wenger, and Bejerano]{mclean2010great}
+	Cory~Y McLean, Dave Bristor, Michael Hiller, Shoa~L Clarke, Bruce~T Schaar,
+	Craig~B Lowe, Aaron~M Wenger, and Gill Bejerano.
+	\newblock {GREAT} improves functional interpretation of cis-regulatory regions.
+	\newblock \emph{Nature Biotechnology}, 28\penalty0 (5):\penalty0 495--501,
+	2010.
+	\newblock \doi{10.1038/nbt.1630}.
+	
+	\bibitem[Boggs(2006)]{mbp}
+	JM~Boggs.
+	\newblock Myelin basic protein: a multifunctional protein.
+	\newblock \emph{Cellular and Molecular Life Sciences CMLS}, 63:\penalty0
+	1945--1961, 2006.
+	\newblock \doi{10.1007/s00018-006-6094-7}.
+	
+	\bibitem[Krueger and Andrews(2011)]{bismark}
+	Felix Krueger and Simon~R Andrews.
+	\newblock Bismark: a flexible aligner and methylation caller for
+	{Bisulfite-Seq} applications.
+	\newblock \emph{Bioinformatics}, 27\penalty0 (11):\penalty0 1571--1572, 2011.
+	\newblock \doi{10.1093/bioinformatics/btr167}.
+	
+	\bibitem[Schultz et~al.(2015)Schultz, He, Whitaker, Hariharan, Mukamel, Leung,
+	Rajagopal, Nery, Urich, Chen, et~al.]{methylpy}
+	Matthew~D Schultz, Yupeng He, John~W Whitaker, Manoj Hariharan, Eran~A Mukamel,
+	Danny Leung, Nisha Rajagopal, Joseph~R Nery, Mark~A Urich, Huaming Chen,
+	et~al.
+	\newblock Human body epigenome maps reveal noncanonical {DNA} methylation
+	variation.
+	\newblock \emph{Nature}, 523\penalty0 (7559):\penalty0 212--216, 2015.
+	\newblock \doi{10.1038/nature14465}.
+	
+	\bibitem[Zhou et~al.(2021)]{biscuit}
+	Wanding Zhou et~al.
+	\newblock {BISCUIT} -- understand sequencing data with bisulfite conversion.
+	\newblock Software, \url{https://huishenlab.github.io/biscuit}, 2021.
+	
+	\bibitem[Kapourani and Sanguinetti(2019)]{kapourani2019melissa}
+	Chantriolnt-Andreas Kapourani and Guido Sanguinetti.
+	\newblock Melissa: Bayesian clustering and imputation of single-cell
+	methylomes.
+	\newblock \emph{Genome Biology}, 20\penalty0 (1):\penalty0 61, 2019.
+	\newblock \doi{10.1186/s13059-019-1665-8}.
+	
+	\bibitem[Kapourani et~al.(2021)Kapourani, Argelaguet, Sanguinetti, and
+	Vallejos]{kapourani2021scmet}
+	Chantriolnt-Andreas Kapourani, Ricard Argelaguet, Guido Sanguinetti, and
+	Catalina~A Vallejos.
+	\newblock {scMET}: Bayesian modeling of {DNA} methylation heterogeneity at
+	single-cell resolution.
+	\newblock \emph{Genome Biology}, 22:\penalty0 1--21, 2021.
+	\newblock \doi{10.1186/s13059-021-02329-8}.
+	
+	\bibitem[Danese et~al.(2021)Danese, Richter, Chaichoompu, Fischer, Theis, and
+	Colomé-Tatché]{danese2021episcanpy}
+	Anna Danese, Maria~L. Richter, Kridsadakorn Chaichoompu, David~S. Fischer,
+	Fabian~J. Theis, and Maria Colomé-Tatché.
+	\newblock {EpiScanpy}: integrated single-cell epigenomic analysis.
+	\newblock \emph{Nature Communications}, 12:\penalty0 5228, 2021.
+	\newblock \doi{10.1038/s41467-021-25131-3}.
+	
+	\bibitem[Welch et~al.(2019)Welch, Kozareva, Ferreira, Vanderburg, Martin, and
+	Macosko]{welch2019single}
+	Joshua~D Welch, Velina Kozareva, Ashley Ferreira, Charles Vanderburg, Carly
+	Martin, and Evan~Z Macosko.
+	\newblock Single-cell multi-omic integration compares and contrasts features of
+	brain cell identity.
+	\newblock \emph{Cell}, 177\penalty0 (7):\penalty0 1873--1887, 2019.
+	\newblock \doi{10.1016/j.cell.2019.05.006}.
+	
+	\bibitem[Virtanen et~al.(2020)Virtanen, Gommers, Oliphant, Haberland, Reddy,
+	et~al.]{SciPy}
+	Pauli Virtanen, Ralf Gommers, Travis~E. Oliphant, Matt Haberland, Tyler Reddy,
+	et~al.
+	\newblock {SciPy 1.0: fundamental algorithms for scientific computing in
+		Python}.
+	\newblock \emph{Nature Methods}, 17:\penalty0 261--272, 2020.
+	\newblock \doi{10.1038/s41592-019-0686-2}.
+	
+	\bibitem[Baglama and Reichel(2005)]{Baglama2005}
+	James Baglama and Lothar Reichel.
+	\newblock Augmented implicitly restarted {Lanczos} bidiagonalization methods.
+	\newblock \emph{{SIAM} Journal on Scientific Computing}, 27\penalty0
+	(1):\penalty0 19--42, January 2005.
+	\newblock \doi{10.1137/04060593x}.
+	\newblock URL \url{https://doi.org/10.1137/04060593x}.
+	
+	\bibitem[Josse and Husson(2012)]{josse2012}
+	Julie Josse and Fran{\c c}ois Husson.
+	\newblock {Handling missing values in exploratory multivariate data analysis
+		methods}.
+	\newblock \emph{{Journal de la Societe Fran{\c c}aise de Statistique}},
+	153\penalty0 (2):\penalty0 79--99, 2012.
+	\newblock URL \url{https://hal.science/hal-00811888}.
+	
+	\bibitem[Quinlan and Hall(2010)]{quinlan2010bedtools}
+	Aaron~R Quinlan and Ira~M Hall.
+	\newblock {BEDTools}: a flexible suite of utilities for comparing genomic
+	features.
+	\newblock \emph{Bioinformatics}, 26\penalty0 (6):\penalty0 841--842, 2010.
+	\newblock \doi{10.1093/bioinformatics/btq033}.
+	
+	\bibitem[Kireeva et~al.(2014)Kireeva, Ovchinnikova, Tetko, Asiri, Balakin, and
+	Tsivadze]{Kireeva_2014}
+	Natalia~V. Kireeva, Svetlana~I. Ovchinnikova, Igor~V. Tetko, Abdullah~M. Asiri,
+	Konstantin~V. Balakin, and Aslan~Yu Tsivadze.
+	\newblock {Nonlinear dimensionality reduction for visualizing toxicity data:
+		Distance-based versus topology-based approaches}.
+	\newblock \emph{ChemMedChem}, 9\penalty0 (5):\penalty0 1047--1059, 2014.
+	\newblock ISSN 18607187.
+	\newblock \doi{10.1002/cmdc.201400027}.
+	
+	\bibitem[Rodriguez et~al.(2013)Rodriguez, Maietta, Ezkurdia, Pietrelli,
+	Wesselink, Lopez, Valencia, and Tress]{appris}
+	Jose~Manuel Rodriguez, Paolo Maietta, Iakes Ezkurdia, Alessandro Pietrelli,
+	Jan-Jaap Wesselink, Gonzalo Lopez, Alfonso Valencia, and Michael~L Tress.
+	\newblock {APPRIS}: annotation of principal and alternative splice isoforms.
+	\newblock \emph{Nucleic Acids Research}, 41\penalty0 (D1):\penalty0 D110--D117,
+	2013.
+	\newblock \doi{10.1093/nar/gks1058}.
+\end{thebibliography}
 
-\onecolumn 
+
+
+
 \newpage
 \section*{Extended Data Figures}
-\vspace{1.5cm}
 
 \setcounter{figure}{0}
-%\renewcommand{\thefigure}{ \arabic{figure}}
 \renewcommand{\figurename}{Extended Data Figure} 
 
 \noindent%
 \begin{minipage}{\linewidth}
 	\begin{center}
-	    \includegraphics[width=\textwidth]{figures/SFig_benchmark.png}
+	    \includegraphics[width=\textwidth]{figures/SFig_benchmark.pdf}
 	\end{center}
 	\captionof{figure}{\small \textbf{Benchmark of several combinations of analysis methods on four single-cell methylation data sets.}\\
 	\textbf{(A-E)} Benchmarking the ability to separate groups of cells based on CpG methylation data, using different analysis approaches.
@@ -744,7 +1021,7 @@ The source code is hosted at \href{https://github.com/anders-biostat/MethSCAn}{h
 \noindent%
 \begin{minipage}{\linewidth}
     \begin{center}
-        \includegraphics[width=.55\textwidth]{figures/SFig_parameter_sweep.png}
+        \includegraphics[width=.55\textwidth]{figures/SFig_parameter_sweep.pdf}
     \end{center}
     \captionof{figure}{\small \textbf{Effect of VMR detection parameters on separation of cell types.}\\
     \textbf{(A-B)} Mean neighbor scores obtained after analyzing single-cell methylomes from \citet{kremer_scnmt} (\textbf{A}) or \citet{luo2017single} (\textbf{B}) with our proposed methods.
@@ -757,7 +1034,7 @@ The source code is hosted at \href{https://github.com/anders-biostat/MethSCAn}{h
 \noindent%
 \begin{minipage}{\linewidth}
 	\begin{center}
-		\includegraphics[width=.85\textwidth]{figures/SFig_benchmark_resources.png}
+		\includegraphics[width=.85\textwidth]{figures/SFig_benchmark_resources.pdf}
 	\end{center}
 	\captionof{figure}{\small \textbf{VMRs are more informative than an equal number of regulatory regions with high sequencing coverage.}\\
 	\textbf{(A-B)} Mean neighbor score obtained when quantifying CpG methylation at VMRs, all ENCODE regulatory regions, or a subset of regulatory regions for the data sets of \citet{kremer_scnmt} and \citet{luo2017single}.
@@ -770,7 +1047,7 @@ The source code is hosted at \href{https://github.com/anders-biostat/MethSCAn}{h
 \noindent%
 \begin{minipage}{\linewidth}
 	\begin{center}
-		\includegraphics[width=.85\textwidth]{figures/SFig_100k_and_CH.png}
+		\includegraphics[width=.85\textwidth]{figures/SFig_100k_and_CH.pdf}
 	\end{center}
 	\captionof{figure}{\small \textbf{\textit{MethSCAn} performs well on CH-methylation data and on extremely large data sets.}\\
     \textbf{(A)} UMAPs obtained when analysing data from \citet{luo2017single} with three different strategies for producing a methylation matrix:
