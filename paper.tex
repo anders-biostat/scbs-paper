@@ -9,8 +9,9 @@
 \usepackage[varqu]{inconsolata}
 
 \usepackage[utf8]{inputenc}
-\usepackage[super,sort&compress]{natbib}
-\bibliographystyle{simon}
+\usepackage[super,sort]{natbib}
+%\bibliographystyle{simon}
+\bibliographystyle{unsrtnat}
 \setlength{\bibsep}{0.3ex plus 0.2ex}
 %\setcitestyle{aysep={}} 
 \usepackage[dvipsnames]{xcolor}
@@ -66,6 +67,8 @@ We also present an approach to detect differentially methylated regions (DMRs) b
 
 To facilitate the analysis of scBS data, we have developed a software tool called \textit{MethSCAn} that implements these methods and provides additional functionality.
 
+
+\section*{Main Text}
 \section*{Introduction}
 
 Sequencing-based assays with single-cell resolution have offered new means to understand the differences between the cells making up a sample.
@@ -289,7 +292,7 @@ Gene ontology (GO) enrichment with GREAT \citep{mclean2010great} revealed that D
 Similarly, DMRs specifically demethylated in NSCs occur near genes involved in stem cell population maintenance.
 This demonstrates that our DMR detection approach is able to identify biologically meaningful DMRs, even in scBS data sets of modest cell number.
 
-Fig.~\ref{fig:dmr}D-E depicts an exemplary DMR, located at the gene body of myelin-basic protein (\textit{Mbp}), the major component of myelin that is essential for myelination of neuronal axons \citep{mbp}.
+Fig.~\ref{fig:dmr}D-E depicts an exemplary DMR, located at the gene encoding myelin-basic protein (\textit{Mbp}), the major component of myelin that is essential for myelination of neuronal axons \citep{mbp}.
 Our results suggest that oligodendrocyte-specific gene expression of \textit{Mbp} is supported by low methylation at the detected DMR.
 
 
@@ -333,18 +336,20 @@ In conclusion, we have presented powerful improvements to scBS data preprocessin
 \noindent\hfil\rule{.6\columnwidth}{.2pt}\hfil
 
 
-\subsection*{Acknowledgments}
+\subsection*{Acknowledgements}
 SA and LPMK acknowledge funding by the Klaus Tschira Foundation (project 00.022.2019).
-LPMK, MMB, LK, SC, and AMV acknowledge funding from the European Commission via ERC grant 771376, from the DFG via SFB grant 873, and from the DKFZ.
+LPMK, MMB, LK, SC, and AMV acknowledge funding from the European Commission via ERC grant 771376 (to AMV), from the DFG via SFB 873, and from the DKFZ.
 We thank Alexey Uvarovskii for code refactoring and helpful suggestions on the source code.
 
 
 \subsection*{Author Contributions}
 
-MMB developed and implemented DMR detection under supervision of LPMK and SA.
-SO, LK and LPMK performed benchmarks.
+LPMK and SA conceived and worked out the method.
+LPKM wrote the software package, with contributions from MMB (differential methylation functionality) and LKü.
+LPMK, SO and LKü prepared the use-case demonstrations and performed the benchmarks.
+SC and AMV contributed experimental data and biological expertise.
+LPMK, AMV and SA contributed supervision and project management.
 LPMK and SA wrote the manuscript.
-% TO DO: complete this
 
 
 \subsection*{Competing Interests}
@@ -423,7 +428,7 @@ The authors declare no competing interests.
 		Windows exceeding either threshold are merged if they overlap, yielding DMRs that are lowly methylated in either group of cells.
 		\textbf{(B)} DMRs detected between 58 oligodendrocytes (ODs) and 130 neural stem cells (NSCs) from \citet{kremer_scnmt} (top) and DMRs detected in the same data with randomly permuted cell labels (bottom, used to estimate FDR and determine adjusted p-values).
 		\textbf{(C)} Enrichment of GO terms associated with DMRs lowly methylated in ODs (top) or NSCs (bottom).
-		Depicted are the top 5 GO terms of the "Biological Process" (GO:BP) and "Cellular Component" (GO:CC) GO category, and their binomial test p-value and enrichment, as reported by GREAT \citep{mclean2010great}.
+		Depicted are the top 5 GO terms of the "Biological Process" (GO:BP) and "Cellular Component" (GO:CC) GO category, and their binomial test p-value (two-sided, not adjusted for multiple comparisons) and enrichment, as reported by GREAT \citep{mclean2010great}.
 		\textbf{(D)} Mean methylation of NSCs and ODs at an exemplary DMR.
 		Each point corresponds to a cell, black lines denote the median.
 		\textbf{(E)} Detailed view of the DMR (yellow dashed rectangle) from C in pseudo-bulk samples consisting of NSCs or ODs.
