@@ -208,8 +208,10 @@ Finally, the resulting methylation matrices were subjected to iterative PCA (see
 Visual inspection of the resulting UMAPs revealed that our proposed combination of methods results in more clearly separated cell types, compared to a UMAP obtained with default analysis methods (Fig.~\ref{fig:score}B,C).
 While all cells form a continuous point cloud when using default methods, our improvements led to a clear separation of oligodendrocytes, OPCs and endothelial cells.
 Furthermore, even cellular sub-states of cells in the continuous neural stem cell lineage were partially separated.
+To quantify this performance gain in a more rigorous manner, we used a score that quantifies whether cells were placed, in 15-dimensional PC space, in a neighborhood comprising cells of the same cell type ("neighbor score", see Fig.~\ref{fig:score}E, and Methods for details).
+A higher neighbor score implies better separation of cell types inferred from single-cell transcriptomes of the same cells.
 
-To quantify this performance gain in a more rigorous manner, we used a score that quantifies whether cells were placed, in 15-dimensional PC space, in a neighborhood comprising cells of the same cell type ("neighbor score", see Fig.~\ref{fig:score}E, and Methods for details). The neighborhood relation in PCA space is relevant as it is used in many downstream analyses, e.g., for clustering.
+The neighborhood relation in PCA space is relevant as it is used in many downstream analyses, e.g., for clustering.
 We ask how the neighbor score depends on the number of available cells.
 This is relevant as scBS protocols are costly and labor-intensive, and only few laboratories are currently able to obtain thousands of single cell methylomes.
 To simulate smaller data sets, we sub-sampled the 1566-cell data set into smaller data sets, analyzed them again with all combinations of analysis methods, and calculated the mean neighbor score for each (Fig.~\ref{fig:score}D).
@@ -217,7 +219,6 @@ The results confirmed that quantifying methylation at VMRs leads to a cleaner se
 Using the shrunken mean of residuals as a measure of DNA methylation improved results further.
 This effect was most noticeable when quantifying promoters or genomic tiles, presumably because an individual promoter region or tile might span genomic regions with varying levels of DNA methylation as depicted in Fig.~\ref{fig:smoothres}B, which our method accounts for.
 Although cell cluster separation generally becomes more difficult in those, performance gains were observed also in smaller data sets.
-
 
 
 Overall, VMR quantification yielded results similar to those obtained when quantifying ENCODE regulatory regions, even though the number of detected VMRs (63\,421) is considerably smaller than the number of ENCODE cCREs (339\,815).
@@ -378,8 +379,6 @@ The authors declare no competing interests.
 	\end{center}
 	\caption{\small \textbf{Improved quantification of DNA methylation in a given genomic interval.}\\
 		\textbf{(A)} Depicted is a genomic interval (between vertical blue lines) along a chromosome, for which DNA methylation is to be quantified.
-		Two cells cover differing parts of the interval with one read each.
-		If one simply counts for each cell which fraction of the covered CpG sites are methylated, one obtains very different values for the two cells.
 		\textbf{(B)} By averaging each CpG site's methylation over all cells and subsequent smoothing, the thick black ``average methylation curve'' is obtained.
 		To quantify the methylation of cell 1 from (A) relative to this average over all cells, we propose to use the cell's residuals to the smoothed curve (lengths of the vertical red lines) and take their average, counting residuals of methylated CpGs positive and residuals of unmethylated CpGs negative.}
 	\label{fig:smoothres}
@@ -403,7 +402,7 @@ The authors declare no competing interests.
 		\includegraphics[width=\textwidth]{figures/Fig_correlation.pdf}
 	\end{center}
 	\caption{\small \textbf{Correlation of DNA methylation and gene expression}.\\
-		\textbf{(A)} Distribution of Pearson correlations between gene expression and promoter methylation (black) and gene expression and methylation of the nearest VMR (red): for most promoters, correlation is weak.
+		\textbf{(A)} Distribution of Pearson correlations between gene expression and promoter methylation (black) and gene expression and methylation of the nearest VMR (red).
 		Promoters are defined as intervals \textpm2~kb around the TSS.
 		\textbf{(B)} Mean methylation near the gene \textit{Htra1}.
 		Cells are assigned to 4 groups based on \textit{Htra1} expression (group 0: cells with no \textit{Htra1} expression, groups 1-3: cells that express \textit{Htra1}, divided into three equally large groups with group 3 having the highest expression).
@@ -422,7 +421,6 @@ The authors declare no competing interests.
 		Either VMRs, ENCODE regulatory elements, 100~kb genomic tiles or promoter regions (TSS\textpm2kb) were subjected to iterative PCA and UMAP.
 		CpG methylation in these intervals was either quantified by averaging (dotted lines) or using the shrunken mean of the residuals as proposed in this work (solid lines).
 		The full 1566-cell data set was sub-sampled to simulate smaller data sets (x axis).
-		A higher neighbor score implies better separation of cell types inferred from single-cell transcriptomes of the same cells (A).
 		\textbf{(F)} Proportion of VMRs (blue dots) that have at least 1~bp overlap with other genomic features.
 		The black range illustrates the minimum and maximum overlap observed for 100 reshufflings of the VMRs to randomly chosen positions.
 	}
@@ -435,10 +433,8 @@ The authors declare no competing interests.
 		\includegraphics[width=.8\textwidth]{figures/Fig_DMRs.pdf}
 	\end{center}
 	\caption{\small \textbf{Detection of differentially methylated regions (DMRs).}\\
-		\textbf{(A)} To identify DMRs, the chromosome is first divided into windows overlapping by a small and fixed size.
-		For each window, the cell’s methylation values are calculated as described and as depicted in Fig.~\ref{fig:smoothres}B.
-		Then the t statistic of these values is obtained as a measure of methylation difference between two groups of cells that were selected by the user (each point represents one of the windows).
-		Upper and lower thresholds (dashed lines) are chosen such that a defined quantile of windows have a t statistic above or below the threshold.
+		\textbf{(A)} Schematic depiction of our DMR detection algorithm.
+		Points represent windows for which the t statistic is obtained, dashed lines represent upper and lower t statistic thresholds.
 		Windows exceeding either threshold are merged if they overlap, yielding DMRs that are lowly methylated in either group of cells.
 		\textbf{(B)} DMRs detected between 58 oligodendrocytes (ODs) and 130 neural stem cells (NSCs) from \citet{kremer_scnmt} (top) and DMRs detected in the same data with randomly permuted cell labels (bottom, used to estimate FDR and determine adjusted p-values).
 		\textbf{(C)} Enrichment of GO terms associated with DMRs lowly methylated in ODs (top) or NSCs (bottom).
@@ -702,7 +698,7 @@ mouse gastrulation \citep{argelaguet2019gastru}: \texttt{GSE121708};
 \subsection*{Code Availability}
 
 \textit{MethSCAn} is available on the Python Package Index (PyPI) and can be installed with the Python package installer \texttt{pip}.
-The source code is hosted at \url{https://github.com/anders-biostat/MethSCAn}, where we also provide detailed documentation including a tutorial that demonstrates a complete \textit{MethSCAn} analysis on an example data set.
+At \url{https://anders-biostat.github.io/MethSCAn} we provide detailed documentation including a link to the source code and a tutorial that demonstrates a complete \textit{MethSCAn} analysis on an example data set.
 
 
 \begin{thebibliography}{31}
